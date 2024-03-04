@@ -1,0 +1,368 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Orientation="Horizontal">
+                <TabItem Header="Leaf" />
+                <TabItem Header="Arch" IsSelected="True" />
+                <TabItem Header="Background" IsEnabled="False" />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Constants. -->
+    <!--==================================================-->
+
+    <x:Double x:Key="TabItemMinHeight">24</x:Double>
+
+    <!--==================================================-->
+    <!-- TabItem control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource TabItemHeaderThemeFontWeight}" />
+        <Setter Property="Background" Value="{DynamicResource TabItemHeaderBackgroundUnselected}" />
+        <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderForegroundUnselected}" />
+        <Setter Property="MinHeight" Value="{DynamicResource TabItemMinHeight}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+            
+            <!--==================================================-->
+            <!-- Control theme. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Panel container. -->
+                <!--==================================================-->
+
+                <Panel>
+
+                    <!--==================================================-->
+                    <!-- Tab background. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="PART_LayoutRoot"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource TabControlBorder}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="{TemplateBinding Margin}"
+                        Padding="{TemplateBinding Padding}">
+
+                        <!--==================================================-->
+                        <!-- Content. -->
+                        <!--==================================================-->
+
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Header}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            FontFamily="{TemplateBinding FontFamily}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}" />
+
+                    </Border>
+
+                    <!--==================================================-->
+                    <!-- Tab highlight. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="PART_Highlight"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="{TemplateBinding Margin}" />
+
+                </Panel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Selected state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected">
+            <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
+            <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderForegroundSelected}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderBackgroundDisabled}" />
+            <Setter Property="TextElement.Foreground" Value="{DynamicResource TabItemHeaderForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Top placement. -->
+        <!--==================================================-->
+
+        <Style Selector="^[TabStripPlacement=Top]">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="CornerRadius" Value="4,4,0,0" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Top] /template/ Border#PART_LayoutRoot">
+            <Setter Property="BorderThickness" Value="1,1,1,0" />
+            <Setter Property="Margin" Value="2,0,2,1" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Top] /template/ Border#PART_Highlight">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderHighlightUnselected}" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Height" Value="4" />
+            <Setter Property="Margin" Value="2,0" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Top]:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="Padding" Value="12,8,12,9" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Left placement. -->
+        <!--==================================================-->
+
+        <Style Selector="^[TabStripPlacement=Left]">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="CornerRadius" Value="4,0,0,4" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Left] /template/ Border#PART_LayoutRoot">
+            <Setter Property="BorderThickness" Value="1,1,0,1" />
+            <Setter Property="Margin" Value="0,2,1,2" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Left] /template/ Border#PART_Highlight">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderHighlightUnselected}" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="4" />
+            <Setter Property="Margin" Value="0,2" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Left]:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Margin" Value="0,2" />
+            <Setter Property="Padding" Value="12,8,13,8" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Bottom placement. -->
+        <!--==================================================-->
+
+        <Style Selector="^[TabStripPlacement=Bottom]">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="CornerRadius" Value="0,0,4,4" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Bottom] /template/ Border#PART_LayoutRoot">
+            <Setter Property="BorderThickness" Value="1,0,1,1" />
+            <Setter Property="Margin" Value="2,1,2,0" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Bottom] /template/ Border#PART_Highlight">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderHighlightUnselected}" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Height" Value="4" />
+            <Setter Property="Margin" Value="2,0" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Bottom]:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="Padding" Value="12,9,12,8" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Right placement. -->
+        <!--==================================================-->
+
+        <Style Selector="^[TabStripPlacement=Right]">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="CornerRadius" Value="0,4,4,0" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Right] /template/ Border#PART_LayoutRoot">
+            <Setter Property="BorderThickness" Value="0,1,1,1" />
+            <Setter Property="Margin" Value="1,2,0,2" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Right] /template/ Border#PART_Highlight">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderHighlightUnselected}" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Width" Value="4" />
+            <Setter Property="Margin" Value="0,2" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Right]:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Margin" Value="0,2" />
+            <Setter Property="Padding" Value="13,8,12,8" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Set highlight color if selected. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected /template/ Border#PART_Highlight">
+            <Setter Property="Background" Value="{DynamicResource TabItemHeaderHighlightSelected}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Red highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Red07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pink highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Pink07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Purple highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Purple07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Purple highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Indigo highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Indigo07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Blue07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Teal highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Teal07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Green highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Green07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Amber highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Amber07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Orange highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Orange07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Orange highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Brown highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource Brown07}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue Grey highlight color. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+            <Style Selector="^:selected /template/ Border#PART_Highlight">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey07}" />
+            </Style>
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

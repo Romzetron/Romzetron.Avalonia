@@ -1,0 +1,35 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- BLUE them background colors. -->
+    <!--==================================================-->
+
+    <Color x:Key="ColorTheme00">#FCE4EC</Color>
+    <Color x:Key="ColorTheme01">#F8BBD0</Color>
+    <Color x:Key="ColorTheme02">#F48FB1</Color>
+    <Color x:Key="ColorTheme03">#F06292</Color>
+    <Color x:Key="ColorTheme04">#EC407A</Color>
+    <Color x:Key="ColorTheme05">#E91E63</Color>
+    <Color x:Key="ColorTheme06">#D81B60</Color>
+    <Color x:Key="ColorTheme07">#C2185B</Color>
+    <Color x:Key="ColorTheme08">#AD1457</Color>
+    <Color x:Key="ColorTheme09">#880E4F</Color>
+
+    <!--==================================================-->
+    <!-- BLUE theme text colors. -->
+    <!--==================================================-->
+
+    <Color x:Key="ColorThemeText00">#000000</Color>
+    <Color x:Key="ColorThemeText01">#000000</Color>
+    <Color x:Key="ColorThemeText02">#000000</Color>
+    <Color x:Key="ColorThemeText03">#000000</Color>
+    <Color x:Key="ColorThemeText04">#FFFFFF</Color>
+    <Color x:Key="ColorThemeText05">#FFFFFF</Color>
+    <Color x:Key="ColorThemeText06">#FFFFFF</Color>
+    <Color x:Key="ColorThemeText07">#FFFFFF</Color>
+    <Color x:Key="ColorThemeText08">#FFFFFF</Color>
+    <Color x:Key="ColorThemeText09">#FFFFFF</Color>
+
+</ResourceDictionary>

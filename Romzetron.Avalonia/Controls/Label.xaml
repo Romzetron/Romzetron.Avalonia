@@ -1,0 +1,58 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Label template. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type Label}" TargetType="Label">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Foreground" Value="{DynamicResource LabelForeground}" />
+        <Setter Property="Padding" Value="4" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Content. -->
+                <!--==================================================-->
+
+                <ContentPresenter
+                    Name="PART_ContentPresenter"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Content="{TemplateBinding Content}"
+                    Padding="{TemplateBinding Padding}"
+                    RecognizesAccessKey="True"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+
+            </ControlTemplate>
+
+        </Setter>
+        
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+        
+        <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource LabelDisabledForeground}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,97 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabNumericUpDown">
+
+    <!--==================================================-->
+    <!-- Tab layout container. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Spacing="8"
+        Width="200"
+        Margin="8">
+
+        <!--==================================================-->
+        <!-- Standard right buttons, left aligned text. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Name="MainNumberUpDown"
+            Value="5.0"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Watermark="Enter text" />
+
+        <!--==================================================-->
+        <!-- Right buttons, right aligned text. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Watermark="Enter text"
+            HorizontalContentAlignment="Right" />
+
+        <!--==================================================-->
+        <!-- Left buttons, left aligned text. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Width="200"
+            ButtonSpinnerLocation="Left"
+            Watermark="Enter text" />
+
+        <!--==================================================-->
+        <!-- Left buttons, right aligned text. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Width="200"
+            ButtonSpinnerLocation="Left"
+            Watermark="Enter text"
+            HorizontalContentAlignment="Right" />
+
+        <!--==================================================-->
+        <!-- Disabled showing watermark. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            IsEnabled="False"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Watermark="Disabled Watermark" />
+
+        <!--==================================================-->
+        <!-- Disabled showing value. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            IsEnabled="False"
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5"
+            Watermark="Enter text" />
+
+    </StackPanel>
+
+</UserControl>

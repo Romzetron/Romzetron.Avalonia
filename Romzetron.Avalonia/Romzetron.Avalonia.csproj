@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Copyright>Copyright © 2024 Romzetron Software</Copyright>
+        <Company>Romzetron Software</Company>
+        <Title>Romzetron Avalonia Theme</Title>
+        <RepositoryUrl>https://github.com/Romzetron/Romzetron.Avalonia</RepositoryUrl>
+        <PackageLicenseUrl>https://github.com/Romzetron/Romzetron.Avalonia/LICENSE.md</PackageLicenseUrl>
+        <Version>11.0.9.0</Version>
+        <AssemblyVersion>11.0.9.0</AssemblyVersion>
+        <FileVersion>11.0.9.0</FileVersion>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <!-- NativeMenuBar uses ReflectionBinding -->
+        <NoWarn>$(NoWarn);IL2026</NoWarn>
+        <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+        <TrimmerSingleWarn>false</TrimmerSingleWarn>
+        <IsTrimmable>true</IsTrimmable>
+        
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.9" />
+        <AvaloniaResource Include="**/*.xaml" />
+        <AvaloniaResource Include="**/*.ttf" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.0.9" />
+    </ItemGroup>
+
+</Project>

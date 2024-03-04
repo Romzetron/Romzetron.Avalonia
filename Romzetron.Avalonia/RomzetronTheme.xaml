@@ -1,0 +1,18 @@
+﻿<Styles
+    x:Class="Romzetron.Avalonia.RomzetronTheme"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="/Resources/BoxShadows.xaml" />
+                <MergeResourceInclude Source="/Resources/FullPalette.xaml" />
+                <MergeResourceInclude Source="/Resources/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <StyleInclude Source="/Resources/Controls.xaml" />
+
+</Styles>

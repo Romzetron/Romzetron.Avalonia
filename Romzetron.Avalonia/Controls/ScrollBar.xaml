@@ -1,0 +1,282 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Spacing="10">
+
+                <ScrollBar
+                    Orientation="Horizontal"
+                    Width="200"
+                    HorizontalAlignment="Left" />
+
+                <ScrollBar
+                    Orientation="Vertical"
+                    Height="100"
+                    HorizontalAlignment="Left" />
+
+                <ScrollViewer
+                    Width="200"
+                    Height="200"
+                    HorizontalScrollBarVisibility="Visible"
+                    VerticalScrollBarVisibility="Visible">
+
+                    <Border
+                        Width="400"
+                        Height="400">
+
+                        <Border.Background>
+
+                            <VisualBrush TileMode="Tile" SourceRect="0,0,40,40" DestinationRect="0,0,40,40"
+                                         Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Canvas Width="40" Height="40">
+                                        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="20" Height="20"
+                                                   Fill="{StaticResource Red05}" />
+                                        <Rectangle Canvas.Left="20" Canvas.Top="0" Width="20" Height="20"
+                                                   Fill="{StaticResource Green05}" />
+                                        <Rectangle Canvas.Left="0" Canvas.Top="20" Width="20" Height="20"
+                                                   Fill="{StaticResource Blue06}" />
+                                        <Rectangle Canvas.Left="20" Canvas.Top="20" Width="20" Height="20"
+                                                   Fill="{StaticResource Yellow05}" />
+                                    </Canvas>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+
+                        </Border.Background>
+
+                    </Border>
+
+                </ScrollViewer>
+
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- ScrollViewer template. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
+        
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Cursor" Value="Arrow" />
+        
+        <!--==================================================-->
+        <!-- Horizontal style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:horizontal">
+            
+            <!--==================================================-->
+            <!-- Horizontal default property setters. -->
+            <!--==================================================-->
+
+            <Setter Property="Background" Value="{DynamicResource ScrollBarBackground}" />
+            <Setter Property="Height" Value="{DynamicResource ScrollBarThickness}" />
+            <Setter Property="CornerRadius" Value="{DynamicResource ScrollBarCornerRadius}" />
+
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+            
+            <Setter Property="Template">
+                
+                <!--==================================================-->
+                <!-- Control template. -->
+                <!--==================================================-->
+                
+                <ControlTemplate>
+                    
+                    <!--==================================================-->
+                    <!-- Background container. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Height="{DynamicResource ScrollBarThumbThickness}"
+                        VerticalAlignment="Center"
+                        UseLayoutRounding="False">
+                        
+                        <!--==================================================-->
+                        <!-- Track. -->
+                        <!--==================================================-->
+
+                        <Track
+                            Maximum="{TemplateBinding Maximum}"
+                            Minimum="{TemplateBinding Minimum}"
+                            Orientation="{TemplateBinding Orientation}"
+                            ViewportSize="{TemplateBinding ViewportSize}"
+                            Value="{TemplateBinding Value, Mode=TwoWay}">
+
+                            <!--==================================================-->
+                            <!-- Thumb. -->
+                            <!--==================================================-->
+                            
+                            <Thumb Name="Thumb" />
+
+                        </Track>
+
+                    </Border>
+
+                </ControlTemplate>
+                
+            </Setter>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Vertical style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:vertical">
+            
+            <!--==================================================-->
+            <!-- Vertical default property setters. -->
+            <!--==================================================-->
+
+            <Setter Property="Background" Value="{DynamicResource ScrollBarBackground}" />
+            <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}" />
+            <Setter Property="CornerRadius" Value="{DynamicResource ScrollBarCornerRadius}" />
+            
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+
+            <Setter Property="Template">
+                
+                <!--==================================================-->
+                <!-- Control template. -->
+                <!--==================================================-->
+                
+                <ControlTemplate>
+                    
+                    <!--==================================================-->
+                    <!-- Background container. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Width="{DynamicResource ScrollBarThumbThickness}"
+                        HorizontalAlignment="Center"
+                        UseLayoutRounding="False">
+                        
+                        <!--==================================================-->
+                        <!-- Track. -->
+                        <!--==================================================-->
+
+                        <Track
+                            IsDirectionReversed="True"
+                            Maximum="{TemplateBinding Maximum}"
+                            Minimum="{TemplateBinding Minimum}"
+                            Orientation="{TemplateBinding Orientation}"
+                            ViewportSize="{TemplateBinding ViewportSize}"
+                            Value="{TemplateBinding Value, Mode=TwoWay}">
+
+                            <!--==================================================-->
+                            <!-- Thumb. -->
+                            <!--==================================================-->
+
+                            <Thumb Name="Thumb" />
+
+                        </Track>
+
+                    </Border>
+
+                </ControlTemplate>
+                
+            </Setter>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Thumb style. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ Thumb#Thumb">
+            
+            <!--==================================================-->
+            <!-- Thumb properties. -->
+            <!--==================================================-->
+
+            <Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackground}" />
+            <Setter Property="CornerRadius" Value="{DynamicResource ScrollBarCornerRadius}" />
+
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+            
+            <Setter Property="Template">
+                
+                <Setter.Value>
+                    
+                    <!--==================================================-->
+                    <!-- Control template. -->
+                    <!--==================================================-->
+                    
+                    <ControlTemplate>
+                        
+                        <!--==================================================-->
+                        <!-- Thumb border. -->
+                        <!--==================================================-->
+
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}" />
+
+                    </ControlTemplate>
+                    
+                </Setter.Value>
+                
+            </Setter>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Thumb pointer over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ Thumb#Thumb:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackgroundPointerOver}" />
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Thumb pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ Thumb#Thumb:pressed">
+            <Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackgroundPressed}" />
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Thumb horizontal state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:horizontal /template/ Thumb#Thumb">
+            <Setter Property="MinWidth" Value="24" />
+            <Setter Property="Height" Value="{DynamicResource ScrollBarThumbThickness}" />
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Thumb vertical state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:vertical /template/ Thumb#Thumb">
+            <Setter Property="MinHeight" Value="24" />
+            <Setter Property="Width" Value="{DynamicResource ScrollBarThumbThickness}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

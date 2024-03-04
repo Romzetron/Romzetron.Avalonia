@@ -1,0 +1,75 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <TabStrip>
+                <TabStripItem>Item 1</TabStripItem>
+                <TabStripItem Theme.ColorTheme="Red">Item 2</TabStripItem>
+                <TabStripItem IsEnabled="False">Disabled</TabStripItem>
+            </TabStrip>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- TabStrip control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type TabStrip}" TargetType="TabStrip">
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Background border. -->
+                <!--==================================================-->
+
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+
+                    <!--==================================================-->
+                    <!-- Tab item presenter. -->
+                    <!--==================================================-->
+
+                    <ItemsPresenter
+                        Name="PART_ItemsPresenter"
+                        ItemsPanel="{TemplateBinding ItemsPanel}" />
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Items panel template.. -->
+        <!--==================================================-->
+
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <WrapPanel />
+            </ItemsPanelTemplate>
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

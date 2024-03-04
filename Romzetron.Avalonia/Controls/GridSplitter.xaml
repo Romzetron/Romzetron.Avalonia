@@ -1,0 +1,90 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+
+        <Grid
+            Height="100"
+            Width="200"
+            ColumnDefinitions="*,Auto,*">
+
+            <Border
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="{DynamicResource Red05}" />
+
+            <GridSplitter Grid.Column="1" />
+
+            <Border
+                Grid.Column="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="{DynamicResource Blue05}" />
+
+        </Grid>
+
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- GridSplitter control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme
+        x:Key="{x:Type GridSplitter}"
+        TargetType="GridSplitter">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="MinWidth" Value="6" />
+        <Setter Property="MinHeight" Value="6" />
+        <Setter Property="Background" Value="{DynamicResource GridSplitterBackground}" />
+
+        <!--==================================================-->
+        <!-- Content preview. -->
+        <!--==================================================-->
+
+        <Setter Property="PreviewContent">
+            <Template>
+                <Rectangle Fill="{DynamicResource GridSplitterPreview}" />
+            </Template>
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Content. -->
+                <!--==================================================-->
+
+                <Border
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Background="{TemplateBinding Background}" />
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

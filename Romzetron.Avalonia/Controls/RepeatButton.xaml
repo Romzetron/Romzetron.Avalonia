@@ -1,0 +1,102 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+    
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Spacing="20">
+                <RepeatButton Content="Click Me!" />
+                <RepeatButton Content="Disabled" IsEnabled="False" />
+                <RepeatButton Content="Rounded" CornerRadius="16" />
+                <RepeatButton HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                    <Path Data="M 0 4 L 8 4 L 4 0 Z" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RepeatButton}}" />
+                </RepeatButton>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+    
+    <!--==================================================-->
+    <!-- RepeatButton control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+        
+        <Setter Property="Background" Value="{DynamicResource RepeatButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource RepeatButtonBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource RepeatButtonCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource RepeatButtonPadding}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="RenderTransform" Value="none" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+        
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <Border
+                    x:Name="PART_Container"
+                    Padding="0,0,0,1">
+                
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Margin="0"/>
+                
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+        
+        <!--==================================================-->
+        <!-- Pointer over, pressed & disabled styles. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPointerOver}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushPointerOver}" />
+        </Style>
+
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="0,1,0,-1" />
+        </Style>
+
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPressed}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushPressed}" />
+        </Style>
+
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabled}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushDisabled}" />
+            <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

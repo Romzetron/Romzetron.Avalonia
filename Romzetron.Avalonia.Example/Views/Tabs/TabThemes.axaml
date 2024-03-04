@@ -1,0 +1,471 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
+    xmlns:theme="clr-namespace:Romzetron.Avalonia;assembly=Romzetron.Avalonia"
+    xmlns:converters="clr-namespace:Romzetron.Avalonia.Converters;assembly=Romzetron.Avalonia"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabThemes">
+
+    <!--==================================================-->
+    <!-- Design time data context. -->
+    <!--==================================================-->
+
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+
+    <!--==================================================-->
+    <!-- Resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <system:Double x:Key="ColorWidth">30</system:Double>
+            <system:Double x:Key="ColorHeight">30</system:Double>
+            <converters:ThemeConverter x:Key="ThemeConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Tab layout. -->
+    <!--==================================================-->
+
+    <Grid
+        Margin="8"
+        VerticalAlignment="Top"
+        ColumnDefinitions="Auto,Auto"
+        RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,Auto,Auto">
+
+        <!--==================================================-->
+        <!-- RED theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="0" Grid.Column="0"
+            Content="Red"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Red}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="0" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Red09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- PINK theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="1" Grid.Column="0"
+            Content="Pink"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Pink}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="1" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Pink09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- PURPLE theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="2" Grid.Column="0"
+            Content="Purple"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Purple}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="2" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Purple09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- DEEP PURPLE theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="3" Grid.Column="0"
+            Content="Deep Purple"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.DeepPurple}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="3" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepPurple09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- INDIGO theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="4" Grid.Column="0"
+            Content="Indigo"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Indigo}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="4" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Indigo09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- BLUE theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="5" Grid.Column="0"
+            Content="Blue"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Blue}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="5" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Blue09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- TEAL theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="6" Grid.Column="0"
+            Content="Teal"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Teal}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="6" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Teal09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- GREEN theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="7" Grid.Column="0"
+            Content="Green"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Green}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="7" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Green09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- AMBER theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="8" Grid.Column="0"
+            Content="Amber"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Amber}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="8" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Amber09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- ORANGE theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="9" Grid.Column="0"
+            Content="Orange"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Orange}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="9" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Orange09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- DEEP ORANGE theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="10" Grid.Column="0"
+            Content="Deep Orange"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.DeepOrange}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="10" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource DeepOrange09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- BROWN theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="11" Grid.Column="0"
+            Content="Brown"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Brown}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="11" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource Brown09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- BLUE GREY theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="12" Grid.Column="0"
+            Content="Blue Grey"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.BlueGrey}}"
+            Margin="4"
+            GroupName="ThemeSelector" />
+
+        <StackPanel
+            Grid.Row="12" Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Margin="14,4,4,4"
+            Height="{StaticResource ColorHeight}">
+
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey00}" CornerRadius="4,0,0,4" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey01}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey02}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey03}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey04}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey05}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey06}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey07}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey08}" />
+            <Border Width="{StaticResource ColorWidth}" Background="{DynamicResource BlueGrey09}" CornerRadius="0,4,4,0" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Cycle themes start/stop button. -->
+        <!--==================================================-->
+
+        <Button
+            Grid.Row="13" Grid.Column="1"
+            Command="{Binding ToggleCyclingThemes}"
+            Margin="14,4,4,4"
+            HorizontalAlignment="Stretch">
+
+            <i:Interaction.Behaviors>
+                <ia:DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="NotEqual" Value="True">
+                    <ia:ChangePropertyAction TargetObject="{Binding $self}" PropertyName="Content" Value="Start Cycling Themes" />
+                </ia:DataTriggerBehavior>
+                <ia:DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="Equal" Value="True">
+                    <ia:ChangePropertyAction TargetObject="{Binding $self}" PropertyName="Content" Value="Stop Cycling Themes" />
+                </ia:DataTriggerBehavior>
+            </i:Interaction.Behaviors>
+
+        </Button>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,264 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabTextBox">
+
+    <!--==================================================-->
+    <!-- Tab resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <x:Double x:Key="LabelWidth">150</x:Double>
+        <x:Double x:Key="TextBoxWidth">200</x:Double>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Tab layout. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical">
+
+        <!--==================================================-->
+        <!-- Clear button. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Clear Button"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="You can clear me"
+                Classes="ClearButton"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Content left aligned. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Left Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Left"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Content center aligned. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Center Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Center"
+                HorizontalContentAlignment="Center"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Content right aligned. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Right Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Right"
+                HorizontalContentAlignment="Right"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Password hidden. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Password"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Password"
+                PasswordChar="•"
+                Classes="RevealPasswordButton"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Password shown. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Password"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Password"
+                PasswordChar="•"
+                Classes="RevealPasswordButton"
+                RevealPassword="True"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Watermark. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Watermark"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Watermark="Watermark"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Floating watermark. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Floating Watermark"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Floating Watermark"
+                Watermark="Text"
+                UseFloatingWatermark="True"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Disabled"
+                IsEnabled="False"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled with watermark. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled w/Watermark"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                IsEnabled="False"
+                Watermark="Watermark"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled password. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled Password"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Password"
+                IsEnabled="False"
+                PasswordChar="•"
+                Classes="RevealPasswordButton"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Multiline. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Multiline"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="Line 1&#10;Line 2&#10;Line 3"
+                AcceptsReturn="True"
+                Margin="4"
+                Height="100"
+                VerticalContentAlignment="Top"
+                Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

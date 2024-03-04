@@ -1,0 +1,289 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <Calendar DisplayDate="2000-01-01">
+                <Calendar.BlackoutDates>
+                    <CalendarDateRange>
+                        <x:Arguments>
+                            <sys:DateTime>2000-01-01</sys:DateTime>
+                            <sys:DateTime>2000-01-05</sys:DateTime>
+                        </x:Arguments>
+                    </CalendarDateRange>
+                </Calendar.BlackoutDates>
+            </Calendar>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- CalendarButton control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="CalendarButton" TargetType="Button">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Button content. -->
+                <!--==================================================-->
+
+                <ContentPresenter
+                    x:Name="Text"
+                    Background="{TemplateBinding Background}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ ContentPresenter#Text">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarViewForegroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed /template/ ContentPresenter#Text">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarViewForegroundPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarViewForegroundDisabled}" />
+        </Style>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- CalendarItem control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+
+        <!--==================================================-->
+        <!-- Day title template. -->
+        <!--==================================================-->
+
+        <Setter Property="DayTitleTemplate">
+
+            <Template x:DataType="x:String">
+
+                <TextBlock
+                    Text="{Binding}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="12" />
+
+            </Template>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Background border. -->
+                <!--==================================================-->
+
+                <Border
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+
+                    <!--==================================================-->
+                    <!-- MinWidth of DayItem = 40 * 7 = 280 + -->
+                    <!-- margins/padding = ~282 -->
+                    <!--==================================================-->
+
+                    <Grid
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        RowDefinitions="40,*"
+                        MinWidth="282">
+
+                        <!--==================================================-->
+                        <!-- Layout grid. -->
+                        <!--==================================================-->
+
+                        <Grid ColumnDefinitions="*,Auto,Auto">
+
+                            <!--==================================================-->
+                            <!-- Header button. -->
+                            <!--==================================================-->
+
+                            <Button
+                                Name="PART_HeaderButton"
+                                Theme="{StaticResource CalendarButton}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Padding="12,0,0,0"
+                                HorizontalContentAlignment="Left" />
+
+                            <!--==================================================-->
+                            <!-- Previous button. -->
+                            <!--==================================================-->
+
+                            <Button
+                                Name="PART_PreviousButton"
+                                Theme="{StaticResource CalendarButton}"
+                                Grid.Column="1"
+                                Width="40"
+                                Padding="1">
+
+                                <Path
+                                    Fill="{TemplateBinding Foreground}"
+                                    Data="M 0 7 L 5 0 L 10 7"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+
+                            </Button>
+
+                            <!--==================================================-->
+                            <!-- Next button. -->
+                            <!--==================================================-->
+
+                            <Button
+                                Name="PART_NextButton"
+                                Theme="{StaticResource CalendarButton}"
+                                Grid.Column="2"
+                                Width="40"
+                                Padding="1">
+
+                                <Path
+                                    Fill="{TemplateBinding Foreground}"
+                                    Data="M 0 0 L 5 7 L 10 0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+
+                            </Button>
+
+                        </Grid>
+
+                        <!--==================================================-->
+                        <!-- Border below is used only for MonthView but it -->
+                        <!-- can't be moved inside of Grid because -->
+                        <!-- CalendarItem expects it to be empty and it will -->
+                        <!-- cause side-effects. -->
+                        <!--==================================================-->
+
+
+                        <Border
+                            Name="BackgroundLayer"
+                            Grid.Row="1"
+                            Background="Transparent"
+                            Margin="0,38,0,0"
+                            IsVisible="{Binding #PART_MonthView.IsVisible}" />
+
+                        <!--==================================================-->
+                        <!-- Month view grid. -->
+                        <!--==================================================-->
+
+                        <Grid
+                            Name="PART_MonthView"
+                            Grid.Row="1"
+                            IsVisible="False"
+                            MinHeight="290"
+                            RowDefinitions="38,Auto,Auto,Auto,Auto,Auto,Auto"
+                            ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                        </Grid>
+
+                        <!--==================================================-->
+                        <!-- Year view grid. -->
+                        <!--==================================================-->
+
+                        <Grid
+                            Name="PART_YearView"
+                            Grid.Row="1"
+                            MinHeight="290"
+                            IsVisible="False"
+                            RowDefinitions="*,*,*"
+                            ColumnDefinitions="*,*,*,*">
+
+                        </Grid>
+
+                    </Grid>
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Style used to set month view day header text to -->
+        <!-- disabled. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ Grid#PART_MonthView">
+            <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarViewForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Style used to set month view previous and next -->
+        <!-- button foregrounds to disabled. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ Path">
+            <Setter Property="Fill" Value="{DynamicResource CalendarViewForegroundDisabled}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

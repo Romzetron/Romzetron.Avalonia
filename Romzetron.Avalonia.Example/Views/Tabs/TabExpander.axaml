@@ -1,0 +1,178 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabExpander">
+
+    <!--==================================================-->
+    <!-- Resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <StackPanel x:Key="TabExpanderTestContent" Orientation="Vertical" Spacing="8">
+                <Label Content="Content Line 1" />
+                <Label Content="Content Line 2" />
+                <Label Content="Content Line 3" />
+                <Label Content="Content Line 4" />
+                <Label Content="Content Line 5" />
+                <Label Content="Content Line 6" />
+            </StackPanel>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Scroll viewer. -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        Margin="8"
+        VerticalScrollBarVisibility="Auto"
+        HorizontalScrollBarVisibility="Auto">
+
+        <!--==================================================-->
+        <!-- Layout container. -->
+        <!--==================================================-->
+
+        <StackPanel
+            Orientation="Vertical"
+            Margin="8"
+            Spacing="8">
+
+            <!--==================================================-->
+            <!-- Expander that expands down. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Expand Down (Custom Background)"
+                ExpandDirection="Down"
+                Background="{DynamicResource UiTheme02}"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+            <!--==================================================-->
+            <!-- Expander that expands up. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Expand Up"
+                ExpandDirection="Up"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+            <!--==================================================-->
+            <!-- Expander that expands left. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Expand Left"
+                ExpandDirection="Left"
+                IsExpanded="True"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+            <!--==================================================-->
+            <!-- Expander that expands right. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Expand Right"
+                ExpandDirection="Right"
+                IsExpanded="True"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+            <!--==================================================-->
+            <!-- Disabled and collapsed expander. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Disabled (Collapsed)"
+                IsEnabled="False"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+            <!--==================================================-->
+            <!-- Disabled and expanded expander. -->
+            <!--==================================================-->
+
+            <Expander
+                Header="Disabled (Expanded)"
+                IsEnabled="False"
+                IsExpanded="True"
+                Width="400">
+
+                <StackPanel Orientation="Vertical" Spacing="8">
+                    <Label Content="Content Line 1" />
+                    <Label Content="Content Line 2" />
+                    <Label Content="Content Line 3" />
+                    <Label Content="Content Line 4" />
+                    <Label Content="Content Line 5" />
+                    <Label Content="Content Line 6" />
+                    <TextBox Text="Text Content" />
+                </StackPanel>
+
+            </Expander>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

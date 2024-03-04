@@ -1,0 +1,584 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabToggleSwitch">
+
+    <!--==================================================-->
+    <!-- Tab resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <Thickness x:Key="ToggleSwitchMargin">8,2</Thickness>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Scroll viewer. -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto">
+
+        <!--==================================================-->
+        <!-- Horizontal layout. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <!--==================================================-->
+            <!-- Variety of toggle switch examples. -->
+            <!--==================================================-->
+
+            <StackPanel
+                Margin="8"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Orientation="Vertical"
+                Spacing="16">
+
+                <!--==================================================-->
+                <!-- Standard toggle switch with default options. -->
+                <!--==================================================-->
+
+                <ToggleSwitch />
+
+                <!--==================================================-->
+                <!-- Custom message. -->
+                <!--==================================================-->
+
+                <ToggleSwitch
+                    IsChecked="True"
+                    OnContent="Custom On Message"
+                    OffContent="Custom Off Message" />
+
+                <!--==================================================-->
+                <!-- Unchecked and enabled. -->
+                <!--==================================================-->
+
+                <ToggleSwitch
+                    HorizontalContentAlignment="Left"
+                    Content="Unchecked, Enabled" />
+
+                <!--==================================================-->
+                <!-- Unchecked and disabled. -->
+                <!--==================================================-->
+
+                <ToggleSwitch
+                    HorizontalContentAlignment="Left"
+                    Content="Unchecked, Disabled"
+                    IsEnabled="False" />
+
+                <!--==================================================-->
+                <!-- Checked and enabled. -->
+                <!--==================================================-->
+
+                <ToggleSwitch
+                    HorizontalContentAlignment="Left"
+                    Content="Checked, Enabled"
+                    IsChecked="True" />
+
+                <!--==================================================-->
+                <!-- Checked and disabled. -->
+                <!--==================================================-->
+
+                <ToggleSwitch
+                    HorizontalContentAlignment="Left"
+                    Content="Checked, Disabled"
+                    IsChecked="True"
+                    IsEnabled="False" />
+
+            </StackPanel>
+
+            <!--==================================================-->
+            <!-- Color theme examples. -->
+            <!--==================================================-->
+
+            <Grid
+                Margin="8"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                ColumnDefinitions="Auto,Auto,Auto,Auto,Auto"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <!--==================================================-->
+                <!-- Theme progress bar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="0" Grid.Column="0"
+                    Content="Theme"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="0" Grid.Column="1"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="0" Grid.Column="2"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="0" Grid.Column="3"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="0" Grid.Column="4"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Red slider. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Content="Red"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="1" Grid.Column="1"
+                    Theme.ColorTheme="Red"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="1" Grid.Column="2"
+                    Theme.ColorTheme="Red"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="1" Grid.Column="3"
+                    Theme.ColorTheme="Red"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="1" Grid.Column="4"
+                    Theme.ColorTheme="Red"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Pink slider. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="2" Grid.Column="0"
+                    Content="Pink"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="2" Grid.Column="1"
+                    Theme.ColorTheme="Pink"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="2" Grid.Column="2"
+                    Theme.ColorTheme="Pink"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="2" Grid.Column="3"
+                    Theme.ColorTheme="Pink"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="2" Grid.Column="4"
+                    Theme.ColorTheme="Pink"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Purple ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="3" Grid.Column="0"
+                    Content="Purple"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="3" Grid.Column="1"
+                    Theme.ColorTheme="Purple"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="3" Grid.Column="2"
+                    Theme.ColorTheme="Purple"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="3" Grid.Column="3"
+                    Theme.ColorTheme="Purple"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="3" Grid.Column="4"
+                    Theme.ColorTheme="Purple"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Deep Purple ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="4" Grid.Column="0"
+                    Content="Deep Purple"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="4" Grid.Column="1"
+                    Theme.ColorTheme="DeepPurple"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="4" Grid.Column="2"
+                    Theme.ColorTheme="DeepPurple"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="4" Grid.Column="3"
+                    Theme.ColorTheme="DeepPurple"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="4" Grid.Column="4"
+                    Theme.ColorTheme="DeepPurple"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Indigo ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="5" Grid.Column="0"
+                    Content="Indigo"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="5" Grid.Column="1"
+                    Theme.ColorTheme="Indigo"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="5" Grid.Column="2"
+                    Theme.ColorTheme="Indigo"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="5" Grid.Column="3"
+                    Theme.ColorTheme="Indigo"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="5" Grid.Column="4"
+                    Theme.ColorTheme="Indigo"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Blue ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="6" Grid.Column="0"
+                    Content="Blue"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="6" Grid.Column="1"
+                    Theme.ColorTheme="Blue"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="6" Grid.Column="2"
+                    Theme.ColorTheme="Blue"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="6" Grid.Column="3"
+                    Theme.ColorTheme="Blue"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="6" Grid.Column="4"
+                    Theme.ColorTheme="Blue"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Teal ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="7" Grid.Column="0"
+                    Content="Teal"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="7" Grid.Column="1"
+                    Theme.ColorTheme="Teal"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="7" Grid.Column="2"
+                    Theme.ColorTheme="Teal"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="7" Grid.Column="3"
+                    Theme.ColorTheme="Teal"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="7" Grid.Column="4"
+                    Theme.ColorTheme="Teal"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Green ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="8" Grid.Column="0"
+                    Content="Green"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="8" Grid.Column="1"
+                    Theme.ColorTheme="Green"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="8" Grid.Column="2"
+                    Theme.ColorTheme="Green"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="8" Grid.Column="3"
+                    Theme.ColorTheme="Green"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="8" Grid.Column="4"
+                    Theme.ColorTheme="Green"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Amber ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="9" Grid.Column="0"
+                    Content="Amber"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="9" Grid.Column="1"
+                    Theme.ColorTheme="Amber"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="9" Grid.Column="2"
+                    Theme.ColorTheme="Amber"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="9" Grid.Column="3"
+                    Theme.ColorTheme="Amber"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="9" Grid.Column="4"
+                    Theme.ColorTheme="Amber"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Orange ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="10" Grid.Column="0"
+                    Content="Orange"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="10" Grid.Column="1"
+                    Theme.ColorTheme="Orange"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="10" Grid.Column="2"
+                    Theme.ColorTheme="Orange"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="10" Grid.Column="3"
+                    Theme.ColorTheme="Orange"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="10" Grid.Column="4"
+                    Theme.ColorTheme="Orange"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Deep Orange ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="11" Grid.Column="0"
+                    Content="Deep Orange"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="11" Grid.Column="1"
+                    Theme.ColorTheme="DeepOrange"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="11" Grid.Column="2"
+                    Theme.ColorTheme="DeepOrange"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="11" Grid.Column="3"
+                    Theme.ColorTheme="DeepOrange"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="11" Grid.Column="4"
+                    Theme.ColorTheme="DeepOrange"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Brown ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="12" Grid.Column="0"
+                    Content="Brown"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="12" Grid.Column="1"
+                    Theme.ColorTheme="Brown"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="12" Grid.Column="2"
+                    Theme.ColorTheme="Brown"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="12" Grid.Column="3"
+                    Theme.ColorTheme="Brown"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="12" Grid.Column="4"
+                    Theme.ColorTheme="Brown"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <!--==================================================-->
+                <!-- Blue Grey ToggleSwitch. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="13" Grid.Column="0"
+                    Content="Blue Grey"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="13" Grid.Column="1"
+                    Theme.ColorTheme="BlueGrey"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="13" Grid.Column="2"
+                    Theme.ColorTheme="BlueGrey"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="13" Grid.Column="3"
+                    Theme.ColorTheme="BlueGrey"
+                    IsChecked="True"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+                <ToggleSwitch
+                    Grid.Row="13" Grid.Column="4"
+                    Theme.ColorTheme="BlueGrey"
+                    IsChecked="True"
+                    IsEnabled="False"
+                    Margin="{StaticResource ToggleSwitchMargin}" />
+
+            </Grid>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

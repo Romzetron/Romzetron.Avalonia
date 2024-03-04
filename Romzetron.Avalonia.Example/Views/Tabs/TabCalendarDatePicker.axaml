@@ -1,0 +1,218 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCalendarDatePicker">
+
+    <!--==================================================-->
+    <!-- Tab resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <x:Double x:Key="LabelWidth">200</x:Double>
+        <x:Double x:Key="CalendarDatePickerWidth">200</x:Double>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- SelectedDateFormat: Short. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="SelectedDateFormat: Short"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDateFormat="Short"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- SelectedDateFormat: Long. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="SelectedDateFormat: Long"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDateFormat="Long"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- SelectedDateFormat: Custom. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="SelectedDateFormat: Custom"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDateFormat="Custom"
+                CustomDateFormatString="yyyy-MM-dd"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Blackout dates example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Blackout Dates"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                x:Name="BlackoutCalendarDatePicker"
+                Margin="4"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Watermark example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Watermark"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                Watermark="Watermark"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Floating watermark example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Floating Watermark"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                Watermark="Watermark"
+                UseFloatingWatermark="True"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Left aligned example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Left Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                HorizontalContentAlignment="Left"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Center aligned example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Center Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                HorizontalContentAlignment="Center"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Right aligned example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Right Aligned"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                HorizontalContentAlignment="Right"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                IsEnabled="False"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

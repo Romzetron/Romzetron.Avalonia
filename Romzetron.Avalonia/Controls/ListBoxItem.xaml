@@ -1,0 +1,133 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="0" Width="200">
+            <ListBox Margin="10">
+                <ListBoxItem IsEnabled="False">Disabled</ListBoxItem>
+                <ListBoxItem Background="#66000000">
+                    Test
+                </ListBoxItem>
+                <ListBoxItem>Test</ListBoxItem>
+            </ListBox>
+        </Border>
+    </Design.PreviewWith>
+    
+    <!--==================================================-->
+    <!-- ListBoxItem control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForeground}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ListBoxItemCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource ListBoxItemPadding}" />
+        <Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <ContentPresenter
+                    Name="PART_ContentPresenter"
+                    Background="{TemplateBinding Background}"
+                    Foreground="{TemplateBinding Foreground}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Content="{TemplateBinding Content}"
+                    FontSize="{DynamicResource StandardFontSize}"
+                    Padding="{TemplateBinding Padding}"
+                    Margin="{TemplateBinding Margin}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pointer over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundPointerOver}" />
+            <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundPressed}" />
+            <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected">
+
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundSelected}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected & unfocused state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:not(:focus) /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundSelectedUnfocused}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundSelectedUnfocused}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected & pointer over state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundSelectedPointerOver}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundSelectedPointerOver}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected & pressed state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ListBoxItemBackgroundSelectedPressed}" />
+                <Setter Property="Foreground" Value="{DynamicResource ListBoxItemForegroundSelectedPressed}" />
+            </Style>
+
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

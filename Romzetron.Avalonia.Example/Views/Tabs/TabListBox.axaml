@@ -1,0 +1,147 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabListBox">
+
+    <!--==================================================-->
+    <!-- Scroll viewer -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        Margin="8"
+        VerticalScrollBarVisibility="Auto"
+        HorizontalScrollBarVisibility="Auto">
+
+        <!--==================================================-->
+        <!-- Layout grid. -->
+        <!--==================================================-->
+
+        <Grid
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            RowDefinitions="Auto,Auto,8,Auto,Auto"
+            ColumnDefinitions="Auto,8,Auto">
+
+            <!--==================================================-->
+            <!-- ListBox single selection example. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="0"
+                Content="SelectionMode: Single"
+                Margin="4" />
+
+            <ListBox
+                Grid.Row="1" Grid.Column="0"
+                Width="200"
+                Height="300"
+                Margin="4">
+
+                <ListBoxItem Content="Item 1 (Disabled)" IsEnabled="False" />
+                <ListBoxItem Content="Item 2" />
+                <ListBoxItem Content="Item 3" />
+                <ListBoxItem Content="Item 4" />
+                <ListBoxItem Content="Item 5" />
+                <ListBoxItem Content="Item 6" />
+                <ListBoxItem Content="Item 7" />
+                <ListBoxItem Content="Item 8" />
+                <ListBoxItem Content="Item 9" />
+                <ListBoxItem Content="Item 10" />
+
+            </ListBox>
+
+            <!--==================================================-->
+            <!-- ListBox multiple selection example. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="3" Grid.Column="0"
+                Content="SelectionMode: Multiple"
+                Margin="4" />
+
+            <ListBox
+                Grid.Row="4" Grid.Column="0"
+                SelectionMode="Multiple"
+                Width="200"
+                Height="300"
+                Margin="4">
+
+                <ListBoxItem Content="Item 1 (Disabled)" IsEnabled="False" />
+                <ListBoxItem Content="Item 2" IsSelected="True" />
+                <ListBoxItem Content="Item 3" IsSelected="True" />
+                <ListBoxItem Content="Item 4" IsSelected="True" />
+                <ListBoxItem Content="Item 5" />
+                <ListBoxItem Content="Item 6" />
+                <ListBoxItem Content="Item 7" />
+                <ListBoxItem Content="Item 8" />
+                <ListBoxItem Content="Item 9" />
+                <ListBoxItem Content="Item 10" />
+
+            </ListBox>
+
+            <!--==================================================-->
+            <!-- ListBox toggle selection example. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="2"
+                Content="SelectionMode: Toggle"
+                Margin="4" />
+
+            <ListBox
+                Grid.Row="1" Grid.Column="2"
+                SelectionMode="Toggle"
+                Width="200"
+                Height="300"
+                Margin="4">
+
+                <ListBoxItem Content="Item 1 (Disabled)" IsEnabled="False" />
+                <ListBoxItem Content="Item 2" />
+                <ListBoxItem Content="Item 3" />
+                <ListBoxItem Content="Item 4" />
+                <ListBoxItem Content="Item 5" />
+                <ListBoxItem Content="Item 6" />
+                <ListBoxItem Content="Item 7" />
+                <ListBoxItem Content="Item 8" />
+                <ListBoxItem Content="Item 9" />
+                <ListBoxItem Content="Item 10" />
+
+            </ListBox>
+            
+            <!--==================================================-->
+            <!-- ListBox always selected example. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="3" Grid.Column="2"
+                Content="SelectionMode: AlwaysSelected"
+                Margin="4" />
+
+            <ListBox
+                Grid.Row="4" Grid.Column="2"
+                SelectionMode="AlwaysSelected"
+                Width="200"
+                Height="300"
+                Margin="4">
+
+                <ListBoxItem Content="Item 1 (Disabled)" IsEnabled="False" />
+                <ListBoxItem Content="Item 2" IsSelected="True" />
+                <ListBoxItem Content="Item 3" />
+                <ListBoxItem Content="Item 4" />
+                <ListBoxItem Content="Item 5" />
+                <ListBoxItem Content="Item 6" />
+                <ListBoxItem Content="Item 7" />
+                <ListBoxItem Content="Item 8" />
+                <ListBoxItem Content="Item 9" />
+                <ListBoxItem Content="Item 10" />
+
+            </ListBox>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</UserControl>

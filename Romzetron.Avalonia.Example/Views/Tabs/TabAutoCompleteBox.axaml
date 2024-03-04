@@ -1,0 +1,111 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabAutoCompleteBox">
+
+    <!--==================================================-->
+    <!-- Tab layout container. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Spacing="8"
+        Margin="8">
+
+        <!--==================================================-->
+        <!-- Grid layout. -->
+        <!--==================================================-->
+
+        <UniformGrid
+            Margin="-8,0"
+            Columns="2">
+
+            <!--==================================================-->
+            <!-- Common style for all StackPanels. -->
+            <!--==================================================-->
+
+            <UniformGrid.Styles>
+                <Style Selector="StackPanel">
+                    <Setter Property="Margin" Value="8" />
+                    <Setter Property="Spacing" Value="4" />
+                </Style>
+            </UniformGrid.Styles>
+
+            <StackPanel>
+                <TextBlock Text="MinimumPrefixLength: 0" />
+                <AutoCompleteBox MinimumPrefixLength="0" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="MinimumPrefixLength: 1" />
+                <AutoCompleteBox MinimumPrefixLength="1" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="MinimumPrefixLength: 3" />
+                <AutoCompleteBox MinimumPrefixLength="3" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="MinimumPopulateDelay: 1s" />
+                <AutoCompleteBox MinimumPopulateDelay="00:00:01" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="MaxDropDownHeight: 60" />
+                <AutoCompleteBox MaxDropDownHeight="60" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Watermark" />
+                <AutoCompleteBox Watermark="Hello World" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Disabled" />
+                <AutoCompleteBox IsEnabled="False" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="ValueMemberBinding" />
+                <AutoCompleteBox ValueMemberBinding="{Binding Capital, x:DataType=tabs:StateData}" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Multi-Binding" />
+                <AutoCompleteBox Name="MultiBindingBox" FilterMode="Contains" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Async Populate" />
+                <AutoCompleteBox Name="AsyncBox" FilterMode="None" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Custom Autocomplete" />
+                <AutoCompleteBox Name="CustomAutocompleteBox" FilterMode="None" />
+            </StackPanel>
+
+        </UniformGrid>
+
+        <!-- <StackPanel> -->
+        <!--      -->
+        <!--     <TextBlock Text="With Validation Errors" /> -->
+        <!--      -->
+        <!--     <AutoCompleteBox Name="ValidationErrors" FilterMode="None"> -->
+        <!--         <DataValidationErrors.Error> -->
+        <!--             <system:Exception /> -->
+        <!--         </DataValidationErrors.Error> -->
+        <!--     </AutoCompleteBox> -->
+        <!--      -->
+        <!-- </StackPanel> -->
+
+    </StackPanel>
+
+</UserControl>

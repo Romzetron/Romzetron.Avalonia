@@ -1,0 +1,677 @@
+ <ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Spacing="20">
+                <CheckBox>Unchecked</CheckBox>
+                <CheckBox IsChecked="True">Checked</CheckBox>
+                <CheckBox IsThreeState="True" IsChecked="{x:Null}">Indeterminate</CheckBox>
+                <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- CheckBox template. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Foreground" Value="{DynamicResource CheckBoxForeground}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="8,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="CornerRadius" Value="4" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Root grid. -->
+                <!--==================================================-->
+
+                <Grid x:Name="RootGrid" ColumnDefinitions="20,*">
+
+                    <!--==================================================-->
+                    <!-- Background border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Grid.Column="0" Grid.ColumnSpan="2"
+                        x:Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}" />
+
+                    <!--==================================================-->
+                    <!-- Check container. -->
+                    <!--==================================================-->
+                    
+                    <Grid
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Height="32">
+
+                        <!--==================================================-->
+                        <!-- Check background. -->
+                        <!--==================================================-->
+                        
+                        <Border
+                            x:Name="NormalRectangle"
+                            Background="{DynamicResource CheckBoxCheckBackgroundFillUnchecked}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            UseLayoutRounding="False"
+                            Height="20"
+                            Width="20" />
+
+                        <!--==================================================-->
+                        <!-- Check & indeterminate glyph. -->
+                        <!--==================================================-->
+                        
+                        <Viewbox UseLayoutRounding="False">
+
+                            <Panel>
+
+                                <Panel Height="16" Width="16" />
+
+                                <!--==================================================-->
+                                <!-- Check glyph. -->
+                                <!--==================================================-->
+                                
+                                <Path
+                                    x:Name="CheckGlyph"
+                                    Opacity="0"
+                                    StrokeThickness="1.5"
+                                    Stroke="{DynamicResource CheckBoxCheckForegroundFillChecked}"
+                                    Stretch="Uniform"
+                                    VerticalAlignment="Center"
+                                    FlowDirection="LeftToRight" />
+                                
+                                <!--==================================================-->
+                                <!-- Indeterminate glyph. -->
+                                <!--==================================================-->
+                                
+                                <Border
+                                    x:Name="IndeterminateGlyph"
+                                    Opacity="0"
+                                    Background="{DynamicResource CheckBoxCheckForegroundFillChecked}"
+                                    CornerRadius="2"
+                                    Width="8"
+                                    Height="8"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+
+                            </Panel>
+
+                        </Viewbox>
+
+                    </Grid>
+                    
+                    <!--==================================================-->
+                    <!-- Content. -->
+                    <!--==================================================-->
+
+                    <ContentPresenter
+                        Grid.Column="1"
+                        x:Name="ContentPresenter"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Content="{TemplateBinding Content}"
+                        Margin="{TemplateBinding Padding}"
+                        RecognizesAccessKey="True"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        TextWrapping="Wrap" />
+
+                </Grid>
+
+            </ControlTemplate>
+
+        </Setter>
+        
+        <!--==================================================-->
+        <!-- Unchecked pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed">
+            <Style Selector="^ /template/ Border#NormalRectangle">
+                <Setter Property="Background" Value="{DynamicResource CheckBoxOuterBackgroundFillPressed}" />
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Unchecked disabled state. -->
+        <!--==================================================-->
+        
+        <Style Selector="^:disabled">
+            
+            <Style Selector="^ /template/ ContentPresenter#ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundDisabled}" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#NormalRectangle">
+                <Setter Property="Background" Value="{DynamicResource CheckBoxBackgroundDisabled}" />
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Checked states. -->
+        <!--==================================================-->
+        
+        <Style Selector="^:checked">
+            
+            <!--==================================================-->
+            <!-- Checked normal state. -->
+            <!--==================================================-->
+            
+            <Style Selector="^ /template/ Border#NormalRectangle">
+                <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillChecked}" />
+            </Style>
+
+            <Style Selector="^ /template/ Path#CheckGlyph">
+                <Setter Property="Data" Value="M1507 31L438 1101L-119 543L-29 453L438 919L1417 -59L1507 31Z" />
+                <Setter Property="Width" Value="9" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Indeterminate disabled state. -->
+            <!--==================================================-->
+            
+            <Style Selector="^:disabled">
+                
+                <Style Selector="^ ContentPresenter#ContentPresenter">
+                    <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundDisabled}" />
+                </Style>
+
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedBackgroundDisabled}" />
+                </Style>
+
+                <Style Selector="^ /template/ Path#CheckGlyph">
+                    <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckedForegroundDisabled}" />
+                </Style>
+                
+            </Style>
+            
+        </Style>
+
+        <!--==================================================-->
+        <!-- Indeterminate states. -->
+        <!--==================================================-->
+        
+        <Style Selector="^:indeterminate">
+            
+            <!--==================================================-->
+            <!-- Indeterminate normal state. -->
+            <!--==================================================-->
+            
+            <Style Selector="^ /template/ Border#NormalRectangle">
+                <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillChecked}" />
+            </Style>
+            
+            <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Indeterminate disabled state. -->
+            <!--==================================================-->
+            
+            <Style Selector="^:disabled">
+                
+                <Style Selector="^ /template/ ContentPresenter#ContentPresenter">
+                    <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundDisabled}" />
+                </Style>
+
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedBackgroundDisabled}" />
+                </Style>
+
+                <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                    <Setter Property="Background" Value="{DynamicResource CheckBoxCheckedForegroundDisabled}" />
+                </Style>
+                
+            </Style>
+            
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Red theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Red07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Red03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Red01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Red01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Pink theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Pink07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Pink03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Pink01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Pink01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Purple theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Purple07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Purple03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Purple01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Purple01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Deep Purple theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource DeepPurple03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource DeepPurple01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource DeepPurple01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Indigo theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Indigo07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Indigo03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Indigo01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Indigo01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Blue theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Blue07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Blue03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Blue01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Blue01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Teal theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Teal07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Teal03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Teal01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Teal01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Green theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Green07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Green03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Green01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Green01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Amber theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Amber07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Amber03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Amber01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Amber01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Orange theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Orange07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Orange03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Orange01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Orange01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Deep Orange theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource DeepOrange03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource DeepOrange01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource DeepOrange01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Brown theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource Brown07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource Brown03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource Brown01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource Brown01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Blue Grey theme state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+
+            <Style Selector="^:checked,^:indeterminate">
+                
+                <Style Selector="^ /template/ Border#NormalRectangle">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey07}" />
+                </Style>
+                
+                <Style Selector="^:disabled">
+                    
+                    <Style Selector="^ /template/ Border#NormalRectangle">
+                        <Setter Property="Background" Value="{DynamicResource BlueGrey03}" />
+                    </Style>
+
+                    <Style Selector="^ /template/ Path#CheckGlyph">
+                        <Setter Property="Stroke" Value="{DynamicResource BlueGrey01}" />
+                    </Style>
+            
+                    <Style Selector="^ /template/ Border#IndeterminateGlyph">
+                        <Setter Property="Background" Value="{DynamicResource BlueGrey01}" />
+                    </Style>
+                    
+                </Style>
+                
+            </Style>
+
+        </Style>
+        
+    </ControlTheme>
+    
+</ResourceDictionary>

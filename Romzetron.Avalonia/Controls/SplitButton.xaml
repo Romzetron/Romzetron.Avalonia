@@ -1,0 +1,1484 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Avalonia.Controls.Converters"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="6">
+            <StackPanel Spacing="20">
+                <SplitButton Theme.ColorTheme="Red" Width="200" Content="SplitButton">
+                    <SplitButton.Flyout>
+                        <Flyout>Hello</Flyout>
+                    </SplitButton.Flyout>
+                </SplitButton>
+                <SplitButton Width="200" CornerRadius="16" Content="Rounded">
+                    <SplitButton.Flyout>
+                        <Flyout>Hello</Flyout>
+                    </SplitButton.Flyout>
+                </SplitButton>
+                <SplitButton Width="200" IsEnabled="False">Disabled</SplitButton>
+                <ToggleSplitButton Width="200" Content="ToggleSplitButton">
+                    <ToggleSplitButton.Flyout>
+                        <Flyout>Hello</Flyout>
+                    </ToggleSplitButton.Flyout>
+                </ToggleSplitButton>
+                <ToggleSplitButton Width="200" Content="Checked" IsChecked="True">
+                    <ToggleSplitButton.Flyout>
+                        <Flyout>Hello</Flyout>
+                    </ToggleSplitButton.Flyout>
+                </ToggleSplitButton>
+                <ToggleSplitButton Theme.ColorTheme="Red" Width="200" Content="Checked Disabled" IsChecked="True" IsEnabled="False" />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Corner radius converters. -->
+    <!--==================================================-->
+
+    <converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight" />
+    <converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight" />
+    <converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight" />
+    <converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft" />
+
+    <!--==================================================-->
+    <!-- SplitButton control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type SplitButton}" TargetType="SplitButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource SplitButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource SplitButtonForeground}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SplitButtonBorderThickness}" />
+        <Setter Property="MinHeight" Value="{DynamicResource SplitButtonMinHeight}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="True" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Layout grid. -->
+                <!--==================================================-->
+
+                <Grid ColumnDefinitions="*,Auto,Auto">
+
+                    <!--==================================================-->
+                    <!-- Primary button. -->
+                    <!--==================================================-->
+
+                    <Button
+                        x:Name="PART_PrimaryButton"
+                        Grid.Column="0"
+                        Theme="{DynamicResource SplitButtonComponent}"
+                        MinWidth="{DynamicResource SplitButtonPrimaryButtonSize}"
+                        Foreground="{TemplateBinding Foreground}"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Command="{TemplateBinding Command}"
+                        CommandParameter="{TemplateBinding CommandParameter}"
+                        CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
+                        FontFamily="{TemplateBinding FontFamily}"
+                        FontSize="{TemplateBinding FontSize}"
+                        FontWeight="{TemplateBinding FontWeight}"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Padding="{TemplateBinding Padding}"
+                        Focusable="False"
+                        KeyboardNavigation.IsTabStop="False" />
+
+                    <!--==================================================-->
+                    <!-- Separator border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        x:Name="SeparatorBorder"
+                        Grid.Column="1"
+                        Background="Transparent"
+                        Width="{DynamicResource SplitButtonSeparatorWidth}"
+                        BorderThickness="1,0,0,0"
+                        Margin="0,0,0,1"
+                        BorderBrush="{DynamicResource SplitButtonSeparatorBorderBrush}" />
+
+                    <!--==================================================-->
+                    <!-- Secondary button. -->
+                    <!--==================================================-->
+
+                    <Button
+                        x:Name="PART_SecondaryButton"
+                        Grid.Column="2"
+                        Theme="{DynamicResource SplitButtonComponent}"
+                        MinWidth="{DynamicResource SplitButtonSecondaryButtonSize}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Foreground="{TemplateBinding Foreground}"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
+                        Padding="0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Focusable="False"
+                        KeyboardNavigation.IsTabStop="False">
+
+                        <!--==================================================-->
+                        <!-- Arrow. -->
+                        <!--==================================================-->
+
+                        <PathIcon
+                            Height="8"
+                            Width="16"
+                            Data="M 0 0 L 2.5 3.5 L 5 0" />
+
+                    </Button>
+
+                </Grid>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:checked">
+            <Setter Property="FontFamily" Value="{DynamicResource FontInterBold}" />
+        </Style>
+
+        <Style Selector="^:checked /template/ Border#SeparatorBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource SplitButtonSeparatorBorderBrushChecked}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource SplitButtonSeparatorBorderBrushDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled and checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource SplitButtonSeparatorBorderBrushCheckedDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Flyout open state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource SplitButtonSeparatorBorderBrushPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Flyout open and checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource SplitButtonSeparatorBorderBrushPressedChecked}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Flyout open state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:flyout-open /template/ Button">
+            <Setter Property="Tag" Value="flyout-open" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:checked /template/ Button">
+            <Setter Property="Tag" Value="checked" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Checked and flyout open state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:checked:flyout-open /template/ Button">
+            <Setter Property="Tag" Value="checked-flyout-open" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Red theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Red" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Red07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pink theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Pink" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Pink07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Purple" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Purple07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="DeepPurple" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepPurple07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Indigo theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Indigo" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Indigo07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Blue" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Blue07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Teal theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Teal" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Teal07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Green theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Green" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Green07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Amber theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Amber" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Amber07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Orange" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Orange07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="DeepOrange" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepOrange07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Brown theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="Brown" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource Brown07}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue Grey theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+
+            <Style Selector="^ /template/ Button">
+                <Setter Property="Theme.ColorTheme" Value="BlueGrey" />
+            </Style>
+
+            <Style Selector="^ /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey08}" />
+            </Style>
+
+            <Style Selector="^:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey09}" />
+            </Style>
+
+            <Style Selector="^:disabled /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey04}" />
+            </Style>
+
+            <Style Selector="^:disabled:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey05}" />
+            </Style>
+
+            <Style Selector="^:flyout-open /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey06}" />
+            </Style>
+
+            <Style Selector="^:flyout-open:checked /template/ Border#SeparatorBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueGrey07}" />
+            </Style>
+
+        </Style>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- SplitButtonComponent control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="SplitButtonComponent" TargetType="Button">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource SplitButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource SplitButtonForeground}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Container with padding to allow pressed motion. -->
+                <!--==================================================-->
+
+                <Border
+                    x:Name="PART_Container"
+                    Padding="0,0,0,1">
+
+                    <!--==================================================-->
+                    <!-- Content. -->
+                    <!--==================================================-->
+
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"
+                        Margin="0"
+                        RecognizesAccessKey="True"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Default states. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundPointerOver}" />
+        </Style>
+
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="0,1,0,-1" />
+        </Style>
+
+        <Style Selector="^:pressed">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPressed}" />
+        </Style>
+
+        <Style Selector="^:disabled">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Flyout open state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[Tag=checked]">
+
+            <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundChecked}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundCheckedPointerOver}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundCheckedPressed}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundCheckedDisabled}" />
+                <Setter Property="Foreground" Value="{DynamicResource SplitButtonForegroundCheckedDisabled}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Checked and flyout open state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[Tag=checked-flyout-open]">
+            <Setter Property="Background" Value="{DynamicResource SplitButtonBackgroundCheckedPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Red theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+
+            <Setter Property="Background" Value="{DynamicResource Red07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Red06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Red05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Red03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Red01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Red05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Red08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Red07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Red06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Red04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Red01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Red06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pink theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+
+            <Setter Property="Background" Value="{DynamicResource Pink07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Pink06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Pink05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Pink03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Pink01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Pink05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Pink08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Pink07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Pink06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Pink04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Pink01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Pink06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+
+            <Setter Property="Background" Value="{DynamicResource Purple07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Purple06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Purple05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Purple03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Purple01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Purple05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Purple08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Purple07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Purple06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Purple04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Purple01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Purple06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+
+            <Setter Property="Background" Value="{DynamicResource DeepPurple07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple03}" />
+                <Setter Property="Foreground" Value="{DynamicResource DeepPurple01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource DeepPurple08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource DeepPurple01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Indigo theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+
+            <Setter Property="Background" Value="{DynamicResource Indigo07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Indigo06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Indigo05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Indigo03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Indigo01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Indigo05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Indigo08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Indigo07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Indigo06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Indigo04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Indigo01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Indigo06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+
+            <Setter Property="Background" Value="{DynamicResource Blue07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Blue06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Blue05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Blue03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Blue01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Blue05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Blue08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Blue07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Blue06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Blue04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Blue01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Blue06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Teal theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+
+            <Setter Property="Background" Value="{DynamicResource Teal07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Teal06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Teal05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Teal03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Teal01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Teal05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Teal08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Teal07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Teal06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Teal04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Teal01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Teal06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Green theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+
+            <Setter Property="Background" Value="{DynamicResource Green07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Green06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Green05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Green03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Green01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Green05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Green08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Green07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Green06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Green04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Green01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Green06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Amber theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+
+            <Setter Property="Background" Value="{DynamicResource Amber07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Amber06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Amber05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Amber03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Amber01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Amber05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Amber08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Amber07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Amber06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Amber04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Amber01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Amber06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+
+            <Setter Property="Background" Value="{DynamicResource Orange07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Orange06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Orange05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Orange03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Orange01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Orange05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Orange08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Orange07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Orange06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Orange04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Orange01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Orange06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+
+            <Setter Property="Background" Value="{DynamicResource DeepOrange07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange03}" />
+                <Setter Property="Foreground" Value="{DynamicResource DeepOrange01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource DeepOrange08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource DeepOrange01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Brown theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+
+            <Setter Property="Background" Value="{DynamicResource Brown07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource Brown06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource Brown05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource Brown03}" />
+                <Setter Property="Foreground" Value="{DynamicResource Brown01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource Brown05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource Brown08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource Brown07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource Brown06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource Brown04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Brown01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource Brown06}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue Grey theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+
+            <Setter Property="Background" Value="{DynamicResource BlueGrey07}" />
+            <Setter Property="Foreground" Value="{DynamicResource White}" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey06}" />
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey05}" />
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey03}" />
+                <Setter Property="Foreground" Value="{DynamicResource BlueGrey01}" />
+            </Style>
+
+            <Style Selector="^[Tag=flyout-open] /template/ ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey05}" />
+            </Style>
+
+            <Style Selector="^[Tag=checked]">
+
+                <Setter Property="Background" Value="{DynamicResource BlueGrey08}" />
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey07}" />
+                </Style>
+
+                <Style Selector="^:pressed">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey06}" />
+                </Style>
+
+                <Style Selector="^:disabled">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey04}" />
+                    <Setter Property="Foreground" Value="{DynamicResource BlueGrey01}" />
+                </Style>
+
+            </Style>
+
+            <Style Selector="^[Tag=checked-flyout-open]">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey06}" />
+            </Style>
+
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,220 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+
+        <Border
+            Width="400"
+            Height="400"
+            Margin="20, 20, 20, 200">
+
+            <CalendarDatePicker
+                Width="200"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Right" />
+
+        </Border>
+
+    </Design.PreviewWith>
+
+    <x:Double x:Key="CalendarDatePickerCurrentDayFontSize">12</x:Double>
+    <x:Double x:Key="CalendarDatePickerMinHeight">32</x:Double>
+
+    <!--==================================================-->
+    <!-- CalendarDatePicker control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBoxForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource CalendarDatePickerPadding}" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="IsTodayHighlighted" Value="True" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!-- <DataValidationErrors> -->
+
+                <!--==================================================-->
+                <!-- Layout container. -->
+                <!--==================================================-->
+
+                <Panel
+                    x:Name="LayoutRoot"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+
+                    <!--==================================================-->
+                    <!-- Content layout grid. -->
+                    <!--==================================================-->
+
+                    <Grid ColumnDefinitions="*,Auto">
+
+                        <!--==================================================-->
+                        <!-- Content text box. -->
+                        <!--==================================================-->
+
+                        <TextBox
+                            Grid.Column="0" Grid.ColumnSpan="2"
+                            x:Name="PART_TextBox"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Margin="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            Watermark="{TemplateBinding Watermark}"
+                            UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
+
+                        </TextBox>
+
+                        <!--==================================================-->
+                        <!-- Show calendar popup button. -->
+                        <!--==================================================-->
+
+                        <Button
+                            Grid.Column="1"
+                            x:Name="PART_Button"
+                            Focusable="False"
+                            Margin="4,4,6,4"
+                            Padding="4"
+                            CornerRadius="2"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                            <!--==================================================-->
+                            <!-- Layout grid. -->
+                            <!--==================================================-->
+
+                            <Grid
+                                Height="16"
+                                Width="16"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                ColumnDefinitions="*,*,*,*"
+                                RowDefinitions="23*,19*,19*,19*"
+                                ClipToBounds="False">
+
+                                <!--==================================================-->
+                                <!-- Calendar bottom border. -->
+                                <!--==================================================-->
+
+                                <Border
+                                    Grid.Row="1" Grid.RowSpan="3"
+                                    Grid.ColumnSpan="4"
+                                    x:Name="Background"
+                                    BorderBrush="{Binding $parent[Button].Foreground}"
+                                    BorderThickness="1,0,1,1"
+                                    CornerRadius="0,0,1,1"
+                                    Margin="0,-1,0,0"
+                                    Opacity="0.5" />
+
+                                <!--==================================================-->
+                                <!-- Calendar top border. -->
+                                <!--==================================================-->
+
+                                <Border
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="4" Grid.Column="0"
+                                    BorderBrush="{Binding $parent[Button].Foreground}"
+                                    BorderThickness="1"
+                                    CornerRadius="1,1,0,0"
+                                    Opacity="0.5" />
+
+                                <!--==================================================-->
+                                <!-- Current day. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    Grid.Row="1" Grid.RowSpan="3"
+                                    Grid.Column="0" Grid.ColumnSpan="4"
+                                    Margin="2,-1,0,0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Foreground="{Binding $parent[Button].Foreground}"
+                                    FontSize="9"
+                                    Text="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}" />
+
+                                <!--==================================================-->
+                                <!-- Dot above current day. -->
+                                <!--==================================================-->
+
+                                <Ellipse
+                                    Grid.Row="0"
+                                    Grid.Column="0" Grid.ColumnSpan="4"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="{Binding $parent[Button].Foreground}"
+                                    StrokeThickness="0"
+                                    Width="2"
+                                    Height="2" />
+
+                            </Grid>
+
+                        </Button>
+
+                        <!--==================================================-->
+                        <!-- Calendar popup. -->
+                        <!--==================================================-->
+
+                        <Popup
+                            Grid.Column="0"
+                            x:Name="PART_Popup"
+                            PlacementTarget="{TemplateBinding}"
+                            IsLightDismissEnabled="True">
+
+                            <Calendar
+                                Name="PART_Calendar"
+                                FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                                IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                                SelectedDate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedDate, Mode=TwoWay}"
+                                DisplayDate="{TemplateBinding DisplayDate}"
+                                DisplayDateStart="{TemplateBinding DisplayDateStart}"
+                                DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+
+                        </Popup>
+
+                    </Grid>
+
+                </Panel>
+
+                <!-- </DataValidationErrors> -->
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,22 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- ThemeVariantScope control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type ThemeVariantScope}" TargetType="ThemeVariantScope">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource UiTextTheme00}" />
+        <Setter Property="TextElement.FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="TextElement.FontFamily" Value="{DynamicResource FontInterMedium}" />
+
+    </ControlTheme>
+
+</ResourceDictionary>

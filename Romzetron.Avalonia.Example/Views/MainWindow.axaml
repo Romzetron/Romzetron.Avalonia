@@ -1,0 +1,318 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:Romzetron.Avalonia.Example.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="1000"
+    x:Class="Romzetron.Avalonia.Example.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    Title="{Binding WindowTitle}"
+    WindowState="Maximized">
+
+    <!--==================================================-->
+    <!-- Design time data context. -->
+    <!--==================================================-->
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <!--==================================================-->
+    <!-- Native menu (MacOS). -->
+    <!--==================================================-->
+
+    <NativeMenu.Menu>
+        <NativeMenu>
+            <NativeMenuItem Header="File">
+                <NativeMenu>
+                    <NativeMenuItem Header="New File" Gesture="Cmd+N" />
+                    <NativeMenuItem Header="New File" Gesture="Cmd+O" />
+                    <NativeMenuItem Header="Open Recent" Gesture="Cmd+R">
+                        <NativeMenu>
+                            <NativeMenuItem Header="File 1" />
+                            <NativeMenuItem Header="File 2" />
+                            <NativeMenuItem Header="File 3" />
+                            <NativeMenuItem Header="File 4" />
+                            <NativeMenuItem Header="File 5" />
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItemSeparator />
+                    <NativeMenuItem Header="Save" Gesture="Cmd+S" />
+                    <NativeMenuItem Header="Save As" Gesture="Cmd+A" />
+                    <NativeMenuItemSeparator />
+                    <NativeMenuItem Header="Exit" Gesture="Cmd+Q" />
+                </NativeMenu>
+            </NativeMenuItem>
+            <NativeMenuItem Header="Edit" Gesture="Cmd+E">
+                <NativeMenu>
+                    <NativeMenuItem Header="Cut" Gesture="Cmd+X" />
+                    <NativeMenuItem Header="Copy" Gesture="Cmd+C" />
+                    <NativeMenuItem Header="Paste" Gesture="Cmd+V" />
+                </NativeMenu>
+            </NativeMenuItem>
+            <NativeMenuItem Header="Help" Gesture="Cmd+H">
+                <NativeMenu>
+                    <NativeMenuItem Header="There Is No Help" />
+                </NativeMenu>
+            </NativeMenuItem>
+        </NativeMenu>
+    </NativeMenu.Menu>
+
+    <!--==================================================-->
+    <!-- Main layout dock panel. -->
+    <!--==================================================-->
+
+    <DockPanel>
+
+        <!--==================================================-->
+        <!-- Main menu. -->
+        <!--==================================================-->
+
+        <Menu DockPanel.Dock="Top">
+
+            <MenuItem Header="_File">
+                <MenuItem Header="_New File" InputGesture="Cmd+N" />
+                <MenuItem Header="_Open File" InputGesture="Cmd+O" />
+                <MenuItem Header="Open _Recent" InputGesture="Cmd+R">
+                    <MenuItem Header="File 1" />
+                    <MenuItem Header="File 2" />
+                    <MenuItem Header="File 3" />
+                    <MenuItem Header="File 4" />
+                    <MenuItem Header="File 5" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Save" InputGesture="Cmd+S" />
+                <MenuItem Header="Save _As" InputGesture="Cmd+A" IsEnabled="False" />
+                <Separator />
+                <MenuItem Header="E_xit" InputGesture="Cmd+Q" />
+            </MenuItem>
+
+            <MenuItem Header="_Edit" InputGesture="Cmd+E">
+                <MenuItem Header="C_ut" InputGesture="Cmd+X" />
+                <MenuItem Header="_Copy" InputGesture="Cmd+C" />
+                <MenuItem Header="_Paste" InputGesture="Cmd+V" />
+            </MenuItem>
+
+            <MenuItem Header="_Help" InputGesture="Cmd+H">
+                <MenuItem Header="There Is No Help" />
+            </MenuItem>
+
+        </Menu>
+
+        <!--==================================================-->
+        <!-- Main tab control. -->
+        <!--==================================================-->
+
+        <TabControl
+            DockPanel.Dock="Bottom"
+            Margin="16"
+            TabStripPlacement="Left">
+
+            <!--==================================================-->
+            <!-- Color theme examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Color Themes">
+                <tabs:TabThemes />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- AutoCompleteBox theme examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="AutoCompleteBox">
+                <tabs:TabAutoCompleteBox />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Button examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Button">
+                <tabs:TabButton />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ButtonSpinner examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ButtonSpinner">
+                <tabs:TabButtonSpinner />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Calendar examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Calendar">
+                <tabs:TabCalendar />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- CalendarDatePicker examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="CalendarDatePicker">
+                <tabs:TabCalendarDatePicker />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- CheckBox examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="CheckBox">
+                <tabs:TabCheckBox />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ComboBox examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ComboBox">
+                <tabs:TabComboBox />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ContextMenu examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ContextMenu">
+                <tabs:TabContextMenu />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Date/time picker examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="DateTimePicker">
+                <tabs:TabDateTimePicker />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Expander examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Expander">
+                <tabs:TabExpander />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Flyout examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Flyout">
+                <tabs:TabFlyout />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- GridSplitter examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="GridSplitter">
+                <tabs:TabGridSplitter />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ListBox examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ListBox">
+                <tabs:TabListBox />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- NotificationCard examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="NotificationCard">
+                <tabs:TabNotificationCard />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- NumericUpDown examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="NumericUpDown">
+                <tabs:TabNumericUpDown />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ProgressBar examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ProgressBar">
+                <tabs:TabProgressBar />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- RadioButton examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="RadioButton">
+                <tabs:TabRadioButton />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ScrollViewer examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ScrollViewer">
+                <tabs:TabScrollViewer />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Slider examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Slider">
+                <tabs:TabSlider />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- TabControl and TabItem examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="TabControl/TabItem">
+                <tabs:TabTabControl />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- TextBox examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="TextBox">
+                <tabs:TabTextBox />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- TextBox examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ToggleSwitch">
+                <tabs:TabToggleSwitch />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- ToolTip examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="ToolTip">
+                <tabs:TabToolTip />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- TreeView examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="TreeView">
+                <tabs:TabTreeView />
+            </TabItem>
+
+        </TabControl>
+
+    </DockPanel>
+
+</Window>

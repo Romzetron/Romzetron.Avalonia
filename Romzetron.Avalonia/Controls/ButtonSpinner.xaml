@@ -1,0 +1,305 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Spacing="20">
+                <ButtonSpinner Height="40" Content="Right spinner" />
+                <ButtonSpinner ButtonSpinnerLocation="Left" Content="Left spinner" />
+                <ButtonSpinner BorderThickness="2" BorderBrush="Blue" Content="Right Border" />
+                <ButtonSpinner ButtonSpinnerLocation="Left" BorderThickness="2" BorderBrush="Blue" Content="Left Border" />
+                <ButtonSpinner Content="Right disabled" AllowSpin="False" />
+                <ButtonSpinner ButtonSpinnerLocation="Left" Content="Left disabled" AllowSpin="False" />
+                <ButtonSpinner ShowButtonSpinner="False" Content="Hide spinner" />
+                <ButtonSpinner Content="Error">
+                    <DataValidationErrors.Error>
+                        <sys:Exception>
+                            <x:Arguments>
+                                <x:String>Error</x:String>
+                            </x:Arguments>
+                        </sys:Exception>
+                    </DataValidationErrors.Error>
+                </ButtonSpinner>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Increase/decrease button arrows. -->
+    <!--==================================================-->
+
+    <StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M 0 3.5 L 2.5 0 L 5 3.5</StreamGeometry>
+    <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M 0 0 L 2.5 3.5 L 5 0</StreamGeometry>
+
+    <!--==================================================-->
+    <!-- Increase/decrease button control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="ButtonSpinnerRepeatButton" TargetType="RepeatButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="MinWidth" Value="24" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <ContentPresenter
+                    x:Name="PART_ContentPresenter"
+                    Foreground="{TemplateBinding Foreground}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="2"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPressed}" />
+        </Style>
+
+        <Style Selector="^:pressed">
+            <Setter Property="Margin" Value="0,1,0,-1" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
+        </Style>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- ButtonSpinner control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Foreground" Value="{DynamicResource TextBoxForeground}" />
+        <Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+        <Setter Property="MinWidth" Value="10" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="True" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!-- <DataValidationErrors> -->
+
+                <!--==================================================-->
+                <!-- Grid used to overlay content on top of -->
+                <!-- background border. -->
+                <!--==================================================-->
+
+                <Grid>
+
+                    <!--==================================================-->
+                    <!-- Background border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="PART_BorderElement"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                    <!--==================================================-->
+                    <!-- Layout dock container. -->
+                    <!--==================================================-->
+
+                    <DockPanel>
+
+                        <!--==================================================-->
+                        <!-- Increase/decrease button container. -->
+                        <!--==================================================-->
+
+                        <StackPanel
+                            Name="PART_SpinnerPanel"
+                            TabIndex="2"
+                            DockPanel.Dock="Right"
+                            Orientation="Horizontal"
+                            Margin="0,5,5,5"
+                            Spacing="4"
+                            IsVisible="{TemplateBinding ShowButtonSpinner}">
+
+                            <!--==================================================-->
+                            <!-- Increase button. -->
+                            <!--==================================================-->
+
+                            <RepeatButton
+                                Name="PART_IncreaseButton"
+                                IsTabStop="{TemplateBinding IsTabStop}"
+                                Theme="{StaticResource ButtonSpinnerRepeatButton}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                VerticalAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}">
+
+                                <PathIcon
+                                    Width="16"
+                                    Height="8"
+                                    Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
+
+                            </RepeatButton>
+
+                            <!--==================================================-->
+                            <!-- Decrease button. -->
+                            <!--==================================================-->
+
+                            <RepeatButton
+                                Name="PART_DecreaseButton"
+                                IsTabStop="{TemplateBinding IsTabStop}"
+                                Theme="{StaticResource ButtonSpinnerRepeatButton}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                VerticalAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}">
+
+                                <PathIcon
+                                    Width="16"
+                                    Height="8"
+                                    Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
+
+                            </RepeatButton>
+
+                        </StackPanel>
+
+                        <!--==================================================-->
+                        <!-- Content. -->
+                        <!--==================================================-->
+
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            TabIndex="1"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Padding="{TemplateBinding Padding}"
+                            Margin="1,0,0,0" />
+
+                    </DockPanel>
+
+                </Grid>
+
+                <!-- </DataValidationErrors> -->
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Position increase/decrease buttons on left. -->
+        <!--==================================================-->
+
+        <Style Selector="^:left">
+
+            <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel">
+                <Setter Property="DockPanel.Dock" Value="Left" />
+                <Setter Property="Margin" Value="5,5,0,5" />
+            </Style>
+
+            <Style Selector="^ /template/ StackPanel#PART_ContentPresenter">
+                <Setter Property="Margin" Value="0,0,1,0" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled">
+
+            <Setter Property="Foreground" Value="{DynamicResource TextBoxForegroundDisabled}" />
+
+            <Style Selector="^ /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundDisabled}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrushDisabled}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Focused state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:focus">
+
+            <Style Selector="^ /template/ Border#PART_BorderElement">
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrushFocused}" />
+                <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThicknessFocused}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Error state. -->
+        <!--==================================================-->
+
+        <!-- <Style Selector="^:error"> -->
+        <!--     <Setter Property="BorderBrush" Value="{DynamicResource SystemErrorTextColor}" /> -->
+        <!-- </Style> -->
+
+    </ControlTheme>
+
+</ResourceDictionary>

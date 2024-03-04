@@ -1,0 +1,758 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCheckBox">
+
+    <!--==================================================-->
+    <!-- Tab layout. -->
+    <!--==================================================-->
+
+    <Grid
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+        <!--==================================================-->
+        <!-- Theme. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="0" Grid.Column="0"
+            Content="Theme Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="0" Grid.Column="1"
+            Content="Theme Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="0" Grid.Column="2"
+            Content="Theme Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="0" Grid.Column="3"
+            Content="Theme Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="0" Grid.Column="4"
+            Content="Theme Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="0" Grid.Column="5"
+            Content="Theme Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Red. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="1" Grid.Column="0"
+            Theme.ColorTheme="Red"
+            Content="Red Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="1" Grid.Column="1"
+            Theme.ColorTheme="Red"
+            Content="Red Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="1" Grid.Column="2"
+            Theme.ColorTheme="Red"
+            Content="Red Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="1" Grid.Column="3"
+            Theme.ColorTheme="Red"
+            Content="Red Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="1" Grid.Column="4"
+            Theme.ColorTheme="Red"
+            Content="Red Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="1" Grid.Column="5"
+            Theme.ColorTheme="Red"
+            Content="Red Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Pink. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="2" Grid.Column="0"
+            Theme.ColorTheme="Pink"
+            Content="Pink Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="2" Grid.Column="1"
+            Theme.ColorTheme="Pink"
+            Content="Pink Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="2" Grid.Column="2"
+            Theme.ColorTheme="Pink"
+            Content="Pink Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="2" Grid.Column="3"
+            Theme.ColorTheme="Pink"
+            Content="Pink Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="2" Grid.Column="4"
+            Theme.ColorTheme="Pink"
+            Content="Pink Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="2" Grid.Column="5"
+            Theme.ColorTheme="Pink"
+            Content="Pink Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Purple. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="3" Grid.Column="0"
+            Theme.ColorTheme="Purple"
+            Content="Purple Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="3" Grid.Column="1"
+            Theme.ColorTheme="Purple"
+            Content="Purple Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="3" Grid.Column="2"
+            Theme.ColorTheme="Purple"
+            Content="Purple Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="3" Grid.Column="3"
+            Theme.ColorTheme="Purple"
+            Content="Purple Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="3" Grid.Column="4"
+            Theme.ColorTheme="Purple"
+            Content="Purple Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="3" Grid.Column="5"
+            Theme.ColorTheme="Purple"
+            Content="Purple Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Deep Purple. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="4" Grid.Column="0"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="4" Grid.Column="1"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="4" Grid.Column="2"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="4" Grid.Column="3"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="4" Grid.Column="4"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="4" Grid.Column="5"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Indigo. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="5" Grid.Column="0"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="5" Grid.Column="1"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="5" Grid.Column="2"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="5" Grid.Column="3"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="5" Grid.Column="4"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="5" Grid.Column="5"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Blue. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="6" Grid.Column="0"
+            Theme.ColorTheme="Blue"
+            Content="Blue Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="6" Grid.Column="1"
+            Theme.ColorTheme="Blue"
+            Content="Blue Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="6" Grid.Column="2"
+            Theme.ColorTheme="Blue"
+            Content="Blue Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="6" Grid.Column="3"
+            Theme.ColorTheme="Blue"
+            Content="Blue Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="6" Grid.Column="4"
+            Theme.ColorTheme="Blue"
+            Content="Blue Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="6" Grid.Column="5"
+            Theme.ColorTheme="Blue"
+            Content="Blue Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Teal. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="7" Grid.Column="0"
+            Theme.ColorTheme="Teal"
+            Content="Teal Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="7" Grid.Column="1"
+            Theme.ColorTheme="Teal"
+            Content="Teal Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="7" Grid.Column="2"
+            Theme.ColorTheme="Teal"
+            Content="Teal Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="7" Grid.Column="3"
+            Theme.ColorTheme="Teal"
+            Content="Teal Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="7" Grid.Column="4"
+            Theme.ColorTheme="Teal"
+            Content="Teal Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="7" Grid.Column="5"
+            Theme.ColorTheme="Teal"
+            Content="Teal Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Green. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="8" Grid.Column="0"
+            Theme.ColorTheme="Green"
+            Content="Green Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="8" Grid.Column="1"
+            Theme.ColorTheme="Green"
+            Content="Green Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="8" Grid.Column="2"
+            Theme.ColorTheme="Green"
+            Content="Green Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="8" Grid.Column="3"
+            Theme.ColorTheme="Green"
+            Content="Green Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="8" Grid.Column="4"
+            Theme.ColorTheme="Green"
+            Content="Green Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="8" Grid.Column="5"
+            Theme.ColorTheme="Green"
+            Content="Green Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Amber. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="9" Grid.Column="0"
+            Theme.ColorTheme="Amber"
+            Content="Amber Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="9" Grid.Column="1"
+            Theme.ColorTheme="Amber"
+            Content="Amber Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="9" Grid.Column="2"
+            Theme.ColorTheme="Amber"
+            Content="Amber Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="9" Grid.Column="3"
+            Theme.ColorTheme="Amber"
+            Content="Amber Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="9" Grid.Column="4"
+            Theme.ColorTheme="Amber"
+            Content="Amber Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="9" Grid.Column="5"
+            Theme.ColorTheme="Amber"
+            Content="Amber Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Orange. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="10" Grid.Column="0"
+            Theme.ColorTheme="Orange"
+            Content="Orange Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="10" Grid.Column="1"
+            Theme.ColorTheme="Orange"
+            Content="Orange Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="10" Grid.Column="2"
+            Theme.ColorTheme="Orange"
+            Content="Orange Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="10" Grid.Column="3"
+            Theme.ColorTheme="Orange"
+            Content="Orange Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="10" Grid.Column="4"
+            Theme.ColorTheme="Orange"
+            Content="Orange Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="10" Grid.Column="5"
+            Theme.ColorTheme="Orange"
+            Content="Orange Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Deep Orange. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="11" Grid.Column="0"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="11" Grid.Column="1"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="11" Grid.Column="2"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="11" Grid.Column="3"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="11" Grid.Column="4"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="11" Grid.Column="5"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Brown. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="12" Grid.Column="0"
+            Theme.ColorTheme="Brown"
+            Content="Brown Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="12" Grid.Column="1"
+            Theme.ColorTheme="Brown"
+            Content="Brown Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="12" Grid.Column="2"
+            Theme.ColorTheme="Brown"
+            Content="Brown Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="12" Grid.Column="3"
+            Theme.ColorTheme="Brown"
+            Content="Brown Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="12" Grid.Column="4"
+            Theme.ColorTheme="Brown"
+            Content="Brown Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="12" Grid.Column="5"
+            Theme.ColorTheme="Brown"
+            Content="Brown Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <!--==================================================-->
+        <!-- Blue Grey button. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Grid.Row="13" Grid.Column="0"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Checked"
+            IsChecked="True"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="13" Grid.Column="1"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Indeterminate"
+            IsChecked="{x:Null}"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="13" Grid.Column="2"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Unchecked"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="13" Grid.Column="3"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Checked, Disabled"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+        
+        <CheckBox
+            Grid.Row="13" Grid.Column="4"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Indeterminate, Disabled"
+            IsChecked="{x:Null}"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+        <CheckBox
+            Grid.Row="13" Grid.Column="5"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey Unchecked, Disabled"
+            IsEnabled="False"
+            Width="200"
+            Margin="4" />
+
+    </Grid>
+
+</UserControl>

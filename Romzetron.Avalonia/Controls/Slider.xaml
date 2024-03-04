@@ -1,0 +1,1132 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Margin="20" Width="400" Height="600">
+            <DockPanel LastChildFill="True">
+                <StackPanel Spacing="16" DockPanel.Dock="Top">
+                    <Slider Value="50" />
+                    <Slider IsDirectionReversed="True" Value="50" />
+                    <Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" />
+                    <Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" />
+                    <Slider Value="50" TickPlacement="Outside" TickFrequency="10" />
+                    <Slider IsEnabled="False" Value="50" />
+                    <Slider Value="50">
+                        <!-- <DataValidationErrors.Error> -->
+                        <!--     <sys:Exception> -->
+                        <!--         <x:Arguments> -->
+                        <!--             <x:String>Error</x:String> -->
+                        <!--         </x:Arguments> -->
+                        <!--     </sys:Exception> -->
+                        <!-- </DataValidationErrors.Error> -->
+                    </Slider>
+                </StackPanel>
+                <StackPanel Spacing="16" Orientation="Horizontal">
+                    <Slider Value="50" Orientation="Vertical" />
+                    <Slider IsDirectionReversed="True" Value="50" Orientation="Vertical" />
+                    <Slider IsEnabled="False" Orientation="Vertical" Value="50" />
+                    <Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" Orientation="Vertical" />
+                    <Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" Orientation="Vertical" />
+                    <Slider Value="50" TickPlacement="Outside" TickFrequency="10" Orientation="Vertical" />
+                </StackPanel>
+            </DockPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Horizontal slider repeat button control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="SliderHorizontalRepeatButton" TargetType="RepeatButton">
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <Grid>
+
+                    <Border
+                        Name="FocusTarget"
+                        Margin="0,-10"
+                        Background="Transparent" />
+
+                    <Border
+                        Name="TrackBackground"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{DynamicResource SliderCornerRadius}"
+                        Height="{DynamicResource SliderTrackHeight}"
+                        UseLayoutRounding="False"
+                        VerticalAlignment="Center"
+                        Margin="0" />
+
+                </Grid>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- Vertical slider repeat button control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="SliderVerticalRepeatButton" TargetType="RepeatButton">
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <Grid>
+
+                    <Border
+                        x:Name="FocusTarget"
+                        Margin="0,-10"
+                        Background="Transparent" />
+
+                    <Border
+                        x:Name="TrackBackground"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{DynamicResource SliderCornerRadius}"
+                        Width="{DynamicResource SliderTrackHeight}"
+                        UseLayoutRounding="False"
+                        HorizontalAlignment="Center" />
+
+                </Grid>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- Slider thumb control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="SliderThumbTheme" TargetType="Thumb">
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{DynamicResource SliderThumbCornerRadius}">
+
+                    <Border
+                        Background="{TemplateBinding Foreground}"
+                        Height="8"
+                        Width="8"
+                        CornerRadius="4" />
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- Slider control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type Slider}" TargetType="Slider">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThickness}" />
+        <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+
+        <!--==================================================-->
+        <!-- Horizontal style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:horizontal">
+
+            <Setter Property="Template">
+
+                <ControlTemplate>
+
+                    <!-- <DataValidationErrors> -->
+
+                    <Border
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+
+                        <Grid
+                            x:Name="SliderContainer"
+                            Margin="{TemplateBinding Padding}"
+                            Background="{DynamicResource SliderContainerBackground}">
+
+                            <Grid.Styles>
+                                <Style Selector="TickBar">
+                                    <Setter Property="ReservedSpace" Value="{Binding #PART_Track.Thumb.Bounds}" />
+                                </Style>
+                            </Grid.Styles>
+
+                            <Grid
+                                x:Name="HorizontalTemplate"
+                                MinHeight="{DynamicResource SliderHorizontalHeight}"
+                                ColumnDefinitions="Auto,Auto,*">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TickBar
+                                    Name="TopTickBar"
+                                    Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"
+                                    Ticks="{TemplateBinding Ticks}"
+                                    TickFrequency="{TemplateBinding Slider.TickFrequency}"
+                                    Orientation="{TemplateBinding Slider.Orientation}"
+                                    Minimum="{TemplateBinding Slider.Minimum}"
+                                    Maximum="{TemplateBinding Slider.Maximum}"
+                                    Height="{DynamicResource SliderOutsideTickBarHeight}"
+                                    Margin="0,0,0,0"
+                                    VerticalAlignment="Bottom"
+                                    Placement="Top"
+                                    IsVisible="False"
+                                    Fill="{DynamicResource SliderTickBarFill}" />
+
+                                <TickBar
+                                    Name="BottomTickBar"
+                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Ticks="{TemplateBinding Ticks}"
+                                    TickFrequency="{TemplateBinding Slider.TickFrequency}"
+                                    Orientation="{TemplateBinding Slider.Orientation}"
+                                    Minimum="{TemplateBinding Slider.Minimum}"
+                                    Maximum="{TemplateBinding Slider.Maximum}"
+                                    Height="{DynamicResource SliderOutsideTickBarHeight}"
+                                    Margin="0,0,0,0"
+                                    VerticalAlignment="Top"
+                                    Placement="Bottom"
+                                    IsVisible="False"
+                                    Fill="{DynamicResource SliderTickBarFill}" />
+
+                                <Track
+                                    Name="PART_Track"
+                                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Minimum="{TemplateBinding Minimum}"
+                                    Maximum="{TemplateBinding Maximum}"
+                                    Value="{TemplateBinding Value, Mode=TwoWay}"
+                                    IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                    Orientation="Horizontal">
+
+                                    <Track.DecreaseButton>
+
+                                        <RepeatButton
+                                            Name="PART_DecreaseButton"
+                                            Theme="{StaticResource SliderHorizontalRepeatButton}"
+                                            Background="{TemplateBinding Foreground}"
+                                            Focusable="False"
+                                            Margin="0,0,-8,0" />
+
+                                    </Track.DecreaseButton>
+
+                                    <Track.IncreaseButton>
+
+                                        <RepeatButton
+                                            Name="PART_IncreaseButton"
+                                            Theme="{StaticResource SliderHorizontalRepeatButton}"
+                                            Background="{TemplateBinding Background}"
+                                            Focusable="False"
+                                            Margin="-8,0,0,0" />
+
+                                    </Track.IncreaseButton>
+
+                                    <Thumb
+                                        Name="thumb"
+                                        Width="{DynamicResource SliderHorizontalThumbWidth}"
+                                        Height="{DynamicResource SliderHorizontalThumbHeight}"
+                                        Margin="0"
+                                        Padding="0"
+                                        Background="{DynamicResource SliderThumbBackground}"
+                                        Foreground="{DynamicResource SliderThumbForeground}"
+                                        BorderThickness="0"
+                                        Theme="{StaticResource SliderThumbTheme}"
+                                        DataContext="{TemplateBinding Value}" />
+
+                                </Track>
+
+                            </Grid>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- </DataValidationErrors> -->
+
+                </ControlTemplate>
+
+            </Setter>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Vertical style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:vertical">
+
+            <Setter Property="Template">
+
+                <ControlTemplate>
+
+                    <!-- <DataValidationErrors> -->
+
+                    <Border
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+
+                        <Grid
+                            x:Name="SliderContainer"
+                            Background="{DynamicResource SliderContainerBackground}"
+                            Margin="{TemplateBinding Padding}">
+
+                            <Grid.Styles>
+                                <Style Selector="TickBar">
+                                    <Setter Property="ReservedSpace" Value="{Binding #PART_Track.Thumb.Bounds}" />
+                                </Style>
+                            </Grid.Styles>
+
+                            <Grid
+                                x:Name="VerticalTemplate"
+                                MinWidth="{DynamicResource SliderVerticalWidth}"
+                                RowDefinitions="*,Auto,Auto">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TickBar
+                                    Name="LeftTickBar"
+                                    Grid.RowSpan="3"
+                                    Ticks="{TemplateBinding Ticks}"
+                                    TickFrequency="{TemplateBinding Slider.TickFrequency}"
+                                    Orientation="{TemplateBinding Slider.Orientation}"
+                                    Minimum="{TemplateBinding Slider.Minimum}"
+                                    Maximum="{TemplateBinding Slider.Maximum}"
+                                    Width="{DynamicResource SliderOutsideTickBarHeight}"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Right"
+                                    Placement="Left"
+                                    IsVisible="False"
+                                    Fill="{DynamicResource SliderTickBarFill}" />
+
+                                <TickBar
+                                    Name="RightTickBar"
+                                    Grid.Row="0" Grid.RowSpan="3"
+                                    Grid.Column="2"
+                                    Ticks="{TemplateBinding Ticks}"
+                                    TickFrequency="{TemplateBinding Slider.TickFrequency}"
+                                    Orientation="{TemplateBinding Slider.Orientation}"
+                                    Minimum="{TemplateBinding Slider.Minimum}"
+                                    Maximum="{TemplateBinding Slider.Maximum}"
+                                    Width="{DynamicResource SliderOutsideTickBarHeight}"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    Placement="Right"
+                                    IsVisible="False"
+                                    Fill="{DynamicResource SliderTickBarFill}" />
+
+                                <Track
+                                    Name="PART_Track"
+                                    Grid.Row="0" Grid.RowSpan="3"
+                                    Grid.Column="1"
+                                    Minimum="{TemplateBinding Minimum}"
+                                    Maximum="{TemplateBinding Maximum}"
+                                    Value="{TemplateBinding Value, Mode=TwoWay}"
+                                    IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                    Orientation="Vertical">
+
+                                    <Track.DecreaseButton>
+
+                                        <RepeatButton
+                                            Name="PART_DecreaseButton"
+                                            Theme="{StaticResource SliderVerticalRepeatButton}"
+                                            Background="{TemplateBinding Foreground}"
+                                            Focusable="False"
+                                            Margin="0,-8,0,0" />
+
+                                    </Track.DecreaseButton>
+
+                                    <Track.IncreaseButton>
+
+                                        <RepeatButton
+                                            Name="PART_IncreaseButton"
+                                            Background="{TemplateBinding Background}"
+                                            Theme="{StaticResource SliderVerticalRepeatButton}"
+                                            Focusable="False"
+                                            Margin="0,0,0,-8" />
+
+                                    </Track.IncreaseButton>
+
+                                    <Thumb
+                                        Name="SliderThumb"
+                                        Width="{DynamicResource SliderVerticalThumbWidth}"
+                                        Height="{DynamicResource SliderVerticalThumbHeight}"
+                                        Margin="0"
+                                        Padding="0"
+                                        Background="{DynamicResource SliderThumbBackground}"
+                                        Foreground="{DynamicResource SliderThumbForeground}"
+                                        BorderThickness="0"
+                                        Theme="{StaticResource SliderThumbTheme}"
+                                        DataContext="{TemplateBinding Value}" />
+
+                                </Track>
+
+                            </Grid>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- </DataValidationErrors> -->
+
+                </ControlTemplate>
+
+            </Setter>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- TickBar placement states. -->
+        <!--==================================================-->
+
+        <Style Selector="^[TickPlacement=TopLeft] /template/ TickBar#LeftTickBar, ^[TickPlacement=Outside] /template/ TickBar#LeftTickBar">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+        <Style Selector="^[TickPlacement=TopLeft] /template/ TickBar#TopTickBar, ^[TickPlacement=Outside] /template/ TickBar#TopTickBar">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+        <Style Selector="^[TickPlacement=BottomRight] /template/ TickBar#BottomTickBar, ^[TickPlacement=Outside] /template/ TickBar#BottomTickBar">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+        <Style Selector="^[TickPlacement=BottomRight] /template/ TickBar#RightTickBar, ^[TickPlacement=Outside] /template/ TickBar#RightTickBar">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Reverse state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[IsDirectionReversed=True]">
+
+            <Style Selector="^:horizontal /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Margin" Value="-8,0,0,0" />
+            </Style>
+
+            <Style Selector="^:horizontal /template/ RepeatButton#PART_IncreaseButton">
+                <Setter Property="Margin" Value="0,0,-8,0" />
+            </Style>
+
+            <Style Selector="^:vertical /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Margin" Value="0,0,0,-8" />
+            </Style>
+
+            <Style Selector="^:vertical /template/ RepeatButton#PART_IncreaseButton">
+                <Setter Property="Margin" Value="0,-8,0,0" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!--  PointerOver state.  -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover">
+
+            <Style Selector="^ /template/ Grid#SliderContainer">
+                <Setter Property="Background" Value="{DynamicResource SliderContainerBackgroundPointerOver}" />
+            </Style>
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource SliderThumbBackgroundPointerOver}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackFillPointerOver}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackValueFillPointerOver}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!--  Pressed state.  -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed">
+
+            <Style Selector="^ /template/ Grid#SliderContainer">
+                <Setter Property="Background" Value="{DynamicResource SliderContainerBackgroundPressed}" />
+            </Style>
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource SliderThumbBackgroundPressed}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackFillPressed}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackValueFillPressed}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!--  Disabled state.  -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled">
+
+            <Style Selector="^ /template/ Grid#SliderContainer">
+                <Setter Property="Background" Value="{DynamicResource SliderContainerBackgroundDisabled}" />
+            </Style>
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource SliderThumbBackgroundDisabled}" />
+                <Setter Property="Foreground" Value="{DynamicResource SliderThumbForegroundDisabled}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackValueFillDisabled}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+                <Setter Property="Background" Value="{DynamicResource SliderTrackFillDisabled}" />
+            </Style>
+
+            <Style Selector="^ /template/ TickBar">
+                <Setter Property="Fill" Value="{DynamicResource SliderTickBarFillDisabled}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Red theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Red07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Red05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Red06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Red04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Red05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Red04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Red03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Red01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Red02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pink theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Pink07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Pink05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Pink06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Pink04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Pink05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Pink04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Pink03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Pink01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Pink02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Purple07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Purple05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Purple06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Purple04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Purple05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Purple04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Purple03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Purple01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Purple02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Purple theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource DeepPurple05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource DeepPurple01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepPurple02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Indigo theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Indigo07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Indigo05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Indigo06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Indigo04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Indigo05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Indigo04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Indigo03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Indigo01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Indigo02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Blue07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Blue05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Blue06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Blue04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Blue05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Blue04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Blue03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Blue01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Blue02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Teal theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Teal07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Teal05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Teal06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Teal04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Teal05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Teal04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Teal03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Teal01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Teal02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Green theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Green07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Green05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Green06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Green04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Green05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Green04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Green03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Green01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Green02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Amber theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Amber07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Amber05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Amber06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Amber04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Amber05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Amber04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Amber03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Amber01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Amber02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Orange07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Orange05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Orange06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Orange04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Orange05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Orange04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Orange03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Orange01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Orange02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Deep Orange theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource DeepOrange05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource DeepOrange01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource DeepOrange02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Brown theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource Brown07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource Brown05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Brown06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Brown04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Brown05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Brown04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource Brown03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource Brown01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource Brown02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blue Grey theme. -->
+        <!--==================================================-->
+
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+
+            <Style Selector="^ /template/ Thumb">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey07}" />
+            </Style>
+
+            <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                <Setter Property="Background" Value="{DynamicResource BlueGrey05}" />
+            </Style>
+
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey06}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:pressed">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey05}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey04}" />
+                </Style>
+            </Style>
+
+            <Style Selector="^:disabled">
+                <Style Selector="^ /template/ Thumb">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey03}" />
+                    <Setter Property="Foreground" Value="{DynamicResource BlueGrey01}" />
+                </Style>
+                <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+                    <Setter Property="Background" Value="{DynamicResource BlueGrey02}" />
+                </Style>
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!--  Error state.  -->
+        <!--==================================================-->
+
+        <!-- <Style Selector="^:error"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" /> -->
+        <!-- -->
+        <!--     <Style Selector="^ /template/ Thumb"> -->
+        <!--         <Setter Property="Background" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" /> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!-- </Style> -->
+
+    </ControlTheme>
+
+</ResourceDictionary>

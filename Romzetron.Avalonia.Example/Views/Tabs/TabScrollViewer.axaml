@@ -1,0 +1,174 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabScrollViewer">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- Horizontal ScrollBar. -->
+        <!--==================================================-->
+
+        <ScrollBar
+            Width="200"
+            Orientation="Horizontal" />
+
+        <!--==================================================-->
+        <!-- Horizontal ScrollBar. -->
+        <!--==================================================-->
+
+        <ScrollBar
+            Height="100"
+            Orientation="Vertical"
+            HorizontalAlignment="Left" />
+
+        <!--==================================================-->
+        <!-- Standard ScrollViewer. -->
+        <!--==================================================-->
+
+        <ScrollViewer
+            Width="200"
+            Height="200"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible">
+
+            <Border
+                Width="400"
+                Height="400">
+
+                <Border.Background>
+
+                    <VisualBrush
+                        TileMode="Tile"
+                        SourceRect="0,0,40,40"
+                        DestinationRect="0,0,40,40"
+                        Stretch="None">
+
+                        <VisualBrush.Visual>
+
+                            <Canvas
+                                Width="40"
+                                Height="40">
+
+                                <Rectangle
+                                    Canvas.Left="0"
+                                    Canvas.Top="0"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Red02}" />
+
+                                <Rectangle
+                                    Canvas.Left="20"
+                                    Canvas.Top="0"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Blue02}" />
+
+                                <Rectangle
+                                    Canvas.Left="0"
+                                    Canvas.Top="20"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Blue02}" />
+
+                                <Rectangle
+                                    Canvas.Left="20"
+                                    Canvas.Top="20"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Red02}" />
+
+                            </Canvas>
+
+                        </VisualBrush.Visual>
+
+                    </VisualBrush>
+
+                </Border.Background>
+
+            </Border>
+
+        </ScrollViewer>
+
+        <!--==================================================-->
+        <!-- Simple scroll bar. -->
+        <!--==================================================-->
+
+        <ScrollViewer
+            Theme="{StaticResource MenuScrollViewer}"
+            Width="200"
+            Height="200">
+
+            <Border
+                Width="400"
+                Height="400">
+
+                <Border.Background>
+
+                    <VisualBrush
+                        TileMode="Tile"
+                        SourceRect="0,0,40,40"
+                        DestinationRect="0,0,40,40"
+                        Stretch="None">
+
+                        <VisualBrush.Visual>
+
+                            <Canvas
+                                Width="40"
+                                Height="40">
+
+                                <Rectangle
+                                    Canvas.Left="0"
+                                    Canvas.Top="0"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Green02}" />
+
+                                <Rectangle
+                                    Canvas.Left="20"
+                                    Canvas.Top="0"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Yellow02}" />
+
+                                <Rectangle
+                                    Canvas.Left="0"
+                                    Canvas.Top="20"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Yellow02}" />
+
+                                <Rectangle
+                                    Canvas.Left="20"
+                                    Canvas.Top="20"
+                                    Width="20"
+                                    Height="20"
+                                    Fill="{StaticResource Green02}" />
+
+                            </Canvas>
+
+                        </VisualBrush.Visual>
+
+                    </VisualBrush>
+
+                </Border.Background>
+
+            </Border>
+
+        </ScrollViewer>
+
+    </StackPanel>
+
+</UserControl>

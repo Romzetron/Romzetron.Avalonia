@@ -1,0 +1,555 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabProgressBar">
+
+    <!--==================================================-->
+    <!-- Tab resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <x:Double x:Key="ProgressBarWidth">300</x:Double>
+        <x:Double x:Key="ProgressBarHeight">100</x:Double>
+        <Thickness x:Key="ProgressBarHorizontalMargin">8,12</Thickness>
+        <Thickness x:Key="ProgressBarVerticalMargin">12,8</Thickness>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Scroll viewer. -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto">
+
+        <!--==================================================-->
+        <!-- Horizontal layout. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <!--==================================================-->
+            <!-- Slider configuration examples. -->
+            <!--==================================================-->
+
+            <Grid
+                Margin="8"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                ColumnDefinitions="Auto,Auto"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <!--==================================================-->
+                <!-- Standard progress bar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="0" Grid.Column="0"
+                    Content="Default Progress Bar"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="0" Grid.Column="1"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Custom min/max. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Content="Custom Value (Min: 10, Max: 60, Value: 50)"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="1" Grid.Column="1"
+                    Value="50"
+                    Minimum="10"
+                    Maximum="60"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Custom min/max. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="2" Grid.Column="0"
+                    Content="Indeterminate"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="2" Grid.Column="1"
+                    IsIndeterminate="True"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Custom height. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="3" Grid.Column="0"
+                    Content="Custom Height"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="3" Grid.Column="1"
+                    Value="50"
+                    Height="16"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Display default progress text. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="4" Grid.Column="0"
+                    Content="Default Progress Text"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="4" Grid.Column="1"
+                    Value="40"
+                    ShowProgressText="True"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Display default progress text with custom format. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="5" Grid.Column="0"
+                    Content="Custom Formatted Progress Text"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="5" Grid.Column="1"
+                    Minimum="10"
+                    Maximum="70"
+                    Value="50"
+                    ShowProgressText="True"
+                    ProgressTextFormat="\{1:#.#\} percent"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Vertical progress bars. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="6" Grid.Column="0"
+                    Content="Vertical Progress Bars"
+                    VerticalAlignment="Center" />
+
+                <StackPanel
+                    Grid.Row="6" Grid.Column="1"
+                    Orientation="Horizontal">
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        Value="50"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        Value="50"
+                        Minimum="10"
+                        Maximum="60"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        IsIndeterminate="True"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        Value="50"
+                        Width="16"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        Value="40"
+                        ShowProgressText="True"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                    <ProgressBar
+                        Orientation="Vertical"
+                        Minimum="10"
+                        Maximum="70"
+                        Value="50"
+                        ShowProgressText="True"
+                        ProgressTextFormat="\{1:#.#\} percent"
+                        Height="{StaticResource ProgressBarHeight}"
+                        Margin="{StaticResource ProgressBarVerticalMargin}" />
+
+                </StackPanel>
+
+            </Grid>
+
+            <!--==================================================-->
+            <!-- Color theme examples layout. -->
+            <!--==================================================-->
+
+            <Grid
+                Margin="8"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                ColumnDefinitions="Auto,Auto,Auto"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <!--==================================================-->
+                <!-- Theme progress bar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="0" Grid.Column="0"
+                    Content="Theme"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="0" Grid.Column="1"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="0" Grid.Column="2"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Red slider. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Content="Red"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="1" Grid.Column="1"
+                    Theme.ColorTheme="Red"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="1" Grid.Column="2"
+                    Theme.ColorTheme="Red"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Pink slider. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="2" Grid.Column="0"
+                    Content="Pink"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="2" Grid.Column="1"
+                    Theme.ColorTheme="Pink"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="2" Grid.Column="2"
+                    Theme.ColorTheme="Pink"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Purple ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="3" Grid.Column="0"
+                    Content="Purple"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="3" Grid.Column="1"
+                    Theme.ColorTheme="Purple"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="3" Grid.Column="2"
+                    Theme.ColorTheme="Purple"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Deep Purple ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="4" Grid.Column="0"
+                    Content="Deep Purple"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="4" Grid.Column="1"
+                    Theme.ColorTheme="DeepPurple"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="4" Grid.Column="2"
+                    Theme.ColorTheme="DeepPurple"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Indigo ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="5" Grid.Column="0"
+                    Content="Indigo"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="5" Grid.Column="1"
+                    Theme.ColorTheme="Indigo"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="5" Grid.Column="2"
+                    Theme.ColorTheme="Indigo"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Blue ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="6" Grid.Column="0"
+                    Content="Blue"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="6" Grid.Column="1"
+                    Theme.ColorTheme="Blue"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="6" Grid.Column="2"
+                    Theme.ColorTheme="Blue"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Teal ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="7" Grid.Column="0"
+                    Content="Teal"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="7" Grid.Column="1"
+                    Theme.ColorTheme="Teal"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="7" Grid.Column="2"
+                    Theme.ColorTheme="Teal"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Green ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="8" Grid.Column="0"
+                    Content="Green"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="8" Grid.Column="1"
+                    Theme.ColorTheme="Green"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="8" Grid.Column="2"
+                    Theme.ColorTheme="Green"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Amber ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="9" Grid.Column="0"
+                    Content="Amber"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="9" Grid.Column="1"
+                    Theme.ColorTheme="Amber"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="9" Grid.Column="2"
+                    Theme.ColorTheme="Amber"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Orange ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="10" Grid.Column="0"
+                    Content="Orange"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="10" Grid.Column="1"
+                    Theme.ColorTheme="Orange"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="10" Grid.Column="2"
+                    Theme.ColorTheme="Orange"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Deep Orange ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="11" Grid.Column="0"
+                    Content="Deep Orange"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="11" Grid.Column="1"
+                    Theme.ColorTheme="DeepOrange"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="11" Grid.Column="2"
+                    Theme.ColorTheme="DeepOrange"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Brown ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="12" Grid.Column="0"
+                    Content="Brown"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="12" Grid.Column="1"
+                    Theme.ColorTheme="Brown"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="12" Grid.Column="2"
+                    Theme.ColorTheme="Brown"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Blue Grey ProgressBar. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="13" Grid.Column="0"
+                    Content="Blue Grey"
+                    VerticalAlignment="Center" />
+
+                <ProgressBar
+                    Grid.Row="13" Grid.Column="1"
+                    Theme.ColorTheme="BlueGrey"
+                    Value="50"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+                <ProgressBar
+                    Grid.Row="13" Grid.Column="2"
+                    Theme.ColorTheme="BlueGrey"
+                    Value="50"
+                    IsEnabled="False"
+                    Width="{StaticResource ProgressBarWidth}"
+                    Margin="{StaticResource ProgressBarHorizontalMargin}" />
+
+            </Grid>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

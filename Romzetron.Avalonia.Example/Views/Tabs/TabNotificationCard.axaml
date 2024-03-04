@@ -1,0 +1,74 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabNotificationCard">
+
+    <!--==================================================-->
+    <!-- Resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <x:Double x:Key="ButtonWidth">250</x:Double>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- Display notification top right. -->
+        <!--==================================================-->
+
+        <Button
+            x:Name="ShowTopRightNotification"
+            Theme.ColorTheme="Blue"
+            Content="Show Top Right Info Notification"
+            Click="ShowTopRightNotification_OnClick"
+            Width="{StaticResource ButtonWidth}" />
+
+        <!--==================================================-->
+        <!-- Display notification top left. -->
+        <!--==================================================-->
+
+        <Button
+            x:Name="ShowTopLeftNotification"
+            Theme.ColorTheme="Green"
+            Content="Show Top Left Success Notification"
+            Click="ShowTopLeftNotification_OnClick"
+            Width="{StaticResource ButtonWidth}" />
+
+        <!--==================================================-->
+        <!-- Display notification bottom left. -->
+        <!--==================================================-->
+
+        <Button
+            x:Name="ShowBottomLeftNotification"
+            Theme.ColorTheme="Orange"
+            Content="Show Bottom Left Warning Notification"
+            Click="ShowBottomLeftNotification_OnClick"
+            Width="{StaticResource ButtonWidth}" />
+
+        <!--==================================================-->
+        <!-- Display notification bottom right. -->
+        <!--==================================================-->
+
+        <Button
+            x:Name="ShowBottomRightNotification"
+            Theme.ColorTheme="Red"
+            Content="Show Bottom Right Error Notification"
+            Click="ShowBottomRightNotification_OnClick"
+            Width="{StaticResource ButtonWidth}" />
+
+    </StackPanel>
+
+</UserControl>

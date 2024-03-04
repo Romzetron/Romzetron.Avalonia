@@ -1,0 +1,216 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabTabControl">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <Grid
+        RowDefinitions="*,*,*"
+        ColumnDefinitions="*,*"
+        Margin="4">
+
+        <!--==================================================-->
+        <!-- Top orientation. -->
+        <!--==================================================-->
+
+        <TabControl
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            TabStripPlacement="Top"
+            Margin="4">
+
+            <TabItem Header="Theme">
+                <TextBlock Margin="16" Text="Tab with theme highlight." />
+            </TabItem>
+
+            <TabItem Header="Red" Theme.ColorTheme="Red">
+                <TextBlock Margin="16" Text="Tab with red highlight." />
+            </TabItem>
+
+            <TabItem Header="Pink" Theme.ColorTheme="Pink">
+                <TextBlock Margin="16" Text="Tab with pink highlight." />
+            </TabItem>
+
+            <TabItem Header="Purple" Theme.ColorTheme="Purple">
+                <TextBlock Margin="16" Text="Tab with purple highlight." />
+            </TabItem>
+
+            <TabItem Header="Deep Purple" Theme.ColorTheme="DeepPurple">
+                <TextBlock Margin="16" Text="Tab with deep purple highlight." />
+            </TabItem>
+
+            <TabItem Header="Indigo" Theme.ColorTheme="Indigo">
+                <TextBlock Margin="16" Text="Tab with indigo highlight." />
+            </TabItem>
+
+            <TabItem Header="Blue" Theme.ColorTheme="Blue">
+                <TextBlock Margin="16" Text="Tab with blue highlight." />
+            </TabItem>
+
+            <TabItem Header="Teal" Theme.ColorTheme="Teal">
+                <TextBlock Margin="16" Text="Tab with teal highlight." />
+            </TabItem>
+
+            <TabItem Header="Green" Theme.ColorTheme="Green">
+                <TextBlock Margin="16" Text="Tab with green highlight." />
+            </TabItem>
+
+            <TabItem Header="Amber" Theme.ColorTheme="Amber">
+                <TextBlock Margin="16" Text="Tab with amber highlight." />
+            </TabItem>
+
+            <TabItem Header="Orange" Theme.ColorTheme="Orange">
+                <TextBlock Margin="16" Text="Tab with orange highlight." />
+            </TabItem>
+
+            <TabItem Header="Deep Orange" Theme.ColorTheme="DeepOrange">
+                <TextBlock Margin="16" Text="Tab with deep orange highlight." />
+            </TabItem>
+
+            <TabItem Header="Brown" Theme.ColorTheme="Brown">
+                <TextBlock Margin="16" Text="Tab with brown highlight." />
+            </TabItem>
+
+            <TabItem Header="Blue Grey" Theme.ColorTheme="BlueGrey">
+                <TextBlock Margin="16" Text="Tab with blue grey highlight." />
+            </TabItem>
+
+            <TabItem Header="Disabled" IsEnabled="False">
+                <TextBlock Margin="16" Text="Tab with disabled highlight." />
+            </TabItem>
+
+        </TabControl>
+
+        <!--==================================================-->
+        <!-- Bottom orientation. -->
+        <!--==================================================-->
+
+        <TabControl
+            Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+            TabStripPlacement="Bottom"
+            Margin="4">
+
+            <TabItem Header="Theme">
+                <TextBlock Margin="16" Text="Tab with theme highlight." />
+            </TabItem>
+
+            <TabItem Header="Red" Theme.ColorTheme="Red">
+                <TextBlock Margin="16" Text="Tab with red highlight." />
+            </TabItem>
+
+            <TabItem Header="Pink" Theme.ColorTheme="Pink">
+                <TextBlock Margin="16" Text="Tab with pink highlight." />
+            </TabItem>
+
+            <TabItem Header="Purple" Theme.ColorTheme="Purple">
+                <TextBlock Margin="16" Text="Tab with purple highlight." />
+            </TabItem>
+
+            <TabItem Header="Deep Purple" Theme.ColorTheme="DeepPurple">
+                <TextBlock Margin="16" Text="Tab with deep purple highlight." />
+            </TabItem>
+
+            <TabItem Header="Indigo" Theme.ColorTheme="Indigo">
+                <TextBlock Margin="16" Text="Tab with indigo highlight." />
+            </TabItem>
+
+            <TabItem Header="Blue" Theme.ColorTheme="Blue">
+                <TextBlock Margin="16" Text="Tab with blue highlight." />
+            </TabItem>
+
+            <TabItem Header="Teal" Theme.ColorTheme="Teal">
+                <TextBlock Margin="16" Text="Tab with teal highlight." />
+            </TabItem>
+
+            <TabItem Header="Green" Theme.ColorTheme="Green">
+                <TextBlock Margin="16" Text="Tab with green highlight." />
+            </TabItem>
+
+            <TabItem Header="Amber" Theme.ColorTheme="Amber">
+                <TextBlock Margin="16" Text="Tab with amber highlight." />
+            </TabItem>
+
+            <TabItem Header="Orange" Theme.ColorTheme="Orange">
+                <TextBlock Margin="16" Text="Tab with orange highlight." />
+            </TabItem>
+
+            <TabItem Header="Deep Orange" Theme.ColorTheme="DeepOrange">
+                <TextBlock Margin="16" Text="Tab with deep orange highlight." />
+            </TabItem>
+
+            <TabItem Header="Brown" Theme.ColorTheme="Brown">
+                <TextBlock Margin="16" Text="Tab with brown highlight." />
+            </TabItem>
+
+            <TabItem Header="Blue Grey" Theme.ColorTheme="BlueGrey">
+                <TextBlock Margin="16" Text="Tab with blue grey highlight." />
+            </TabItem>
+
+            <TabItem Header="Disabled" IsEnabled="False">
+                <TextBlock Margin="16" Text="Tab with disabled highlight." />
+            </TabItem>
+
+        </TabControl>
+
+        <!--==================================================-->
+        <!-- Left orientation. -->
+        <!--==================================================-->
+
+        <TabControl
+            Grid.Row="1" Grid.Column="0"
+            TabStripPlacement="Left"
+            Margin="4">
+
+            <TabItem Header="Tab 1">
+                <TextBlock Margin="16" Text="Tab 1 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 2">
+                <TextBlock Margin="16" Text="Tab 2 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 3 With Really Long Name">
+                <TextBlock Margin="16" Text="Tab 3 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 4 (Disabled)" IsEnabled="False">
+                <TextBlock Margin="16" Text="Tab 4 Content" />
+            </TabItem>
+
+        </TabControl>
+
+        <!--==================================================-->
+        <!-- Right orientation. -->
+        <!--==================================================-->
+
+        <TabControl
+            Grid.Row="1" Grid.Column="1"
+            TabStripPlacement="Right"
+            Margin="4">
+
+            <TabItem Header="Tab 1">
+                <TextBlock Margin="16" Text="Tab 1 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 2">
+                <TextBlock Margin="16" Text="Tab 2 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 3 With Really Long Name">
+                <TextBlock Margin="16" Text="Tab 3 Content" />
+            </TabItem>
+
+            <TabItem Header="Tab 4 (Disabled)" IsEnabled="False">
+                <TextBlock Margin="16" Text="Tab 4 Content" />
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+
+</UserControl>

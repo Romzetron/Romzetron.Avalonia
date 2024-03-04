@@ -1,0 +1,145 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:DataType="WindowNotificationManager"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- WindowNotificationManager control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type WindowNotificationManager}" TargetType="WindowNotificationManager">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Margin" Value="0" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Notification collection to display. -->
+                <!--==================================================-->
+
+                <ReversibleStackPanel Name="PART_Items">
+
+                    <!--==================================================-->
+                    <!-- Date templates. -->
+                    <!--==================================================-->
+
+                    <ReversibleStackPanel.DataTemplates>
+
+                        <!--==================================================-->
+                        <!-- Notification data template. -->
+                        <!--==================================================-->
+
+                        <DataTemplate DataType="INotification">
+
+                            <!--==================================================-->
+                            <!-- Layout stack panel. -->
+                            <!--==================================================-->
+
+                            <StackPanel
+                                Margin="12"
+                                Spacing="8"
+                                TextElement.Foreground="{DynamicResource NotificationCardForeground}">
+
+                                <!--==================================================-->
+                                <!-- Header. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    FontWeight="Medium"
+                                    Text="{Binding Title}" />
+
+                                <!--==================================================-->
+                                <!-- Message content. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    MaxHeight="80"
+                                    Margin="0,0,12,0"
+                                    Text="{Binding Message}"
+                                    TextWrapping="Wrap" />
+
+                            </StackPanel>
+
+                        </DataTemplate>
+
+                        <!--==================================================-->
+                        <!-- Header and content string template. -->
+                        <!--==================================================-->
+
+                        <DataTemplate DataType="x:String">
+
+                            <!--==================================================-->
+                            <!-- Notification header and content formatted. -->
+                            <!--==================================================-->
+
+                            <TextBlock
+                                Margin="12"
+                                Foreground="{DynamicResource NotificationCardForeground}"
+                                Text="{Binding}" />
+
+                        </DataTemplate>
+
+                    </ReversibleStackPanel.DataTemplates>
+
+                </ReversibleStackPanel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Top left style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:topleft /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Top right style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:topright /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Bottom left style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:bottomleft /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="ReverseOrder" Value="True" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Bottom right style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:bottomright /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="ReverseOrder" Value="True" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

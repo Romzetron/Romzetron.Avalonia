@@ -1,0 +1,83 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:DataType="tabs:TabComboBoxViewModel"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabComboBox">
+
+    <!--==================================================-->
+    <!-- Tab layout container. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Spacing="8"
+        Margin="8">
+
+        <!--==================================================-->
+        <!-- Standard combo box. -->
+        <!--==================================================-->
+
+        <ComboBox
+            Width="200"
+            PlaceholderText="Select Item">
+
+            <ComboBoxItem>Inline Item 1</ComboBoxItem>
+            <ComboBoxItem>Inline Item 2</ComboBoxItem>
+            <ComboBoxItem>Inline Item 3</ComboBoxItem>
+            <ComboBoxItem>Inline Item 4</ComboBoxItem>
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Disabled combo box. -->
+        <!--==================================================-->
+
+        <ComboBox
+            Width="200"
+            PlaceholderText="Disabled"
+            IsEnabled="False">
+
+            <ComboBoxItem>Inline Item 1</ComboBoxItem>
+            <ComboBoxItem>Inline Item 2</ComboBoxItem>
+            <ComboBoxItem>Inline Item 3</ComboBoxItem>
+            <ComboBoxItem>Inline Item 4</ComboBoxItem>
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Font selection combo box. -->
+        <!--==================================================-->
+
+        <ComboBox
+            x:Name="FontComboBox"
+            Width="200"
+            SelectedIndex="0"
+            DataContext="{Binding}"
+            WrapSelection="{Binding WrapSelection}">
+
+            <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="FontFamily">
+                    <TextBlock FontFamily="{Binding}" Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Toggle wrap selection. -->
+        <!--==================================================-->
+
+        <CheckBox
+            Content="WrapSelection"
+            DataContext="{Binding}"
+            IsChecked="{Binding WrapSelection}" />
+
+    </StackPanel>
+
+</UserControl>

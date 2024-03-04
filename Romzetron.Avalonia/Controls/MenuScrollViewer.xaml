@@ -1,0 +1,170 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Avalonia.Controls.Converters"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <ScrollViewer Theme="{DynamicResource SimpleMenuScrollViewer}" Width="200" Height="200" Margin="4">
+            <StackPanel Spacing="20">
+                <TextBlock>Item 1</TextBlock>
+                <TextBlock>Item 2</TextBlock>
+                <TextBlock>Item 3</TextBlock>
+                <TextBlock>Item 4</TextBlock>
+                <TextBlock>Item 5</TextBlock>
+                <TextBlock>Item 6</TextBlock>
+                <TextBlock>Item 7</TextBlock>
+                <TextBlock>Item 8</TextBlock>
+                <TextBlock>Item 9</TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Menu scroll viewer control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme
+        x:Key="MenuScrollViewer"
+        TargetType="ScrollViewer">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="Transparent" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <DockPanel>
+
+                    <!--==================================================-->
+                    <!-- Scroll up button. -->
+                    <!--==================================================-->
+
+                    <RepeatButton
+                        Command="{Binding LineUp, RelativeSource={RelativeSource TemplatedParent}}"
+                        DockPanel.Dock="Top"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        Margin="0,0,0,4">
+
+                        <!--==================================================-->
+                        <!-- Display scroll up button if not already scrolled -->
+                        <!-- to the top. -->
+                        <!--==================================================-->
+
+                        <RepeatButton.IsVisible>
+
+                            <MultiBinding
+                                Converter="{x:Static converters:MenuScrollingVisibilityConverter.Instance}"
+                                ConverterParameter="0">
+
+                                <Binding
+                                    Path="VerticalScrollBarVisibility"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Offset.Y"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Extent.Height"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Viewport.Height"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                            </MultiBinding>
+
+                        </RepeatButton.IsVisible>
+
+                        <!--==================================================-->
+                        <!-- Scroll up icon. -->
+                        <!--==================================================-->
+
+                        <Path
+                            Data="M 0 4 L 8 4 L 4 0 Z"
+                            Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RepeatButton}}" />
+
+                    </RepeatButton>
+
+                    <!--==================================================-->
+                    <!-- Scroll down button. -->
+                    <!--==================================================-->
+
+                    <RepeatButton
+                        Command="{Binding LineDown, RelativeSource={RelativeSource TemplatedParent}}"
+                        DockPanel.Dock="Bottom"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        Margin="0,4,0,0">
+
+                        <!--==================================================-->
+                        <!-- Display scroll down button if not already -->
+                        <!-- scrolled to the bottom. -->
+                        <!--==================================================-->
+
+                        <RepeatButton.IsVisible>
+
+                            <MultiBinding
+                                Converter="{x:Static converters:MenuScrollingVisibilityConverter.Instance}"
+                                ConverterParameter="100">
+
+                                <Binding
+                                    Path="VerticalScrollBarVisibility"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Offset.Y"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Extent.Height"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                <Binding
+                                    Path="Viewport.Height"
+                                    RelativeSource="{RelativeSource TemplatedParent}" />
+
+                            </MultiBinding>
+
+                        </RepeatButton.IsVisible>
+
+                        <!--==================================================-->
+                        <!-- Scroll down icon. -->
+                        <!--==================================================-->
+
+                        <Path
+                            Data="M 0 0 L 4 4 L 8 0 Z"
+                            Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RepeatButton}}" />
+
+                    </RepeatButton>
+
+                    <!--==================================================-->
+                    <!-- Content. -->
+                    <!--==================================================-->
+
+                    <ScrollContentPresenter
+                        Name="PART_ContentPresenter"
+                        Margin="{TemplateBinding Padding}" />
+
+                </DockPanel>
+
+            </ControlTemplate>
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

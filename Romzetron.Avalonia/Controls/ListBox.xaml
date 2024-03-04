@@ -1,0 +1,85 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+    
+    <Design.PreviewWith>
+        <Border Padding="20" Width="200">
+            <ListBox>
+                <ListBoxItem>Test</ListBoxItem>
+                <ListBoxItem>Test</ListBoxItem>
+                <ListBoxItem>Test</ListBoxItem>
+                <ListBoxItem>Test</ListBoxItem>
+            </ListBox>
+        </Border>
+    </Design.PreviewWith>
+    
+    <!--==================================================-->
+    <!-- ListBox control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+        
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource ListBoxBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ListBoxForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ListBoxBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ListBoxBorderThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ListBoxCornerRadius}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+        <Setter Property="ScrollViewer.IsScrollInertiaEnabled" Value="True" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+        
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <Border
+                    Name="border"
+                    ClipToBounds="{TemplateBinding ClipToBounds}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+
+                    <ScrollViewer
+                        Name="PART_ScrollViewer"
+                        VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
+                        HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
+                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                        IsScrollInertiaEnabled="{TemplateBinding (ScrollViewer.IsScrollInertiaEnabled)}"
+                        AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                        BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}"
+                        Margin="4">
+
+                        <ItemsPresenter
+                            Name="PART_ItemsPresenter"
+                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                            Margin="{TemplateBinding Padding}" />
+
+                    </ScrollViewer>
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

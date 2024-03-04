@@ -1,0 +1,841 @@
+<!--==================================================-->
+<!-- Romzetron theme base resources. -->
+<!--==================================================-->
+
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- Font resources. -->
+    <!--==================================================-->
+
+    <FontFamily x:Key="FontInterBlack">../Fonts/Inter-Black.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterBold">../Fonts/Inter-Bold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraBold">../Fonts/Inter-ExtraBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraLight">../Fonts/Inter-ExtraLight.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterLight">../Fonts/Inter-Light.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterMedium">../Fonts/Inter-Medium.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterRegular">../Fonts/Inter-Regular.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterSemiBold">../Fonts/Inter-SemiBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterThin">../Fonts/Inter-Thin.ttf#Inter</FontFamily>
+
+    <SolidColorBrush x:Key="StandardFontForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <x:Double x:Key="StandardFontSize">12</x:Double>
+
+    <!--==================================================-->
+    <!-- AutoCompleteBox resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="AutoCompleteBoxSuggestionsListBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="AutoCompleteBoxSuggestionsListBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <x:Double x:Key="AutoCompleteListMaxHeight">350</x:Double>
+    <Thickness x:Key="AutoCompleteListMargin">0</Thickness>
+    <Thickness x:Key="AutoCompleteListPadding">0</Thickness>
+    <Thickness x:Key="AutoCompleteListBorderThickness">1</Thickness>
+    <CornerRadius x:Key="AutoCompleteBoxSuggestionsListCorerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- Button resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ButtonBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ButtonForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="ButtonBorderBrush" Color="Transparent" />
+
+    <Thickness x:Key="ButtonBorderThickness">0</Thickness>
+    <Thickness x:Key="ButtonPadding">8</Thickness>
+    <CornerRadius x:Key="ButtonCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- Calendar resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="CalendarViewBackground" Color="{DynamicResource UiTheme02}" />
+
+    <SolidColorBrush x:Key="CalendarViewForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="CalendarViewForegroundPointerOver" Color="{DynamicResource UiTextTheme01}" />
+    <SolidColorBrush x:Key="CalendarViewForegroundPressed" Color="{DynamicResource UiTextTheme02}" />
+    <SolidColorBrush x:Key="CalendarViewForegroundDisabled" Color="{DynamicResource UiTextTheme05}" />
+
+    <SolidColorBrush x:Key="CalendarViewBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <CornerRadius x:Key="CalendarViewCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- Calendar button. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="CalendarButtonBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundPointerOver" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+
+    <SolidColorBrush x:Key="CalendarButtonBackgroundSelected" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundSelectedPointerOver" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundSelectedPressed" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundSelectedUnfocused" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundSelectedDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="CalendarButtonBackgroundToday" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayPointerOver" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayPressed" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="CalendarButtonBackgroundOutOfScope" Color="{DynamicResource UiTheme03}" />
+
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlight" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightPointerOver" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightPressed" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightSelected" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightSelectedPointerOver" Color="{DynamicResource ColorTheme03}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightSelectedPressed" Color="{DynamicResource ColorTheme02}" />
+    <SolidColorBrush x:Key="CalendarButtonBackgroundTodayHighlightSelectedDisabled" Color="{DynamicResource ColorTheme02}" />
+
+    <SolidColorBrush x:Key="CalendarButtonForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundSelected" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundSelectedDisabled" Color="{DynamicResource ColorTheme00}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundBlackout" Color="{DynamicResource UiTextTheme08}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundToday" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="CalendarButtonForegroundOutOfScope" Color="{DynamicResource UiTextTheme05}" />
+
+    <!--==================================================-->
+    <!-- CalendarDatePicker resources. -->
+    <!--==================================================-->
+
+    <Thickness x:Key="CalendarDatePickerPadding">8,8,34,8</Thickness>
+
+    <!--==================================================-->
+    <!-- CheckBox resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="CheckBoxBackgroundDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="CheckBoxCheckForegroundFillChecked" Color="{DynamicResource White}" />
+
+    <SolidColorBrush x:Key="CheckBoxCheckedBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+    <SolidColorBrush x:Key="CheckBoxCheckedForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="CheckBoxOuterBackgroundFillPressed" Color="{DynamicResource UiTheme07}" />
+
+    <SolidColorBrush x:Key="CheckBoxForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="CheckBoxForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <!--==================================================-->
+    <!-- ComboBox resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ComboBoxBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ComboBoxForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxForegroundFocused" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxForegroundFocusedPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground" Color="{DynamicResource ColorTheme02}" />
+
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="Transparent" />
+
+    <Thickness x:Key="ComboBoxPadding">8</Thickness>
+    <Thickness x:Key="ComboBoxBorderThemeThickness">0</Thickness>
+    <CornerRadius x:Key="ComboBoxCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- ComboBoxDropDown resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <Thickness x:Key="ComboBoxDropdownBorderThickness">1</Thickness>
+    <Thickness x:Key="ComboBoxDropdownBorderPadding">4</Thickness>
+    <CornerRadius x:Key="ComboBoxDropdownCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- ComboBoxItem resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ComboBoxItemBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundPointerOver" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundDisabled" Color="{DynamicResource UiTheme02}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPointerOver" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPressed" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundPointerOver" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundPressed" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <SolidColorBrush x:Key="ComboBoxItemForegroundSelected" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <Thickness x:Key="ComboBoxItemPadding">8</Thickness>
+    <Thickness x:Key="ComboBoxItemMargin">0,1</Thickness>
+    <CornerRadius x:Key="ComboBoxItemCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- DatePicker resources. -->
+    <!--==================================================-->
+
+    <x:Double x:Key="DatePickerMinWidth">296</x:Double>
+    <x:Double x:Key="DatePickerMaxWidth">456</x:Double>
+
+    <!--==================================================-->
+    <!-- TimePicker resources. -->
+    <!--==================================================-->
+
+    <x:Double x:Key="TimePickerMinWidth">242</x:Double>
+    <x:Double x:Key="TimePickerMaxWidth">456</x:Double>
+
+    <!--==================================================-->
+    <!-- DateTimePicker resources. -->
+    <!--==================================================-->
+
+    <Thickness x:Key="DateTimePickerFlyoutItemPadding">8,4</Thickness>
+    <Thickness x:Key="DateTimePickerFlyoutMonthPadding">8,4</Thickness>
+    <Thickness x:Key="DateTimePickerHostPadding">8,4</Thickness>
+    <Thickness x:Key="DateTimePickerHostMonthPadding">8,4</Thickness>
+    <x:Double x:Key="DateTimePickerSpacerWidth">1</x:Double>
+
+    <!--==================================================-->
+    <!-- DateTimePickerButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="DateTimePickerButtonBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="DateTimePickerButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonForegroundNoDate" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="DateTimePickerButtonBorderBrush" Color="Transparent" />
+
+    <SolidColorBrush x:Key="DateTimePickerButtonSpacerBrush" Color="{DynamicResource ColorTheme08}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonSpacerBrushPointerOver" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonSpacerBrushPressed" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="DateTimePickerButtonSpacerBrushDisabled" Color="{DynamicResource ColorTheme04}" />
+
+    <Thickness x:Key="DateTimePickerButtonBorderThickness">0</Thickness>
+    <Thickness x:Key="DateTimePickerButtonPadding">8</Thickness>
+    <CornerRadius x:Key="DateTimePickerButtonCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- DateTimePickerFlyout resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutHighlightBrush" Color="{DynamicResource UiTheme03}" />
+
+    <Thickness x:Key="DateTimePickerFlyoutBorderThickness">1</Thickness>
+    <Thickness x:Key="DateTimePickerFlyoutBorderPadding">4</Thickness>
+    <CornerRadius x:Key="DateTimePickerFlyoutCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- DateTimePickerFlyoutButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonForegroundNoDate" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutButtonBorderBrush" Color="Transparent" />
+    <Thickness x:Key="DateTimePickerFlyoutButtonBorderThickness">0</Thickness>
+
+    <Thickness x:Key="DateTimePickerFlyoutButtonPadding">8</Thickness>
+    <CornerRadius x:Key="DateTimePickerFlyoutButtonCornerRadius">4</CornerRadius>
+
+    <x:Double x:Key="DateTimePickerFlyoutPresenterHighlightHeight">40</x:Double>
+    <x:Double x:Key="DateTimePickerFlyoutPresenterItemHeight">40</x:Double>
+    <x:Double x:Key="DateTimePickerFlyoutAcceptDismissHostGridHeight">33</x:Double>
+
+    <!--==================================================-->
+    <!-- DateTimePickerFlyoutItem resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutItemBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutItemBackgroundSelected" Color="{DynamicResource ColorTheme05}" />
+
+    <SolidColorBrush x:Key="DateTimePickerFlyoutItemForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="DateTimePickerFlyoutItemForegroundSelected" Color="{DynamicResource White}" />
+
+    <!--==================================================-->
+    <!-- Expander resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ExpanderHeaderBackground" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="ExpanderHeaderBackgroundDisabled" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="ExpanderHeaderForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ExpanderHeaderForegroundDisabled" Color="{DynamicResource UiTextTheme05}" />
+    <SolidColorBrush x:Key="ExpanderHeaderBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="ExpanderContentBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="ExpanderContentBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <x:Double x:Key="ExpanderMinHeight">32</x:Double>
+    <Thickness x:Key="ExpanderArrowMargin">8,0,0,0</Thickness>
+    <x:Double x:Key="ExpanderArrowButtonSize">20</x:Double>
+
+    <CornerRadius x:Key="ExpanderHeaderCornerRadius">4</CornerRadius>
+    <Thickness x:Key="ExpanderHeaderBorderThickness">1</Thickness>
+    <Thickness x:Key="ExpanderHeaderPadding">8</Thickness>
+    <HorizontalAlignment x:Key="ExpanderHeaderHorizontalContentAlignment">Stretch</HorizontalAlignment>
+    <VerticalAlignment x:Key="ExpanderHeaderVerticalContentAlignment">Center</VerticalAlignment>
+
+    <CornerRadius x:Key="ExpanderContentCornerRadius">0,0,4,4</CornerRadius>
+    <Thickness x:Key="ExpanderContentBorderThickness">1,0,1,1</Thickness>
+    <Thickness x:Key="ExpanderContentPadding">8</Thickness>
+    <Thickness x:Key="ExpanderContentLeftBorderThickness">1,1,0,1</Thickness>
+    <Thickness x:Key="ExpanderContentUpBorderThickness">1,1,1,0</Thickness>
+    <Thickness x:Key="ExpanderContentRightBorderThickness">0,1,1,1</Thickness>
+    <Thickness x:Key="ExpanderContentDownBorderThickness">1,0,1,1</Thickness>
+
+    <CornerRadius x:Key="ExpanderTopCornerRadius">4,4,0,0</CornerRadius>
+    <CornerRadius x:Key="ExpanderBottomCornerRadius">0,0,4,4</CornerRadius>
+    <CornerRadius x:Key="ExpanderLeftCornerRadius">4,0,0,4</CornerRadius>
+    <CornerRadius x:Key="ExpanderRightCornerRadius">0,4,4,0</CornerRadius>
+
+    <!--==================================================-->
+    <!-- FlyoutPresenter resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="FlyoutPresenterBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="FlyoutPresenterForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="FlyoutBorderThemeBrush" Color="{DynamicResource UiTheme05}" />
+
+    <Thickness x:Key="FlyoutBorderThemeThickness">1</Thickness>
+    <Thickness x:Key="FlyoutContentThemePadding">12</Thickness>
+    <x:Double x:Key="FlyoutThemeMinWidth">96</x:Double>
+    <x:Double x:Key="FlyoutThemeMaxWidth">450</x:Double>
+    <x:Double x:Key="FlyoutThemeMinHeight">40</x:Double>
+    <x:Double x:Key="FlyoutThemeMaxHeight">750</x:Double>
+    <CornerRadius x:Key="FlyoutCornerRadius">4</CornerRadius>
+    <Thickness x:Key="FlyoutPresenterThemePadding">4</Thickness>
+
+    <!--==================================================-->
+    <!-- GridSplitter resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="GridSplitterBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="GridSplitterPreview" Color="{DynamicResource UiTheme05}" />
+
+    <!--==================================================-->
+    <!-- Label resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="LabelForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="LabelDisabledForeground" Color="{DynamicResource UiTextTheme05}" />
+
+    <!--==================================================-->
+    <!-- ListBox resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ListBoxBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="ListBoxForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ListBoxBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <Thickness x:Key="ListBoxBorderThickness">1</Thickness>
+    <CornerRadius x:Key="ListBoxCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- ListBoxItem resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ListBoxItemBackgroundPointerOver" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundSelected" Color="{DynamicResource ColorTheme06}" />
+
+    <SolidColorBrush x:Key="ListBoxItemBackgroundSelectedUnfocused" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundSelectedPointerOver" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ListBoxItemBackgroundSelectedPressed" Color="{DynamicResource ColorTheme04}" />
+
+    <SolidColorBrush x:Key="ListBoxItemForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundPointerOver" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundPressed" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <SolidColorBrush x:Key="ListBoxItemForegroundSelected" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundSelectedUnfocused" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundSelectedPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ListBoxItemForegroundSelectedPressed" Color="{DynamicResource White}" />
+
+    <Thickness x:Key="ListBoxItemPadding">8</Thickness>
+    <Thickness x:Key="ListBoxItemMargin">0,1</Thickness>
+    <CornerRadius x:Key="ListBoxItemCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- MenuBar resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="MenuBarBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="MenuBarBorderBrush" Color="#44000000" />
+
+    <x:Double x:Key="MenuBarHeight">40</x:Double>
+    <Thickness x:Key="MenuBarPadding">0,4</Thickness>
+    <Thickness x:Key="MenuBarBorderThickness">0,0,0,1</Thickness>
+    <Thickness x:Key="MenuBarItemPadding">8,0</Thickness>
+
+    <!--==================================================-->
+    <!-- MenuFlyout resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="{DynamicResource UiTheme05}" />
+    <SolidColorBrush x:Key="MenuFlyoutSeparatorBackground" Color="{DynamicResource UiTheme06}" />
+
+    <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="MenuFlyoutPresenterForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <SolidColorBrush x:Key="MenuFlyoutItemBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemBackgroundDisabled" Color="{DynamicResource UiTheme02}" />
+
+    <SolidColorBrush x:Key="MenuFlyoutItemForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemForegroundPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemForegroundPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled"
+                     Color="{DynamicResource UiTextTheme06}" />
+
+    <SolidColorBrush x:Key="MenuFlyoutSubItemArrow" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="MenuFlyoutSubItemArrowPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutSubItemArrowPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="MenuFlyoutSubItemArrowDisabled" Color="{DynamicResource UiTextTheme06}" />
+    <SolidColorBrush x:Key="MenuFlyoutSubItemArrowSubMenuOpened" Color="{DynamicResource White}" />
+
+    <x:Double x:Key="MenuFlyoutSeparatorHeight">1</x:Double>
+    <Thickness x:Key="MenuFlyoutSeparatorPadding">0,4</Thickness>
+    <Thickness x:Key="MenuFlyoutItemPaddingNarrow">8</Thickness>
+    <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
+    <Thickness x:Key="MenuFlyoutPresenterThemePadding">4</Thickness>
+    <x:Double x:Key="MenuFlyoutThemeMinHeight">40</x:Double>
+    <Thickness x:Key="MenuFlyoutScrollerMargin">0</Thickness>
+    <x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">0</x:Double>
+    <x:Double x:Key="MenuFlyoutSubItemPopupVerticalOffset">-4</x:Double>
+
+    <!--==================================================-->
+    <!-- NotificationCard resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="NotificationCardBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="NotificationCardProgressBackground" Color="{DynamicResource UiTheme05}" />
+    <SolidColorBrush x:Key="NotificationCardBackgroundInformation" Color="{DynamicResource Blue07}" />
+    <SolidColorBrush x:Key="NotificationCardBackgroundSuccess" Color="{DynamicResource Green07}" />
+    <SolidColorBrush x:Key="NotificationCardBackgroundWarning" Color="{DynamicResource Orange07}" />
+    <SolidColorBrush x:Key="NotificationCardBackgroundError" Color="{DynamicResource Red07}" />
+    <SolidColorBrush x:Key="NotificationCardForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <CornerRadius x:Key="NotificationCardCornerRadius">4</CornerRadius>
+    <Thickness x:Key="NotificationCardPadding">8</Thickness>
+
+    <!--==================================================-->
+    <!-- ProgressBar resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ProgressBarBackground" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="ProgressBarBackgroundDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="ProgressBarForeground" Color="White" />
+
+    <SolidColorBrush x:Key="ProgressBarValueFill" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ProgressBarValueFillDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ProgressBarBorderBrush" Color="Transparent" />
+
+    <Thickness x:Key="ProgressBarBorderThickness">0</Thickness>
+    <CornerRadius x:Key="ProgressBarCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- RadioButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseFill" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPressed" Color="{DynamicResource UiTheme07}" />
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseFillDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="RadioButtonInnerEllipseCheckedFill" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="RadioButtonInnerEllipseCheckedFillDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="RadioButtonForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="RadioButtonForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <!--==================================================-->
+    <!-- RepeatButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="RepeatButtonBackground" Color="{DynamicResource UiTheme08}" />
+    <SolidColorBrush x:Key="RepeatButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="RepeatButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="RepeatButtonBackgroundDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="RepeatButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="RepeatButtonForegroundDisabled" Color="{DynamicResource UiTextTheme05}" />
+
+    <Thickness x:Key="RepeatButtonBorderThickness">0</Thickness>
+    <CornerRadius x:Key="RepeatButtonCornerRadius">4</CornerRadius>
+    <Thickness x:Key="RepeatButtonPadding">6</Thickness>
+
+    <!--==================================================-->
+    <!-- ScrollBar resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ScrollBarBackground" Color="{DynamicResource UiTheme05}" />
+    <SolidColorBrush x:Key="ScrollBarThumbBackground" Color="{DynamicResource UiTheme08}" />
+    <SolidColorBrush x:Key="ScrollBarThumbBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ScrollBarThumbBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+
+    <x:Double x:Key="ScrollBarThickness">8</x:Double>
+    <x:Double x:Key="ScrollBarThumbThickness">8</x:Double>
+    <CornerRadius x:Key="ScrollBarCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- Slider resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="SliderContainerBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="SliderContainerBackgroundPointerOver" Color="Transparent" />
+    <SolidColorBrush x:Key="SliderContainerBackgroundPressed" Color="Transparent" />
+    <SolidColorBrush x:Key="SliderContainerBackgroundDisabled" Color="Transparent" />
+
+    <SolidColorBrush x:Key="SliderTrackFill" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="SliderTrackFillPointerOver" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="SliderTrackFillPressed" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="SliderTrackFillDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="SliderTrackValueFill" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="SliderTrackValueFillPointerOver" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="SliderTrackValueFillPressed" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="SliderTrackValueFillDisabled" Color="{DynamicResource ColorTheme02}" />
+
+    <SolidColorBrush x:Key="SliderThumbBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="SliderThumbBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="SliderThumbBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="SliderThumbForeground" Color="White" />
+    <SolidColorBrush x:Key="SliderThumbForegroundPointerOver" Color="White" />
+    <SolidColorBrush x:Key="SliderThumbForegroundPressed" Color="White" />
+    <SolidColorBrush x:Key="SliderThumbForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="SliderTickBarFill" Color="{DynamicResource UiTextTheme05}" />
+    <SolidColorBrush x:Key="SliderTickBarFillDisabled" Color="{DynamicResource UiTextTheme03}" />
+
+    <x:Double x:Key="SliderHorizontalHeight">28</x:Double>
+    <x:Double x:Key="SliderVerticalWidth">28</x:Double>
+    <x:Double x:Key="SliderTrackHeight">8</x:Double>
+    <x:Double x:Key="SliderHorizontalThumbWidth">20</x:Double>
+    <x:Double x:Key="SliderHorizontalThumbHeight">20</x:Double>
+    <x:Double x:Key="SliderVerticalThumbWidth">20</x:Double>
+    <x:Double x:Key="SliderVerticalThumbHeight">20</x:Double>
+    <x:Double x:Key="SliderOutsideTickBarHeight">6</x:Double>
+    <Thickness x:Key="SliderBorderThickness">0</Thickness>
+    <Thickness x:Key="SliderTopHeaderMargin">0,0,0,4</Thickness>
+    <GridLength x:Key="SliderPreContentMargin">16</GridLength>
+    <GridLength x:Key="SliderPostContentMargin">16</GridLength>
+    <CornerRadius x:Key="SliderCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="SliderThumbCornerRadius">10</CornerRadius>
+
+    <!--==================================================-->
+    <!-- SplitButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="SplitButtonBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="SplitButtonBackgroundChecked" Color="{DynamicResource ColorTheme08}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundCheckedPointerOver" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundCheckedPressed" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="SplitButtonBackgroundCheckedDisabled" Color="{DynamicResource ColorTheme04}" />
+
+    <SolidColorBrush x:Key="SplitButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="SplitButtonForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+    <SolidColorBrush x:Key="SplitButtonForegroundCheckedDisabled" Color="{DynamicResource ColorTheme02}" />
+
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrush" Color="{DynamicResource ColorTheme08}" />
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrushDisabled" Color="{DynamicResource ColorTheme04}" />
+
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrushPressed" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrushPressedChecked" Color="{DynamicResource ColorTheme07}" />
+
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrushChecked" Color="{DynamicResource ColorTheme09}" />
+    <SolidColorBrush x:Key="SplitButtonSeparatorBorderBrushCheckedDisabled" Color="{DynamicResource ColorTheme05}" />
+
+    <Thickness x:Key="SplitButtonBorderThickness">0</Thickness>
+    <x:Double x:Key="SplitButtonPrimaryButtonSize">32</x:Double>
+    <x:Double x:Key="SplitButtonSecondaryButtonSize">32</x:Double>
+    <x:Double x:Key="SplitButtonSeparatorWidth">1</x:Double>
+    <x:Double x:Key="SplitButtonMinHeight">32</x:Double>
+
+    <!--==================================================-->
+    <!-- TabControl resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="TabControlBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="TabControlBorder" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="TabItemHeaderBackgroundUnselected" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="TabItemHeaderBackgroundDisabled" Color="{DynamicResource UiTheme02}" />
+
+    <SolidColorBrush x:Key="TabItemHeaderHighlightSelected" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="TabItemHeaderHighlightUnselected" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="TabItemHeaderForegroundSelected" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="TabItemHeaderForegroundUnselected" Color="{DynamicResource UiTextTheme03}" />
+    <SolidColorBrush x:Key="TabItemHeaderForegroundDisabled" Color="{DynamicResource UiTextTheme05}" />
+
+    <!--==================================================-->
+    <!-- TextBox resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="TextBoxBackground" Color="{DynamicResource UiTheme01}" />
+    <SolidColorBrush x:Key="TextBoxBackgroundDisabled" Color="{DynamicResource UiTheme02}" />
+
+    <SolidColorBrush x:Key="TextBoxForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="TextBoxForegroundDisabled" Color="{DynamicResource UiTextTheme05}" />
+
+    <SolidColorBrush x:Key="TextBoxWatermarkForeground" Color="{DynamicResource UiTextTheme07}" />
+
+    <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource UiTheme05}" />
+    <SolidColorBrush x:Key="TextBoxBorderBrushFocused" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="TextBoxBorderBrushDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="TextBoxSelectionHighlightColor" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="TextBoxSelectionForegroundColor" Color="{DynamicResource White}" />
+
+    <Thickness x:Key="TextBoxBorderThickness">1</Thickness>
+    <Thickness x:Key="TextBoxBorderThicknessFocused">2</Thickness>
+    <CornerRadius x:Key="TextBoxCornerRadius">4</CornerRadius>
+    <Thickness x:Key="TextBoxPadding">8</Thickness>
+
+    <!--==================================================-->
+    <!-- TitleBar resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="TitleBarBackground" Color="{DynamicResource UiTheme00}" />
+    <SolidColorBrush x:Key="TitleBarForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <!--==================================================-->
+    <!-- ToggleButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ToggleButtonBackground" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundPointerOver" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundPressed" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ToggleButtonBackgroundIndeterminate" Color="{DynamicResource Grey05}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundIndeterminatePointerOver" Color="{DynamicResource Grey04}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundIndeterminatePressed" Color="{DynamicResource Grey03}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundIndeterminateDisabled" Color="{DynamicResource Grey03}" />
+
+    <SolidColorBrush x:Key="ToggleButtonBackgroundChecked" Color="{DynamicResource ColorTheme08}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPointerOver" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPressed" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundCheckedDisabled" Color="{DynamicResource ColorTheme04}" />
+
+    <SolidColorBrush x:Key="ToggleButtonForeground" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ToggleButtonForegroundDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="ToggleButtonForegroundIndeterminate" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ToggleButtonForegroundIndeterminateDisabled" Color="{DynamicResource Grey01}" />
+
+    <SolidColorBrush x:Key="ToggleButtonForegroundChecked" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ToggleButtonForegroundCheckedDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <Thickness x:Key="ToggleButtonPadding">8</Thickness>
+    <Thickness x:Key="ToggleButtonBorderThickness">0</Thickness>
+
+    <!--==================================================-->
+    <!-- ToggleSwitch resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ToggleSwitchContainerBackground" Color="Transparent" />
+
+    <SolidColorBrush x:Key="ToggleSwitchFillOff" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="ToggleSwitchFillOffDisabled" Color="{DynamicResource UiTheme05}" />
+
+    <SolidColorBrush x:Key="ToggleSwitchFillOn" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="ToggleSwitchFillOnDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="ToggleSwitchKnobFillOff" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ToggleSwitchKnobFillOffDisabled" Color="#55FFFFFF" />
+
+    <SolidColorBrush x:Key="ToggleSwitchKnobFillOn" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="ToggleSwitchKnobFillOnDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <SolidColorBrush x:Key="ToggleSwitchContentForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ToggleSwitchHeaderForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <Thickness x:Key="ToggleSwitchTopHeaderMargin">0,0,0,4</Thickness>
+    <GridLength x:Key="ToggleSwitchPreContentMargin">8</GridLength>
+    <GridLength x:Key="ToggleSwitchPostContentMargin">8</GridLength>
+    <x:Double x:Key="ToggleSwitchThemeMinWidth">0</x:Double>
+
+    <!--==================================================-->
+    <!-- ToolTip resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="ToolTipBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <Thickness x:Key="ToolTipBorderThemeThickness">1</Thickness>
+    <Thickness x:Key="ToolTipBorderThemePadding">12</Thickness>
+    <CornerRadius x:Key="ToolTipCornerRadius">4</CornerRadius>
+    <x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+
+    <!--==================================================-->
+    <!-- TreeViewItem resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="TreeViewItemBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundPointerOver" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundDisabled" Color="Transparent" />
+
+    <SolidColorBrush x:Key="TreeViewItemBackgroundSelected" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedPointerOver" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedPressed" Color="{DynamicResource ColorTheme04}" />
+    <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <SolidColorBrush x:Key="TreeViewItemForeground" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundPointerOver" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundPressed" Color="{DynamicResource UiTextTheme00}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <SolidColorBrush x:Key="TreeViewItemForegroundSelected" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundSelectedPointerOver" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundSelectedPressed" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="TreeViewItemForegroundSelectedDisabled" Color="{DynamicResource ColorTheme01}" />
+
+    <CornerRadius x:Key="TreeViewItemCornerRadius">4</CornerRadius>
+
+    <!--==================================================-->
+    <!-- Window resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="WindowBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="WindowForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <!--==================================================-->
+    <!-- Theme dictionaries. -->
+    <!--==================================================-->
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!--==================================================-->
+        <!-- Default/light UI theme colors. -->
+        <!--==================================================-->
+
+        <ResourceDictionary x:Key="Default">
+
+            <!--==================================================-->
+            <!-- Default background colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTheme00">#ffffff</Color>
+            <Color x:Key="UiTheme01">#f0f0f0</Color>
+            <Color x:Key="UiTheme02">#e1e1e1</Color>
+            <Color x:Key="UiTheme03">#d2d2d2</Color>
+            <Color x:Key="UiTheme04">#c3c3c3</Color>
+            <Color x:Key="UiTheme05">#b5b5b5</Color>
+            <Color x:Key="UiTheme06">#a7a7a7</Color>
+            <Color x:Key="UiTheme07">#999999</Color>
+            <Color x:Key="UiTheme08">#8b8b8b</Color>
+            <Color x:Key="UiTheme09">#7e7e7e</Color>
+
+            <!--==================================================-->
+            <!-- Default text colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTextTheme00">#000000</Color>
+            <Color x:Key="UiTextTheme01">#191919</Color>
+            <Color x:Key="UiTextTheme02">#2a2a2a</Color>
+            <Color x:Key="UiTextTheme03">#3d3d3d</Color>
+            <Color x:Key="UiTextTheme04">#515151</Color>
+            <Color x:Key="UiTextTheme05">#666666</Color>
+            <Color x:Key="UiTextTheme06">#7b7b7b</Color>
+            <Color x:Key="UiTextTheme07">#929292</Color>
+            <Color x:Key="UiTextTheme08">#a9a9a9</Color>
+            <Color x:Key="UiTextTheme09">#c0c0c0</Color>
+
+        </ResourceDictionary>
+
+        <!--==================================================-->
+        <!-- Dark UI theme colors. -->
+        <!--==================================================-->
+
+        <ResourceDictionary x:Key="Dark">
+
+            <!--==================================================-->
+            <!-- Dark background colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTheme00">#000000</Color>
+            <Color x:Key="UiTheme01">#121212</Color>
+            <Color x:Key="UiTheme02">#1d1d1d</Color>
+            <Color x:Key="UiTheme03">#272727</Color>
+            <Color x:Key="UiTheme04">#333333</Color>
+            <Color x:Key="UiTheme05">#3e3e3e</Color>
+            <Color x:Key="UiTheme06">#4a4a4a</Color>
+            <Color x:Key="UiTheme07">#575757</Color>
+            <Color x:Key="UiTheme08">#636363</Color>
+            <Color x:Key="UiTheme09">#707070</Color>
+
+            <!--==================================================-->
+            <!-- Dark text colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTextTheme00">#ffffff</Color>
+            <Color x:Key="UiTextTheme01">#e8e8e8</Color>
+            <Color x:Key="UiTextTheme02">#d1d1d1</Color>
+            <Color x:Key="UiTextTheme03">#bababa</Color>
+            <Color x:Key="UiTextTheme04">#a4a4a4</Color>
+            <Color x:Key="UiTextTheme05">#8f8f8f</Color>
+            <Color x:Key="UiTextTheme06">#7a7a7a</Color>
+            <Color x:Key="UiTextTheme07">#656565</Color>
+            <Color x:Key="UiTextTheme08">#525252</Color>
+            <Color x:Key="UiTextTheme09">#3f3f3f</Color>
+
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

@@ -1,0 +1,350 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Avalonia.Controls.Converters"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20" MinWidth="300">
+            <TreeView>
+                <TreeViewItem Header="Level 1" IsExpanded="True">
+                    <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+                        <TreeViewItem Header="Level 3.1" />
+                        <TreeViewItem Header="Level 3.2" IsSelected="True">
+                            <TreeViewItem Header="Level 4" />
+                        </TreeViewItem>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Level 2.2" IsEnabled="False" />
+                </TreeViewItem>
+            </TreeView>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Static resources. -->
+    <!--==================================================-->
+
+    <x:Double x:Key="TreeViewItemIndent">16</x:Double>
+    <x:Double x:Key="TreeViewItemExpandCollapseArrowSize">16</x:Double>
+    <Thickness x:Key="TreeViewItemExpandCollapseArrowMargin">4,0</Thickness>
+    <StreamGeometry x:Key="TreeViewItemCollapsedArrowPathData">M 0 0 L 7 5 L 0 10</StreamGeometry>
+    <StreamGeometry x:Key="TreeViewItemExpandedArrowPathData">M 0 0 L 5 7 L 10 0</StreamGeometry>
+
+    <!--==================================================-->
+    <!-- Indent converter. -->
+    <!--==================================================-->
+
+    <converters:MarginMultiplierConverter
+        Indent="{StaticResource TreeViewItemIndent}"
+        Left="True"
+        x:Key="TreeViewItemLeftMarginConverter" />
+
+    <!--==================================================-->
+    <!-- TreeViewExpandCollapseArrow control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="TreeViewExpandCollapseArrow" TargetType="ToggleButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Width" Value="{DynamicResource TreeViewItemExpandCollapseArrowSize}" />
+        <Setter Property="Height" Value="{DynamicResource TreeViewItemExpandCollapseArrowSize}" />
+        <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Background border. -->
+                <!--==================================================-->
+
+                <Border
+                    Width="{TemplateBinding Width}"
+                    Height="{TemplateBinding Height}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Padding="4">
+
+                    <!--==================================================-->
+                    <!-- Expand/collapse arrow. -->
+                    <!--==================================================-->
+
+                    <Path
+                        x:Name="ArrowPath"
+                        Data="{StaticResource TreeViewItemCollapsedArrowPathData}"
+                        Fill="{TemplateBinding Foreground}"
+                        Stretch="Uniform"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Checked state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:checked /template/ Path#ArrowPath">
+            <Setter Property="Data" Value="{StaticResource TreeViewItemExpandedArrowPathData}" />
+        </Style>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- TreeViewItem control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type TreeViewItem}" TargetType="TreeViewItem">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Padding" Value="0,8,8,8" />
+        <Setter Property="Margin" Value="0,1" />
+        <Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource TreeViewItemCornerRadius}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Layout container. -->
+                <!--==================================================-->
+
+                <StackPanel>
+
+                    <!--==================================================-->
+                    <!-- Item background. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="PART_LayoutRoot"
+                        Classes="TreeViewItemLayoutRoot"
+                        Focusable="True"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        Margin="{TemplateBinding Margin}"
+                        TemplatedControl.IsTemplateFocusTarget="True">
+
+                        <!--==================================================-->
+                        <!-- Item layout grid. -->
+                        <!--==================================================-->
+
+                        <Grid
+                            Name="PART_Header"
+                            ColumnDefinitions="Auto, *"
+                            Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+                            <!--==================================================-->
+                            <!-- Expand/collapse arrow. -->
+                            <!--==================================================-->
+
+                            <Panel
+                                Name="PART_ExpandCollapseArrowContainer"
+                                Margin="{DynamicResource TreeViewItemExpandCollapseArrowMargin}">
+
+                                <ToggleButton
+                                    Name="PART_ExpandCollapseArrow"
+                                    Theme="{StaticResource TreeViewExpandCollapseArrow}"
+                                    Focusable="False"
+                                    IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
+
+                            </Panel>
+
+                            <!--==================================================-->
+                            <!-- Item content. -->
+                            <!--==================================================-->
+
+                            <ContentPresenter
+                                Name="PART_HeaderPresenter"
+                                Grid.Column="1"
+                                Focusable="False"
+                                Background="Transparent"
+                                Foreground="{TemplateBinding Foreground}"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                Margin="{TemplateBinding Padding}" />
+
+                        </Grid>
+
+                    </Border>
+
+                    <!--==================================================-->
+                    <!-- Child items. -->
+                    <!--==================================================-->
+
+                    <ItemsPresenter
+                        Name="PART_ItemsPresenter"
+                        IsVisible="{TemplateBinding IsExpanded}"
+                        ItemsPanel="{TemplateBinding ItemsPanel}" />
+
+                </StackPanel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundPointerOver}" />
+        </Style>
+
+        <Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover > Grid > ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPointerOver}" />
+        </Style>
+
+        <Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover > Grid > ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundPressed}" />
+        </Style>
+
+        <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover > Grid >  ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPressed}" />
+        </Style>
+
+        <Style Selector="^:pressed  /template/ Border#PART_LayoutRoot:pointerover > Grid >  ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundDisabled}" />
+        </Style>
+
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundDisabled}" />
+        </Style>
+
+        <Style Selector="^:disabled  /template/ ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundSelected}" />
+        </Style>
+
+        <Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelected}" />
+        </Style>
+
+        <Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelected}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected and pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected /template/ Border#PART_LayoutRoot:pointerover">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundSelectedPointerOver}" />
+        </Style>
+
+        <Style Selector="^:selected /template/ Border#PART_LayoutRoot:pointerover > Grid > ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedPointerOver}" />
+        </Style>
+
+        <Style Selector="^:selected  /template/ Border#PART_LayoutRoot:pointerover > Grid >  ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected and pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pressed:selected /template/ Border#PART_LayoutRoot:pointerover">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundSelectedPressed}" />
+        </Style>
+
+        <Style Selector="^:pressed:selected /template/ Border#PART_LayoutRoot:pointerover > Grid >  ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedPressed}" />
+        </Style>
+
+        <Style Selector="^:pressed:selected /template/ Border#PART_LayoutRoot:pointerover > Grid >  ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected and disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundSelectedDisabled}" />
+        </Style>
+
+        <Style Selector="^:disabled:selected /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedDisabled}" />
+        </Style>
+
+        <Style Selector="^:disabled:selected /template/ Border#PART_LayoutRoot:pointerover > Grid >  ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelectedDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Empty state state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:empty /template/ ToggleButton#PART_ExpandCollapseArrow">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+
+        <Style Selector="^:empty /template/ Panel#PART_ExpandCollapseArrowContainer">
+            <Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseArrowSize}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

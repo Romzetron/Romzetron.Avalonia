@@ -1,0 +1,237 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- WHITE and BLACK. -->
+    <!--==================================================-->
+
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="White">#FFFFFF</Color>
+
+    <!--==================================================-->
+    <!-- RED color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Red00">#FFEBEE</Color>            <!--Text: BLACK -->
+    <Color x:Key="Red01">#FFCDD2</Color>            <!--Text: BLACK -->
+    <Color x:Key="Red02">#EF9A9A</Color>            <!--Text: BLACK -->
+    <Color x:Key="Red03">#E57373</Color>            <!--Text: BLACK -->
+    <Color x:Key="Red04">#EF5350</Color>            <!--Text: WHITE -->
+    <Color x:Key="Red05">#F44336</Color>            <!--Text: WHITE -->
+    <Color x:Key="Red06">#E53935</Color>            <!--Text: WHITE -->
+    <Color x:Key="Red07">#D32F2F</Color>            <!--Text: WHITE -->
+    <Color x:Key="Red08">#C62828</Color>            <!--Text: WHITE -->
+    <Color x:Key="Red09">#B71C1C</Color>            <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- PINK color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Pink00">#FCE4EC</Color>           <!--Text: BLACK -->
+    <Color x:Key="Pink01">#F8BBD0</Color>           <!--Text: BLACK -->
+    <Color x:Key="Pink02">#F48FB1</Color>           <!--Text: BLACK -->
+    <Color x:Key="Pink03">#F06292</Color>           <!--Text: BLACK -->
+    <Color x:Key="Pink04">#EC407A</Color>           <!--Text: WHITE -->
+    <Color x:Key="Pink05">#E91E63</Color>           <!--Text: WHITE -->
+    <Color x:Key="Pink06">#D81B60</Color>           <!--Text: WHITE -->
+    <Color x:Key="Pink07">#C2185B</Color>           <!--Text: WHITE -->
+    <Color x:Key="Pink08">#AD1457</Color>           <!--Text: WHITE -->
+    <Color x:Key="Pink09">#880E4F</Color>           <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- PURPLE color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Purple00">#F3E5F5</Color>         <!--Text: BLACK -->
+    <Color x:Key="Purple01">#E1BEE7</Color>         <!--Text: BLACK -->
+    <Color x:Key="Purple02">#CE93D8</Color>         <!--Text: BLACK -->
+    <Color x:Key="Purple03">#BA68C8</Color>         <!--Text: BLACK -->
+    <Color x:Key="Purple04">#AB47BC</Color>         <!--Text: WHITE -->
+    <Color x:Key="Purple05">#9C27B0</Color>         <!--Text: WHITE -->
+    <Color x:Key="Purple06">#8E24AA</Color>         <!--Text: WHITE -->
+    <Color x:Key="Purple07">#7B1FA2</Color>         <!--Text: WHITE -->
+    <Color x:Key="Purple08">#6A1B9A</Color>         <!--Text: WHITE -->
+    <Color x:Key="Purple09">#4A148C</Color>         <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- DEEP-PURPLE color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="DeepPurple00">#EDE7F6</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepPurple01">#D1C4E9</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepPurple02">#B39DDB</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepPurple03">#9575CD</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepPurple04">#7E57C2</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepPurple05">#673AB7</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepPurple06">#5E35B1</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepPurple07">#512DA8</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepPurple08">#4527A0</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepPurple09">#311B92</Color>     <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- INDIGO color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Indigo00">#E8EAF6</Color>         <!--Text: BLACK -->
+    <Color x:Key="Indigo01">#C5CAE9</Color>         <!--Text: BLACK -->
+    <Color x:Key="Indigo02">#9FA8DA</Color>         <!--Text: BLACK -->
+    <Color x:Key="Indigo03">#7986CB</Color>         <!--Text: BLACK -->
+    <Color x:Key="Indigo04">#5C6BC0</Color>         <!--Text: WHITE -->
+    <Color x:Key="Indigo05">#3F51B5</Color>         <!--Text: WHITE -->
+    <Color x:Key="Indigo06">#3949AB</Color>         <!--Text: WHITE -->
+    <Color x:Key="Indigo07">#303F9F</Color>         <!--Text: WHITE -->
+    <Color x:Key="Indigo08">#283593</Color>         <!--Text: WHITE -->
+    <Color x:Key="Indigo09">#1A237E</Color>         <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- BLUE color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Blue00">#E3F2FD</Color>           <!--Text: BLACK -->
+    <Color x:Key="Blue01">#BBDEFB</Color>           <!--Text: BLACK -->
+    <Color x:Key="Blue02">#90CAF9</Color>           <!--Text: BLACK -->
+    <Color x:Key="Blue03">#64B5F6</Color>           <!--Text: BLACK -->
+    <Color x:Key="Blue04">#42A5F5</Color>           <!--Text: WHITE -->
+    <Color x:Key="Blue05">#2196F3</Color>           <!--Text: WHITE -->
+    <Color x:Key="Blue06">#1E88E5</Color>           <!--Text: WHITE -->
+    <Color x:Key="Blue07">#1976D2</Color>           <!--Text: WHITE -->
+    <Color x:Key="Blue08">#1565C0</Color>           <!--Text: WHITE -->
+    <Color x:Key="Blue09">#0D47A1</Color>           <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- TEAL color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Teal00">#E0F2F1</Color>           <!--Text: BLACK -->
+    <Color x:Key="Teal01">#B2DFDB</Color>           <!--Text: BLACK -->
+    <Color x:Key="Teal02">#80CBC4</Color>           <!--Text: BLACK -->
+    <Color x:Key="Teal03">#4DB6AC</Color>           <!--Text: BLACK -->
+    <Color x:Key="Teal04">#26A69A</Color>           <!--Text: WHITE -->
+    <Color x:Key="Teal05">#009688</Color>           <!--Text: WHITE -->
+    <Color x:Key="Teal06">#00897B</Color>           <!--Text: WHITE -->
+    <Color x:Key="Teal07">#00796B</Color>           <!--Text: WHITE -->
+    <Color x:Key="Teal08">#00695C</Color>           <!--Text: WHITE -->
+    <Color x:Key="Teal09">#004D40</Color>           <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- GREEN color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Green00">#E8F5E9</Color>          <!--Text: BLACK -->
+    <Color x:Key="Green01">#C8E6C9</Color>          <!--Text: BLACK -->
+    <Color x:Key="Green02">#A5D6A7</Color>          <!--Text: BLACK -->
+    <Color x:Key="Green03">#81C784</Color>          <!--Text: BLACK -->
+    <Color x:Key="Green04">#66BB6A</Color>          <!--Text: WHITE -->
+    <Color x:Key="Green05">#4CAF50</Color>          <!--Text: WHITE -->
+    <Color x:Key="Green06">#43A047</Color>          <!--Text: WHITE -->
+    <Color x:Key="Green07">#388E3C</Color>          <!--Text: WHITE -->
+    <Color x:Key="Green08">#2E7D32</Color>          <!--Text: WHITE -->
+    <Color x:Key="Green09">#1B5E20</Color>          <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- YELLOW color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Yellow00">#FFFDE7</Color>         <!--Text: BLACK -->
+    <Color x:Key="Yellow01">#FFF9C4</Color>         <!--Text: BLACK -->
+    <Color x:Key="Yellow02">#FFF59D</Color>         <!--Text: BLACK -->
+    <Color x:Key="Yellow03">#FFF176</Color>         <!--Text: BLACK -->
+    <Color x:Key="Yellow04">#FFEE58</Color>         <!--Text: WHITE -->
+    <Color x:Key="Yellow05">#FFEB3B</Color>         <!--Text: WHITE -->
+    <Color x:Key="Yellow06">#FDD835</Color>         <!--Text: WHITE -->
+    <Color x:Key="Yellow07">#FBC02D</Color>         <!--Text: WHITE -->
+    <Color x:Key="Yellow08">#F9A825</Color>         <!--Text: WHITE -->
+    <Color x:Key="Yellow09">#F57F17</Color>         <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- AMBER color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Amber00">#FFF8E1</Color>          <!--Text: BLACK -->
+    <Color x:Key="Amber01">#FFECB3</Color>          <!--Text: BLACK -->
+    <Color x:Key="Amber02">#FFE082</Color>          <!--Text: BLACK -->
+    <Color x:Key="Amber03">#FFD54F</Color>          <!--Text: BLACK -->
+    <Color x:Key="Amber04">#FFCA28</Color>          <!--Text: WHITE -->
+    <Color x:Key="Amber05">#FFC107</Color>          <!--Text: WHITE -->
+    <Color x:Key="Amber06">#FFB300</Color>          <!--Text: WHITE -->
+    <Color x:Key="Amber07">#FFA000</Color>          <!--Text: WHITE -->
+    <Color x:Key="Amber08">#FF8F00</Color>          <!--Text: WHITE -->
+    <Color x:Key="Amber09">#FF6F00</Color>          <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- ORANGE color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Orange00">#FFF3E0</Color>         <!--Text: BLACK -->
+    <Color x:Key="Orange01">#FFE0B2</Color>         <!--Text: BLACK -->
+    <Color x:Key="Orange02">#FFCC80</Color>         <!--Text: BLACK -->
+    <Color x:Key="Orange03">#FFB74D</Color>         <!--Text: BLACK -->
+    <Color x:Key="Orange04">#FFA726</Color>         <!--Text: WHITE -->
+    <Color x:Key="Orange05">#FF9800</Color>         <!--Text: WHITE -->
+    <Color x:Key="Orange06">#FB8C00</Color>         <!--Text: WHITE -->
+    <Color x:Key="Orange07">#F57C00</Color>         <!--Text: WHITE -->
+    <Color x:Key="Orange08">#EF6C00</Color>         <!--Text: WHITE -->
+    <Color x:Key="Orange09">#E65100</Color>         <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- DEEP-ORANGE color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="DeepOrange00">#FBE9E7</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepOrange01">#FFCCBC</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepOrange02">#FFAB91</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepOrange03">#FF8A65</Color>     <!--Text: BLACK -->
+    <Color x:Key="DeepOrange04">#FF7043</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepOrange05">#FF5722</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepOrange06">#F4511E</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepOrange07">#E64A19</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepOrange08">#D84315</Color>     <!--Text: WHITE -->
+    <Color x:Key="DeepOrange09">#BF360C</Color>     <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- BROWN color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Brown00">#EFEBE9</Color>          <!--Text: BLACK -->
+    <Color x:Key="Brown01">#D7CCC8</Color>          <!--Text: BLACK -->
+    <Color x:Key="Brown02">#BCAAA4</Color>          <!--Text: BLACK -->
+    <Color x:Key="Brown03">#A1887F</Color>          <!--Text: BLACK -->
+    <Color x:Key="Brown04">#8D6E63</Color>          <!--Text: WHITE -->
+    <Color x:Key="Brown05">#795548</Color>          <!--Text: WHITE -->
+    <Color x:Key="Brown06">#6D4C41</Color>          <!--Text: WHITE -->
+    <Color x:Key="Brown07">#5D4037</Color>          <!--Text: WHITE -->
+    <Color x:Key="Brown08">#4E342E</Color>          <!--Text: WHITE -->
+    <Color x:Key="Brown09">#3E2723</Color>          <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- GREY color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="Grey00">#FAFAFA</Color>           <!--Text: BLACK -->
+    <Color x:Key="Grey01">#BDBDBD</Color>           <!--Text: BLACK -->
+    <Color x:Key="Grey02">#A7A7A7</Color>           <!--Text: BLACK -->
+    <Color x:Key="Grey03">#929292</Color>           <!--Text: BLACK -->
+    <Color x:Key="Grey04">#7E7E7E</Color>           <!--Text: WHITE -->
+    <Color x:Key="Grey05">#6A6A6A</Color>           <!--Text: WHITE -->
+    <Color x:Key="Grey06">#565656</Color>           <!--Text: WHITE -->
+    <Color x:Key="Grey07">#444444</Color>           <!--Text: WHITE -->
+    <Color x:Key="Grey08">#323232</Color>           <!--Text: WHITE -->
+    <Color x:Key="Grey09">#212121</Color>           <!--Text: WHITE -->
+
+    <!--==================================================-->
+    <!-- BlueGREY color palette. -->
+    <!--==================================================-->
+
+    <Color x:Key="BlueGrey00">#ECEFF1</Color>       <!--Text: BLACK -->
+    <Color x:Key="BlueGrey01">#CFD8DC</Color>       <!--Text: BLACK -->
+    <Color x:Key="BlueGrey02">#B0BEC5</Color>       <!--Text: BLACK -->
+    <Color x:Key="BlueGrey03">#90A4AE</Color>       <!--Text: BLACK -->
+    <Color x:Key="BlueGrey04">#78909C</Color>       <!--Text: WHITE -->
+    <Color x:Key="BlueGrey05">#607D8B</Color>       <!--Text: WHITE -->
+    <Color x:Key="BlueGrey06">#546E7A</Color>       <!--Text: WHITE -->
+    <Color x:Key="BlueGrey07">#455A64</Color>       <!--Text: WHITE -->
+    <Color x:Key="BlueGrey08">#37474F</Color>       <!--Text: WHITE -->
+    <Color x:Key="BlueGrey09">#263238</Color>       <!--Text: WHITE -->
+
+</ResourceDictionary>

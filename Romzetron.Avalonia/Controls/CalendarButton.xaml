@@ -1,0 +1,159 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20" Background="{DynamicResource UiTheme00}">
+            <StackPanel Spacing="20">
+                <CalendarButton Margin="8" />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- CalendarButton control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type CalendarButton}" TargetType="CalendarButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="ClickMode" Value="Release" />
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForeground}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Panel container. -->
+                <!--==================================================-->
+
+                <Panel>
+
+                    <!--==================================================-->
+                    <!-- Background border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="Root" Background="{TemplateBinding Background}"
+                        BorderThickness="0"
+                        ClipToBounds="True">
+
+                        <!--==================================================-->
+                        <!-- Content. -->
+                        <!--==================================================-->
+
+                        <ContentControl
+                            x:Name="Content"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            FontSize="{TemplateBinding FontSize}"
+                            Margin="{TemplateBinding Padding}" />
+
+                    </Border>
+
+                </Panel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ Border#Root">
+            <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected">
+
+            <!--==================================================-->
+            <!-- Content selected foreground. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ ContentControl#Content">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Button selected background. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ Border#Root">
+                <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected and pointer-over state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:pointerover">
+
+                <Style Selector="^ /template/ Border#Root">
+                    <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelectedPointerOver}" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ Border#Root">
+            <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelectedPressed}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blackout state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled /template/ ContentControl#Content">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blackout state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:blackout /template/ ContentControl#Content">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundBlackout}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

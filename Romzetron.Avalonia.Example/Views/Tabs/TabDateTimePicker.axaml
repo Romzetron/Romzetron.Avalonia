@@ -1,0 +1,198 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabDateTimePicker">
+
+    <!--==================================================-->
+    <!-- Tab resources. -->
+    <!--==================================================-->
+
+    <UserControl.Resources>
+        <x:Double x:Key="LabelWidth">150</x:Double>
+        <x:Double x:Key="ControlWidth">300</x:Double>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- Standard date picker. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Standard Date Picker"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled date picker. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled Date Picker"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                IsEnabled="False"
+                Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Date picker with year hidden. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Month &amp; Day Only"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                Margin="4"
+                YearVisible="False" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Date picker with day hidden. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Month &amp; Year Only"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                Margin="4"
+                DayVisible="False" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Date picker with day and month hidden. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Year Only"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                Margin="4"
+                DayVisible="False"
+                MonthVisible="False" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Standard time picker. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Standard Time Picker"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Disabled time picker. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Disabled Time Picker"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                IsEnabled="False"
+                Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Time picker with minute increments. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Minute Increments"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                MinuteIncrement="15"
+                Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Time picker with 12 hour clock. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="12 Hour Clock"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                ClockIdentifier="12HourClock"
+                Margin="4" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Time picker with 24 hour clock. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="24 Hour Clock"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                ClockIdentifier="24HourClock"
+                Margin="4" />
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

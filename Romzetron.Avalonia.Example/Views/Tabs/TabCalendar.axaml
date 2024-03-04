@@ -1,0 +1,141 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCalendar">
+
+    <UserControl.Resources>
+        <Thickness x:Key="LabelMargin">8,8,8,0</Thickness>
+        <Thickness x:Key="CalendarMargin">8,4,8,8</Thickness>
+    </UserControl.Resources>
+
+    <!--==================================================-->
+    <!-- Scroll viewer. -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto"
+        Margin="4">
+
+        <!--==================================================-->
+        <!-- Layout grid. -->
+        <!--==================================================-->
+
+        <Grid
+            Margin="4"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            RowDefinitions="Auto,Auto,Auto,Auto"
+            ColumnDefinitions="Auto,Auto,Auto,Auto">
+
+            <!--==================================================-->
+            <!-- Standard calendar. SelectionMode: SingleDate. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="0"
+                Content="Selection Mode: Single"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="SingleSelectionCalendar"
+                Grid.Row="1" Grid.Column="0"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- SelectionMode: None. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="2" Grid.Column="0"
+                Content="Selection Mode: None"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="NoneSelectionCalendar"
+                Grid.Row="3" Grid.Column="0"
+                SelectionMode="None"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- SelectionMode: SingleRange. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="1"
+                Content="Selection Mode: Single Range"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="SingleRangeSelectionCalendar"
+                Grid.Row="1" Grid.Column="1"
+                SelectionMode="SingleRange"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- SelectionMode: MultipleRange. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="2" Grid.Column="1"
+                Content="Selection Mode: Multiple Range"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="MultipleRangeSelectionCalendar"
+                Grid.Row="3" Grid.Column="1"
+                SelectionMode="MultipleRange"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- Display specific date range. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="2"
+                Content="Display Specific Date Range"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="DisplayDatesCalendar"
+                Grid.Row="1" Grid.Column="2"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- Blackout dates. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="2" Grid.Column="2"
+                Content="Blackout Dates"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="BlackoutCalendar"
+                Grid.Row="3" Grid.Column="2"
+                Margin="{StaticResource CalendarMargin}" />
+
+            <!--==================================================-->
+            <!-- Disabled. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Row="0" Grid.Column="3"
+                Content="Disabled"
+                Margin="{StaticResource LabelMargin}" />
+
+            <Calendar
+                x:Name="DisabledCalendar"
+                Grid.Row="1" Grid.Column="3"
+                SelectionMode="MultipleRange"
+                IsEnabled="False"
+                Margin="{StaticResource CalendarMargin}" />
+
+        </Grid>
+
+    </ScrollViewer>
+
+</UserControl>

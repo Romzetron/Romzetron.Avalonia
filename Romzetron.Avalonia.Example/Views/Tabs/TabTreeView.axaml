@@ -1,0 +1,73 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabTreeView">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- TreeView container. -->
+        <!--==================================================-->
+
+        <Border
+            BorderBrush="{DynamicResource FlyoutBorderThemeBrush}"
+            Background="{DynamicResource FlyoutPresenterBackground}"
+            BorderThickness="1"
+            CornerRadius="4"
+            Width="200"
+            Height="300"
+            Padding="4">
+
+            <!--==================================================-->
+            <!-- TreeView example. -->
+            <!--==================================================-->
+
+            <TreeView>
+                <TreeViewItem Header="Level 1.1" IsExpanded="True">
+                    <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+                        <TreeViewItem Header="Level 3.1" />
+                        <TreeViewItem Header="Level 3.2" />
+                        <TreeViewItem Header="Level 3.3" />
+                        <TreeViewItem Header="Level 3.4" IsSelected="True">
+                            <TreeViewItem Header="Level 4.1" />
+                            <TreeViewItem Header="Level 4.2" />
+                            <TreeViewItem Header="Level 4.3">
+                                <TreeViewItem Header="Level 5.1">
+                                    <TreeViewItem Header="Level 6.1">
+                                        <TreeViewItem Header="Level 7.1">
+                                            <TreeViewItem Header="Level 8.1" />
+                                            <TreeViewItem Header="Level 8.2" />
+                                            <TreeViewItem Header="Level 8.3" />
+                                        </TreeViewItem>
+                                    </TreeViewItem>
+                                </TreeViewItem>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Level 4.4" IsEnabled="False">
+                                <TreeViewItem Header="Level 5.1" />
+                                <TreeViewItem Header="Level 5.2" />
+                                <TreeViewItem Header="Level 5.3" />
+                                <TreeViewItem Header="Level 5.4" />
+                            </TreeViewItem>
+                        </TreeViewItem>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Level 2.2" IsEnabled="False" />
+                </TreeViewItem>
+            </TreeView>
+
+        </Border>
+
+    </StackPanel>
+
+</UserControl>

@@ -1,0 +1,52 @@
+<!--==================================================-->
+<!-- UserControl style. -->
+<!--==================================================-->
+
+<Style
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Selector=":is(UserControl)">
+
+    <!--==================================================-->
+    <!-- Style resources. -->
+    <!--==================================================-->
+
+    <Style.Resources>
+
+        <!--==================================================-->
+        <!-- UserControl control theme. -->
+        <!--==================================================-->
+
+        <ControlTheme x:Key="RomzetronUserControl" TargetType="UserControl">
+            <Setter Property="Template">
+                <ControlTemplate>
+
+                    <!--==================================================-->
+                    <!-- UserControl content presenter. -->
+                    <!--==================================================-->
+
+                    <ContentPresenter
+                        Name="PART_ContentPresenter"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Content="{TemplateBinding Content}"
+                        Padding="{TemplateBinding Padding}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+
+                </ControlTemplate>
+            </Setter>
+        </ControlTheme>
+
+    </Style.Resources>
+
+    <!--==================================================-->
+    <!-- Property setters. -->
+    <!--==================================================-->
+
+    <Setter Property="Theme" Value="{StaticResource RomzetronUserControl}" />
+
+</Style>

@@ -1,0 +1,63 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- OverlayPopupHost control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type OverlayPopupHost}" TargetType="OverlayPopupHost">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Foreground" Value="{DynamicResource StandardFontForeground}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontStyle" Value="Normal" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Layout transform. -->
+                <!--==================================================-->
+
+                <LayoutTransformControl LayoutTransform="{TemplateBinding Transform}">
+
+                    <!--==================================================-->
+                    <!-- Visual layer manager. -->
+                    <!--==================================================-->
+
+                    <VisualLayerManager IsPopup="True">
+
+                        <!--==================================================-->
+                        <!-- Content. -->
+                        <!--==================================================-->
+
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            Background="{TemplateBinding Background}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            Padding="{TemplateBinding Padding}" />
+
+                    </VisualLayerManager>
+
+                </LayoutTransformControl>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

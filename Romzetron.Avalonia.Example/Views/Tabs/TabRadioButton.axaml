@@ -1,0 +1,578 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabRadioButton">
+
+    <!--==================================================-->
+    <!-- Tab layout. -->
+    <!--==================================================-->
+
+    <Grid
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        ColumnDefinitions="Auto,Auto,Auto,Auto"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+        <!--==================================================-->
+        <!-- Theme. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="0" Grid.Column="0"
+            Content="Theme"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Theme" />
+
+        <RadioButton
+            Grid.Row="0" Grid.Column="1"
+            Content="Theme"
+            Width="200"
+            Margin="4"
+            GroupName="Theme" />
+
+        <RadioButton
+            Grid.Row="0" Grid.Column="2"
+            Content="Theme (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="ThemeDisabled" />
+
+        <RadioButton
+            Grid.Row="0" Grid.Column="3"
+            Content="Theme (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="ThemeDisabled" />
+
+        <!--==================================================-->
+        <!-- Red. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="1" Grid.Column="0"
+            Theme.ColorTheme="Red"
+            Content="Red"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Red" />
+
+        <RadioButton
+            Grid.Row="1" Grid.Column="1"
+            Theme.ColorTheme="Red"
+            Content="Red"
+            Width="200"
+            Margin="4"
+            GroupName="Red" />
+
+        <RadioButton
+            Grid.Row="1" Grid.Column="2"
+            Theme.ColorTheme="Red"
+            Content="Red (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="RedDisabled" />
+
+        <RadioButton
+            Grid.Row="1" Grid.Column="3"
+            Theme.ColorTheme="Red"
+            Content="Red (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="RedDisabled" />
+
+        <!--==================================================-->
+        <!-- Pink. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="2" Grid.Column="0"
+            Theme.ColorTheme="Pink"
+            Content="Pink"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Pink" />
+
+        <RadioButton
+            Grid.Row="2" Grid.Column="1"
+            Theme.ColorTheme="Pink"
+            Content="Pink"
+            Width="200"
+            Margin="4"
+            GroupName="Pink" />
+
+        <RadioButton
+            Grid.Row="2" Grid.Column="2"
+            Theme.ColorTheme="Pink"
+            Content="Pink (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="PinkDisabled" />
+
+        <RadioButton
+            Grid.Row="2" Grid.Column="3"
+            Theme.ColorTheme="Pink"
+            Content="Pink (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="PinkDisabled" />
+
+        <!--==================================================-->
+        <!-- Purple. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="3" Grid.Column="0"
+            Theme.ColorTheme="Purple"
+            Content="Purple"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Purple" />
+
+        <RadioButton
+            Grid.Row="3" Grid.Column="1"
+            Theme.ColorTheme="Purple"
+            Content="Purple"
+            Width="200"
+            Margin="4"
+            GroupName="Purple" />
+
+        <RadioButton
+            Grid.Row="3" Grid.Column="2"
+            Theme.ColorTheme="Purple"
+            Content="Purple (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="PurpleDisabled" />
+
+        <RadioButton
+            Grid.Row="3" Grid.Column="3"
+            Theme.ColorTheme="Purple"
+            Content="Purple (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="PurpleDisabled" />
+
+        <!--==================================================-->
+        <!-- Deep Purple. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="4" Grid.Column="0"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="DeepPurple" />
+
+        <RadioButton
+            Grid.Row="4" Grid.Column="1"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple"
+            Width="200"
+            Margin="4"
+            GroupName="DeepPurple" />
+
+        <RadioButton
+            Grid.Row="4" Grid.Column="2"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="DeepPurpleDisabled" />
+
+        <RadioButton
+            Grid.Row="4" Grid.Column="3"
+            Theme.ColorTheme="DeepPurple"
+            Content="Deep Purple (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="DeepPurpleDisabled" />
+
+        <!--==================================================-->
+        <!-- Indigo. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="5" Grid.Column="0"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Indigo" />
+
+        <RadioButton
+            Grid.Row="5" Grid.Column="1"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo"
+            Width="200"
+            Margin="4"
+            GroupName="Indigo" />
+
+        <RadioButton
+            Grid.Row="5" Grid.Column="2"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="IndigoDisabled" />
+
+        <RadioButton
+            Grid.Row="5" Grid.Column="3"
+            Theme.ColorTheme="Indigo"
+            Content="Indigo (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="IndigoDisabled" />
+
+        <!--==================================================-->
+        <!-- Blue. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="6" Grid.Column="0"
+            Theme.ColorTheme="Blue"
+            Content="Blue"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Blue" />
+
+        <RadioButton
+            Grid.Row="6" Grid.Column="1"
+            Theme.ColorTheme="Blue"
+            Content="Blue"
+            Width="200"
+            Margin="4"
+            GroupName="Blue" />
+
+        <RadioButton
+            Grid.Row="6" Grid.Column="2"
+            Theme.ColorTheme="Blue"
+            Content="Blue (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BlueDisabled" />
+
+        <RadioButton
+            Grid.Row="6" Grid.Column="3"
+            Theme.ColorTheme="Blue"
+            Content="Blue (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BlueDisabled" />
+
+        <!--==================================================-->
+        <!-- Teal. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="7" Grid.Column="0"
+            Theme.ColorTheme="Teal"
+            Content="Teal"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Teal" />
+
+        <RadioButton
+            Grid.Row="7" Grid.Column="1"
+            Theme.ColorTheme="Teal"
+            Content="Teal"
+            Width="200"
+            Margin="4"
+            GroupName="Teal" />
+
+        <RadioButton
+            Grid.Row="7" Grid.Column="2"
+            Theme.ColorTheme="Teal"
+            Content="Teal (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="TealDisabled" />
+
+        <RadioButton
+            Grid.Row="7" Grid.Column="3"
+            Theme.ColorTheme="Teal"
+            Content="Teal (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="TealDisabled" />
+
+        <!--==================================================-->
+        <!-- Green. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="8" Grid.Column="0"
+            Theme.ColorTheme="Green"
+            Content="Green"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Green" />
+
+        <RadioButton
+            Grid.Row="8" Grid.Column="1"
+            Theme.ColorTheme="Green"
+            Content="Green"
+            Width="200"
+            Margin="4"
+            GroupName="Green" />
+
+        <RadioButton
+            Grid.Row="8" Grid.Column="2"
+            Theme.ColorTheme="Green"
+            Content="Green (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="GreenDisabled" />
+
+        <RadioButton
+            Grid.Row="8" Grid.Column="3"
+            Theme.ColorTheme="Green"
+            Content="Green (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="GreenDisabled" />
+
+        <!--==================================================-->
+        <!-- Amber. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="9" Grid.Column="0"
+            Theme.ColorTheme="Amber"
+            Content="Amber"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Amber" />
+
+        <RadioButton
+            Grid.Row="9" Grid.Column="1"
+            Theme.ColorTheme="Amber"
+            Content="Amber"
+            Width="200"
+            Margin="4"
+            GroupName="Amber" />
+
+        <RadioButton
+            Grid.Row="9" Grid.Column="2"
+            Theme.ColorTheme="Amber"
+            Content="Amber (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="AmberDisabled" />
+
+        <RadioButton
+            Grid.Row="9" Grid.Column="3"
+            Theme.ColorTheme="Amber"
+            Content="Amber (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="AmberDisabled" />
+
+        <!--==================================================-->
+        <!-- Orange. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="10" Grid.Column="0"
+            Theme.ColorTheme="Orange"
+            Content="Orange"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Orange" />
+
+        <RadioButton
+            Grid.Row="10" Grid.Column="1"
+            Theme.ColorTheme="Orange"
+            Content="Orange"
+            Width="200"
+            Margin="4"
+            GroupName="Orange" />
+
+        <RadioButton
+            Grid.Row="10" Grid.Column="2"
+            Theme.ColorTheme="Orange"
+            Content="Orange (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="OrangeDisabled" />
+
+        <RadioButton
+            Grid.Row="10" Grid.Column="3"
+            Theme.ColorTheme="Orange"
+            Content="Orange (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="OrangeDisabled" />
+
+        <!--==================================================-->
+        <!-- Deep Orange. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="11" Grid.Column="0"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="DeepOrange" />
+
+        <RadioButton
+            Grid.Row="11" Grid.Column="1"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange"
+            Width="200"
+            Margin="4"
+            GroupName="DeepOrange" />
+
+        <RadioButton
+            Grid.Row="11" Grid.Column="2"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="DeepOrangeDisabled" />
+
+        <RadioButton
+            Grid.Row="11" Grid.Column="3"
+            Theme.ColorTheme="DeepOrange"
+            Content="Deep Orange (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="DeepOrangeDisabled" />
+
+        <!--==================================================-->
+        <!-- Brown. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="12" Grid.Column="0"
+            Theme.ColorTheme="Brown"
+            Content="Brown"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="Brown" />
+
+        <RadioButton
+            Grid.Row="12" Grid.Column="1"
+            Theme.ColorTheme="Brown"
+            Content="Brown"
+            Width="200"
+            Margin="4"
+            GroupName="Brown" />
+
+        <RadioButton
+            Grid.Row="12" Grid.Column="2"
+            Theme.ColorTheme="Brown"
+            Content="Brown (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BrownDisabled" />
+
+        <RadioButton
+            Grid.Row="12" Grid.Column="3"
+            Theme.ColorTheme="Brown"
+            Content="Brown (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BrownDisabled" />
+
+        <!--==================================================-->
+        <!-- Blue Grey button. -->
+        <!--==================================================-->
+
+        <RadioButton
+            Grid.Row="13" Grid.Column="0"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey"
+            IsChecked="True"
+            Width="200"
+            Margin="4"
+            GroupName="BlueGrey" />
+
+        <RadioButton
+            Grid.Row="13" Grid.Column="1"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey"
+            Width="200"
+            Margin="4"
+            GroupName="BlueGrey" />
+
+        <RadioButton
+            Grid.Row="13" Grid.Column="2"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey (Disabled)"
+            IsChecked="True"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BlueGreyDisabled" />
+
+        <RadioButton
+            Grid.Row="13" Grid.Column="3"
+            Theme.ColorTheme="BlueGrey"
+            Content="Blue Grey (Disabled)"
+            IsEnabled="False"
+            Width="200"
+            Margin="4"
+            GroupName="BlueGreyDisabled" />
+
+    </Grid>
+
+</UserControl>

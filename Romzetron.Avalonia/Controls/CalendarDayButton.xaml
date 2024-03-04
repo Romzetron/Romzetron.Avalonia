@@ -1,0 +1,297 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Padding="20" Background="{DynamicResource UiTheme00}">
+            <StackPanel Spacing="20">
+                <CalendarDayButton Content="31" />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- CalendarDayButton control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type CalendarDayButton}" TargetType="CalendarDayButton">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="ClickMode" Value="Release" />
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForeground}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Tag" Value="{Binding $parent[Calendar].SelectionMode}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Panel container. -->
+                <!--==================================================-->
+
+                <Panel>
+
+                    <!--==================================================-->
+                    <!-- Background border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        x:Name="Root" Background="{TemplateBinding Background}"
+                        BorderThickness="0"
+                        ClipToBounds="True">
+
+                        <Grid>
+
+                            <!--==================================================-->
+                            <!-- Today highlight ellipse. -->
+                            <!--==================================================-->
+
+                            <Ellipse
+                                x:Name="TodayHighlight"
+                                IsVisible="False"
+                                Height="30"
+                                Width="30" />
+
+                            <!--==================================================-->
+                            <!-- Content. -->
+                            <!--==================================================-->
+
+                            <ContentControl
+                                x:Name="Content"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Content="{TemplateBinding Content}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                FontSize="{TemplateBinding FontSize}"
+                                Margin="{TemplateBinding Padding}" />
+
+                        </Grid>
+
+                    </Border>
+
+                </Panel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+        <!--==================================================-->
+        <!-- Pointer-over state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:pointerover /template/ Border#Root">
+            <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPointerOver}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Today style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:today">
+
+            <!--==================================================-->
+            <!-- Content today state. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ ContentControl#Content">
+                <Setter Property="FontFamily" Value="{DynamicResource FontInterExtraBold}" />
+                <Setter Property="FontWeight" Value="Bold" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Highlight circle visible. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ Ellipse#TodayHighlight">
+                <Setter Property="IsVisible" Value="True" />
+                <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlight}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Highlight circle pointer-over state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:pointerover">
+
+                <Style Selector="^ /template/ Ellipse#TodayHighlight">
+                    <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightPointerOver}" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Selected state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:selected">
+
+            <!--==================================================-->
+            <!-- Content selected foreground. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ ContentControl#Content">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Button selected background. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ Border#Root">
+                <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Highlight ellipse selected background. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ Ellipse#TodayHighlight">
+                <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightSelected}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected and pointer-over state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:pointerover">
+
+                <Style Selector="^ /template/ Border#Root">
+                    <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelectedPointerOver}" />
+                </Style>
+
+                <Style Selector="^:today /template/ Ellipse#TodayHighlight">
+                    <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightSelectedPointerOver}" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Pressed state. -->
+        <!--==================================================-->
+
+        <Style Selector="^[Tag=SingleDate][Tag=SingleRange][Tag=MultipleRange]:pressed">
+
+            <Style Selector="^ /template/ Border#Root">
+                <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelectedPressed}" />
+            </Style>
+
+            <Style Selector="^:today /template/ Ellipse#TodayHighlight">
+                <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightSelectedPressed}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Inactive state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:inactive">
+
+            <Style Selector="^ /template/ Border#Root">
+                <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundOutOfScope}" />
+            </Style>
+
+            <Style Selector="^ /template/ ContentControl#Content">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundOutOfScope}" />
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Disabled state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:disabled">
+
+            <!--==================================================-->
+            <!-- Disable foreground. -->
+            <!--==================================================-->
+
+            <Style Selector="^ /template/ ContentControl#Content">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+            </Style>
+
+            <!--==================================================-->
+            <!-- Selected and disabled state. -->
+            <!--==================================================-->
+
+            <Style Selector="^:selected">
+
+                <!--==================================================-->
+                <!-- Selected and disabled foreground. -->
+                <!--==================================================-->
+
+                <Style Selector="^ /template/ ContentControl#Content">
+                    <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelectedDisabled}" />
+                </Style>
+
+                <!--==================================================-->
+                <!-- Button selected and disabled background. -->
+                <!--==================================================-->
+
+                <Style Selector="^ /template/ Border#Root">
+                    <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundSelectedDisabled}" />
+                </Style>
+
+                <!--==================================================-->
+                <!-- Highlight ellipse selected and disabled -->
+                <!-- background. -->
+                <!--==================================================-->
+
+                <Style Selector="^ /template/ Ellipse#TodayHighlight">
+                    <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightSelectedDisabled}" />
+                </Style>
+
+                <!--==================================================-->
+                <!-- Selected, disabled, and today state. -->
+                <!--==================================================-->
+
+                <Style Selector="^:today /template/ Ellipse#TodayHighlight">
+                    <Setter Property="Fill" Value="{DynamicResource CalendarButtonBackgroundTodayHighlightSelectedDisabled}" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Blackout state. -->
+        <!--==================================================-->
+
+        <Style Selector="^:blackout /template/ ContentControl#Content">
+            <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundBlackout}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

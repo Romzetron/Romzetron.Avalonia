@@ -1,0 +1,95 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- Window template. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type Window}" TargetType="Window">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+        <Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource WindowForeground}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Main panel. -->
+                <!--==================================================-->
+
+                <Panel>
+
+                    <!--==================================================-->
+                    <!-- Transparency fallback. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Name="PART_TransparencyFallback"
+                        IsHitTestVisible="False" />
+
+                    <!--==================================================-->
+                    <!-- Background. -->
+                    <!--==================================================-->
+
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        IsHitTestVisible="False" />
+
+                    <!--==================================================-->
+                    <!-- Decoration margin. -->
+                    <!--==================================================-->
+
+                    <Panel
+                        Background="Transparent"
+                        Margin="{TemplateBinding WindowDecorationMargin}" />
+
+                    <!--==================================================-->
+                    <!-- Windows layout. -->
+                    <!--==================================================-->
+
+                    <VisualLayerManager>
+
+                        <!--==================================================-->
+                        <!-- Title bar. -->
+                        <!--==================================================-->
+
+                        <VisualLayerManager.ChromeOverlayLayer>
+                            <TitleBar />
+                        </VisualLayerManager.ChromeOverlayLayer>
+
+                        <!--==================================================-->
+                        <!-- Window content. -->
+                        <!--==================================================-->
+
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                    </VisualLayerManager>
+
+                </Panel>
+
+            </ControlTemplate>
+
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>
