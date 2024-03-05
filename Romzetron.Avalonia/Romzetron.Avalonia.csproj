@@ -4,8 +4,11 @@
         <Copyright>Copyright © 2024 Romzetron Software</Copyright>
         <Company>Romzetron Software</Company>
         <Title>Romzetron Avalonia Theme</Title>
-        <RepositoryUrl>https://github.com/Romzetron/Romzetron.Avalonia</RepositoryUrl>
-        <PackageLicenseUrl>https://github.com/Romzetron/Romzetron.Avalonia/LICENSE.md</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
+        <PackageIcon>RomzetronLogo.png</PackageIcon>
+        <Description>Theme library for Avalonia.</Description>
+        <PackageTags>avalonia, ui, theme</PackageTags>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <Version>11.0.9.0</Version>
         <AssemblyVersion>11.0.9.0</AssemblyVersion>
         <FileVersion>11.0.9.0</FileVersion>
@@ -17,22 +20,29 @@
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <TrimmerSingleWarn>false</TrimmerSingleWarn>
         <IsTrimmable>true</IsTrimmable>
-        <PackageIcon>RomzetronLogo.ico</PackageIcon>
-        
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.9" />
-        <AvaloniaResource Include="**/*.xaml" />
-        <AvaloniaResource Include="**/*.ttf" />
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.0.9" />
+        <PackageReference Include="Avalonia" Version="11.0.9"/>
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.0.9"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="RomzetronLogo.ico">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
+        <None Update="RomzetronLogo.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
+            <Link>LICENSE.md</Link>
+        </Content>
+        <Content Include="..\README.md">
+            <Link>README.md</Link>
+        </Content>
     </ItemGroup>
 
 </Project>
