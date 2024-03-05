@@ -13,6 +13,7 @@
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <PackageIcon>RomzetronLogo.ico</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -129,5 +130,12 @@
           <DependentUpon>TabGridSplitter.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="RomzetronLogo.ico">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 </Project>

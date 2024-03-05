@@ -17,6 +17,7 @@
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <TrimmerSingleWarn>false</TrimmerSingleWarn>
         <IsTrimmable>true</IsTrimmable>
+        <PackageIcon>RomzetronLogo.ico</PackageIcon>
         
     </PropertyGroup>
 
@@ -25,6 +26,13 @@
         <AvaloniaResource Include="**/*.xaml" />
         <AvaloniaResource Include="**/*.ttf" />
         <PackageReference Include="Avalonia.Diagnostics" Version="11.0.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="RomzetronLogo.ico">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
