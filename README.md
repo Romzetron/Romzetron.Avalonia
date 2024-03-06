@@ -3,16 +3,13 @@
 [![GitHub License](https://img.shields.io/github/license/Romzetron/Romzetron.Avalonia)](https://github.com/Romzetron/Romzetron.Avalonia/blob/main/LICENSE.md)
 [![NuGet Version](https://img.shields.io/nuget/v/Romzetron.Avalonia)](https://www.nuget.org/packages/Romzetron.Avalonia)
 
-[Romzetron.Avalonia](https://github.com/Romzetron/Romzetron.Avalonia) is a UI theme library designed to work with the [Avalonia](https://avaloniaui.net) cross-platform UI framework.
-Light and dark modes are supported, and one of several color themes can be chosen that apply to most controls. Some of the controls can have their color set explicitly to override
-the theme color.
+[Romzetron.Avalonia](https://github.com/Romzetron/Romzetron.Avalonia) is a UI theme library designed to work with the [Avalonia](https://avaloniaui.net) cross-platform UI framework. Light and dark modes are supported, and one of several color themes can be chosen that apply to most controls. Some of the controls can have their color set explicitly to override the theme color.
 
 ![](https://raw.githubusercontent.com/Romzetron/Romzetron.Avalonia/main/Images/RometronAvaloniaExample.png)
 
 ## Installation
 
-The [Romzetron.Avalonia](https://github.com/Romzetron/Romzetron.Avalonia) theme library is available on [nuget.org](https://www.nuget.org/packages/Romzetron.Avalonia) and can be added to your
-project with using the **Nuget Package Manager** within **Visual Studio** or **Jetbrains Rider**, or with the following terminal command:
+The [Romzetron.Avalonia](https://github.com/Romzetron/Romzetron.Avalonia) theme library is available on [nuget.org](https://www.nuget.org/packages/Romzetron.Avalonia) and can be added to your project with using the **Nuget Package Manager** within **Visual Studio** or **Jetbrains Rider**, or with the following terminal command:
 
 ```bash
 dotnet add package Romzetron.Avalonia
@@ -74,5 +71,4 @@ The theme supports dark and light variations that can be set explicitly or to fo
 
 ## Example Application
 
-An example application is included in the solution that demonstrates the look & feel of most of the controls. I may add more detail in the front end of the example application
-that explains how to customize the controls, but for now the best method to figure out how things work is to look at the source code.
+An example application is included in the solution that demonstrates the look & feel of most of the controls. I may add more detail in the front end of the example application that explains how to customize the controls, but for now the best method to figure out how things work is to look at the source code.
