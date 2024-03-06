@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Romzetron/Romzetron.Avalonia/main/Romzetron.Avalonia.Example/RomzetronLogo.png" width="28" height="28"/> Romzetron.Avalonia Theme Library
+# Romzetron.Avalonia Theme Library
 
 [![GitHub License](https://img.shields.io/github/license/Romzetron/Romzetron.Avalonia)](https://github.com/Romzetron/Romzetron.Avalonia/blob/main/LICENSE.md)
 [![NuGet Version](https://img.shields.io/nuget/v/Romzetron.Avalonia)](https://www.nuget.org/packages/Romzetron.Avalonia)
