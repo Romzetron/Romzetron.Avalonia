@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabButtonSpinner">
 
@@ -15,7 +16,7 @@
         HorizontalAlignment="Left"
         VerticalAlignment="Top"
         Spacing="8"
-        Width="200"
+        Width="250"
         Margin="8">
 
         <!--==================================================-->
@@ -81,6 +82,54 @@
             ButtonSpinnerLocation="Left"
             AllowSpin="{Binding #AllowSpinCheck.IsChecked}"
             ShowButtonSpinner="{Binding #ShowSpinCheck.IsChecked}">
+
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="Apple" />
+
+        </ButtonSpinner>
+
+        <!--==================================================-->
+        <!-- Validation error. -->
+        <!--==================================================-->
+
+        <ButtonSpinner
+            MinHeight="30"
+            Spin="OnSpin"
+            AllowSpin="{Binding #AllowSpinCheck.IsChecked}"
+            ShowButtonSpinner="{Binding #ShowSpinCheck.IsChecked}">
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
+
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="Apple" />
+
+        </ButtonSpinner>
+
+        <!--==================================================-->
+        <!-- Validation error tooltip. -->
+        <!--==================================================-->
+
+        <ButtonSpinner
+            MinHeight="30"
+            Spin="OnSpin"
+            AllowSpin="{Binding #AllowSpinCheck.IsChecked}"
+            ShowButtonSpinner="{Binding #ShowSpinCheck.IsChecked}">
+
+            <ButtonSpinner.Styles>
+                <Style Selector="DataValidationErrors">
+                    <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                </Style>
+            </ButtonSpinner.Styles>
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
 
             <TextBlock
                 HorizontalAlignment="Center"

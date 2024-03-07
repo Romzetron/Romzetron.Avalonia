@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabAutoCompleteBox">
 
     <!--==================================================-->
@@ -94,17 +95,47 @@
 
         </UniformGrid>
 
-        <!-- <StackPanel> -->
-        <!--      -->
-        <!--     <TextBlock Text="With Validation Errors" /> -->
-        <!--      -->
-        <!--     <AutoCompleteBox Name="ValidationErrors" FilterMode="None"> -->
-        <!--         <DataValidationErrors.Error> -->
-        <!--             <system:Exception /> -->
-        <!--         </DataValidationErrors.Error> -->
-        <!--     </AutoCompleteBox> -->
-        <!--      -->
-        <!-- </StackPanel> -->
+        <!--==================================================-->
+        <!-- Validation errors. -->
+        <!--==================================================-->
+
+        <StackPanel>
+
+            <TextBlock Text="With Validation Errors" Margin="0,8" />
+
+            <AutoCompleteBox Name="ValidationErrors" FilterMode="None">
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </AutoCompleteBox>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Validation errors tooltip. -->
+        <!--==================================================-->
+
+        <StackPanel>
+
+            <TextBlock Text="With Validation Errors Tooltip" Margin="0,4" />
+
+            <AutoCompleteBox Name="ValidationErrorsTooltip" FilterMode="None">
+
+                <AutoCompleteBox.Styles>
+                    <Style Selector="DataValidationErrors">
+                        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                    </Style>
+                </AutoCompleteBox.Styles>
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </AutoCompleteBox>
+
+        </StackPanel>
 
     </StackPanel>
 

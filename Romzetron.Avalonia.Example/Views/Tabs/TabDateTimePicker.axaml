@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabDateTimePicker">
 
@@ -11,8 +12,9 @@
     <!--==================================================-->
 
     <UserControl.Resources>
-        <x:Double x:Key="LabelWidth">150</x:Double>
-        <x:Double x:Key="ControlWidth">300</x:Double>
+        <x:Double x:Key="LabelWidth">160</x:Double>
+        <x:Double x:Key="DatePickerWidth">330</x:Double>
+        <x:Double x:Key="TimePickerWidth">280</x:Double>
     </UserControl.Resources>
 
     <!--==================================================-->
@@ -37,7 +39,9 @@
                 Content="Standard Date Picker"
                 Width="{StaticResource LabelWidth}" />
 
-            <DatePicker Margin="4" />
+            <DatePicker
+                Margin="4"
+                Width="{StaticResource DatePickerWidth}" />
 
         </StackPanel>
 
@@ -54,6 +58,7 @@
 
             <DatePicker
                 IsEnabled="False"
+                Width="{StaticResource DatePickerWidth}"
                 Margin="4" />
 
         </StackPanel>
@@ -71,6 +76,7 @@
 
             <DatePicker
                 Margin="4"
+                Width="{StaticResource DatePickerWidth}"
                 YearVisible="False" />
 
         </StackPanel>
@@ -88,6 +94,7 @@
 
             <DatePicker
                 Margin="4"
+                Width="{StaticResource DatePickerWidth}"
                 DayVisible="False" />
 
         </StackPanel>
@@ -105,8 +112,61 @@
 
             <DatePicker
                 Margin="4"
+                Width="{StaticResource DatePickerWidth}"
                 DayVisible="False"
                 MonthVisible="False" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Date picker validation errors. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Errors"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                Margin="4"
+                Width="{StaticResource DatePickerWidth}">
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </DatePicker>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Date picker validation errors tooltip. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Errors Tooltip"
+                Width="{StaticResource LabelWidth}" />
+
+            <DatePicker
+                Margin="4"
+                Width="{StaticResource DatePickerWidth}">
+
+                <DatePicker.Styles>
+                    <Style Selector="DataValidationErrors">
+                        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                    </Style>
+                </DatePicker.Styles>
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </DatePicker>
 
         </StackPanel>
 
@@ -121,7 +181,9 @@
                 Content="Standard Time Picker"
                 Width="{StaticResource LabelWidth}" />
 
-            <TimePicker Margin="4" />
+            <TimePicker
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}" />
 
         </StackPanel>
 
@@ -138,7 +200,8 @@
 
             <TimePicker
                 IsEnabled="False"
-                Margin="4" />
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}" />
 
         </StackPanel>
 
@@ -155,7 +218,8 @@
 
             <TimePicker
                 MinuteIncrement="15"
-                Margin="4" />
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}" />
 
         </StackPanel>
 
@@ -172,7 +236,8 @@
 
             <TimePicker
                 ClockIdentifier="12HourClock"
-                Margin="4" />
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}" />
 
         </StackPanel>
 
@@ -189,7 +254,60 @@
 
             <TimePicker
                 ClockIdentifier="24HourClock"
-                Margin="4" />
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Time picker validation errors. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Errors"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}">
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </TimePicker>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Time picker validation errors tooltip. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Errors"
+                Width="{StaticResource LabelWidth}" />
+
+            <TimePicker
+                Margin="4"
+                Width="{StaticResource TimePickerWidth}">
+
+                <TimePicker.Styles>
+                    <Style Selector="DataValidationErrors">
+                        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                    </Style>
+                </TimePicker.Styles>
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </TimePicker>
 
         </StackPanel>
 

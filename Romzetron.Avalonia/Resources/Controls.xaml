@@ -26,6 +26,7 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ComboBoxItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ContentControl.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ContextMenu.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DataValidationErrors.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DateTimePickerShared.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DatePicker.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DropDownButton.xaml" />
@@ -77,7 +78,6 @@
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/AdornerLayer.xaml" /> -->
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Carousel.xaml" /> -->
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/SplitView.xaml" /> -->
-                <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DataValidationErrors.xaml" /> -->
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ManagedFileChooser.xaml" /> -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

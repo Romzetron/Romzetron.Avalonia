@@ -13,7 +13,7 @@
 
     <UserControl.Resources>
         <x:Double x:Key="LabelWidth">200</x:Double>
-        <x:Double x:Key="CalendarDatePickerWidth">200</x:Double>
+        <x:Double x:Key="CalendarDatePickerWidth">250</x:Double>
     </UserControl.Resources>
 
     <!--==================================================-->
@@ -210,6 +210,60 @@
                 IsEnabled="False"
                 SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
                 Width="{StaticResource CalendarDatePickerWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Validation error example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Error"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                Width="{StaticResource CalendarDatePickerWidth}">
+
+                <DataValidationErrors.Error>
+                    <sys:Exception />
+                </DataValidationErrors.Error>
+
+            </CalendarDatePicker>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Validation error tooltip example. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Error Tooltip"
+                Width="{StaticResource LabelWidth}" />
+
+            <CalendarDatePicker
+                Margin="4"
+                SelectedDate="{Binding Source={x:Static sys:DateTime.Today}, Path=Date}"
+                Width="{StaticResource CalendarDatePickerWidth}">
+
+                <CalendarDatePicker.Styles>
+                    <Style Selector="DataValidationErrors">
+                        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                    </Style>
+                </CalendarDatePicker.Styles>
+
+                <DataValidationErrors.Error>
+                    <sys:Exception />
+                </DataValidationErrors.Error>
+
+            </CalendarDatePicker>
 
         </StackPanel>
 

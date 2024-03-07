@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     mc:Ignorable="d"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabTextBox">
 
@@ -12,7 +13,7 @@
 
     <UserControl.Resources>
         <x:Double x:Key="LabelWidth">150</x:Double>
-        <x:Double x:Key="TextBoxWidth">200</x:Double>
+        <x:Double x:Key="TextBoxWidth">350</x:Double>
     </UserControl.Resources>
 
     <!--==================================================-->
@@ -256,6 +257,62 @@
                 Height="100"
                 VerticalContentAlignment="Top"
                 Width="{StaticResource TextBoxWidth}" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Validation error. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Error"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="An error? That's unpossible."
+                AcceptsReturn="True"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}">
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </TextBox>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Validation error tooltip. -->
+        <!--==================================================-->
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label
+                VerticalAlignment="Center"
+                Content="Validation Error Tooltip"
+                Width="{StaticResource LabelWidth}" />
+
+            <TextBox
+                Text="This data is the opposite of not incorrect."
+                AcceptsReturn="True"
+                Margin="4"
+                Width="{StaticResource TextBoxWidth}">
+
+                <TextBox.Styles>
+                    <Style Selector="DataValidationErrors">
+                        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                    </Style>
+                </TextBox.Styles>
+
+                <DataValidationErrors.Error>
+                    <system:Exception />
+                </DataValidationErrors.Error>
+
+            </TextBox>
 
         </StackPanel>
 

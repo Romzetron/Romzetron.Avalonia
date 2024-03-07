@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:DataType="tabs:TabComboBoxViewModel"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabComboBox">
@@ -77,6 +78,50 @@
             Content="WrapSelection"
             DataContext="{Binding}"
             IsChecked="{Binding WrapSelection}" />
+
+        <!--==================================================-->
+        <!-- Validation error example. -->
+        <!--==================================================-->
+
+        <ComboBox
+            Width="200"
+            PlaceholderText="Select Item">
+
+            <ComboBoxItem>Inline Item 1</ComboBoxItem>
+            <ComboBoxItem>Inline Item 2</ComboBoxItem>
+            <ComboBoxItem>Inline Item 3</ComboBoxItem>
+            <ComboBoxItem>Inline Item 4</ComboBoxItem>
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Validation error tooltip example. -->
+        <!--==================================================-->
+
+        <ComboBox
+            Width="200"
+            PlaceholderText="Select Item">
+
+            <ComboBoxItem>Inline Item 1</ComboBoxItem>
+            <ComboBoxItem>Inline Item 2</ComboBoxItem>
+            <ComboBoxItem>Inline Item 3</ComboBoxItem>
+            <ComboBoxItem>Inline Item 4</ComboBoxItem>
+
+            <ComboBox.Styles>
+                <Style Selector="DataValidationErrors">
+                    <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                </Style>
+            </ComboBox.Styles>
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
+
+        </ComboBox>
 
     </StackPanel>
 

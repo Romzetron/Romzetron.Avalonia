@@ -1,6 +1,7 @@
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     x:ClassModifier="internal">
 
     <!--==================================================-->
@@ -17,6 +18,11 @@
                 <TextBox Watermark="Watermark" />
                 <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True" />
                 <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True">Content</TextBox>
+                <TextBox Text="Error">
+                    <DataValidationErrors.Error>
+                        <system:Exception />
+                    </DataValidationErrors.Error>
+                </TextBox>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -189,149 +195,150 @@
             <ControlTemplate TargetType="TextBox">
 
                 <!--==================================================-->
-                <!-- Data validation container. -->
+                <!-- Data validation errors. -->
                 <!--==================================================-->
 
-                <!-- <DataValidationErrors> -->
-
-                <!--==================================================-->
-                <!-- Main layout panel. -->
-                <!--==================================================-->
-
-                <Panel>
+                <DataValidationErrors>
 
                     <!--==================================================-->
-                    <!-- Main background border. -->
+                    <!-- Main layout panel. -->
                     <!--==================================================-->
 
-                    <Border
-                        Name="PART_BorderElement"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        MinWidth="{TemplateBinding MinWidth}"
-                        MinHeight="{TemplateBinding MinHeight}" />
-
-                    <!--==================================================-->
-                    <!-- TextBox content container. -->
-                    <!--==================================================-->
-
-                    <Border Margin="{TemplateBinding BorderThickness}">
+                    <Panel>
 
                         <!--==================================================-->
-                        <!-- Layout grid. -->
+                        <!-- Main background border. -->
                         <!--==================================================-->
 
-                        <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Border
+                            Name="PART_BorderElement"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            MinHeight="{TemplateBinding MinHeight}" />
+
+                        <!--==================================================-->
+                        <!-- TextBox content container. -->
+                        <!--==================================================-->
+
+                        <Border Margin="{TemplateBinding BorderThickness}">
 
                             <!--==================================================-->
-                            <!-- Left content. -->
+                            <!-- Layout grid. -->
                             <!--==================================================-->
 
-                            <ContentPresenter
-                                Grid.Column="0"
-                                Content="{TemplateBinding InnerLeftContent}" />
-
-                            <!--==================================================-->
-                            <!-- Center content. -->
-                            <!--==================================================-->
-
-                            <DockPanel
-                                x:Name="PART_InnerDockPanel"
-                                Grid.Column="1"
-                                Cursor="IBeam"
-                                Margin="{TemplateBinding Padding}">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
 
                                 <!--==================================================-->
-                                <!-- Floating watermark. -->
+                                <!-- Left content. -->
                                 <!--==================================================-->
 
-                                <TextBlock
-                                    Name="PART_FloatingWatermark"
-                                    Foreground="{DynamicResource TextBoxWatermarkForeground}"
-                                    FontSize="{TemplateBinding FontSize}"
-                                    IsVisible="False"
-                                    Text="{TemplateBinding Watermark}"
-                                    DockPanel.Dock="Top" />
+                                <ContentPresenter
+                                    Grid.Column="0"
+                                    Content="{TemplateBinding InnerLeftContent}" />
 
                                 <!--==================================================-->
-                                <!-- Content scroll viewer. -->
+                                <!-- Center content. -->
                                 <!--==================================================-->
 
-                                <ScrollViewer
-                                    Name="PART_ScrollViewer"
-                                    HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-                                    VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
-                                    IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-                                    AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
-                                    BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
+                                <DockPanel
+                                    x:Name="PART_InnerDockPanel"
+                                    Grid.Column="1"
+                                    Cursor="IBeam"
+                                    Margin="{TemplateBinding Padding}">
 
                                     <!--==================================================-->
-                                    <!-- Content panel. -->
+                                    <!-- Floating watermark. -->
                                     <!--==================================================-->
 
-                                    <Panel>
+                                    <TextBlock
+                                        Name="PART_FloatingWatermark"
+                                        Foreground="{DynamicResource TextBoxWatermarkForeground}"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        IsVisible="False"
+                                        Text="{TemplateBinding Watermark}"
+                                        DockPanel.Dock="Top" />
+
+                                    <!--==================================================-->
+                                    <!-- Content scroll viewer. -->
+                                    <!--==================================================-->
+
+                                    <ScrollViewer
+                                        Name="PART_ScrollViewer"
+                                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                                        AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                                        BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
 
                                         <!--==================================================-->
-                                        <!-- Watermark. -->
+                                        <!-- Content panel. -->
                                         <!--==================================================-->
 
-                                        <TextBlock
-                                            Name="PART_Watermark"
-                                            Opacity="0.3"
-                                            Text="{TemplateBinding Watermark}"
-                                            TextAlignment="{TemplateBinding TextAlignment}"
-                                            TextWrapping="{TemplateBinding TextWrapping}"
-                                            IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                        <Panel>
 
-                                        <!--==================================================-->
-                                        <!-- Content. -->
-                                        <!--==================================================-->
+                                            <!--==================================================-->
+                                            <!-- Watermark. -->
+                                            <!--==================================================-->
 
-                                        <TextPresenter
-                                            Name="PART_TextPresenter"
-                                            Text="{TemplateBinding Text, Mode=TwoWay}"
-                                            CaretIndex="{TemplateBinding CaretIndex}"
-                                            SelectionStart="{TemplateBinding SelectionStart}"
-                                            SelectionEnd="{TemplateBinding SelectionEnd}"
-                                            TextAlignment="{TemplateBinding TextAlignment}"
-                                            TextWrapping="{TemplateBinding TextWrapping}"
-                                            LineHeight="{TemplateBinding LineHeight}"
-                                            LetterSpacing="{TemplateBinding LetterSpacing}"
-                                            PasswordChar="{TemplateBinding PasswordChar}"
-                                            RevealPassword="{TemplateBinding RevealPassword}"
-                                            SelectionBrush="{TemplateBinding SelectionBrush}"
-                                            SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                                            CaretBrush="{TemplateBinding CaretBrush}"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                            <TextBlock
+                                                Name="PART_Watermark"
+                                                Opacity="0.3"
+                                                Text="{TemplateBinding Watermark}"
+                                                TextAlignment="{TemplateBinding TextAlignment}"
+                                                TextWrapping="{TemplateBinding TextWrapping}"
+                                                IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-                                    </Panel>
+                                            <!--==================================================-->
+                                            <!-- Content. -->
+                                            <!--==================================================-->
 
-                                </ScrollViewer>
+                                            <TextPresenter
+                                                Name="PART_TextPresenter"
+                                                Text="{TemplateBinding Text, Mode=TwoWay}"
+                                                CaretIndex="{TemplateBinding CaretIndex}"
+                                                SelectionStart="{TemplateBinding SelectionStart}"
+                                                SelectionEnd="{TemplateBinding SelectionEnd}"
+                                                TextAlignment="{TemplateBinding TextAlignment}"
+                                                TextWrapping="{TemplateBinding TextWrapping}"
+                                                LineHeight="{TemplateBinding LineHeight}"
+                                                LetterSpacing="{TemplateBinding LetterSpacing}"
+                                                PasswordChar="{TemplateBinding PasswordChar}"
+                                                RevealPassword="{TemplateBinding RevealPassword}"
+                                                SelectionBrush="{TemplateBinding SelectionBrush}"
+                                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                                CaretBrush="{TemplateBinding CaretBrush}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-                            </DockPanel>
+                                        </Panel>
 
-                            <!--==================================================-->
-                            <!-- Right content. -->
-                            <!--==================================================-->
+                                    </ScrollViewer>
 
-                            <ContentPresenter
-                                Grid.Column="2"
-                                Content="{TemplateBinding InnerRightContent}" />
+                                </DockPanel>
 
-                        </Grid>
+                                <!--==================================================-->
+                                <!-- Right content. -->
+                                <!--==================================================-->
 
-                    </Border>
+                                <ContentPresenter
+                                    Grid.Column="2"
+                                    Content="{TemplateBinding InnerRightContent}" />
 
-                </Panel>
+                            </Grid>
 
-                <!-- </DataValidationErrors> -->
+                        </Border>
+
+                    </Panel>
+
+                </DataValidationErrors>
 
             </ControlTemplate>
+
         </Setter>
 
         <!--==================================================-->
@@ -367,7 +374,8 @@
         <!--==================================================-->
 
         <Style Selector="^:error /template/ Border#PART_BorderElement">
-            <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Red05}" />
+            <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThicknessFocused}" />
         </Style>
 
         <!--==================================================-->
