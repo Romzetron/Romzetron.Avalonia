@@ -284,8 +284,7 @@
             </Style>
 
             <Style Selector="^ TextBlock#PART_InputGestureText">
-                <Setter Property="Foreground"
-                        Value="{DynamicResource MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed}" />
+                <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed}" />
             </Style>
 
             <Style Selector="^ Path#PART_ArrowPath">
