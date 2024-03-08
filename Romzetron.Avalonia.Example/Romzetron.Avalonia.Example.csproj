@@ -9,9 +9,9 @@
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.0.10.0</Version>
-        <AssemblyVersion>11.0.10.0</AssemblyVersion>
-        <FileVersion>11.0.10.0</FileVersion>
+        <Version>11.0.10.1</Version>
+        <AssemblyVersion>11.0.10.1</AssemblyVersion>
+        <FileVersion>11.0.10.1</FileVersion>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
