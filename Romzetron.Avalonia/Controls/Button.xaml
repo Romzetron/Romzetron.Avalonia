@@ -116,7 +116,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Red05}" />
+                <Setter Property="Background" Value="{DynamicResource Red06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -142,7 +142,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Pink05}" />
+                <Setter Property="Background" Value="{DynamicResource Pink06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -168,7 +168,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Purple05}" />
+                <Setter Property="Background" Value="{DynamicResource Purple06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -194,7 +194,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource DeepPurple05}" />
+                <Setter Property="Background" Value="{DynamicResource DeepPurple06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -220,7 +220,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Indigo05}" />
+                <Setter Property="Background" Value="{DynamicResource Indigo06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -246,7 +246,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Blue05}" />
+                <Setter Property="Background" Value="{DynamicResource Blue06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -272,7 +272,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Teal05}" />
+                <Setter Property="Background" Value="{DynamicResource Teal06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -324,7 +324,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Amber05}" />
+                <Setter Property="Background" Value="{DynamicResource Amber06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -350,7 +350,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Orange05}" />
+                <Setter Property="Background" Value="{DynamicResource Orange06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -376,7 +376,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource DeepOrange05}" />
+                <Setter Property="Background" Value="{DynamicResource DeepOrange06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -402,7 +402,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource Brown05}" />
+                <Setter Property="Background" Value="{DynamicResource Brown06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -428,7 +428,7 @@
             </Style>
 
             <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource BlueGrey05}" />
+                <Setter Property="Background" Value="{DynamicResource BlueGrey06}" />
             </Style>
 
             <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
