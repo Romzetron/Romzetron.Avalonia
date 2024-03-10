@@ -302,6 +302,7 @@
 
     <x:Double x:Key="ExpanderMinHeight">32</x:Double>
     <Thickness x:Key="ExpanderArrowMargin">8,0,0,0</Thickness>
+    <Thickness x:Key="ExpanderArrowMarginRight">0,0,8,0</Thickness>
     <x:Double x:Key="ExpanderArrowButtonSize">20</x:Double>
 
     <CornerRadius x:Key="ExpanderHeaderCornerRadius">4</CornerRadius>
