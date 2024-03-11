@@ -1,0 +1,171 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCarousel">
+
+    <!--==================================================-->
+    <!-- Main container. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- Carousel layout grid. -->
+        <!--==================================================-->
+
+        <Grid
+            ColumnDefinitions="Auto,*,Auto"
+            MaxWidth="660"
+            HorizontalAlignment="Stretch" Margin="0 16 0 0">
+
+            <!--==================================================-->
+            <!-- Previous button. -->
+            <!--==================================================-->
+
+            <Button
+                Name="ButtonPrevious"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Height="48"
+                Width="32"
+                Margin="8">
+
+                <!--==================================================-->
+                <!-- Left Arrow. -->
+                <!--==================================================-->
+
+                <Path
+                    Data="M 7 0 L 0 5 L 7 10"
+                    Fill="{Binding $parent[Button].Foreground}" />
+
+            </Button>
+
+            <!--==================================================-->
+            <!-- Carousel. -->
+            <!--==================================================-->
+
+            <Carousel
+                Name="Carousel"
+                Grid.Column="1">
+
+                <!--==================================================-->
+                <!-- Carousel transition. -->
+                <!--==================================================-->
+
+                <Carousel.PageTransition>
+                    <PageSlide Duration="0.25" Orientation="Horizontal" />
+                </Carousel.PageTransition>
+
+                <!--==================================================-->
+                <!-- Carousel images. -->
+                <!--==================================================-->
+
+                <Image Source="/Assets/pizza.png" />
+                <Image Source="/Assets/veggies.png" />
+                <Image Source="/Assets/omelette.png" />
+
+            </Carousel>
+
+            <!--==================================================-->
+            <!-- Next button. -->
+            <!--==================================================-->
+
+            <Button
+                Name="ButtonNext"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                Height="48"
+                Width="32"
+                Margin="8">
+
+                <Path
+                    Data="M 0 0 L 7 5 L 0 10"
+                    Fill="{Binding $parent[Button].Foreground}" />
+
+            </Button>
+
+        </Grid>
+
+        <!--==================================================-->
+        <!-- Transition selection. -->
+        <!--==================================================-->
+
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="4,8,4,0"
+            Spacing="4">
+
+            <!--==================================================-->
+            <!-- Transition label. -->
+            <!--==================================================-->
+
+            <Label
+                Content="Transition"
+                Width="80"
+                VerticalAlignment="Center" />
+
+            <!--==================================================-->
+            <!-- Transition options. -->
+            <!--==================================================-->
+
+            <ComboBox
+                Name="Transition"
+                SelectedIndex="1"
+                Width="200"
+                VerticalAlignment="Center">
+
+                <ComboBoxItem>None</ComboBoxItem>
+                <ComboBoxItem>Slide</ComboBoxItem>
+                <ComboBoxItem>Crossfade</ComboBoxItem>
+                <ComboBoxItem>3D Rotation</ComboBoxItem>
+
+            </ComboBox>
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Orientation selection. -->
+        <!--==================================================-->
+
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="4,0,4,4"
+            Spacing="4">
+
+            <!--==================================================-->
+            <!-- Orientation label. -->
+            <!--==================================================-->
+
+            <Label
+                Content="Orientation"
+                Width="80"
+                VerticalAlignment="Center" />
+
+            <!--==================================================-->
+            <!-- Orientation options. -->
+            <!--==================================================-->
+
+            <ComboBox
+                Name="Orientation"
+                SelectedIndex="0"
+                Width="200"
+                VerticalAlignment="Center">
+
+                <ComboBoxItem>Horizontal</ComboBoxItem>
+                <ComboBoxItem>Vertical</ComboBoxItem>
+
+            </ComboBox>
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

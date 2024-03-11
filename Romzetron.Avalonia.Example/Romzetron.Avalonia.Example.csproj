@@ -133,6 +133,10 @@
             <DependentUpon>TabGridSplitter.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabCarousel.axaml.cs">
+          <DependentUpon>TabCarousel.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -149,5 +153,9 @@
         <Content Include="..\README.md" Pack="true" PackagePath="">
             <Link>README.md</Link>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Assets\" />
     </ItemGroup>
 </Project>

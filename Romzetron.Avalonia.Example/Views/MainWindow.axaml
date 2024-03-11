@@ -8,7 +8,7 @@
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="1000"
     x:Class="Romzetron.Avalonia.Example.Views.MainWindow"
     x:DataType="vm:MainWindowViewModel"
-    Icon="/Assets/avalonia-logo.ico"
+    Icon="/Assets/Romzetron.ico"
     Title="{Binding WindowTitle}"
     WindowState="Maximized">
 
@@ -157,6 +157,14 @@
 
             <TabItem Header="CalendarDatePicker">
                 <tabs:TabCalendarDatePicker />
+            </TabItem>
+
+            <!--==================================================-->
+            <!-- Carousel examples. -->
+            <!--==================================================-->
+
+            <TabItem Header="Carousel">
+                <tabs:TabCarousel />
             </TabItem>
 
             <!--==================================================-->

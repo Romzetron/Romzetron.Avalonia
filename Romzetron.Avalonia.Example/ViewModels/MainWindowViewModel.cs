@@ -31,8 +31,8 @@ public class MainWindowViewModel : ViewModelBase
         set
         {
             this.RaiseAndSetIfChanged(ref _selectedColorTheme, value);
-            var app = (App) Application.Current!;
-            app.SetTheme(value);
+            var app = Application.Current as App;
+            app?.SetTheme(value);
         }
     }
 
