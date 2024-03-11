@@ -3,20 +3,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:ClassModifier="internal">
 
+    <!--==================================================-->
+    <!-- Constants. -->
+    <!--==================================================-->
+
     <Thickness x:Key="AdornerMargin">0</Thickness>
     <Thickness x:Key="AdornerPrimaryThickness">2</Thickness>
     <Thickness x:Key="AdornerSecondaryThickness">1</Thickness>
 
+    <!--==================================================-->
+    <!-- AdornerLayer control theme. -->
+    <!--==================================================-->
+
     <ControlTheme x:Key="{x:Type AdornerLayer}" TargetType="AdornerLayer">
+
+        <!--==================================================-->
+        <!-- DefaultFocusAdorner template. -->
+        <!--==================================================-->
 
         <Setter Property="DefaultFocusAdorner">
 
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+
             <FocusAdornerTemplate>
+
+                <!--==================================================-->
+                <!-- Primary border. -->
+                <!--==================================================-->
 
                 <Border
                     BorderThickness="{DynamicResource AdornerPrimaryThickness}"
                     BorderBrush="{DynamicResource AdornerPrimaryBrush}"
                     Margin="{DynamicResource AdornerMargin}">
+
+                    <!--==================================================-->
+                    <!-- Secondary border. -->
+                    <!--==================================================-->
 
                     <Border
                         BorderThickness="{DynamicResource AdornerSecondaryThickness}"

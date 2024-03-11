@@ -137,6 +137,10 @@
           <DependentUpon>TabCarousel.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabAdornerLayer.axaml.cs">
+          <DependentUpon>TabAdornerLayer.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>

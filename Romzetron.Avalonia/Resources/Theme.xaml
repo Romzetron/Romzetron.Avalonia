@@ -25,6 +25,13 @@
     <x:Double x:Key="StandardFontSize">12</x:Double>
 
     <!--==================================================-->
+    <!-- AdornerLayer resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="AdornerPrimaryBrush" Color="{DynamicResource UiTheme00}" />
+    <SolidColorBrush x:Key="AdornerSecondaryBrush" Color="{DynamicResource UiTheme00}" Opacity="0.5" />
+
+    <!--==================================================-->
     <!-- AutoCompleteBox resources. -->
     <!--==================================================-->
 
@@ -555,8 +562,8 @@
     <SolidColorBrush x:Key="SliderTickBarFill" Color="{DynamicResource UiTextTheme05}" />
     <SolidColorBrush x:Key="SliderTickBarFillDisabled" Color="{DynamicResource UiTextTheme03}" />
 
-    <x:Double x:Key="SliderHorizontalHeight">28</x:Double>
-    <x:Double x:Key="SliderVerticalWidth">28</x:Double>
+    <x:Double x:Key="SliderHorizontalHeight">20</x:Double>
+    <x:Double x:Key="SliderVerticalWidth">20</x:Double>
     <x:Double x:Key="SliderTrackHeight">8</x:Double>
     <x:Double x:Key="SliderHorizontalThumbWidth">20</x:Double>
     <x:Double x:Key="SliderHorizontalThumbHeight">20</x:Double>
