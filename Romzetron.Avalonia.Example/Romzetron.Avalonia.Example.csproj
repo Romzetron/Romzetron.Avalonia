@@ -141,6 +141,10 @@
           <DependentUpon>TabAdornerLayer.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabSplitView.axaml.cs">
+          <DependentUpon>TabSplitView.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>

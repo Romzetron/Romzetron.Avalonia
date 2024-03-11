@@ -1,0 +1,527 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
+    x:ClassModifier="internal">
+
+    <!--==================================================-->
+    <!-- Design preview. -->
+    <!--==================================================-->
+
+    <Design.PreviewWith>
+        <Border Width="400" Height="400">
+            <SplitView DisplayMode="Inline" IsPaneOpen="True">
+                <SplitView.Pane>
+                    <!-- <Border Background="Green" /> -->
+                </SplitView.Pane>
+                <SplitView.Content>
+                    <!-- <Border Background="Blue" /> -->
+                </SplitView.Content>
+            </SplitView>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--==================================================-->
+    <!-- Constants. -->
+    <!--==================================================-->
+
+    <x:Double x:Key="SplitViewOpenPaneThemeLength">320</x:Double>
+    <x:Double x:Key="SplitViewCompactPaneThemeLength">48</x:Double>
+    <sys:TimeSpan x:Key="SplitViewPaneAnimationOpenDuration">00:00:00.2</sys:TimeSpan>
+    <sys:TimeSpan x:Key="SplitViewPaneAnimationCloseDuration">00:00:00.1</sys:TimeSpan>
+    <Easing x:Key="SplitViewPaneAnimationEasing">0.1,0.9,0.2,1.0</Easing>
+
+    <!--==================================================-->
+    <!-- SplitView control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type SplitView}" TargetType="SplitView">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="OpenPaneLength" Value="{DynamicResource SplitViewOpenPaneThemeLength}" />
+        <Setter Property="CompactPaneLength" Value="{DynamicResource SplitViewCompactPaneThemeLength}" />
+        <Setter Property="Background" Value="{DynamicResource SplitViewBackground}" />
+        <Setter Property="PaneBackground" Value="{DynamicResource SplitViewPanelBackground}" />
+
+        <!--==================================================-->
+        <!-- Left position style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:left">
+
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+
+            <Setter Property="Template">
+
+                <!--==================================================-->
+                <!-- Control template. -->
+                <!--==================================================-->
+
+                <ControlTemplate>
+
+                    <!--==================================================-->
+                    <!-- Main border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        CornerRadius="4"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource SplitViewBorderBrush}"
+                        BorderThickness="1">
+
+                        <!--==================================================-->
+                        <!-- Container grid. -->
+                        <!--==================================================-->
+
+                        <Grid Name="Container">
+
+                            <!--==================================================-->
+                            <!-- Container columns. -->
+                            <!--==================================================-->
+
+                            <Grid.ColumnDefinitions>
+                                <!-- why is this throwing a binding error? -->
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--==================================================-->
+                            <!-- Pane panel. -->
+                            <!--==================================================-->
+
+                            <Panel
+                                Name="PART_PaneRoot"
+                                ClipToBounds="True"
+                                HorizontalAlignment="Left"
+                                ZIndex="100">
+
+                                <!--==================================================-->
+                                <!-- Pane background. -->
+                                <!--==================================================-->
+
+                                <Border
+                                    CornerRadius="4,0,0,4"
+                                    Background="{TemplateBinding PaneBackground}" />
+
+                                <!--==================================================-->
+                                <!-- Pane content. -->
+                                <!--==================================================-->
+
+                                <ContentPresenter
+                                    x:Name="PART_PanePresenter"
+                                    Content="{TemplateBinding Pane}"
+                                    ContentTemplate="{TemplateBinding PaneTemplate}" />
+
+                                <!--==================================================-->
+                                <!-- Pane border. -->
+                                <!--==================================================-->
+
+                                <Rectangle
+                                    Name="HCPaneBorder"
+                                    Fill="{DynamicResource SplitViewBorderBrush}"
+                                    ClipToBounds="True"
+                                    Width="1"
+                                    HorizontalAlignment="Right" />
+
+                            </Panel>
+
+                            <!--==================================================-->
+                            <!-- Content panel. -->
+                            <!--==================================================-->
+
+                            <Panel Name="ContentRoot">
+
+                                <!--==================================================-->
+                                <!-- Content. -->
+                                <!--==================================================-->
+
+                                <ContentPresenter
+                                    x:Name="PART_ContentPresenter"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+                                <!--==================================================-->
+                                <!-- Dismiss layer. -->
+                                <!--==================================================-->
+
+                                <Rectangle
+                                    Name="LightDismissLayer"
+                                    Fill="Transparent"
+                                    IsVisible="False" />
+
+                            </Panel>
+
+                        </Grid>
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter>
+
+            <!--==================================================-->
+            <!-- Overlay style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:overlay">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="0" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Compact inline style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:compactinline">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Compact overlay style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:compactoverlay">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <!-- ColumnSpan should be 2 -->
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Inline style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:inline">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Right position style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:right">
+
+            <!--==================================================-->
+            <!-- Template. -->
+            <!--==================================================-->
+
+            <Setter Property="Template">
+
+                <!--==================================================-->
+                <!-- Control template. -->
+                <!--==================================================-->
+
+                <ControlTemplate>
+
+                    <!--==================================================-->
+                    <!-- Main border. -->
+                    <!--==================================================-->
+
+                    <Border
+                        CornerRadius="4"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource SplitViewBorderBrush}"
+                        BorderThickness="1">
+
+                        <!--==================================================-->
+                        <!-- Container grid. -->
+                        <!--==================================================-->
+
+                        <Grid
+                            Name="Container"
+                            ClipToBounds="True">
+
+                            <!--==================================================-->
+                            <!-- Container columns. -->
+                            <!--==================================================-->
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--==================================================-->
+                            <!-- Pane panel. -->
+                            <!--==================================================-->
+
+                            <Panel
+                                Name="PART_PaneRoot"
+                                ClipToBounds="True"
+                                HorizontalAlignment="Right"
+                                ZIndex="100">
+
+                                <!--==================================================-->
+                                <!-- Pane background. -->
+                                <!--==================================================-->
+
+                                <Border
+                                    CornerRadius="0,4,4,0"
+                                    Background="{TemplateBinding PaneBackground}" />
+
+                                <!--==================================================-->
+                                <!-- Pane content. -->
+                                <!--==================================================-->
+
+                                <ContentPresenter
+                                    x:Name="PART_PanePresenter"
+                                    Content="{TemplateBinding Pane}"
+                                    ContentTemplate="{TemplateBinding PaneTemplate}" />
+
+                                <!--==================================================-->
+                                <!-- Pane border. -->
+                                <!--==================================================-->
+
+                                <Rectangle
+                                    Name="HCPaneBorder"
+                                    Fill="{DynamicResource SplitViewBorderBrush}"
+                                    Width="1" HorizontalAlignment="Left" />
+
+                            </Panel>
+
+                            <!--==================================================-->
+                            <!-- Content pane. -->
+                            <!--==================================================-->
+
+                            <Panel Name="ContentRoot">
+
+                                <!--==================================================-->
+                                <!-- Content. -->
+                                <!--==================================================-->
+
+                                <ContentPresenter
+                                    x:Name="PART_ContentPresenter"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+                                <!--==================================================-->
+                                <!-- Dismiss layer. -->
+                                <!--==================================================-->
+
+                                <Rectangle Name="LightDismissLayer" />
+
+                            </Panel>
+
+                        </Grid>
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter>
+
+            <!--==================================================-->
+            <!-- Overlay style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:overlay">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                    <Setter Property="Grid.Column" Value="1" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Compact inline style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:compactinline">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Compact overlay style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:compactoverlay">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+            <!--==================================================-->
+            <!-- Inline style. -->
+            <!--==================================================-->
+
+            <Style Selector="^:inline">
+
+                <Style Selector="^ /template/ Panel#PART_PaneRoot">
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+                </Style>
+
+                <Style Selector="^ /template/ Panel#ContentRoot">
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                </Style>
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Open style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:open">
+
+            <Style Selector="^ /template/ Panel#PART_PaneRoot">
+
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Width" Duration="{StaticResource SplitViewPaneAnimationOpenDuration}" Easing="{StaticResource SplitViewPaneAnimationEasing}" />
+                    </Transitions>
+                </Setter>
+
+                <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=OpenPaneLength}" />
+
+            </Style>
+
+            <Style Selector="^ /template/ Rectangle#LightDismissLayer">
+
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Opacity" Duration="{StaticResource SplitViewPaneAnimationOpenDuration}" Easing="{StaticResource SplitViewPaneAnimationEasing}" />
+                    </Transitions>
+                </Setter>
+
+                <Setter Property="Opacity" Value="1.0" />
+
+            </Style>
+
+        </Style>
+
+        <!--==================================================-->
+        <!-- Closed style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:closed">
+
+            <Style Selector="^ /template/ Panel#PART_PaneRoot">
+
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Width" Duration="{StaticResource SplitViewPaneAnimationCloseDuration}" Easing="{StaticResource SplitViewPaneAnimationEasing}" />
+                    </Transitions>
+                </Setter>
+
+                <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ClosedPaneWidth}" />
+
+            </Style>
+
+            <Style Selector="^ /template/ Rectangle#LightDismissLayer">
+
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Opacity" Duration="{StaticResource SplitViewPaneAnimationCloseDuration}" Easing="{StaticResource SplitViewPaneAnimationEasing}" />
+                    </Transitions>
+                </Setter>
+
+                <Setter Property="Opacity" Value="0.0" />
+
+            </Style>
+        </Style>
+
+        <!--==================================================-->
+        <!-- Light dismiss style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:lightDismiss /template/ Rectangle#LightDismissLayer">
+            <Setter Property="Fill" Value="{DynamicResource SplitViewLightDismissBackground}" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Overlay open style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:overlay:open /template/ Rectangle#LightDismissLayer">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Compact overlay open style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:compactoverlay:open /template/ Rectangle#LightDismissLayer">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

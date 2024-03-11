@@ -611,6 +611,16 @@
     <x:Double x:Key="SplitButtonMinHeight">32</x:Double>
 
     <!--==================================================-->
+    <!-- SplitView Resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="SplitViewBackground" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="SplitViewPanelBackground" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="SplitViewLightDismissBackground" Color="{DynamicResource UiTheme09}" Opacity="0.5" />
+
+    <SolidColorBrush x:Key="SplitViewBorderBrush" Color="{DynamicResource UiTheme05}" />
+
+    <!--==================================================-->
     <!-- TabControl resources. -->
     <!--==================================================-->
 
