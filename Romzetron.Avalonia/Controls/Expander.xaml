@@ -40,7 +40,7 @@
                         <TextBlock>Expanded content</TextBlock>
                     </StackPanel>
                 </Expander>
-                <Expander ExpandDirection="Down">
+                <Expander ExpandDirection="Down" Width="200">
                     <Expander.Header>
                         <Grid ColumnDefinitions="*, Auto">
                             <TextBlock Grid.Column="0" Text="Control" />
@@ -96,14 +96,20 @@
 
                     <!--==================================================-->
                     <!-- Header layout grid. -->
+                    <!-- The header content is always in column 1 and -->
+                    <!-- fills as much space as possible. The arrow is -->
+                    <!-- shifted to column 0 for up, down, and left -->
+                    <!-- expanding, and column 2 for right expanding to -->
+                    <!-- put it on the other side of the header content. -->
                     <!--==================================================-->
 
                     <Grid
                         x:Name="ToggleButtonGrid"
-                        ColumnDefinitions="Auto,Auto">
+                        ColumnDefinitions="Auto,*,Auto">
 
                         <!--==================================================-->
                         <!-- Header content. -->
+                        <!-- Grid column set in style below. -->
                         <!--==================================================-->
 
                         <ContentPresenter
@@ -118,6 +124,7 @@
 
                         <!--==================================================-->
                         <!-- Header arrow. -->
+                        <!-- Grid column set in style below. -->
                         <!--==================================================-->
 
                         <Border
@@ -184,11 +191,11 @@
         <!--==================================================-->
 
         <Style Selector="^[Tag=right] /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Grid.Column" Value="0" />
+            <Setter Property="Grid.Column" Value="1" />
         </Style>
 
         <Style Selector="^[Tag=right] /template/ Border#ExpandCollapseArrowBorder">
-            <Setter Property="Grid.Column" Value="1" />
+            <Setter Property="Grid.Column" Value="2" />
         </Style>
 
         <Style Selector="^[Tag=right] /template/ Border#ExpandCollapseArrowBorder">
