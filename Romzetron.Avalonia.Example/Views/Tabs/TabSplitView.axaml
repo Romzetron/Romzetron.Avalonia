@@ -1,0 +1,246 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Romzetron.Avalonia.Example.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabSplitView"
+    x:DataType="viewModels:SplitViewViewModel">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <Grid ColumnDefinitions="*,225">
+
+        <!--==================================================-->
+        <!-- Controls. -->
+        <!--==================================================-->
+
+        <StackPanel
+            Grid.Column="1"
+            Orientation="Vertical"
+            Spacing="4"
+            Margin="0,8,8,8">
+
+            <!--==================================================-->
+            <!-- Open/close pane button. -->
+            <!--==================================================-->
+
+            <ToggleButton
+                Name="PaneOpenButton"
+                Content="IsPaneOpen"
+                IsChecked="{Binding IsPaneOpen, ElementName=SplitView}"
+                HorizontalAlignment="Stretch" />
+
+            <!--==================================================-->
+            <!-- Enable/disable dismiss overlay. -->
+            <!--==================================================-->
+
+            <ToggleButton
+                Name="UseLightDismissOverlayModeButton"
+                Content="UseLightDismissOverlayMode"
+                IsChecked="{Binding UseLightDismissOverlayMode, ElementName=SplitView}"
+                HorizontalAlignment="Stretch" />
+
+            <!--==================================================-->
+            <!-- Left/right placement toggle. -->
+            <!--==================================================-->
+
+            <ToggleSwitch
+                OffContent="Left"
+                OnContent="Right"
+                Content="Placement"
+                IsChecked="{Binding !IsLeft}" />
+
+            <!--==================================================-->
+            <!-- Display mode. -->
+            <!--==================================================-->
+
+            <TextBlock
+                Text="DisplayMode"
+                Margin="0,8,0,0" />
+
+            <ComboBox
+                Name="DisplayModeSelector"
+                SelectedIndex="{Binding DisplayMode}"
+                HorizontalAlignment="Stretch">
+
+                <ComboBoxItem>Inline</ComboBoxItem>
+                <ComboBoxItem>CompactInline</ComboBoxItem>
+                <ComboBoxItem>Overlay</ComboBoxItem>
+                <ComboBoxItem>CompactOverlay</ComboBoxItem>
+
+            </ComboBox>
+
+            <!--==================================================-->
+            <!-- Pane width slider. -->
+            <!--==================================================-->
+
+            <TextBlock
+                Text="{Binding Value, ElementName=OpenPaneLengthSlider, StringFormat='{}OpenPaneLength: {0}'}"
+                Margin="0,8,0,0" />
+
+            <Slider
+                Name="OpenPaneLengthSlider"
+                Value="256"
+                Minimum="128"
+                Maximum="500"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True" />
+
+            <!--==================================================-->
+            <!-- Compact pane width slider. -->
+            <!--==================================================-->
+
+            <TextBlock
+                Text="{Binding Value, ElementName=CompactPaneLengthSlider, StringFormat='{}CompactPaneLength: {0}'}"
+                Margin="0,8,0,0" />
+
+            <Slider
+                Name="CompactPaneLengthSlider"
+                Value="48"
+                Minimum="24"
+                Maximum="128"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Split view. -->
+        <!--==================================================-->
+
+        <SplitView
+            Name="SplitView"
+            Grid.Column="0"
+            PanePlacement="{Binding PanePlacement}"
+            BorderBrush="{DynamicResource UiTheme05}"
+            BorderThickness="1"
+            OpenPaneLength="{Binding Value, ElementName=OpenPaneLengthSlider}"
+            CompactPaneLength="{Binding Value, ElementName=CompactPaneLengthSlider}"
+            DisplayMode="{Binding CurrentDisplayMode}"
+            Margin="8">
+
+            <!--==================================================-->
+            <!-- Split view pane. -->
+            <!--==================================================-->
+
+            <SplitView.Pane>
+
+                <!--==================================================-->
+                <!-- Pane layout grid and content. -->
+                <!--==================================================-->
+
+                <Grid
+                    RowDefinitions="Auto,Auto,*,Auto"
+                    ColumnDefinitions="*,Auto">
+
+                    <!--==================================================-->
+                    <!-- Pane title. -->
+                    <!--==================================================-->
+
+                    <TextBlock
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Pane Content"
+                        FontWeight="Bold"
+                        Name="PaneHeader"
+                        Margin="8" />
+
+                    <!--==================================================-->
+                    <!-- Menu example. -->
+                    <!--==================================================-->
+
+                    <ListBoxItem
+                        Grid.Row="2" Grid.Column="0"
+                        VerticalAlignment="Top">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <Border Width="48">
+
+                                <Viewbox
+                                    Width="24"
+                                    Height="24"
+                                    HorizontalAlignment="Left">
+
+                                    <Canvas Width="24" Height="24">
+
+                                        <Path
+                                            Fill="{DynamicResource UiTextTheme00}"
+                                            Data="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z" />
+
+                                    </Canvas>
+
+                                </Viewbox>
+
+                            </Border>
+
+                            <TextBlock
+                                Text="People"
+                                VerticalAlignment="Center" />
+
+                        </StackPanel>
+
+                    </ListBoxItem>
+
+                    <!--==================================================-->
+                    <!-- Bottom text. -->
+                    <!--==================================================-->
+
+                    <TextBlock
+                        Grid.Row="3" Grid.Column="0"
+                        Text="Bottom Text"
+                        Margin="60,12" />
+
+                </Grid>
+
+            </SplitView.Pane>
+
+            <!--==================================================-->
+            <!-- Split view content. -->
+            <!--==================================================-->
+
+            <SplitView.Content>
+
+                <!--==================================================-->
+                <!-- Content text items. -->
+                <!--==================================================-->
+
+                <Grid Margin="8">
+
+                    <TextBlock
+                        Text="Split View Content"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+
+                    <TextBlock
+                        Text="Split View Content"
+                        TextAlignment="Left" />
+
+                    <TextBlock
+                        Text="Split View Content"
+                        HorizontalAlignment="Right"
+                        TextAlignment="Left" />
+
+                    <TextBlock
+                        Text="Split View Content"
+                        VerticalAlignment="Bottom"
+                        TextAlignment="Left" />
+
+                    <TextBlock
+                        Text="Split View Content"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        TextAlignment="Left" />
+
+                </Grid>
+
+            </SplitView.Content>
+
+        </SplitView>
+
+    </Grid>
+
+</UserControl>
