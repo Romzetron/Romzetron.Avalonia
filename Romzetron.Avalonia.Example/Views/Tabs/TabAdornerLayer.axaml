@@ -1,0 +1,165 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabAdornerLayer">
+
+    <!--==================================================-->
+    <!-- Layout dock panel. -->
+    <!--==================================================-->
+
+    <DockPanel>
+
+        <!--==================================================-->
+        <!-- Rotation slider container. -->
+        <!--==================================================-->
+
+        <Grid
+            DockPanel.Dock="Top"
+            ColumnDefinitions="Auto,*"
+            RowDefinitions="Auto"
+            Margin="16">
+
+            <!--==================================================-->
+            <!-- Rotation slider label. -->
+            <!--==================================================-->
+
+            <Label
+                Grid.Column="0" Grid.Row="0"
+                Content="Rotation"
+                Margin="8,8,4,8"
+                VerticalAlignment="Center" />
+
+            <!--==================================================-->
+            <!-- Rotation slider. -->
+            <!--==================================================-->
+
+            <Border Grid.Column="1" Grid.Row="0">
+
+                <Slider
+                    Name="Rotation"
+                    Maximum="360"
+                    VerticalAlignment="Center" />
+
+            </Border>
+
+        </Grid>
+
+        <!--==================================================-->
+        <!-- Add/remove adorner buttons. -->
+        <!--==================================================-->
+
+        <StackPanel
+            DockPanel.Dock="Top"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
+
+            <!--==================================================-->
+            <!-- Add adorner button. -->
+            <!--==================================================-->
+
+            <Button
+                Name="AddAdorner"
+                Click="AddAdorner_OnClick"
+                Content="Add Adorner"
+                Margin="6" />
+
+            <!--==================================================-->
+            <!-- Remove adorner button. -->
+            <!--==================================================-->
+
+            <Button
+                Name="RemoveAdorner"
+                Click="RemoveAdorner_OnClick"
+                Content="Remove Adorner"
+                Margin="6" />
+
+        </StackPanel>
+
+        <!--==================================================-->
+        <!-- Button container. -->
+        <!--==================================================-->
+
+        <Grid
+            ColumnDefinitions="24,Auto,24"
+            RowDefinitions="24,Auto,24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <!--==================================================-->
+            <!-- Button border objects. -->
+            <!--==================================================-->
+
+            <Border Background="{DynamicResource Grey05}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Border Background="{DynamicResource Grey05}" Grid.Row="1" Grid.Column="0" />
+            <Border Background="{DynamicResource Grey05}" Grid.Row="1" Grid.Column="2" />
+            <Border Background="{DynamicResource Grey05}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+
+            <!--==================================================-->
+            <!-- Rotation transform. -->
+            <!--==================================================-->
+
+            <LayoutTransformControl
+                Grid.Column="1" Grid.Row="1"
+                Name="LayoutTransform">
+
+                <LayoutTransformControl.LayoutTransform>
+                    <RotateTransform Angle="{Binding #Rotation.Value}" />
+                </LayoutTransformControl.LayoutTransform>
+
+                <!--==================================================-->
+                <!-- Button. -->
+                <!--==================================================-->
+
+                <Button
+                    Name="AdornerButton"
+                    Content="Adorned Button"
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center" VerticalAlignment="Stretch"
+                    Width="200"
+                    Height="42">
+
+                    <!--==================================================-->
+                    <!-- Button adorner. -->
+                    <!--==================================================-->
+
+                    <AdornerLayer.Adorner>
+
+                        <!--==================================================-->
+                        <!-- Adorner canvas. -->
+                        <!--==================================================-->
+
+                        <Canvas
+                            x:Name="AdornerCanvas"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="White"
+                            IsHitTestVisible="False"
+                            Opacity="0.5"
+                            IsVisible="True"
+                            AdornerLayer.IsClipEnabled="False">
+
+                            <!--==================================================-->
+                            <!-- Lines. -->
+                            <!--==================================================-->
+
+                            <Line StartPoint="-10000,0" EndPoint="10000,0" Stroke="White" StrokeThickness="1" />
+                            <Line StartPoint="-10000,42" EndPoint="10000,42" Stroke="White" StrokeThickness="1" />
+                            <Line StartPoint="0,-10000" EndPoint="0,10000" Stroke="White" StrokeThickness="1" />
+                            <Line StartPoint="200,-10000" EndPoint="200,10000" Stroke="White" StrokeThickness="1" />
+
+                        </Canvas>
+
+                    </AdornerLayer.Adorner>
+
+                </Button>
+
+            </LayoutTransformControl>
+
+        </Grid>
+
+    </DockPanel>
+
+</UserControl>

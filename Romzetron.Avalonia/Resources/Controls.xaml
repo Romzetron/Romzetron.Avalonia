@@ -13,6 +13,7 @@
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/AdornerLayer.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/AutoCompleteBox.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Button.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ButtonSpinner.xaml" />
@@ -76,7 +77,6 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TreeViewItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Window.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/WindowNotificationManager.xaml" />
-                <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/AdornerLayer.xaml" /> -->
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/SplitView.xaml" /> -->
                 <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ManagedFileChooser.xaml" /> -->
             </ResourceDictionary.MergedDictionaries>
