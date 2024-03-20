@@ -145,6 +145,10 @@
           <DependentUpon>TabSplitView.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabDialogs.axaml.cs">
+          <DependentUpon>TabDialogs.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
