@@ -40,6 +40,7 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Label.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ListBox.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ListBoxItem.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ManagedFileChooser.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Menu.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/MenuFlyoutPresenter.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/MenuItem.xaml" />
@@ -78,7 +79,6 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TreeViewItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Window.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/WindowNotificationManager.xaml" />
-                <!-- <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ManagedFileChooser.xaml" /> -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

@@ -1,0 +1,179 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabDialogs">
+
+    <!--==================================================-->
+    <!-- Scroll viewer. -->
+    <!--==================================================-->
+
+    <ScrollViewer
+        Margin="4"
+        HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto">
+
+        <!--==================================================-->
+        <!-- Layout grid. -->
+        <!--==================================================-->
+
+        <StackPanel
+            Orientation="Vertical"
+            Spacing="8">
+
+            <!--==================================================-->
+            <!-- Save file container. -->
+            <!--==================================================-->
+
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="8">
+
+                <!--==================================================-->
+                <!-- Save file button. -->
+                <!--==================================================-->
+
+                <Button
+                    Content="Save File"
+                    Width="200"
+                    Click="SaveFileButton_OnClick" />
+
+                <!--==================================================-->
+                <!-- Text to write to file. -->
+                <!--==================================================-->
+
+                <TextBox
+                    x:Name="SaveFileContent"
+                    Watermark="Hello World"
+                    VerticalContentAlignment="Top"
+                    Width="600" />
+
+            </StackPanel>
+
+            <!--==================================================-->
+            <!-- Open file container. -->
+            <!--==================================================-->
+
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="8">
+
+                <!--==================================================-->
+                <!-- Open file options container. -->
+                <!--==================================================-->
+
+                <StackPanel
+                    Orientation="Vertical"
+                    Spacing="8">
+
+                    <!--==================================================-->
+                    <!-- Open file/folder button. -->
+                    <!--==================================================-->
+
+                    <SplitButton
+                        x:Name="OpenFileButton"
+                        Content="Open Single File"
+                        Width="200"
+                        Click="OpenFileButton_OnClick"
+                        VerticalAlignment="Top">
+
+                        <SplitButton.Flyout>
+
+                            <MenuFlyout Placement="BottomEdgeAlignedLeft">
+
+                                <MenuItem
+                                    Header="Open Single File"
+                                    Command="{Binding SelectOpenType}"
+                                    CommandParameter="{x:Static local:OpenFileType.SingleFile}" />
+
+                                <MenuItem
+                                    Header="Open Multiple Files"
+                                    Command="{Binding SelectOpenType}"
+                                    CommandParameter="{x:Static local:OpenFileType.MultipleFiles}" />
+
+                                <MenuItem
+                                    Header="Open Single Folder"
+                                    Command="{Binding SelectOpenType}"
+                                    CommandParameter="{x:Static local:OpenFileType.SingleFolder}" />
+
+                                <MenuItem
+                                    Header="Open Multiple Folders"
+                                    Command="{Binding SelectOpenType}"
+                                    CommandParameter="{x:Static local:OpenFileType.MultipleFolders}" />
+
+                            </MenuFlyout>
+
+                        </SplitButton.Flyout>
+
+                    </SplitButton>
+
+                    <!--==================================================-->
+                    <!-- File filter. -->
+                    <!--==================================================-->
+
+                    <ComboBox
+                        x:Name="FileTypeComboBox"
+                        Width="200"
+                        SelectedIndex="0">
+
+                        <ComboBoxItem>All Files</ComboBoxItem>
+                        <ComboBoxItem>Text Files (*.txt)</ComboBoxItem>
+                        <ComboBoxItem>JSON Files (*.json)</ComboBoxItem>
+
+                    </ComboBox>
+
+                </StackPanel>
+
+                <!--==================================================-->
+                <!-- Text read from file. -->
+                <!--==================================================-->
+
+                <TextBox
+                    x:Name="OpenFileContent"
+                    Watermark="File Contents"
+                    IsReadOnly="True"
+                    AcceptsReturn="True"
+                    VerticalContentAlignment="Top"
+                    Width="600"
+                    Height="200" />
+
+            </StackPanel>
+
+            <!--==================================================-->
+            <!-- Can open file indicator. -->
+            <!--==================================================-->
+
+            <CheckBox
+                x:Name="CanOpenCheckBox"
+                IsHitTestVisible="False"
+                IsEnabled="False"
+                Content="Can Open" />
+
+            <!--==================================================-->
+            <!-- Can save file indicator. -->
+            <!--==================================================-->
+
+            <CheckBox
+                x:Name="CanSaveCheckBox"
+                IsHitTestVisible="False"
+                IsEnabled="False"
+                Content="Can Save" />
+
+            <!--==================================================-->
+            <!-- Can pick folder indicator. -->
+            <!--==================================================-->
+
+            <CheckBox
+                x:Name="CanPickFolderCheckBox"
+                IsHitTestVisible="False"
+                IsEnabled="False"
+                Content="Can Pick Folder" />
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

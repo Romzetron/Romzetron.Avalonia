@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Dialogs;
 using Avalonia.ReactiveUI;
 
 namespace Romzetron.Avalonia.Example;
@@ -21,6 +22,7 @@ internal class Program
     {
         return AppBuilder.Configure<App>()
             .UsePlatformDetect()
+            .UseManagedSystemDialogs()
             .LogToTrace()
             .UseReactiveUI();
     }
