@@ -3,6 +3,10 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!--==================================================-->
+    <!-- Style resources. -->
+    <!--==================================================-->
+
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -12,6 +16,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
+
+    <!--==================================================-->
+    <!-- Include all control styles. -->
+    <!--==================================================-->
 
     <StyleInclude Source="/Resources/Controls.xaml" />
 

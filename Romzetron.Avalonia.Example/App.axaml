@@ -5,8 +5,20 @@
     x:Class="Romzetron.Avalonia.Example.App"
     RequestedThemeVariant="Default">
 
+    <!--==================================================-->
+    <!-- Data templates. -->
+    <!--==================================================-->
+
     <Application.DataTemplates>
         <local:ViewLocator />
     </Application.DataTemplates>
+
+    <!--==================================================-->
+    <!-- Styles. -->
+    <!--==================================================-->
+
+    <Application.Styles>
+        <RomzetronTheme ColorTheme="Blue" />
+    </Application.Styles>
 
 </Application>

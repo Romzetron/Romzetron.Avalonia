@@ -1,12 +1,17 @@
 ﻿using System;
+using Avalonia;
 using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 
 namespace Romzetron.Avalonia;
 
-public class RomzetronTheme : Styles
+public class RomzetronTheme : Style
 {
+    //==================================================
+    // Private theme resource variables.
+    //==================================================
+
     private readonly ResourceInclude _colorThemeAmber;
     private readonly ResourceInclude _colorThemeBlue;
     private readonly ResourceInclude _colorThemeBlueGrey;
@@ -20,25 +25,46 @@ public class RomzetronTheme : Styles
     private readonly ResourceInclude _colorThemePurple;
     private readonly ResourceInclude _colorThemeRed;
     private readonly ResourceInclude _colorThemeTeal;
-    private ResourceInclude? _ColorTheme;
+    private ResourceInclude? _colorTheme;
+
+    //==================================================
+    // Color theme styled property.
+    //==================================================
+
+    public static readonly StyledProperty<ColorTheme> ColorThemeProperty =
+        AvaloniaProperty.Register<RomzetronTheme, ColorTheme>(nameof(ColorTheme), defaultValue: ColorTheme.Blue);
+
+    public ColorTheme ColorTheme
+    {
+        get => GetValue(ColorThemeProperty);
+        set
+        {
+            SetValue(ColorThemeProperty, value);
+            SelectColorTheme(value);
+        }
+    }
+
+    //==================================================
+    // Constructor.
+    //==================================================
 
     public RomzetronTheme(IServiceProvider? sp = null)
     {
         AvaloniaXamlLoader.Load(sp, this);
 
-        var uriAmber = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeAmber.xaml");
-        var uriBlue = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeBlue.xaml");
-        var uriBlueGrey = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeBlueGrey.xaml");
-        var uriBrown = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeBrown.xaml");
-        var uriDeepOrange = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeDeepOrange.xaml");
-        var uriDeepPurple = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeDeepPurple.xaml");
-        var uriGreen = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeGreen.xaml");
-        var uriIndigo = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeIndigo.xaml");
-        var uriOrange = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeOrange.xaml");
-        var uriPink = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemePink.xaml");
-        var uriPurple = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemePurple.xaml");
-        var uriRed = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeRed.xaml");
-        var uriTeal = new Uri(@"avares://Romzetron.Avalonia/Resources/Color/ColorThemeTeal.xaml");
+        var uriAmber = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeAmber.xaml");
+        var uriBlue = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeBlue.xaml");
+        var uriBlueGrey = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeBlueGrey.xaml");
+        var uriBrown = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeBrown.xaml");
+        var uriDeepOrange = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeDeepOrange.xaml");
+        var uriDeepPurple = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeDeepPurple.xaml");
+        var uriGreen = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeGreen.xaml");
+        var uriIndigo = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeIndigo.xaml");
+        var uriOrange = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeOrange.xaml");
+        var uriPink = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemePink.xaml");
+        var uriPurple = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemePurple.xaml");
+        var uriRed = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeRed.xaml");
+        var uriTeal = new Uri("avares://Romzetron.Avalonia/Resources/Color/ColorThemeTeal.xaml");
 
         _colorThemeAmber = new ResourceInclude(uriAmber) { Source = uriAmber };
         _colorThemeBlue = new ResourceInclude(uriBlue) { Source = uriBlue };
@@ -56,6 +82,10 @@ public class RomzetronTheme : Styles
 
         SelectColorTheme(ColorTheme.Blue);
     }
+
+    //==================================================
+    // Select color theme.
+    //==================================================
 
     public void SelectColorTheme(ColorTheme colorTheme)
     {
@@ -77,13 +107,13 @@ public class RomzetronTheme : Styles
             _ => _colorThemeBlue
         };
 
-        if (newColorTheme == _ColorTheme)
+        if (newColorTheme == _colorTheme)
             return;
 
-        if (_ColorTheme is not null)
-            Resources.MergedDictionaries.Remove(_ColorTheme);
+        if (_colorTheme is not null)
+            Resources.MergedDictionaries.Remove(_colorTheme);
 
         Resources.MergedDictionaries.Insert(0, newColorTheme);
-        _ColorTheme = newColorTheme;
+        _colorTheme = newColorTheme;
     }
 }
