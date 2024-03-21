@@ -13,7 +13,7 @@ public class MainWindowViewModel : ViewModelBase
     //==================================================
 
     private readonly Timer _themeCycleTimer;
-    
+
     //==================================================
     // Properties variables.
     //==================================================
@@ -24,15 +24,17 @@ public class MainWindowViewModel : ViewModelBase
     //==================================================
     // Properties.
     //==================================================
-    
+
     public ColorTheme SelectedColorTheme
     {
         get => _selectedColorTheme;
         set
         {
             this.RaiseAndSetIfChanged(ref _selectedColorTheme, value);
-            var app = Application.Current as App;
-            app?.SetTheme(value);
+
+            var theme = GetRomzetronAvaloniaTheme();
+            if (theme is not null)
+                theme.ColorTheme = value;
         }
     }
 
@@ -52,7 +54,7 @@ public class MainWindowViewModel : ViewModelBase
                 _themeCycleTimer.Stop();
         }
     }
-    
+
     public string WindowTitle { get; }
 
     //==================================================
@@ -63,10 +65,10 @@ public class MainWindowViewModel : ViewModelBase
     {
         var version = Assembly.GetExecutingAssembly().GetName().Version;
 
-        WindowTitle = version is not null 
-            ? $"Romzetron Avalonia Theme Example {version.Major}.{version.Minor}.{version.Build}.{version.Revision}" 
+        WindowTitle = version is not null
+            ? $"Romzetron Avalonia Theme Example {version.Major}.{version.Minor}.{version.Build}.{version.Revision}"
             : "Romzetron Avalonia Theme Example";
-        
+
         SelectedColorTheme = ColorTheme.Blue;
 
         _themeCycleTimer = new Timer(1000);
@@ -74,7 +76,25 @@ public class MainWindowViewModel : ViewModelBase
 
         RunTimer = true;
     }
-    
+
+    //==================================================
+    // Get the RomzetronTheme style from the App.
+    //==================================================
+
+    private static RomzetronTheme? GetRomzetronAvaloniaTheme()
+    {
+        if (Application.Current is not App app)
+            return null;
+
+        foreach (var style in app.Styles)
+        {
+            if (style is RomzetronTheme theme)
+                return theme;
+        }
+
+        return null;
+    }
+
     //==================================================
     // Toggle cycling themes.
     //==================================================
@@ -83,7 +103,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         RunTimer = !RunTimer;
     }
-    
+
     //==================================================
     // Automatic colorTheme cycling timer elapsed.
     //==================================================

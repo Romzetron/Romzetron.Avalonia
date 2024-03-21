@@ -7,19 +7,18 @@ namespace Romzetron.Avalonia.Example;
 
 public class App : Application
 {
-    private readonly RomzetronTheme _theme = new();
+    //==================================================
+    // Initialize application.
+    //==================================================
 
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-        var app = (App) Current!;
-        app.Styles.Add(_theme);
     }
 
-    public void SetTheme(ColorTheme theme)
-    {
-        _theme.SelectColorTheme(theme);
-    }
+    //==================================================
+    // Initialization complete.
+    //==================================================
 
     public override void OnFrameworkInitializationCompleted()
     {
