@@ -10,9 +10,9 @@
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.0.10.4</Version>
-        <AssemblyVersion>11.0.10.4</AssemblyVersion>
-        <FileVersion>11.0.10.4</FileVersion>
+        <Version>11.0.10.5</Version>
+        <AssemblyVersion>11.0.10.5</AssemblyVersion>
+        <FileVersion>11.0.10.5</FileVersion>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <!-- NativeMenuBar uses ReflectionBinding -->
