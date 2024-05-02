@@ -92,6 +92,7 @@
 
                     <Border
                         Name="PART_Highlight"
+                        ClipToBounds="True"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Margin="{TemplateBinding Margin}" />
 
