@@ -120,8 +120,8 @@
         <!-- Default property setters. -->
         <!--==================================================-->
 
-        <Setter Property="Padding" Value="0,8,8,8" />
-        <Setter Property="Margin" Value="0,1" />
+        <Setter Property="Padding" Value="{DynamicResource TreeViewItemPadding}" />
+        <Setter Property="Margin" Value="{DynamicResource TreeViewItemMargin}" />
         <Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
         <Setter Property="CornerRadius" Value="{DynamicResource TreeViewItemCornerRadius}" />
@@ -220,7 +220,7 @@
             </ControlTemplate>
 
         </Setter>
-
+        
         <!--==================================================-->
         <!-- Pointer-over state. -->
         <!--==================================================-->

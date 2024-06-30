@@ -32,7 +32,7 @@
         <!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="Padding" Value="{DynamicResource MenuBarItemPadding}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource FlyoutCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource MenuFlyoutItemCornerRadius}" />
 
         <!--==================================================-->
         <!-- Template. -->

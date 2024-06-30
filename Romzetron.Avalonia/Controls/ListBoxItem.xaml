@@ -61,6 +61,22 @@
             </ControlTemplate>
 
         </Setter>
+        
+        <!--==================================================-->
+        <!-- First item style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:nth-child(1)">
+            <Setter Property="Margin" Value="{DynamicResource ListBoxItemFirstItemMargin}" />
+        </Style>
+        
+        <!--==================================================-->
+        <!-- Last item style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:nth-last-child(1)">
+            <Setter Property="Margin" Value="{DynamicResource ListBoxItemLastItemMargin}" />
+        </Style>
 
         <!--==================================================-->
         <!-- Disabled state. -->
