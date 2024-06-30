@@ -75,7 +75,7 @@
 
     <SolidColorBrush x:Key="CalendarViewBorderBrush" Color="{DynamicResource UiTheme05}" />
 
-    <CornerRadius x:Key="CalendarViewCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="CalendarViewCornerRadius">8</CornerRadius>
 
     <!--==================================================-->
     <!-- Calendar button. -->
@@ -169,7 +169,7 @@
 
     <Thickness x:Key="ComboBoxDropdownBorderThickness">1</Thickness>
     <Thickness x:Key="ComboBoxDropdownBorderPadding">4</Thickness>
-    <CornerRadius x:Key="ComboBoxDropdownCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="ComboBoxDropdownCornerRadius">8</CornerRadius>
 
     <!--==================================================-->
     <!-- ComboBoxItem resources. -->
@@ -259,7 +259,7 @@
 
     <Thickness x:Key="DateTimePickerFlyoutBorderThickness">1</Thickness>
     <Thickness x:Key="DateTimePickerFlyoutBorderPadding">4</Thickness>
-    <CornerRadius x:Key="DateTimePickerFlyoutCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="DateTimePickerFlyoutCornerRadius">8</CornerRadius>
 
     <!--==================================================-->
     <!-- DateTimePickerFlyoutButton resources. -->
@@ -345,7 +345,7 @@
     <x:Double x:Key="FlyoutThemeMaxWidth">450</x:Double>
     <x:Double x:Key="FlyoutThemeMinHeight">40</x:Double>
     <x:Double x:Key="FlyoutThemeMaxHeight">750</x:Double>
-    <CornerRadius x:Key="FlyoutCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="FlyoutCornerRadius">8</CornerRadius>
     <Thickness x:Key="FlyoutPresenterThemePadding">4</Thickness>
 
     <!--==================================================-->
@@ -371,7 +371,7 @@
     <SolidColorBrush x:Key="ListBoxBorderBrush" Color="{DynamicResource UiTheme05}" />
 
     <Thickness x:Key="ListBoxBorderThickness">1</Thickness>
-    <CornerRadius x:Key="ListBoxCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="ListBoxCornerRadius">8</CornerRadius>
 
     <!--==================================================-->
     <!-- ListBoxItem resources. -->
@@ -397,6 +397,8 @@
 
     <Thickness x:Key="ListBoxItemPadding">8</Thickness>
     <Thickness x:Key="ListBoxItemMargin">0,1</Thickness>
+    <Thickness x:Key="ListBoxItemFirstItemMargin">0,0,0,1</Thickness>
+    <Thickness x:Key="ListBoxItemLastItemMargin">0,1,0,0</Thickness>
     <CornerRadius x:Key="ListBoxItemCornerRadius">4</CornerRadius>
 
     <!--==================================================-->
@@ -445,9 +447,10 @@
     <x:Double x:Key="MenuFlyoutSeparatorHeight">1</x:Double>
     <Thickness x:Key="MenuFlyoutSeparatorPadding">0,4</Thickness>
     <Thickness x:Key="MenuFlyoutItemPaddingNarrow">8</Thickness>
+    <CornerRadius x:Key="MenuFlyoutItemCornerRadius">4</CornerRadius>
     <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
     <Thickness x:Key="MenuFlyoutPresenterThemePadding">4</Thickness>
-    <x:Double x:Key="MenuFlyoutThemeMinHeight">40</x:Double>
+    <x:Double x:Key="MenuFlyoutThemeMinHeight">32</x:Double>
     <Thickness x:Key="MenuFlyoutScrollerMargin">0</Thickness>
     <x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">0</x:Double>
     <x:Double x:Key="MenuFlyoutSubItemPopupVerticalOffset">-4</x:Double>
@@ -735,7 +738,7 @@
 
     <Thickness x:Key="ToolTipBorderThemeThickness">1</Thickness>
     <Thickness x:Key="ToolTipBorderThemePadding">12</Thickness>
-    <CornerRadius x:Key="ToolTipCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="ToolTipCornerRadius">8</CornerRadius>
     <x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
 
     <!--==================================================-->
@@ -762,6 +765,10 @@
     <SolidColorBrush x:Key="TreeViewItemForegroundSelectedPressed" Color="{DynamicResource White}" />
     <SolidColorBrush x:Key="TreeViewItemForegroundSelectedDisabled" Color="{DynamicResource ColorTheme01}" />
 
+    <Thickness x:Key="TreeViewItemPadding">0,8,8,8</Thickness>
+    <Thickness x:Key="TreeViewItemMargin">0,1</Thickness>
+    <Thickness x:Key="TreeViewItemFirstItemMargin">0,0,0,1</Thickness>
+    <Thickness x:Key="TreeViewItemLastItemMargin">0,1,0,0</Thickness>
     <CornerRadius x:Key="TreeViewItemCornerRadius">4</CornerRadius>
 
     <!--==================================================-->

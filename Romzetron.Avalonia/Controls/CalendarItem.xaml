@@ -219,7 +219,7 @@
                         <!-- Border below is used only for MonthView but it -->
                         <!-- can't be moved inside of Grid because -->
                         <!-- CalendarItem expects it to be empty and it will -->
-                        <!-- cause side-effects. -->
+                        <!-- cause side effects. -->
                         <!--==================================================-->
 
 
@@ -239,7 +239,7 @@
                             Grid.Row="1"
                             IsVisible="False"
                             MinHeight="290"
-                            RowDefinitions="38,Auto,Auto,Auto,Auto,Auto,Auto"
+                            RowDefinitions="38,Auto,Auto,Auto,Auto,Auto,Auto,8"
                             ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
                         </Grid>
@@ -253,7 +253,7 @@
                             Grid.Row="1"
                             MinHeight="290"
                             IsVisible="False"
-                            RowDefinitions="*,*,*"
+                            RowDefinitions="*,*,*,8"
                             ColumnDefinitions="*,*,*,*">
 
                         </Grid>

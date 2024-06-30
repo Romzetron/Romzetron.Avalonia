@@ -25,7 +25,7 @@
             BorderBrush="{DynamicResource FlyoutBorderThemeBrush}"
             Background="{DynamicResource FlyoutPresenterBackground}"
             BorderThickness="1"
-            CornerRadius="4"
+            CornerRadius="8"
             Width="200"
             Height="300"
             Padding="4">

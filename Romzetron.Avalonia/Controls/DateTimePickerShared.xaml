@@ -34,7 +34,7 @@
         <Setter Property="Background" Value="{DynamicResource DateTimePickerFlyoutItemBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource DateTimePickerFlyoutItemForeground}" />
         <Setter Property="Margin" Value="2,0" />
-        <Setter Property="CornerRadius" Value="{DynamicResource DateTimePickerFlyoutCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource DateTimePickerFlyoutButtonCornerRadius}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
 
@@ -108,7 +108,7 @@
         <Setter Property="Background" Value="{DynamicResource DateTimePickerFlyoutButtonBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource DateTimePickerFlyoutButtonForeground}" />
         <Setter Property="Height" Value="22" />
-        <Setter Property="CornerRadius" Value="{DynamicResource DateTimePickerFlyoutCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource DateTimePickerFlyoutButtonCornerRadius}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
 
