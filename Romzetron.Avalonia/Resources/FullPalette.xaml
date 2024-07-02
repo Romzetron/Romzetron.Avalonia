@@ -220,7 +220,7 @@
     <Color x:Key="Grey09">#212121</Color>           <!--Text: WHITE -->
 
     <!--==================================================-->
-    <!-- BlueGREY color palette. -->
+    <!-- BLUE-GREY color palette. -->
     <!--==================================================-->
 
     <Color x:Key="BlueGrey00">#ECEFF1</Color>       <!--Text: BLACK -->
