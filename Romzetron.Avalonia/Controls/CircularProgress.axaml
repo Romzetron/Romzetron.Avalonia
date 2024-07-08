@@ -1,0 +1,94 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="clr-namespace:Romzetron.Avalonia.Controls">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<controls:CircularProgress
+						StrokeThickness="8"
+						IsIndeterminate="False"
+						Width="100"
+						Height="100"
+						Value="63">
+					<TextBlock Text="aoeu"></TextBlock>
+				</controls:CircularProgress>
+				<controls:CircularProgress
+						StrokeThickness="8"
+						IsIndeterminate="True"
+						Width="100"
+						Height="100"
+						Value="63">
+					<TextBlock Text="aoeu"></TextBlock>
+				</controls:CircularProgress>
+				<controls:CircularProgress
+						StrokeThickness="8"
+						ShowProgressText="True"
+						Width="100"
+						Height="100"
+						Value="50">
+				</controls:CircularProgress>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type controls:CircularProgress}"
+			TargetType="controls:CircularProgress">
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Background" Value="{DynamicResource CircularProgressBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CircularProgressForeground}" />
+		<Setter Property="Stroke" Value="{DynamicResource CircularProgressStrokeColor}" />
+		<Setter Property="StrokeThickness" Value="{DynamicResource CircularProgressStrokeThickness}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<ContentPresenter Background="Transparent"
+							Content="{TemplateBinding ContentControl.Content}"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center" />
+					<LayoutTransformControl
+							x:Name="PART_LayoutTransformControl"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							IsVisible="{TemplateBinding ShowProgressText}">
+						<TextBlock Foreground="{TemplateBinding Foreground}">
+							<TextBlock.Text>
+								<MultiBinding Converter="{StaticResource StringFormatConverter}">
+									<TemplateBinding Property="ProgressTextFormat"/>
+									<Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+									<TemplateBinding Property="Percentage"/>
+									<TemplateBinding Property="Minimum"/>
+									<TemplateBinding Property="Maximum"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+					</LayoutTransformControl>
+					<Grid x:Name="Arc">
+						<Arc Stroke="{TemplateBinding Background}"
+								StrokeThickness="{TemplateBinding Converter={x:Static controls:CircularProgress.GetStrokeBorderThickness}}"
+								StartAngle="-90"
+								SweepAngle="360"
+								StrokeJoin="Bevel"
+								StrokeLineCap="{Binding StrokeLineCap, RelativeSource={RelativeSource TemplatedParent}}" />
+						<Arc Stroke="{TemplateBinding Stroke}"
+								StrokeThickness="{TemplateBinding StrokeThickness}"
+								StartAngle="-90"
+								SweepAngle="{Binding SweepAngle, RelativeSource={RelativeSource TemplatedParent}}"
+								StrokeJoin="Bevel"
+								StrokeLineCap="{Binding StrokeLineCap, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^[IsIndeterminate=True] /template/ Grid#Arc">
+			<Style.Animations>
+				<Animation Duration="0:0:2" IterationCount="INFINITE">
+					<KeyFrame Cue="0%">
+						<Setter Property="RotateTransform.Angle" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="RotateTransform.Angle" Value="360" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>
