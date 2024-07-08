@@ -103,247 +103,256 @@
         </Menu>
 
         <!--==================================================-->
-        <!-- Main tab control. -->
+        <!-- Main scroll viewer. -->
         <!--==================================================-->
 
-        <TabControl
+        <ScrollViewer
             DockPanel.Dock="Bottom"
-            Margin="16"
-            TabStripPlacement="Left">
+            Margin="8">
 
             <!--==================================================-->
-            <!-- Color theme examples. -->
+            <!-- Main tab control. -->
             <!--==================================================-->
 
-            <TabItem Header="Color Themes">
-                <tabs:TabThemes />
-            </TabItem>
+            <TabControl
+                Margin="0,0,4,0"
+                TabStripPlacement="Left">
 
-            <!--==================================================-->
-            <!-- AdornerLayer theme examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Color theme examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="AdornerLayer">
-                <tabs:TabAdornerLayer />
-            </TabItem>
+                <TabItem Header="Color Themes">
+                    <tabs:TabThemes />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- AutoCompleteBox theme examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- AdornerLayer theme examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="AutoCompleteBox">
-                <tabs:TabAutoCompleteBox />
-            </TabItem>
+                <TabItem Header="AdornerLayer">
+                    <tabs:TabAdornerLayer />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Button examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- AutoCompleteBox theme examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Button">
-                <tabs:TabButton />
-            </TabItem>
+                <TabItem Header="AutoCompleteBox">
+                    <tabs:TabAutoCompleteBox />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ButtonSpinner examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Button examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ButtonSpinner">
-                <tabs:TabButtonSpinner />
-            </TabItem>
+                <TabItem Header="Button">
+                    <tabs:TabButton />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Calendar examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ButtonSpinner examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Calendar">
-                <tabs:TabCalendar />
-            </TabItem>
+                <TabItem Header="ButtonSpinner">
+                    <tabs:TabButtonSpinner />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- CalendarDatePicker examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Calendar examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="CalendarDatePicker">
-                <tabs:TabCalendarDatePicker />
-            </TabItem>
+                <TabItem Header="Calendar">
+                    <tabs:TabCalendar />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Carousel examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- CalendarDatePicker examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Carousel">
-                <tabs:TabCarousel />
-            </TabItem>
+                <TabItem Header="CalendarDatePicker">
+                    <tabs:TabCalendarDatePicker />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- CheckBox examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Carousel examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="CheckBox">
-                <tabs:TabCheckBox />
-            </TabItem>
+                <TabItem Header="Carousel">
+                    <tabs:TabCarousel />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ComboBox examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- CheckBox examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ComboBox">
-                <tabs:TabComboBox />
-            </TabItem>
+                <TabItem Header="CheckBox">
+                    <tabs:TabCheckBox />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ContextMenu examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ComboBox examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ContextMenu">
-                <tabs:TabContextMenu />
-            </TabItem>
+                <TabItem Header="ComboBox">
+                    <tabs:TabComboBox />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Date/time picker examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ContextMenu examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="DateTimePicker">
-                <tabs:TabDateTimePicker />
-            </TabItem>
+                <TabItem Header="ContextMenu">
+                    <tabs:TabContextMenu />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Dialog examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Date/time picker examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Dialogs">
-                <tabs:TabDialogs />
-            </TabItem>
+                <TabItem Header="DateTimePicker">
+                    <tabs:TabDateTimePicker />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Expander examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Dialog examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Expander">
-                <tabs:TabExpander />
-            </TabItem>
+                <TabItem Header="Dialogs">
+                    <tabs:TabDialogs />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Flyout examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Expander examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Flyout">
-                <tabs:TabFlyout />
-            </TabItem>
+                <TabItem Header="Expander">
+                    <tabs:TabExpander />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- GridSplitter examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Flyout examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="GridSplitter">
-                <tabs:TabGridSplitter />
-            </TabItem>
+                <TabItem Header="Flyout">
+                    <tabs:TabFlyout />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ListBox examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- GridSplitter examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ListBox">
-                <tabs:TabListBox />
-            </TabItem>
+                <TabItem Header="GridSplitter">
+                    <tabs:TabGridSplitter />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- NotificationCard examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ListBox examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="NotificationCard">
-                <tabs:TabNotificationCard />
-            </TabItem>
+                <TabItem Header="ListBox">
+                    <tabs:TabListBox />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- NumericUpDown examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- NotificationCard examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="NumericUpDown">
-                <tabs:TabNumericUpDown />
-            </TabItem>
+                <TabItem Header="NotificationCard">
+                    <tabs:TabNotificationCard />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ProgressBar examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- NumericUpDown examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ProgressBar">
-                <tabs:TabProgressBar />
-            </TabItem>
+                <TabItem Header="NumericUpDown">
+                    <tabs:TabNumericUpDown />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- RadioButton examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ProgressBar examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="RadioButton">
-                <tabs:TabRadioButton />
-            </TabItem>
+                <TabItem Header="ProgressBar">
+                    <tabs:TabProgressBar />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ScrollViewer examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- RadioButton examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ScrollViewer">
-                <tabs:TabScrollViewer />
-            </TabItem>
+                <TabItem Header="RadioButton">
+                    <tabs:TabRadioButton />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- Slider examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ScrollViewer examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="Slider">
-                <tabs:TabSlider />
-            </TabItem>
+                <TabItem Header="ScrollViewer">
+                    <tabs:TabScrollViewer />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- SplitView examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- Slider examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="SplitView">
-                <tabs:TabSplitView />
-            </TabItem>
+                <TabItem Header="Slider">
+                    <tabs:TabSlider />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- TabControl and TabItem examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- SplitView examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="TabControl/TabItem">
-                <tabs:TabTabControl />
-            </TabItem>
+                <TabItem Header="SplitView">
+                    <tabs:TabSplitView />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- TextBox examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- TabControl and TabItem examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="TextBox">
-                <tabs:TabTextBox />
-            </TabItem>
+                <TabItem Header="TabControl/TabItem">
+                    <tabs:TabTabControl />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- TextBox examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- TextBox examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ToggleSwitch">
-                <tabs:TabToggleSwitch />
-            </TabItem>
+                <TabItem Header="TextBox">
+                    <tabs:TabTextBox />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- ToolTip examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- TextBox examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="ToolTip">
-                <tabs:TabToolTip />
-            </TabItem>
+                <TabItem Header="ToggleSwitch">
+                    <tabs:TabToggleSwitch />
+                </TabItem>
 
-            <!--==================================================-->
-            <!-- TreeView examples. -->
-            <!--==================================================-->
+                <!--==================================================-->
+                <!-- ToolTip examples. -->
+                <!--==================================================-->
 
-            <TabItem Header="TreeView">
-                <tabs:TabTreeView />
-            </TabItem>
+                <TabItem Header="ToolTip">
+                    <tabs:TabToolTip />
+                </TabItem>
 
-        </TabControl>
+                <!--==================================================-->
+                <!-- TreeView examples. -->
+                <!--==================================================-->
+
+                <TabItem Header="TreeView">
+                    <tabs:TabTreeView />
+                </TabItem>
+
+            </TabControl>
+
+        </ScrollViewer>
 
     </DockPanel>
 
