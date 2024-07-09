@@ -1,0 +1,158 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="clr-namespace:Romzetron.Avalonia.Controls">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<Grid ColumnDefinitions="Auto,400">
+				<StackPanel
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Spacing="10"
+						Margin="20">
+					<controls:CircularProgress
+							x:Name="Progress"
+							StrokeThickness="8"
+							IsIndeterminate="False"
+							Width="100"
+							Height="100"
+							Value="63" />
+					<Slider Value="{Binding #Progress.Value, Mode=TwoWay}"
+							Maximum="{Binding #Progress.Maximum}"
+							Minimum="{Binding #Progress.Minimum}" />
+					<CheckBox IsChecked="{Binding #Progress.ShowProgressText, Mode=TwoWay}"
+							Content="Show Progress Text" />
+					<CheckBox IsChecked="{Binding #Progress.IsIndeterminate, Mode=TwoWay}"
+							Content="Indeterminate" />
+				</StackPanel>
+				<ItemsControl ItemsSource="{x:Static Theme.Colors}"
+						Grid.Column="1"
+						Margin="10,0,0,0">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+					<ItemsControl.ItemTemplate>
+						<DataTemplate DataType="ColorTheme">
+							<controls:CircularProgress Theme.ColorTheme="{Binding}"
+									IsIndeterminate="{Binding #Progress.IsIndeterminate, Mode=OneWay}"
+									ShowProgressText="{Binding #Progress.ShowProgressText, Mode=OneWay}"
+									Value="{Binding #Progress.Value, Mode=OneWay}"
+									Minimum="{Binding #Progress.Minimum, Mode=OneWay}"
+									Maximum="{Binding #Progress.Maximum, Mode=OneWay}"
+									Content="{Binding}"
+									Margin="10" />
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type controls:CircularProgress}"
+			TargetType="controls:CircularProgress">
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Background" Value="{DynamicResource CircularProgressBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CircularProgressForeground}" />
+		<Setter Property="Stroke" Value="{DynamicResource CircularProgressStrokeColor}" />
+		<Setter Property="StrokeThickness" Value="{DynamicResource CircularProgressStrokeThickness}" />
+		<Setter Property="Height" Value="100" />
+		<Setter Property="Width" Value="100" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<LayoutTransformControl
+							x:Name="PART_LayoutTransformControl"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+						<StackPanel>
+							<ContentPresenter 
+									Background="Transparent"
+									Content="{TemplateBinding ContentControl.Content}"
+									HorizontalAlignment="Center" />
+							<TextBlock x:Name="Percent"
+									Foreground="{TemplateBinding Foreground}"
+									HorizontalAlignment="Center"
+									IsVisible="{TemplateBinding ShowProgressText}">
+								<TextBlock.Text>
+									<MultiBinding Converter="{StaticResource StringFormatConverter}">
+										<TemplateBinding Property="ProgressTextFormat"/>
+										<Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+										<TemplateBinding Property="Percentage"/>
+										<TemplateBinding Property="Minimum"/>
+										<TemplateBinding Property="Maximum"/>
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</StackPanel>
+					</LayoutTransformControl>
+					<Grid x:Name="Arc">
+						<Arc Stroke="{TemplateBinding Background}"
+								StrokeThickness="{TemplateBinding Converter={x:Static controls:CircularProgress.GetStrokeBorderThickness}}"
+								StartAngle="-90"
+								SweepAngle="360"
+								StrokeJoin="Bevel"
+								StrokeLineCap="{Binding StrokeLineCap, RelativeSource={RelativeSource TemplatedParent}}" />
+						<Arc x:Name="Stroke"
+								Stroke="{TemplateBinding Stroke}"
+								StrokeThickness="{TemplateBinding Converter={x:Static controls:CircularProgress.GetStrokeBorderThickness}}"
+								StartAngle="-90"
+								SweepAngle="{Binding SweepAngle, RelativeSource={RelativeSource TemplatedParent}}"
+								StrokeJoin="Bevel"
+								StrokeLineCap="{Binding StrokeLineCap, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^[IsIndeterminate=True] /template/ Grid#Arc">
+			<Style.Animations>
+				<Animation Duration="0:0:2" IterationCount="INFINITE">
+					<KeyFrame Cue="0%">
+						<Setter Property="RotateTransform.Angle" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="RotateTransform.Angle" Value="360" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Red] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Red06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Pink] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Pink06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Purple] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Purple06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=DeepPurple] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource DeepPurple06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Indigo] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Indigo06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Blue] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Blue06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Teal] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Teal06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Green] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Green06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Amber] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Amber06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Orange] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Orange06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=DeepOrange] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource DeepOrange06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=Brown] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource Brown06}" />
+		</Style>
+		<Style Selector="^[(Theme.ColorTheme)=BlueGrey] /template/ Arc#Stroke">
+			<Setter Property="Stroke" Value="{DynamicResource BlueGrey06}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>
