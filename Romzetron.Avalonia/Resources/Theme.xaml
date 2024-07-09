@@ -4,7 +4,8 @@
 
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime">
 
     <!--==================================================-->
     <!-- Font resources. -->
@@ -149,7 +150,7 @@
     <SolidColorBrush x:Key="CircularProgressStrokeColor" Color="{DynamicResource ColorTheme05}" />
     <SolidColorBrush x:Key="CircularProgressStrokeColorDisabled" Color="{DynamicResource ColorTheme03}" />
 
-    <Thickness x:Key="CircularProgressStrokeThickness">8</Thickness>
+    <system:Int32 x:Key="CircularProgressStrokeThickness">8</system:Int32>
 
     <!--==================================================-->
     <!-- ComboBox resources. -->

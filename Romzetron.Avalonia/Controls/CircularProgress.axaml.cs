@@ -4,7 +4,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
-using Romzetron.Avalonia.Extensions;
 
 #endregion
 
@@ -22,7 +21,7 @@ public sealed class CircularProgress : ContentControl
 	public static readonly StyledProperty<bool> ShowProgressTextProperty = AvaloniaProperty.Register<CircularProgress, bool>(nameof(ShowProgressText));
 	public static readonly StyledProperty<PenLineCap> StrokeLineCapProperty = AvaloniaProperty.Register<CircularProgress, PenLineCap>(nameof(StrokeLineCap), PenLineCap.Round);
 	public static readonly StyledProperty<Brush> StrokeProperty = AvaloniaProperty.Register<CircularProgress, Brush>(nameof(Stroke));
-	public static readonly StyledProperty<int> StrokeThicknessProperty = AvaloniaProperty.Register<CircularProgress, int>(nameof(StrokeThickness), 5);
+	public static readonly StyledProperty<int> StrokeThicknessProperty = AvaloniaProperty.Register<CircularProgress, int>(nameof(StrokeThickness), 8);
 	public static readonly StyledProperty<double> SweepAngleProperty = AvaloniaProperty.Register<CircularProgress, double>(nameof(SweepAngle));
 	public static readonly StyledProperty<double> ValueProperty = AvaloniaProperty.Register<CircularProgress, double>(nameof(Value));
 
@@ -33,7 +32,7 @@ public sealed class CircularProgress : ContentControl
 
 	#region Properties
 
-	public static FuncValueConverter<CircularProgress, double> GetStrokeBorderThickness => new(x => x.StrokeThickness + x.BorderThickness.Max());
+	public static FuncValueConverter<CircularProgress, double> GetStrokeBorderThickness => new(x => x?.StrokeThickness ?? 8);
 
 	public bool IsIndeterminate
 	{
