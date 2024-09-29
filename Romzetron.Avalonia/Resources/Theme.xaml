@@ -140,6 +140,19 @@
     <SolidColorBrush x:Key="CheckBoxForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
 
     <!--==================================================-->
+    <!-- CircularProgress resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="CircularProgressBackground" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="CircularProgressBackgroundDisabled" Color="{DynamicResource UiTheme05}" />
+    <SolidColorBrush x:Key="CircularProgressForeground" Color="{DynamicResource UiTextTheme05}" />
+    <SolidColorBrush x:Key="CircularProgressForegroundDisabled" Color="{DynamicResource UiTextTheme03}" />
+    <SolidColorBrush x:Key="CircularProgressStrokeColor" Color="{DynamicResource ColorTheme05}" />
+    <SolidColorBrush x:Key="CircularProgressStrokeColorDisabled" Color="{DynamicResource ColorTheme03}" />
+
+    <system:Int32 x:Key="CircularProgressStrokeThickness">8</system:Int32>
+
+    <!--==================================================-->
     <!-- ComboBox resources. -->
     <!--==================================================-->
 
