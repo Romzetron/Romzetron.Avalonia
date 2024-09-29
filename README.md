@@ -153,6 +153,7 @@ Some controls have the ability to have their color set explicitly, which overrid
 The following controls support this feature, with more possibly being added in the future.
 
 - CheckBox
+- CircularProgress
 - Button
 - DropDownButton
 - ProgressBar
