@@ -1,19 +1,15 @@
-#region References
-
 using Avalonia.Controls;
-
-#endregion
 
 namespace Romzetron.Avalonia.Example.Views.Tabs;
 
 public partial class TabCircularProgress : UserControl
 {
-	#region Constructors
+    //==================================================
+    // Constructor.
+    //==================================================
 
-	public TabCircularProgress()
-	{
-		InitializeComponent();
-	}
-
-	#endregion
+    public TabCircularProgress()
+    {
+        InitializeComponent();
+    }
 }

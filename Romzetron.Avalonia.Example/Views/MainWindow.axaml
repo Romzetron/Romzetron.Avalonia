@@ -219,7 +219,7 @@
                 <TabItem Header="CheckBox">
                     <tabs:TabCheckBox />
                 </TabItem>
-                
+
                 <!--==================================================-->
                 <!-- Circular Progress examples. -->
                 <!--==================================================-->
@@ -283,7 +283,7 @@
                 <TabItem Header="GridSplitter">
                     <tabs:TabGridSplitter />
                 </TabItem>
-                
+
                 <!--==================================================-->
                 <!-- HyperlinkButton examples. -->
                 <!--==================================================-->
