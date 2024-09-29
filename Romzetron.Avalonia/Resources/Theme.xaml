@@ -4,7 +4,8 @@
 
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime">
 
     <!--==================================================-->
     <!-- Font resources. -->
@@ -356,6 +357,20 @@
     <SolidColorBrush x:Key="GridSplitterPreview" Color="{DynamicResource UiTheme05}" />
 
     <!--==================================================-->
+    <!-- HyperlinkButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="HyperlinkButtonForeground" Color="{DynamicResource Blue07}" />
+    <SolidColorBrush x:Key="HyperlinkButtonBackgroundPointerOver" Color="{DynamicResource Blue06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundPressed" Color="{DynamicResource Blue06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundDisabled" Color="{DynamicResource Blue03}" />
+
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisited" Color="{DynamicResource Purple07}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedPointerOver" Color="{DynamicResource Purple06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedPressed" Color="{DynamicResource Purple06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedDisabled" Color="{DynamicResource Purple03}" />
+
+    <!--==================================================-->
     <!-- Label resources. -->
     <!--==================================================-->
 
@@ -488,6 +503,12 @@
     <CornerRadius x:Key="ProgressBarCornerRadius">4</CornerRadius>
 
     <!--==================================================-->
+    <!-- RefreshVisualizer resources. -->
+    <!--==================================================-->
+
+    <system:Double x:Key="RefreshVisualizerIndicatorSize">24</system:Double>
+
+    <!--==================================================-->
     <!-- RadioButton resources. -->
     <!--==================================================-->
 
@@ -495,7 +516,7 @@
     <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPressed" Color="{DynamicResource UiTheme06}" />
     <SolidColorBrush x:Key="RadioButtonOuterEllipseFillDisabled" Color="{DynamicResource UiTheme05}" />
 
-    <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill" Color="{DynamicResource ColorTheme07}" />
     <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillDisabled" Color="{DynamicResource ColorTheme03}" />
 
     <SolidColorBrush x:Key="RadioButtonInnerEllipseCheckedFill" Color="{DynamicResource White}" />

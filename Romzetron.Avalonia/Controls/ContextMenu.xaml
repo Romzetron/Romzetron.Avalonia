@@ -54,8 +54,6 @@
         <Setter Property="MinHeight" Value="{DynamicResource MenuFlyoutThemeMinHeight}" />
         <Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresenterThemePadding}" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="TextBlock.FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-        <Setter Property="TextBlock.FontWeight" Value="Normal" />
         <Setter Property="WindowManagerAddShadowHint" Value="False" />
         <Setter Property="Focusable" Value="True" />
 
@@ -92,7 +90,7 @@
                         <!--==================================================-->
 
                         <ItemsPresenter
-                            Name="PART_ItemsPresenter"
+                            x:Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             Margin="{DynamicResource MenuFlyoutScrollerMargin}"
                             KeyboardNavigation.TabNavigation="Continue"

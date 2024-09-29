@@ -150,7 +150,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="PART_LayoutRoot"
+                        x:Name="PART_LayoutRoot"
                         Classes="TreeViewItemLayoutRoot"
                         Focusable="True"
                         Background="{TemplateBinding Background}"
@@ -166,7 +166,7 @@
                         <!--==================================================-->
 
                         <Grid
-                            Name="PART_Header"
+                            x:Name="PART_Header"
                             ColumnDefinitions="Auto, *"
                             Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
 
@@ -175,11 +175,11 @@
                             <!--==================================================-->
 
                             <Panel
-                                Name="PART_ExpandCollapseArrowContainer"
+                                x:Name="PART_ExpandCollapseArrowContainer"
                                 Margin="{DynamicResource TreeViewItemExpandCollapseArrowMargin}">
 
                                 <ToggleButton
-                                    Name="PART_ExpandCollapseArrow"
+                                    x:Name="PART_ExpandCollapseArrow"
                                     Theme="{StaticResource TreeViewExpandCollapseArrow}"
                                     Focusable="False"
                                     IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
@@ -191,7 +191,7 @@
                             <!--==================================================-->
 
                             <ContentPresenter
-                                Name="PART_HeaderPresenter"
+                                x:Name="PART_HeaderPresenter"
                                 Grid.Column="1"
                                 Focusable="False"
                                 Background="Transparent"
@@ -211,7 +211,7 @@
                     <!--==================================================-->
 
                     <ItemsPresenter
-                        Name="PART_ItemsPresenter"
+                        x:Name="PART_ItemsPresenter"
                         IsVisible="{TemplateBinding IsExpanded}"
                         ItemsPanel="{TemplateBinding ItemsPanel}" />
 
@@ -220,7 +220,7 @@
             </ControlTemplate>
 
         </Setter>
-        
+
         <!--==================================================-->
         <!-- Pointer-over state. -->
         <!--==================================================-->

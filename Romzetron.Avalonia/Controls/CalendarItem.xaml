@@ -57,7 +57,7 @@
                 <!--==================================================-->
 
                 <ContentPresenter
-                    x:Name="Text"
+                    x:Name="PART_ContentPresenter"
                     Background="{TemplateBinding Background}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Content="{TemplateBinding Content}"
@@ -73,7 +73,7 @@
         <!-- Pointer-over state. -->
         <!--==================================================-->
 
-        <Style Selector="^:pointerover /template/ ContentPresenter#Text">
+        <Style Selector="^:pointerover /template/ ContentControl#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource CalendarViewForegroundPointerOver}" />
         </Style>
 
@@ -81,7 +81,7 @@
         <!-- Pressed state. -->
         <!--==================================================-->
 
-        <Style Selector="^:pressed /template/ ContentPresenter#Text">
+        <Style Selector="^:pressed /template/ ContentControl#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource CalendarViewForegroundPressed}" />
         </Style>
 
@@ -169,7 +169,7 @@
                             <!--==================================================-->
 
                             <Button
-                                Name="PART_HeaderButton"
+                                x:Name="PART_HeaderButton"
                                 Theme="{StaticResource CalendarButton}"
                                 Foreground="{TemplateBinding Foreground}"
                                 Padding="12,0,0,0"
@@ -180,7 +180,7 @@
                             <!--==================================================-->
 
                             <Button
-                                Name="PART_PreviousButton"
+                                x:Name="PART_PreviousButton"
                                 Theme="{StaticResource CalendarButton}"
                                 Grid.Column="1"
                                 Width="40"
@@ -199,7 +199,7 @@
                             <!--==================================================-->
 
                             <Button
-                                Name="PART_NextButton"
+                                x:Name="PART_NextButton"
                                 Theme="{StaticResource CalendarButton}"
                                 Grid.Column="2"
                                 Width="40"
@@ -224,7 +224,7 @@
 
 
                         <Border
-                            Name="BackgroundLayer"
+                            x:Name="BackgroundLayer"
                             Grid.Row="1"
                             Background="Transparent"
                             Margin="0,38,0,0"
@@ -235,7 +235,7 @@
                         <!--==================================================-->
 
                         <Grid
-                            Name="PART_MonthView"
+                            x:Name="PART_MonthView"
                             Grid.Row="1"
                             IsVisible="False"
                             MinHeight="290"
@@ -249,7 +249,7 @@
                         <!--==================================================-->
 
                         <Grid
-                            Name="PART_YearView"
+                            x:Name="PART_YearView"
                             Grid.Row="1"
                             MinHeight="290"
                             IsVisible="False"

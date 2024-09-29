@@ -13,6 +13,7 @@
                 <MergeResourceInclude Source="/Resources/BoxShadows.xaml" />
                 <MergeResourceInclude Source="/Resources/FullPalette.xaml" />
                 <MergeResourceInclude Source="/Resources/Theme.xaml" />
+                <MergeResourceInclude Source="/Strings/InvariantResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

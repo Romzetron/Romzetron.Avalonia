@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Dialogs;
 using Avalonia.ReactiveUI;
 
 namespace Romzetron.Avalonia.Example;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
 internal class Program
 {
     // Initialization code. Don't use any Avalonia, third-party APIs or any

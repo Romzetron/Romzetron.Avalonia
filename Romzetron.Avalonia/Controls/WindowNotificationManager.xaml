@@ -32,7 +32,7 @@
                 <!-- Notification collection to display. -->
                 <!--==================================================-->
 
-                <ReversibleStackPanel Name="PART_Items">
+                <ReversibleStackPanel x:Name="PART_Items">
 
                     <!--==================================================-->
                     <!-- Date templates. -->
@@ -121,6 +121,15 @@
         </Style>
 
         <!--==================================================-->
+        <!-- Top center style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:topcenter /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <!--==================================================-->
         <!-- Bottom left style. -->
         <!--==================================================-->
 
@@ -138,6 +147,16 @@
             <Setter Property="ReverseOrder" Value="True" />
             <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+        <!--==================================================-->
+        <!-- Bottom center style. -->
+        <!--==================================================-->
+
+        <Style Selector="^:bottomcenter /template/ ReversibleStackPanel#PART_Items">
+            <Setter Property="ReverseOrder" Value="True" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
 
     </ControlTheme>

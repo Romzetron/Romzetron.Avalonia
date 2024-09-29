@@ -6,7 +6,7 @@
     <!--==================================================-->
     <!-- Design preview. -->
     <!--==================================================-->
-    
+
     <Design.PreviewWith>
         <Border Padding="20">
             <StackPanel Spacing="20">
@@ -19,7 +19,7 @@
             </StackPanel>
         </Border>
     </Design.PreviewWith>
-    
+
     <!--==================================================-->
     <!-- RepeatButton control theme. -->
     <!--==================================================-->
@@ -29,7 +29,7 @@
         <!--==================================================-->
         <!-- Default property setters. -->
         <!--==================================================-->
-        
+
         <Setter Property="Background" Value="{DynamicResource RepeatButtonBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrush}" />
@@ -38,14 +38,12 @@
         <Setter Property="Padding" Value="{DynamicResource RepeatButtonPadding}" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="RenderTransform" Value="none" />
 
         <!--==================================================-->
         <!-- Template. -->
         <!--==================================================-->
-        
+
         <Setter Property="Template">
 
             <ControlTemplate>
@@ -53,7 +51,7 @@
                 <Border
                     x:Name="PART_Container"
                     Padding="0,0,0,1">
-                
+
                     <ContentPresenter
                         x:Name="PART_ContentPresenter"
                         Background="{TemplateBinding Background}"
@@ -65,14 +63,14 @@
                         Padding="{TemplateBinding Padding}"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                        Margin="0"/>
-                
+                        Margin="0" />
+
                 </Border>
 
             </ControlTemplate>
 
         </Setter>
-        
+
         <!--==================================================-->
         <!-- Pointer over, pressed & disabled styles. -->
         <!--==================================================-->

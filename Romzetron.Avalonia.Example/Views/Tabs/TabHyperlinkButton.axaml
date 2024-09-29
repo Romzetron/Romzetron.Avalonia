@@ -1,0 +1,53 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabHyperlinkButton">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="4">
+
+        <!--==================================================-->
+        <!-- Unvisited hyperlink button. -->
+        <!--==================================================-->
+
+        <HyperlinkButton Content="Unvisited Hyperlink" />
+
+        <!--==================================================-->
+        <!-- Visited hyperlink button. -->
+        <!--==================================================-->
+
+        <HyperlinkButton
+            Content="Visited Hyperlink"
+            IsVisited="True" />
+
+        <!--==================================================-->
+        <!-- Unvisited hyperlink button. -->
+        <!--==================================================-->
+
+        <HyperlinkButton
+            Content="Unvisited Hyperlink"
+            IsEnabled="False" />
+
+        <!--==================================================-->
+        <!-- Visited hyperlink button. -->
+        <!--==================================================-->
+
+        <HyperlinkButton
+            Content="Visited Hyperlink"
+            IsVisited="True"
+            IsEnabled="False" />
+
+    </StackPanel>
+
+</UserControl>

@@ -72,7 +72,7 @@
                     <!--==================================================-->
 
                     <ContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         Background="{TemplateBinding Background}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -127,7 +127,6 @@
         <!-- Default property setters. -->
         <!--==================================================-->
 
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="Foreground" Value="{DynamicResource DateTimePickerButtonForeground}" />
         <Setter Property="Background" Value="{DynamicResource DateTimePickerButtonBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource DateTimePickerButtonBorderBrush}" />
@@ -159,7 +158,7 @@
                     <!--==================================================-->
 
                     <Grid
-                        Name="LayoutRoot"
+                        x:Name="LayoutRoot"
                         Margin="{TemplateBinding Padding}">
 
                         <!--==================================================-->
@@ -186,7 +185,7 @@
                             <!-- Flyout button content layout grid. -->
                             <!--==================================================-->
 
-                            <Grid Name="PART_FlyoutButtonContentGrid">
+                            <Grid x:Name="PART_FlyoutButtonContentGrid">
 
                                 <!--==================================================-->
                                 <!-- Hour text. -->
@@ -200,11 +199,9 @@
 
                                     <TextBlock
                                         x:Name="PART_HourTextBlock"
+                                        Text="{DynamicResource StringTimePickerHourText}"
                                         HorizontalAlignment="Center"
-                                        Padding="{DynamicResource ButtonPadding}"
-                                        FontFamily="{TemplateBinding FontFamily}"
-                                        FontWeight="{TemplateBinding FontWeight}"
-                                        FontSize="{TemplateBinding FontSize}" />
+                                        Padding="{DynamicResource ButtonPadding}" />
 
                                 </Border>
 
@@ -213,11 +210,11 @@
                                 <!--==================================================-->
 
                                 <Rectangle
-                                    Name="PART_FirstColumnDivider"
+                                    x:Name="PART_FirstColumnDivider"
+                                    Grid.Column="1"
                                     Fill="{DynamicResource DateTimePickerButtonSpacerBrush}"
                                     HorizontalAlignment="Center"
-                                    Width="1"
-                                    Grid.Column="1" />
+                                    Width="1" />
 
                                 <!--==================================================-->
                                 <!-- Second text. -->
@@ -231,11 +228,9 @@
 
                                     <TextBlock
                                         x:Name="PART_MinuteTextBlock"
+                                        Text="{DynamicResource StringTimePickerMinuteText}"
                                         HorizontalAlignment="Center"
-                                        Padding="{DynamicResource ButtonPadding}"
-                                        FontFamily="{TemplateBinding FontFamily}"
-                                        FontWeight="{TemplateBinding FontWeight}"
-                                        FontSize="{TemplateBinding FontSize}" />
+                                        Padding="{DynamicResource ButtonPadding}" />
 
                                 </Border>
 
@@ -244,11 +239,11 @@
                                 <!--==================================================-->
 
                                 <Rectangle
-                                    Name="PART_SecondColumnDivider"
+                                    x:Name="PART_SecondColumnDivider"
+                                    Grid.Column="3"
                                     Fill="{DynamicResource DateTimePickerButtonSpacerBrush}"
                                     HorizontalAlignment="Center"
-                                    Width="1"
-                                    Grid.Column="3" />
+                                    Width="1" />
 
                                 <!--==================================================-->
                                 <!-- Period text. -->
@@ -263,10 +258,7 @@
                                     <TextBlock
                                         x:Name="PART_PeriodTextBlock"
                                         HorizontalAlignment="Center"
-                                        Padding="{DynamicResource ButtonPadding}"
-                                        FontFamily="{TemplateBinding FontFamily}"
-                                        FontWeight="{TemplateBinding FontWeight}"
-                                        FontSize="{TemplateBinding FontSize}" />
+                                        Padding="{DynamicResource ButtonPadding}" />
 
                                 </Border>
 
@@ -279,7 +271,7 @@
                         <!--==================================================-->
 
                         <Popup
-                            Name="PART_Popup"
+                            x:Name="PART_Popup"
                             WindowManagerAddShadowHint="False"
                             IsLightDismissEnabled="True"
                             PlacementTarget="{TemplateBinding}"
@@ -289,7 +281,7 @@
                             <!-- Time picker presenter. -->
                             <!--==================================================-->
 
-                            <TimePickerPresenter Name="PART_PickerPresenter" />
+                            <TimePickerPresenter x:Name="PART_PickerPresenter" />
 
                         </Popup>
 
@@ -348,7 +340,6 @@
         <Setter Property="Width" Value="242" />
         <Setter Property="MinWidth" Value="242" />
         <Setter Property="MaxHeight" Value="398" />
-        <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="Background" Value="{DynamicResource DateTimePickerFlyoutBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource DateTimePickerFlyoutBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource DateTimePickerFlyoutBorderThickness}" />
@@ -371,7 +362,7 @@
                 <!--==================================================-->
 
                 <Border
-                    Name="Background"
+                    x:Name="Background"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -383,13 +374,13 @@
                     <!-- Content layout grid. -->
                     <!--==================================================-->
 
-                    <Grid Name="ContentPanel" RowDefinitions="*,Auto">
+                    <Grid x:Name="ContentPanel" RowDefinitions="*,Auto">
 
                         <!--==================================================-->
                         <!-- Picker container. -->
                         <!--==================================================-->
 
-                        <Grid Name="PART_PickerContainer">
+                        <Grid x:Name="PART_PickerContainer">
 
                             <!--==================================================-->
                             <!-- Date time picker theme.. -->
@@ -405,7 +396,7 @@
                             <!-- Hour container. -->
                             <!--==================================================-->
 
-                            <Panel Name="PART_HourHost" Grid.Column="0">
+                            <Panel x:Name="PART_HourHost" Grid.Column="0">
 
                                 <!--==================================================-->
                                 <!-- Scroll viewer. -->
@@ -421,7 +412,7 @@
                                     <!--==================================================-->
 
                                     <DateTimePickerPanel
-                                        Name="PART_HourSelector"
+                                        x:Name="PART_HourSelector"
                                         PanelType="Hour"
                                         ItemHeight="{DynamicResource DateTimePickerFlyoutPresenterItemHeight}"
                                         ShouldLoop="True" />
@@ -433,7 +424,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_HourUpButton"
+                                    x:Name="PART_HourUpButton"
                                     Theme="{StaticResource DateTimePickerUpButton}"
                                     Margin="2" />
 
@@ -442,7 +433,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_HourDownButton"
+                                    x:Name="PART_HourDownButton"
                                     Theme="{StaticResource DateTimePickerDownButton}"
                                     Margin="2" />
 
@@ -452,7 +443,7 @@
                             <!-- Minute container. -->
                             <!--==================================================-->
 
-                            <Panel Name="PART_MinuteHost" Grid.Column="2">
+                            <Panel x:Name="PART_MinuteHost" Grid.Column="2">
 
                                 <!--==================================================-->
                                 <!-- Scroll viewer. -->
@@ -468,7 +459,7 @@
                                     <!--==================================================-->
 
                                     <DateTimePickerPanel
-                                        Name="PART_MinuteSelector"
+                                        x:Name="PART_MinuteSelector"
                                         PanelType="Minute"
                                         ItemHeight="{DynamicResource DateTimePickerFlyoutPresenterItemHeight}"
                                         ShouldLoop="True" />
@@ -480,7 +471,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_MinuteUpButton"
+                                    x:Name="PART_MinuteUpButton"
                                     Theme="{StaticResource DateTimePickerUpButton}"
                                     Margin="2" />
 
@@ -489,7 +480,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_MinuteDownButton"
+                                    x:Name="PART_MinuteDownButton"
                                     Theme="{StaticResource DateTimePickerDownButton}"
                                     Margin="2" />
 
@@ -499,7 +490,7 @@
                             <!-- Period container. -->
                             <!--==================================================-->
 
-                            <Panel Name="PART_PeriodHost" Grid.Column="4">
+                            <Panel x:Name="PART_PeriodHost" Grid.Column="4">
 
                                 <!--==================================================-->
                                 <!-- Scroll viewer. -->
@@ -515,7 +506,7 @@
                                     <!--==================================================-->
 
                                     <DateTimePickerPanel
-                                        Name="PART_PeriodSelector"
+                                        x:Name="PART_PeriodSelector"
                                         PanelType="TimePeriod"
                                         ItemHeight="{DynamicResource DateTimePickerFlyoutPresenterItemHeight}"
                                         ShouldLoop="False" />
@@ -527,7 +518,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_PeriodUpButton"
+                                    x:Name="PART_PeriodUpButton"
                                     Theme="{StaticResource DateTimePickerUpButton}"
                                     Margin="2" />
 
@@ -536,7 +527,7 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_PeriodDownButton"
+                                    x:Name="PART_PeriodDownButton"
                                     Theme="{StaticResource DateTimePickerDownButton}"
                                     Margin="2" />
 
@@ -559,7 +550,7 @@
                             <!--==================================================-->
 
                             <Rectangle
-                                Name="PART_FirstSpacer"
+                                x:Name="PART_FirstSpacer"
                                 Fill="{DynamicResource DateTimePickerFlyoutBorderBrush}"
                                 HorizontalAlignment="Center"
                                 Width="{DynamicResource DateTimePickerSpacerWidth}"
@@ -571,7 +562,7 @@
                             <!--==================================================-->
 
                             <Rectangle
-                                Name="PART_SecondSpacer"
+                                x:Name="PART_SecondSpacer"
                                 Fill="{DynamicResource DateTimePickerFlyoutBorderBrush}"
                                 HorizontalAlignment="Center"
                                 Width="{DynamicResource DateTimePickerSpacerWidth}"
@@ -585,7 +576,7 @@
                         <!--==================================================-->
 
                         <Grid
-                            Name="AcceptDismissGrid"
+                            x:Name="AcceptDismissGrid"
                             Grid.Row="1"
                             ColumnDefinitions="*,*"
                             RowDefinitions="Auto,*"
@@ -608,7 +599,7 @@
                             <!--==================================================-->
 
                             <Button
-                                Name="PART_AcceptButton"
+                                x:Name="PART_AcceptButton"
                                 Grid.Row="1" Grid.Column="0"
                                 Theme="{StaticResource DateTimePickerButton}"
                                 Height="{DynamicResource DateTimePickerFlyoutAcceptDismissHostGridHeight}"
@@ -633,7 +624,7 @@
                             <!--==================================================-->
 
                             <Button
-                                Name="PART_DismissButton"
+                                x:Name="PART_DismissButton"
                                 Grid.Row="1" Grid.Column="1"
                                 Theme="{StaticResource DateTimePickerButton}"
                                 Height="{DynamicResource DateTimePickerFlyoutAcceptDismissHostGridHeight}"

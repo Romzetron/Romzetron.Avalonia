@@ -14,8 +14,6 @@
         <!--==================================================-->
 
         <Setter Property="TextElement.Foreground" Value="{DynamicResource UiTextTheme00}" />
-        <Setter Property="TextElement.FontSize" Value="{DynamicResource StandardFontSize}" />
-        <Setter Property="TextElement.FontFamily" Value="{DynamicResource FontInterMedium}" />
 
     </ControlTheme>
 

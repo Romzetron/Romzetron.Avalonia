@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
         <Copyright>Copyright © 2024 Romzetron Software</Copyright>
         <Company>Romzetron Software</Company>
         <Title>Romzetron Avalonia Theme Example</Title>
@@ -9,11 +11,10 @@
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.0.11.1</Version>
-        <AssemblyVersion>11.0.11.1</AssemblyVersion>
-        <FileVersion>11.0.11.1</FileVersion>
+        <Version>11.1.0</Version>
+        <AssemblyVersion>11.1.0</AssemblyVersion>
+        <FileVersion>11.1.0</FileVersion>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -24,12 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.11" />
-        <PackageReference Include="Avalonia.Desktop" Version="11.0.11" />
+        <PackageReference Include="Avalonia" Version="11.1.0"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.1.0"/>
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.11" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.11" />
-        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.0.10.9" />
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.1.0"/>
+        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.1.0"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -134,19 +135,23 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Tabs\TabCarousel.axaml.cs">
-          <DependentUpon>TabCarousel.axaml</DependentUpon>
-          <SubType>Code</SubType>
+            <DependentUpon>TabCarousel.axaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Tabs\TabAdornerLayer.axaml.cs">
-          <DependentUpon>TabAdornerLayer.axaml</DependentUpon>
-          <SubType>Code</SubType>
+            <DependentUpon>TabAdornerLayer.axaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Tabs\TabSplitView.axaml.cs">
-          <DependentUpon>TabSplitView.axaml</DependentUpon>
-          <SubType>Code</SubType>
+            <DependentUpon>TabSplitView.axaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Tabs\TabDialogs.axaml.cs">
-          <DependentUpon>TabDialogs.axaml</DependentUpon>
+            <DependentUpon>TabDialogs.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\Tabs\TabHyperlinkButton.axaml.cs">
+          <DependentUpon>TabHyperlinkButton.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
@@ -168,6 +173,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\" />
+        <Folder Include="Assets\"/>
     </ItemGroup>
 </Project>

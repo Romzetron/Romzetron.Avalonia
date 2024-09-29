@@ -32,7 +32,6 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
 
         <!--==================================================-->
         <!-- Template. -->
@@ -47,7 +46,7 @@
                 <!--==================================================-->
 
                 <Border
-                    Name="RootBorder"
+                    x:Name="RootBorder"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -70,7 +69,7 @@
                             <!--==================================================-->
 
                             <Ellipse
-                                Name="OuterEllipse"
+                                x:Name="OuterEllipse"
                                 Width="20"
                                 Height="20"
                                 Fill="{DynamicResource RadioButtonOuterEllipseFill}"
@@ -82,7 +81,7 @@
                             <!--==================================================-->
 
                             <Ellipse
-                                Name="CheckOuterEllipse"
+                                x:Name="CheckOuterEllipse"
                                 Width="20"
                                 Height="20"
                                 Fill="{DynamicResource RadioButtonOuterEllipseCheckedFill}"
@@ -95,7 +94,7 @@
                             <!--==================================================-->
 
                             <Ellipse
-                                Name="CheckInnerEllipse"
+                                x:Name="CheckInnerEllipse"
                                 Width="8"
                                 Height="8"
                                 Fill="{DynamicResource RadioButtonInnerEllipseCheckedFill}"
@@ -109,7 +108,7 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_ContentPresenter"
+                            x:Name="PART_ContentPresenter"
                             Grid.Column="1"
                             Margin="{TemplateBinding Padding}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

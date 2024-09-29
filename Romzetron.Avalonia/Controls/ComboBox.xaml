@@ -135,7 +135,7 @@
                         <ContentControl
                             x:Name="ContentPresenter"
                             Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding ItemTemplate}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             Foreground="{TemplateBinding Foreground}"
                             Grid.Column="0"
                             Margin="{TemplateBinding Padding}"
@@ -178,7 +178,7 @@
 
                         <Popup
                             Grid.Column="0"
-                            Name="PART_Popup"
+                            x:Name="PART_Popup"
                             WindowManagerAddShadowHint="False"
                             IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
                             MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
@@ -213,7 +213,7 @@
                                     <!--==================================================-->
 
                                     <ItemsPresenter
-                                        Name="PART_ItemsPresenter"
+                                        x:Name="PART_ItemsPresenter"
                                         Margin="{DynamicResource ComboBoxDropdownContentMargin}"
                                         ItemsPanel="{TemplateBinding ItemsPanel}" />
 

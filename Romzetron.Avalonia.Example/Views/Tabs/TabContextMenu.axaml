@@ -46,9 +46,14 @@
                             <TextBlock Text="😀" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Menu Item with _Checkbox">
+                    <MenuItem Header="Menu Item with _CheckBox">
                         <MenuItem.Icon>
-                            <CheckBox BorderThickness="0" IsHitTestVisible="False" IsChecked="True" />
+                            <CheckBox IsChecked="True" Padding="0" IsHitTestVisible="False" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Menu Item with _RadioButton">
+                        <MenuItem.Icon>
+                            <RadioButton IsChecked="True" Padding="0" IsHitTestVisible="False" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </ContextMenu>

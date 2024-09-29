@@ -27,7 +27,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="0" Grid.Column="1"
             Content="Theme Indeterminate"
@@ -48,7 +48,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="0" Grid.Column="4"
             Content="Theme Indeterminate, Disabled"
@@ -75,7 +75,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="1" Grid.Column="1"
             Theme.ColorTheme="Red"
@@ -99,7 +99,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="1" Grid.Column="4"
             Theme.ColorTheme="Red"
@@ -128,7 +128,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="2" Grid.Column="1"
             Theme.ColorTheme="Pink"
@@ -152,7 +152,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="2" Grid.Column="4"
             Theme.ColorTheme="Pink"
@@ -181,7 +181,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="3" Grid.Column="1"
             Theme.ColorTheme="Purple"
@@ -205,7 +205,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="3" Grid.Column="4"
             Theme.ColorTheme="Purple"
@@ -234,7 +234,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="4" Grid.Column="1"
             Theme.ColorTheme="DeepPurple"
@@ -258,7 +258,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="4" Grid.Column="4"
             Theme.ColorTheme="DeepPurple"
@@ -287,7 +287,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="5" Grid.Column="1"
             Theme.ColorTheme="Indigo"
@@ -311,7 +311,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="5" Grid.Column="4"
             Theme.ColorTheme="Indigo"
@@ -340,7 +340,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="6" Grid.Column="1"
             Theme.ColorTheme="Blue"
@@ -364,7 +364,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="6" Grid.Column="4"
             Theme.ColorTheme="Blue"
@@ -393,7 +393,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="7" Grid.Column="1"
             Theme.ColorTheme="Teal"
@@ -417,7 +417,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="7" Grid.Column="4"
             Theme.ColorTheme="Teal"
@@ -446,7 +446,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="8" Grid.Column="1"
             Theme.ColorTheme="Green"
@@ -470,7 +470,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="8" Grid.Column="4"
             Theme.ColorTheme="Green"
@@ -499,7 +499,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="9" Grid.Column="1"
             Theme.ColorTheme="Amber"
@@ -523,7 +523,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="9" Grid.Column="4"
             Theme.ColorTheme="Amber"
@@ -552,7 +552,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="10" Grid.Column="1"
             Theme.ColorTheme="Orange"
@@ -576,7 +576,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="10" Grid.Column="4"
             Theme.ColorTheme="Orange"
@@ -605,7 +605,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="11" Grid.Column="1"
             Theme.ColorTheme="DeepOrange"
@@ -629,7 +629,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="11" Grid.Column="4"
             Theme.ColorTheme="DeepOrange"
@@ -658,7 +658,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="12" Grid.Column="1"
             Theme.ColorTheme="Brown"
@@ -682,7 +682,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="12" Grid.Column="4"
             Theme.ColorTheme="Brown"
@@ -711,7 +711,7 @@
             IsChecked="True"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="13" Grid.Column="1"
             Theme.ColorTheme="BlueGrey"
@@ -735,7 +735,7 @@
             IsEnabled="False"
             Width="200"
             Margin="4" />
-        
+
         <CheckBox
             Grid.Row="13" Grid.Column="4"
             Theme.ColorTheme="BlueGrey"

@@ -30,7 +30,7 @@
                     <!--==================================================-->
 
                     <ContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -45,7 +45,7 @@
                     <!-- Visualizer presenter. -->
                     <!--==================================================-->
 
-                    <Grid Name="PART_RefreshVisualizerPresenter" />
+                    <Grid x:Name="PART_RefreshVisualizerPresenter" />
 
                 </Grid>
 

@@ -37,7 +37,6 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
 
         <!--==================================================-->
         <!-- Template. -->

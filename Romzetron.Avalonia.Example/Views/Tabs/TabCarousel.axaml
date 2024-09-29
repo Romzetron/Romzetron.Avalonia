@@ -31,7 +31,7 @@
             <!--==================================================-->
 
             <Button
-                Name="ButtonPrevious"
+                x:Name="ButtonPrevious"
                 Grid.Column="0"
                 VerticalAlignment="Center"
                 Height="48"
@@ -53,7 +53,7 @@
             <!--==================================================-->
 
             <Carousel
-                Name="Carousel"
+                x:Name="Carousel"
                 Grid.Column="1">
 
                 <!--==================================================-->
@@ -79,7 +79,7 @@
             <!--==================================================-->
 
             <Button
-                Name="ButtonNext"
+                x:Name="ButtonNext"
                 Grid.Column="2"
                 VerticalAlignment="Center"
                 Height="48"
@@ -117,7 +117,7 @@
             <!--==================================================-->
 
             <ComboBox
-                Name="Transition"
+                x:Name="Transition"
                 SelectedIndex="1"
                 Width="200"
                 VerticalAlignment="Center">
@@ -154,7 +154,7 @@
             <!--==================================================-->
 
             <ComboBox
-                Name="Orientation"
+                x:Name="Orientation"
                 SelectedIndex="0"
                 Width="200"
                 VerticalAlignment="Center">

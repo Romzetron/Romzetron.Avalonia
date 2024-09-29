@@ -78,14 +78,13 @@
                         <!-- Container grid. -->
                         <!--==================================================-->
 
-                        <Grid Name="Container">
+                        <Grid x:Name="Container">
 
                             <!--==================================================-->
                             <!-- Container columns. -->
                             <!--==================================================-->
 
                             <Grid.ColumnDefinitions>
-                                <!-- why is this throwing a binding error? -->
                                 <ColumnDefinition Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneColumnGridLength}" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
@@ -95,7 +94,7 @@
                             <!--==================================================-->
 
                             <Panel
-                                Name="PART_PaneRoot"
+                                x:Name="PART_PaneRoot"
                                 ClipToBounds="True"
                                 HorizontalAlignment="Left"
                                 ZIndex="100">
@@ -122,7 +121,7 @@
                                 <!--==================================================-->
 
                                 <Rectangle
-                                    Name="HCPaneBorder"
+                                    x:Name="HCPaneBorder"
                                     Fill="{DynamicResource SplitViewBorderBrush}"
                                     ClipToBounds="True"
                                     Width="1"
@@ -134,7 +133,9 @@
                             <!-- Content panel. -->
                             <!--==================================================-->
 
-                            <Panel Name="ContentRoot">
+                            <Panel
+                                x:Name="ContentRoot"
+                                Grid.Column="0">
 
                                 <!--==================================================-->
                                 <!-- Content. -->
@@ -150,7 +151,7 @@
                                 <!--==================================================-->
 
                                 <Rectangle
-                                    Name="LightDismissLayer"
+                                    x:Name="LightDismissLayer"
                                     Fill="Transparent"
                                     IsVisible="False" />
 
@@ -276,7 +277,7 @@
                         <!--==================================================-->
 
                         <Grid
-                            Name="Container"
+                            x:Name="Container"
                             ClipToBounds="True">
 
                             <!--==================================================-->
@@ -293,7 +294,7 @@
                             <!--==================================================-->
 
                             <Panel
-                                Name="PART_PaneRoot"
+                                x:Name="PART_PaneRoot"
                                 ClipToBounds="True"
                                 HorizontalAlignment="Right"
                                 ZIndex="100">
@@ -320,7 +321,7 @@
                                 <!--==================================================-->
 
                                 <Rectangle
-                                    Name="HCPaneBorder"
+                                    x:Name="HCPaneBorder"
                                     Fill="{DynamicResource SplitViewBorderBrush}"
                                     Width="1" HorizontalAlignment="Left" />
 
@@ -330,7 +331,7 @@
                             <!-- Content pane. -->
                             <!--==================================================-->
 
-                            <Panel Name="ContentRoot">
+                            <Panel x:Name="ContentRoot">
 
                                 <!--==================================================-->
                                 <!-- Content. -->
@@ -345,7 +346,7 @@
                                 <!-- Dismiss layer. -->
                                 <!--==================================================-->
 
-                                <Rectangle Name="LightDismissLayer" />
+                                <Rectangle x:Name="LightDismissLayer" />
 
                             </Panel>
 

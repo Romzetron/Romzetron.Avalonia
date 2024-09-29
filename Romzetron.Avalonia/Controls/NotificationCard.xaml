@@ -25,7 +25,6 @@
 
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Width" Value="350" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="Background" Value="{DynamicResource NotificationCardBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource NotificationCardForeground}" />
         <Setter Property="Padding" Value="{DynamicResource NotificationCardPadding}" />
@@ -50,7 +49,7 @@
                 <!--==================================================-->
 
                 <LayoutTransformControl
-                    Name="PART_LayoutTransformControl"
+                    x:Name="PART_LayoutTransformControl"
                     UseRenderTransform="True">
 
                     <!--==================================================-->
@@ -93,8 +92,8 @@
                                 <!-- Content. -->
                                 <!--==================================================-->
 
-                                <ContentControl
-                                    Name="PART_Content"
+                                <ContentPresenter
+                                    x:Name="PART_ContentPresenter"
                                     MinHeight="64"
                                     Padding="{TemplateBinding Padding}"
                                     Content="{TemplateBinding Content}" />

@@ -18,7 +18,7 @@
             </ListBox>
         </Border>
     </Design.PreviewWith>
-    
+
     <!--==================================================-->
     <!-- ListBoxItem control theme. -->
     <!--==================================================-->
@@ -44,7 +44,7 @@
             <ControlTemplate>
 
                 <ContentPresenter
-                    Name="PART_ContentPresenter"
+                    x:Name="PART_ContentPresenter"
                     Background="{TemplateBinding Background}"
                     Foreground="{TemplateBinding Foreground}"
                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -52,7 +52,6 @@
                     CornerRadius="{TemplateBinding CornerRadius}"
                     ContentTemplate="{TemplateBinding ContentTemplate}"
                     Content="{TemplateBinding Content}"
-                    FontSize="{DynamicResource StandardFontSize}"
                     Padding="{TemplateBinding Padding}"
                     Margin="{TemplateBinding Margin}"
                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -61,7 +60,7 @@
             </ControlTemplate>
 
         </Setter>
-        
+
         <!--==================================================-->
         <!-- First item style. -->
         <!--==================================================-->
@@ -69,7 +68,7 @@
         <Style Selector="^:nth-child(1)">
             <Setter Property="Margin" Value="{DynamicResource ListBoxItemFirstItemMargin}" />
         </Style>
-        
+
         <!--==================================================-->
         <!-- Last item style. -->
         <!--==================================================-->

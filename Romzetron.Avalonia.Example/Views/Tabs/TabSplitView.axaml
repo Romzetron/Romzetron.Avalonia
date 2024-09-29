@@ -29,7 +29,7 @@
             <!--==================================================-->
 
             <ToggleButton
-                Name="PaneOpenButton"
+                x:Name="PaneOpenButton"
                 Content="IsPaneOpen"
                 IsChecked="{Binding IsPaneOpen, ElementName=SplitView}"
                 HorizontalAlignment="Stretch" />
@@ -39,7 +39,7 @@
             <!--==================================================-->
 
             <ToggleButton
-                Name="UseLightDismissOverlayModeButton"
+                x:Name="UseLightDismissOverlayModeButton"
                 Content="UseLightDismissOverlayMode"
                 IsChecked="{Binding UseLightDismissOverlayMode, ElementName=SplitView}"
                 HorizontalAlignment="Stretch" />
@@ -63,7 +63,7 @@
                 Margin="0,8,0,0" />
 
             <ComboBox
-                Name="DisplayModeSelector"
+                x:Name="DisplayModeSelector"
                 SelectedIndex="{Binding DisplayMode}"
                 HorizontalAlignment="Stretch">
 
@@ -83,7 +83,7 @@
                 Margin="0,8,0,0" />
 
             <Slider
-                Name="OpenPaneLengthSlider"
+                x:Name="OpenPaneLengthSlider"
                 Value="256"
                 Minimum="128"
                 Maximum="500"
@@ -99,7 +99,7 @@
                 Margin="0,8,0,0" />
 
             <Slider
-                Name="CompactPaneLengthSlider"
+                x:Name="CompactPaneLengthSlider"
                 Value="48"
                 Minimum="24"
                 Maximum="128"
@@ -113,7 +113,7 @@
         <!--==================================================-->
 
         <SplitView
-            Name="SplitView"
+            x:Name="SplitView"
             Grid.Column="0"
             PanePlacement="{Binding PanePlacement}"
             BorderBrush="{DynamicResource UiTheme05}"
@@ -145,7 +145,7 @@
                         Grid.Row="0" Grid.Column="0"
                         Text="Pane Content"
                         FontWeight="Bold"
-                        Name="PaneHeader"
+                        x:Name="PaneHeader"
                         Margin="8" />
 
                     <!--==================================================-->

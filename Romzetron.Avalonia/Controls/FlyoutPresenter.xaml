@@ -27,8 +27,8 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="CornerRadius" Value="{DynamicResource FlyoutCornerRadius}" />
-        <Setter Property="ClipToBounds" Value="False"/>
-        
+        <Setter Property="ClipToBounds" Value="False" />
+
         <!--==================================================-->
         <!-- Template. -->
         <!--==================================================-->
@@ -42,13 +42,13 @@
                 <!--==================================================-->
 
                 <Border
-                    Name="LayoutRoot"
+                    x:Name="LayoutRoot"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Padding="{DynamicResource FlyoutBorderThemePadding}"
                     CornerRadius="{TemplateBinding CornerRadius}">
-                    
+
                     <!--==================================================-->
                     <!-- Scroll viewer. -->
                     <!--==================================================-->
@@ -62,6 +62,7 @@
                         <!--==================================================-->
 
                         <ContentPresenter
+                            x:Name="PART_ContentPresenter"
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Foreground="{TemplateBinding Foreground}"
@@ -69,12 +70,12 @@
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             HorizontalContentAlignment="Stretch"
-                            VerticalContentAlignment="Stretch"/>
+                            VerticalContentAlignment="Stretch" />
 
                     </ScrollViewer>
 
                 </Border>
-                    
+
             </ControlTemplate>
 
         </Setter>

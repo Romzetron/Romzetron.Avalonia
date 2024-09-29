@@ -75,7 +75,7 @@
                     <!--==================================================-->
 
                     <ContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         Padding="{TemplateBinding Padding}"
                         Background="{TemplateBinding Background}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -176,7 +176,7 @@
                     <!--==================================================-->
 
                     <ContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         Padding="{TemplateBinding Padding}"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -208,7 +208,7 @@
                 <!--==================================================-->
 
                 <Panel
-                    Name="PART_InlineErrorTemplatePanel"
+                    x:Name="PART_InlineErrorTemplatePanel"
                     Background="Transparent">
 
                     <!--==================================================-->

@@ -157,7 +157,7 @@
                     <!--==================================================-->
 
                     <ScrollContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         Margin="{TemplateBinding Padding}" />
 
                 </DockPanel>

@@ -1,7 +1,6 @@
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="using:Avalonia.Controls.Converters"
     x:ClassModifier="internal">
 
     <!--==================================================-->
@@ -41,7 +40,7 @@
                     <!--==================================================-->
 
                     <ScrollContentPresenter
-                        Name="PART_ContentPresenter"
+                        x:Name="PART_ContentPresenter"
                         Padding="{TemplateBinding Padding}"
                         HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
                         VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
@@ -66,7 +65,7 @@
                     <!--==================================================-->
 
                     <ScrollBar
-                        Name="PART_HorizontalScrollBar"
+                        x:Name="PART_HorizontalScrollBar"
                         Grid.Row="1" Grid.Column="0"
                         Margin="0,4,0,0"
                         Orientation="Horizontal" />
@@ -76,7 +75,7 @@
                     <!--==================================================-->
 
                     <ScrollBar
-                        Name="PART_VerticalScrollBar"
+                        x:Name="PART_VerticalScrollBar"
                         Grid.Row="0" Grid.Column="1"
                         Margin="4,0,0,0"
                         Orientation="Vertical" />

@@ -91,9 +91,39 @@
             </MenuItem>
 
             <MenuItem Header="_Edit" InputGesture="Cmd+E">
+
                 <MenuItem Header="C_ut" InputGesture="Cmd+X" />
                 <MenuItem Header="_Copy" InputGesture="Cmd+C" />
                 <MenuItem Header="_Paste" InputGesture="Cmd+V" />
+
+                <Separator />
+
+                <MenuItem Header="RadioButton Checked">
+                    <MenuItem.Icon>
+                        <RadioButton IsChecked="True" Padding="0" IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem Header="RadioButton Unchecked">
+                    <MenuItem.Icon>
+                        <RadioButton IsChecked="False" Padding="0" IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <Separator />
+
+                <MenuItem Header="CheckBox Checked">
+                    <MenuItem.Icon>
+                        <CheckBox IsChecked="True" Padding="0" IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem Header="CheckBox Unchecked">
+                    <MenuItem.Icon>
+                        <CheckBox IsChecked="False" Padding="0" IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
             </MenuItem>
 
             <MenuItem Header="_Help" InputGesture="Cmd+H">
@@ -244,6 +274,14 @@
 
                 <TabItem Header="GridSplitter">
                     <tabs:TabGridSplitter />
+                </TabItem>
+                
+                <!--==================================================-->
+                <!-- HyperlinkButton examples. -->
+                <!--==================================================-->
+
+                <TabItem Header="HyperlinkButton">
+                    <tabs:TabHyperlinkButton />
                 </TabItem>
 
                 <!--==================================================-->

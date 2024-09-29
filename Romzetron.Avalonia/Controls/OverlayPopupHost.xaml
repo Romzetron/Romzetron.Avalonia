@@ -16,7 +16,7 @@
         <Setter Property="Foreground" Value="{DynamicResource StandardFontForeground}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="FontStyle" Value="Normal" />
 
         <!--==================================================-->
@@ -44,7 +44,7 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_ContentPresenter"
+                            x:Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Content="{TemplateBinding Content}"
