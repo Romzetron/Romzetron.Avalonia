@@ -275,6 +275,14 @@
                 <TabItem Header="GridSplitter">
                     <tabs:TabGridSplitter />
                 </TabItem>
+                
+                <!--==================================================-->
+                <!-- HyperlinkButton examples. -->
+                <!--==================================================-->
+
+                <TabItem Header="HyperlinkButton">
+                    <tabs:TabHyperlinkButton />
+                </TabItem>
 
                 <!--==================================================-->
                 <!-- ListBox examples. -->

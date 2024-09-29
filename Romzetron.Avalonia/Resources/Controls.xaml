@@ -35,6 +35,8 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Expander.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/FlyoutPresenter.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/GridSplitter.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/HeaderedContentControl.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/HyperlinkButton.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ItemsControl.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Label.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ListBox.xaml" />
@@ -66,6 +68,7 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TabStrip.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TabStripItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TextBox.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TextSelectionHandle.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ThemeVariantScope.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TimePicker.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/TitleBar.xaml" />

@@ -150,6 +150,10 @@
             <DependentUpon>TabDialogs.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabHyperlinkButton.axaml.cs">
+          <DependentUpon>TabHyperlinkButton.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>

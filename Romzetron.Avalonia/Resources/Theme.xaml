@@ -357,6 +357,20 @@
     <SolidColorBrush x:Key="GridSplitterPreview" Color="{DynamicResource UiTheme05}" />
 
     <!--==================================================-->
+    <!-- HyperlinkButton resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="HyperlinkButtonForeground" Color="{DynamicResource Blue07}" />
+    <SolidColorBrush x:Key="HyperlinkButtonBackgroundPointerOver" Color="{DynamicResource Blue06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundPressed" Color="{DynamicResource Blue06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundDisabled" Color="{DynamicResource Blue03}" />
+
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisited" Color="{DynamicResource Purple07}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedPointerOver" Color="{DynamicResource Purple06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedPressed" Color="{DynamicResource Purple06}" />
+    <SolidColorBrush x:Key="HyperlinkButtonForegroundVisitedDisabled" Color="{DynamicResource Purple03}" />
+
+    <!--==================================================-->
     <!-- Label resources. -->
     <!--==================================================-->
 
