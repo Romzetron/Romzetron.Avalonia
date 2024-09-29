@@ -55,6 +55,7 @@
         <Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresenterThemePadding}" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="WindowManagerAddShadowHint" Value="False" />
+        <Setter Property="Focusable" Value="True" />
 
         <!--==================================================-->
         <!-- Template. -->
