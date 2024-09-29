@@ -3,19 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tabs="clr-namespace:Romzetron.Avalonia.Example.Views.Tabs"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
-    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabNotificationCard">
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabNotificationCard"
+    x:DataType="tabs:TabNotificationCard">
 
     <!--==================================================-->
-    <!-- Resources. -->
-    <!--==================================================-->
-
-    <UserControl.Resources>
-        <x:Double x:Key="ButtonWidth">250</x:Double>
-    </UserControl.Resources>
-
-    <!--==================================================-->
-    <!-- Layout grid. -->
+    <!-- Layout stack panel. -->
     <!--==================================================-->
 
     <StackPanel
@@ -23,51 +17,103 @@
         VerticalAlignment="Top"
         HorizontalAlignment="Left"
         Orientation="Vertical"
-        Spacing="8">
+        Spacing="16">
 
         <!--==================================================-->
-        <!-- Display notification top right. -->
+        <!-- Notification type. -->
         <!--==================================================-->
 
-        <Button
-            x:Name="ShowTopRightNotification"
-            Theme.ColorTheme="Blue"
-            Content="Show Top Right Info Notification"
-            Click="ShowTopRightNotification_OnClick"
-            Width="{StaticResource ButtonWidth}" />
+        <StackPanel
+            Orientation="Horizontal"
+            Spacing="8">
+
+            <Label
+                Content="Notification Type"
+                VerticalContentAlignment="Center" />
+
+            <ComboBox
+                ItemsSource="{Binding NotificationTypes}"
+                SelectedItem="{Binding SelectedNotificationType}"
+                Width="200" />
+
+        </StackPanel>
 
         <!--==================================================-->
-        <!-- Display notification top left. -->
+        <!-- Button layout grid. -->
         <!--==================================================-->
 
-        <Button
-            x:Name="ShowTopLeftNotification"
-            Theme.ColorTheme="Green"
-            Content="Show Top Left Success Notification"
-            Click="ShowTopLeftNotification_OnClick"
-            Width="{StaticResource ButtonWidth}" />
+        <Grid
+            RowDefinitions="*,*"
+            ColumnDefinitions="*,*,*"
+            Width="800">
 
-        <!--==================================================-->
-        <!-- Display notification bottom left. -->
-        <!--==================================================-->
+            <!--==================================================-->
+            <!-- Display notification top left. -->
+            <!--==================================================-->
 
-        <Button
-            x:Name="ShowBottomLeftNotification"
-            Theme.ColorTheme="Orange"
-            Content="Show Bottom Left Warning Notification"
-            Click="ShowBottomLeftNotification_OnClick"
-            Width="{StaticResource ButtonWidth}" />
+            <Button
+                Grid.Row="0" Grid.Column="0"
+                Content="Show Top Left Notification"
+                Click="ShowTopLeftNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="0,0,4,4" />
 
-        <!--==================================================-->
-        <!-- Display notification bottom right. -->
-        <!--==================================================-->
+            <!--==================================================-->
+            <!-- Display notification top center. -->
+            <!--==================================================-->
 
-        <Button
-            x:Name="ShowBottomRightNotification"
-            Theme.ColorTheme="Red"
-            Content="Show Bottom Right Error Notification"
-            Click="ShowBottomRightNotification_OnClick"
-            Width="{StaticResource ButtonWidth}" />
+            <Button
+                Grid.Row="0" Grid.Column="1"
+                Content="Show Top Center Notification"
+                Click="ShowTopCenterNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="4,0,4,4" />
+
+            <!--==================================================-->
+            <!-- Display notification top right. -->
+            <!--==================================================-->
+
+            <Button
+                Grid.Row="0" Grid.Column="2"
+                Content="Show Top Right Notification"
+                Click="ShowTopRightNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="4,0,0,4" />
+
+            <!--==================================================-->
+            <!-- Display notification bottom left. -->
+            <!--==================================================-->
+
+            <Button
+                Grid.Row="1" Grid.Column="0"
+                Content="Show Bottom Left Notification"
+                Click="ShowBottomLeftNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="0,4,4,0" />
+
+            <!--==================================================-->
+            <!-- Display notification bottom center. -->
+            <!--==================================================-->
+
+            <Button
+                Grid.Row="1" Grid.Column="1"
+                Content="Show Bottom Center Notification"
+                Click="ShowBottomCenterNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="4,4,4,0" />
+
+            <!--==================================================-->
+            <!-- Display notification bottom right. -->
+            <!--==================================================-->
+
+            <Button
+                Grid.Row="1" Grid.Column="2"
+                Content="Show Bottom Right Notification"
+                Click="ShowBottomRightNotification_OnClick"
+                HorizontalAlignment="Stretch"
+                Margin="4,4,0,0" />
+
+        </Grid>
 
     </StackPanel>
 
