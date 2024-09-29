@@ -61,7 +61,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="Root" Background="{TemplateBinding Background}"
+                        x:Name="Root" Background="{TemplateBinding Background}"
                         BorderThickness="0"
                         ClipToBounds="True">
 
@@ -69,8 +69,8 @@
                         <!-- Content. -->
                         <!--==================================================-->
 
-                        <ContentControl
-                            x:Name="Content"
+                        <ContentPresenter
+                            x:Name="PART_ContentPresenter"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Content="{TemplateBinding Content}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -104,7 +104,7 @@
             <!-- Content selected foreground. -->
             <!--==================================================-->
 
-            <Style Selector="^ /template/ ContentControl#Content">
+            <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelected}" />
             </Style>
 
@@ -142,7 +142,7 @@
         <!-- Blackout state. -->
         <!--==================================================-->
 
-        <Style Selector="^:disabled /template/ ContentControl#Content">
+        <Style Selector="^:disabled /template/ ContentControl#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
         </Style>
 
@@ -150,7 +150,7 @@
         <!-- Blackout state. -->
         <!--==================================================-->
 
-        <Style Selector="^:blackout /template/ ContentControl#Content">
+        <Style Selector="^:blackout /template/ ContentControl#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundBlackout}" />
         </Style>
 

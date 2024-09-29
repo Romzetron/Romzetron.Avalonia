@@ -64,7 +64,7 @@
                 <!--==================================================-->
 
                 <ContentPresenter
-                    Name="PART_ContentPresenter"
+                    x:Name="PART_ContentPresenter"
                     Foreground="{TemplateBinding Foreground}"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"

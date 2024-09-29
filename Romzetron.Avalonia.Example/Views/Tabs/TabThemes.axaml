@@ -3,8 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
-    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
     xmlns:theme="clr-namespace:Romzetron.Avalonia;assembly=Romzetron.Avalonia"
@@ -455,14 +453,14 @@
             Margin="14,4,4,4"
             HorizontalAlignment="Stretch">
 
-            <i:Interaction.Behaviors>
-                <ia:DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="NotEqual" Value="True">
-                    <ia:ChangePropertyAction TargetObject="{Binding $self}" PropertyName="Content" Value="Start Cycling Themes" />
-                </ia:DataTriggerBehavior>
-                <ia:DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="Equal" Value="True">
-                    <ia:ChangePropertyAction TargetObject="{Binding $self}" PropertyName="Content" Value="Stop Cycling Themes" />
-                </ia:DataTriggerBehavior>
-            </i:Interaction.Behaviors>
+            <Interaction.Behaviors>
+                <DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="NotEqual" Value="True">
+                    <ChangePropertyAction PropertyName="Content" Value="Start Cycling Themes" />
+                </DataTriggerBehavior>
+                <DataTriggerBehavior Binding="{Binding RunTimer}" ComparisonCondition="Equal" Value="True">
+                    <ChangePropertyAction PropertyName="Content" Value="Stop Cycling Themes" />
+                </DataTriggerBehavior>
+            </Interaction.Behaviors>
 
         </Button>
 

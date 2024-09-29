@@ -26,7 +26,6 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/CheckBox.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ComboBox.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ComboBoxItem.xaml" />
-                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ContentControl.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ContextMenu.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DataValidationErrors.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/DateTimePickerShared.xaml" />
@@ -45,7 +44,6 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/MenuFlyoutPresenter.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/MenuItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/MenuScrollViewer.xaml" />
-                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/NativeMenuBar.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/NotificationCard.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/NumericUpDown.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/OverlayPopupHost.xaml" />
@@ -82,11 +80,5 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
-
-    <!--==================================================-->
-    <!-- Include UserControl style. -->
-    <!--==================================================-->
-
-    <StyleInclude Source="avares://Romzetron.Avalonia/Controls/UserControl.xaml" />
 
 </Styles>

@@ -82,8 +82,8 @@
                             <!-- Content. -->
                             <!--==================================================-->
 
-                            <ContentControl
-                                x:Name="Content"
+                            <ContentPresenter
+                                x:Name="PART_ContentPresenter"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -119,7 +119,7 @@
             <!-- Content today state. -->
             <!--==================================================-->
 
-            <Style Selector="^ /template/ ContentControl#Content">
+            <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="FontFamily" Value="{DynamicResource FontInterExtraBold}" />
                 <Setter Property="FontWeight" Value="Bold" />
             </Style>
@@ -157,7 +157,7 @@
             <!-- Content selected foreground. -->
             <!--==================================================-->
 
-            <Style Selector="^ /template/ ContentControl#Content">
+            <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelected}" />
             </Style>
 
@@ -221,7 +221,7 @@
                 <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundOutOfScope}" />
             </Style>
 
-            <Style Selector="^ /template/ ContentControl#Content">
+            <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundOutOfScope}" />
             </Style>
 
@@ -237,7 +237,7 @@
             <!-- Disable foreground. -->
             <!--==================================================-->
 
-            <Style Selector="^ /template/ ContentControl#Content">
+            <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
             </Style>
 
@@ -251,7 +251,7 @@
                 <!-- Selected and disabled foreground. -->
                 <!--==================================================-->
 
-                <Style Selector="^ /template/ ContentControl#Content">
+                <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                     <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundSelectedDisabled}" />
                 </Style>
 
@@ -288,7 +288,7 @@
         <!-- Blackout state. -->
         <!--==================================================-->
 
-        <Style Selector="^:blackout /template/ ContentControl#Content">
+        <Style Selector="^:blackout /template/ ContentControl#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource CalendarButtonForegroundBlackout}" />
         </Style>
 

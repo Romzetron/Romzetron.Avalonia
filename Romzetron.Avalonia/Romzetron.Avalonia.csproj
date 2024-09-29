@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Copyright>Copyright © 2024 Romzetron Software</Copyright>
-        <Company>Romzetron Software</Company>
+        <TargetFramework>net8.0</TargetFramework>
         <Title>Romzetron Avalonia Theme</Title>
+        <Version>11.1.0</Version>
+        <AssemblyVersion>11.1.0</AssemblyVersion>
+        <FileVersion>11.1.0</FileVersion>
+        <Company>Romzetron Software</Company>
+        <Description>Theme library for Avalonia.</Description>
+        <Copyright>Copyright © 2024 Romzetron Software</Copyright>
         <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
         <PackageIcon>RomzetronLogo.png</PackageIcon>
-        <Description>Theme library for Avalonia.</Description>
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.0.11.1</Version>
-        <AssemblyVersion>11.0.11.1</AssemblyVersion>
-        <FileVersion>11.0.11.1</FileVersion>
-        <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <!-- NativeMenuBar uses ReflectionBinding -->
         <NoWarn>$(NoWarn);IL2026</NoWarn>
@@ -24,10 +24,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.11" />
+        <PackageReference Include="Avalonia" Version="11.1.0"/>
         <AvaloniaResource Include="**/*.xaml"/>
         <AvaloniaResource Include="**/*.ttf"/>
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.0.11" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.1.0"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -1,6 +1,7 @@
 <ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     x:ClassModifier="internal">
 
     <!--==================================================-->
@@ -31,6 +32,62 @@
                     Maximum="10"
                     Increment="0.5"
                     Watermark="Enter text" />
+
+                <NumericUpDown ButtonSpinnerLocation="Left">
+
+                    <NumericUpDown.InnerLeftContent>
+
+                        <TextBlock
+                            Text="Text"
+                            TextAlignment="Center"
+                            VerticalAlignment="Center" />
+
+                    </NumericUpDown.InnerLeftContent>
+
+                    <NumericUpDown.InnerRightContent>
+
+                        <Button
+                            Content="X"
+                            Height="24"
+                            Width="24"
+                            Padding="0" />
+
+                    </NumericUpDown.InnerRightContent>
+
+                </NumericUpDown>
+
+                <NumericUpDown ButtonSpinnerLocation="Right">
+
+                    <NumericUpDown.InnerLeftContent>
+
+                        <Button
+                            Content="X"
+                            Height="24"
+                            Width="24"
+                            Padding="0" />
+
+                    </NumericUpDown.InnerLeftContent>
+
+                    <NumericUpDown.InnerRightContent>
+
+                        <TextBlock
+                            Text="Text"
+                            TextAlignment="Center"
+                            VerticalAlignment="Center" />
+
+                    </NumericUpDown.InnerRightContent>
+
+                </NumericUpDown>
+
+                <NumericUpDown>
+                    <DataValidationErrors.Error>
+                        <system:Exception>
+                            <x:Arguments>
+                                <x:String>Error</x:String>
+                            </x:Arguments>
+                        </system:Exception>
+                    </DataValidationErrors.Error>
+                </NumericUpDown>
 
             </StackPanel>
         </Border>
@@ -64,101 +121,114 @@
 
         <Setter Property="Template">
 
+            <!--==================================================-->
+            <!-- Control template. -->
+            <!--==================================================-->
+
             <ControlTemplate>
 
                 <!--==================================================-->
-                <!-- Button spinner. -->
+                <!-- Data validation errors. -->
                 <!--==================================================-->
 
-                <ButtonSpinner
-                    Name="PART_Spinner"
-                    Background="{TemplateBinding Background}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    Height="{TemplateBinding Height}"
-                    Padding="{TemplateBinding Padding}"
-                    VerticalAlignment="Stretch"
-                    HorizontalContentAlignment="Stretch"
-                    VerticalContentAlignment="Stretch"
-                    AllowSpin="{TemplateBinding AllowSpin}"
-                    ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
-                    DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
-                    ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
-                    Tag="{Binding #PART_TextBox.IsFocused}"
-                    IsTabStop="False">
+                <DataValidationErrors>
 
                     <!--==================================================-->
-                    <!-- TextBox content. -->
+                    <!-- Button spinner. -->
                     <!--==================================================-->
 
-                    <TextBox
-                        Name="PART_TextBox"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Padding="0"
-                        Foreground="{TemplateBinding Foreground}"
-                        FontSize="{TemplateBinding FontSize}"
-                        Watermark="{TemplateBinding Watermark}"
-                        IsReadOnly="{TemplateBinding IsReadOnly}"
-                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        Text="{TemplateBinding Text}"
-                        TextAlignment="{TemplateBinding TextAlignment}"
-                        AcceptsReturn="False"
-                        TextWrapping="NoWrap"
-                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                        ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <ButtonSpinner
+                        x:Name="PART_Spinner"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Height="{TemplateBinding Height}"
+                        Padding="{TemplateBinding Padding}"
+                        VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        AllowSpin="{TemplateBinding AllowSpin}"
+                        ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                        ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
+                        Tag="{Binding #PART_TextBox.IsFocused}"
+                        IsTabStop="False">
+
+                        <!--==================================================-->
+                        <!-- TextBox content. -->
+                        <!--==================================================-->
+
+                        <TextBox
+                            x:Name="PART_TextBox"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Padding="0"
+                            Foreground="{TemplateBinding Foreground}"
+                            FontSize="{TemplateBinding FontSize}"
+                            Watermark="{TemplateBinding Watermark}"
+                            IsReadOnly="{TemplateBinding IsReadOnly}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Text="{TemplateBinding Text}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            AcceptsReturn="False"
+                            TextWrapping="NoWrap"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                            InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
+                            InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}">
+
+                            <!--==================================================-->
+                            <!-- TextBox styles. -->
+                            <!--==================================================-->
+
+                            <TextBox.Styles>
+
+                                <!--==================================================-->
+                                <!-- Override default behavior when focused. -->
+                                <!-- ButtonSpinner will mimic this effects. -->
+                                <!--==================================================-->
+
+                                <Style Selector=":focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                </Style>
+
+                                <!--==================================================-->
+                                <!-- Override default behavior when disabled. -->
+                                <!-- ButtonSpinner will mimic this effects. -->
+                                <!--==================================================-->
+
+                                <Style Selector=":disabled /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                </Style>
+
+                            </TextBox.Styles>
+
+                        </TextBox>
 
                         <!--==================================================-->
                         <!-- TextBox styles. -->
                         <!--==================================================-->
 
-                        <TextBox.Styles>
+                        <ButtonSpinner.Styles>
 
                             <!--==================================================-->
-                            <!-- Override default behavior when focused. -->
-                            <!-- ButtonSpinner will mimic this effects. -->
+                            <!-- Simulate TextBox border when focused. -->
                             <!--==================================================-->
 
-                            <Style Selector=":focus /template/ Border#PART_BorderElement">
-                                <Setter Property="BorderBrush" Value="Transparent" />
-                                <Setter Property="BorderThickness" Value="0" />
+                            <Style Selector="ButtonSpinner#PART_Spinner[Tag=true] /template/ Border#PART_BorderElement">
+                                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrushFocused}" />
+                                <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThicknessFocused}" />
                             </Style>
 
-                            <!--==================================================-->
-                            <!-- Override default behavior when disabled. -->
-                            <!-- ButtonSpinner will mimic this effects. -->
-                            <!--==================================================-->
+                        </ButtonSpinner.Styles>
 
-                            <Style Selector=":disabled /template/ Border#PART_BorderElement">
-                                <Setter Property="Background" Value="Transparent" />
-                                <Setter Property="BorderBrush" Value="Transparent" />
-                                <Setter Property="BorderThickness" Value="0" />
-                            </Style>
+                    </ButtonSpinner>
 
-                        </TextBox.Styles>
-
-                    </TextBox>
-
-                    <!--==================================================-->
-                    <!-- TextBox styles. -->
-                    <!--==================================================-->
-
-                    <ButtonSpinner.Styles>
-
-                        <!--==================================================-->
-                        <!-- Simulate TextBox border when focused. -->
-                        <!--==================================================-->
-
-                        <Style Selector="ButtonSpinner#PART_Spinner[Tag=true] /template/ Border#PART_BorderElement">
-                            <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrushFocused}" />
-                            <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThicknessFocused}" />
-                        </Style>
-
-                    </ButtonSpinner.Styles>
-
-                </ButtonSpinner>
+                </DataValidationErrors>
 
             </ControlTemplate>
 

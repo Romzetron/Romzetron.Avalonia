@@ -65,7 +65,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="PART_LayoutRoot"
+                        x:Name="PART_LayoutRoot"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{DynamicResource TabControlBorder}"
                         BorderThickness="1"
@@ -78,14 +78,11 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_ContentPresenter"
+                            x:Name="PART_ContentPresenter"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            FontFamily="{TemplateBinding FontFamily}"
-                            FontSize="{TemplateBinding FontSize}"
-                            FontWeight="{TemplateBinding FontWeight}" />
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
 
                     </Border>
 
@@ -94,7 +91,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="PART_Highlight"
+                        x:Name="PART_Highlight"
                         CornerRadius="4,4,0,0"
                         Background="{DynamicResource TabItemHeaderHighlightUnselected}"
                         VerticalAlignment="Top"

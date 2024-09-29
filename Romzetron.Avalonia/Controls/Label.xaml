@@ -29,7 +29,7 @@
                 <!--==================================================-->
 
                 <ContentPresenter
-                    Name="PART_ContentPresenter"
+                    x:Name="PART_ContentPresenter"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -44,11 +44,11 @@
             </ControlTemplate>
 
         </Setter>
-        
+
         <!--==================================================-->
         <!-- Disabled state. -->
         <!--==================================================-->
-        
+
         <Style Selector="^:disabled">
             <Setter Property="Foreground" Value="{DynamicResource LabelDisabledForeground}" />
         </Style>

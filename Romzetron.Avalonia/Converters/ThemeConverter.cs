@@ -15,7 +15,7 @@ public class ThemeConverter : IValueConverter
     {
         if (value is null || parameter is null)
             return BindingOperations.DoNothing;
-        
-        return value.Equals(true) ? (ColorTheme)parameter : BindingOperations.DoNothing;
+
+        return value.Equals(true) ? (ColorTheme) parameter : BindingOperations.DoNothing;
     }
 }

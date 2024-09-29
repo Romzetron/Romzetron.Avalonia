@@ -39,7 +39,7 @@
             <Border Grid.Column="1" Grid.Row="0">
 
                 <Slider
-                    Name="Rotation"
+                    x:Name="Rotation"
                     Maximum="360"
                     VerticalAlignment="Center" />
 
@@ -61,7 +61,7 @@
             <!--==================================================-->
 
             <Button
-                Name="AddAdorner"
+                x:Name="AddAdorner"
                 Click="AddAdorner_OnClick"
                 Content="Add Adorner"
                 Margin="6" />
@@ -71,7 +71,7 @@
             <!--==================================================-->
 
             <Button
-                Name="RemoveAdorner"
+                x:Name="RemoveAdorner"
                 Click="RemoveAdorner_OnClick"
                 Content="Remove Adorner"
                 Margin="6" />
@@ -103,7 +103,7 @@
 
             <LayoutTransformControl
                 Grid.Column="1" Grid.Row="1"
-                Name="LayoutTransform">
+                x:Name="LayoutTransform">
 
                 <LayoutTransformControl.LayoutTransform>
                     <RotateTransform Angle="{Binding #Rotation.Value}" />
@@ -114,7 +114,7 @@
                 <!--==================================================-->
 
                 <Button
-                    Name="AdornerButton"
+                    x:Name="AdornerButton"
                     Content="Adorned Button"
                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center" VerticalAlignment="Stretch"

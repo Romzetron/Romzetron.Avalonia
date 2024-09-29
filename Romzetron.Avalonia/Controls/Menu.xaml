@@ -29,8 +29,6 @@
 
         <Setter Property="Background" Value="{DynamicResource MenuBarBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForeground}" />
-        <!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="Padding" Value="{DynamicResource MenuBarItemPadding}" />
         <Setter Property="CornerRadius" Value="{DynamicResource MenuFlyoutItemCornerRadius}" />
 
@@ -47,7 +45,7 @@
                 <!--==================================================-->
 
                 <Border
-                    Name="PART_LayoutRoot"
+                    x:Name="PART_LayoutRoot"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -60,7 +58,7 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_HeaderPresenter"
+                            x:Name="PART_HeaderPresenter"
                             Content="{TemplateBinding Header}"
                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                             VerticalAlignment="Center"
@@ -73,7 +71,7 @@
                         <!--==================================================-->
 
                         <Popup
-                            Name="PART_Popup"
+                            x:Name="PART_Popup"
                             WindowManagerAddShadowHint="False"
                             MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
                             IsLightDismissEnabled="True"
@@ -102,7 +100,7 @@
                                 <ScrollViewer Theme="{StaticResource MenuScrollViewer}">
 
                                     <ItemsPresenter
-                                        Name="PART_ItemsPresenter"
+                                        x:Name="PART_ItemsPresenter"
                                         ItemsPanel="{TemplateBinding ItemsPanel}"
                                         Margin="{DynamicResource MenuFlyoutScrollerMargin}"
                                         Grid.IsSharedSizeScope="True" />
@@ -214,7 +212,7 @@
                     <!--==================================================-->
 
                     <ItemsPresenter
-                        Name="PART_ItemsPresenter"
+                        x:Name="PART_ItemsPresenter"
                         ItemsPanel="{TemplateBinding ItemsPanel}"
                         VerticalAlignment="Stretch"
                         Margin="8,0,0,0"

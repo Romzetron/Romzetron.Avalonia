@@ -21,7 +21,7 @@
                     Padding="{TemplateBinding Padding}">
 
                     <ItemsPresenter
-                        Name="PART_ItemsPresenter"
+                        x:Name="PART_ItemsPresenter"
                         ItemsPanel="{TemplateBinding ItemsPanel}" />
 
                 </Border>

@@ -8,7 +8,9 @@
     <!--==================================================-->
 
     <Design.PreviewWith>
+
         <Border Padding="20">
+
             <StackPanel Spacing="10">
 
                 <ScrollBar
@@ -33,20 +35,49 @@
 
                         <Border.Background>
 
-                            <VisualBrush TileMode="Tile" SourceRect="0,0,40,40" DestinationRect="0,0,40,40"
-                                         Stretch="None">
+                            <VisualBrush
+                                TileMode="Tile"
+                                SourceRect="0,0,40,40"
+                                DestinationRect="0,0,40,40"
+                                Stretch="None">
+
                                 <VisualBrush.Visual>
-                                    <Canvas Width="40" Height="40">
-                                        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="20" Height="20"
-                                                   Fill="{StaticResource Red05}" />
-                                        <Rectangle Canvas.Left="20" Canvas.Top="0" Width="20" Height="20"
-                                                   Fill="{StaticResource Green05}" />
-                                        <Rectangle Canvas.Left="0" Canvas.Top="20" Width="20" Height="20"
-                                                   Fill="{StaticResource Blue06}" />
-                                        <Rectangle Canvas.Left="20" Canvas.Top="20" Width="20" Height="20"
-                                                   Fill="{StaticResource Yellow05}" />
+
+                                    <Canvas
+                                        Width="40"
+                                        Height="40">
+
+                                        <Rectangle
+                                            Canvas.Left="0"
+                                            Canvas.Top="0"
+                                            Width="20"
+                                            Height="20"
+                                            Fill="{StaticResource Red05}" />
+
+                                        <Rectangle
+                                            Canvas.Left="20"
+                                            Canvas.Top="0"
+                                            Width="20"
+                                            Height="20"
+                                            Fill="{StaticResource Green05}" />
+
+                                        <Rectangle
+                                            Canvas.Left="0"
+                                            Canvas.Top="20"
+                                            Width="20"
+                                            Height="20"
+                                            Fill="{StaticResource Blue06}" />
+
+                                        <Rectangle
+                                            Canvas.Left="20"
+                                            Canvas.Top="20"
+                                            Width="20" Height="20"
+                                            Fill="{StaticResource Yellow05}" />
+
                                     </Canvas>
+
                                 </VisualBrush.Visual>
+
                             </VisualBrush>
 
                         </Border.Background>
@@ -56,7 +87,9 @@
                 </ScrollViewer>
 
             </StackPanel>
+
         </Border>
+
     </Design.PreviewWith>
 
     <!--==================================================-->
@@ -64,19 +97,19 @@
     <!--==================================================-->
 
     <ControlTheme x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
-        
+
         <!--==================================================-->
         <!-- Default property setters. -->
         <!--==================================================-->
 
         <Setter Property="Cursor" Value="Arrow" />
-        
+
         <!--==================================================-->
         <!-- Horizontal style. -->
         <!--==================================================-->
 
         <Style Selector="^:horizontal">
-            
+
             <!--==================================================-->
             <!-- Horizontal default property setters. -->
             <!--==================================================-->
@@ -88,15 +121,15 @@
             <!--==================================================-->
             <!-- Template. -->
             <!--==================================================-->
-            
+
             <Setter Property="Template">
-                
+
                 <!--==================================================-->
                 <!-- Control template. -->
                 <!--==================================================-->
-                
+
                 <ControlTemplate>
-                    
+
                     <!--==================================================-->
                     <!-- Background container. -->
                     <!--==================================================-->
@@ -107,7 +140,7 @@
                         Height="{DynamicResource ScrollBarThumbThickness}"
                         VerticalAlignment="Center"
                         UseLayoutRounding="False">
-                        
+
                         <!--==================================================-->
                         <!-- Track. -->
                         <!--==================================================-->
@@ -122,25 +155,25 @@
                             <!--==================================================-->
                             <!-- Thumb. -->
                             <!--==================================================-->
-                            
-                            <Thumb Name="Thumb" />
+
+                            <Thumb x:Name="Thumb" />
 
                         </Track>
 
                     </Border>
 
                 </ControlTemplate>
-                
+
             </Setter>
 
         </Style>
-        
+
         <!--==================================================-->
         <!-- Vertical style. -->
         <!--==================================================-->
 
         <Style Selector="^:vertical">
-            
+
             <!--==================================================-->
             <!-- Vertical default property setters. -->
             <!--==================================================-->
@@ -148,19 +181,19 @@
             <Setter Property="Background" Value="{DynamicResource ScrollBarBackground}" />
             <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}" />
             <Setter Property="CornerRadius" Value="{DynamicResource ScrollBarCornerRadius}" />
-            
+
             <!--==================================================-->
             <!-- Template. -->
             <!--==================================================-->
 
             <Setter Property="Template">
-                
+
                 <!--==================================================-->
                 <!-- Control template. -->
                 <!--==================================================-->
-                
+
                 <ControlTemplate>
-                    
+
                     <!--==================================================-->
                     <!-- Background container. -->
                     <!--==================================================-->
@@ -171,7 +204,7 @@
                         Width="{DynamicResource ScrollBarThumbThickness}"
                         HorizontalAlignment="Center"
                         UseLayoutRounding="False">
-                        
+
                         <!--==================================================-->
                         <!-- Track. -->
                         <!--==================================================-->
@@ -188,24 +221,24 @@
                             <!-- Thumb. -->
                             <!--==================================================-->
 
-                            <Thumb Name="Thumb" />
+                            <Thumb x:Name="Thumb" />
 
                         </Track>
 
                     </Border>
 
                 </ControlTemplate>
-                
+
             </Setter>
 
         </Style>
-        
+
         <!--==================================================-->
         <!-- Thumb style. -->
         <!--==================================================-->
 
         <Style Selector="^ /template/ Thumb#Thumb">
-            
+
             <!--==================================================-->
             <!-- Thumb properties. -->
             <!--==================================================-->
@@ -216,17 +249,17 @@
             <!--==================================================-->
             <!-- Template. -->
             <!--==================================================-->
-            
+
             <Setter Property="Template">
-                
+
                 <Setter.Value>
-                    
+
                     <!--==================================================-->
                     <!-- Control template. -->
                     <!--==================================================-->
-                    
+
                     <ControlTemplate>
-                        
+
                         <!--==================================================-->
                         <!-- Thumb border. -->
                         <!--==================================================-->
@@ -236,13 +269,13 @@
                             CornerRadius="{TemplateBinding CornerRadius}" />
 
                     </ControlTemplate>
-                    
+
                 </Setter.Value>
-                
+
             </Setter>
 
         </Style>
-        
+
         <!--==================================================-->
         <!-- Thumb pointer over state. -->
         <!--==================================================-->
@@ -250,7 +283,7 @@
         <Style Selector="^ /template/ Thumb#Thumb:pointerover">
             <Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackgroundPointerOver}" />
         </Style>
-        
+
         <!--==================================================-->
         <!-- Thumb pressed state. -->
         <!--==================================================-->
@@ -258,7 +291,7 @@
         <Style Selector="^ /template/ Thumb#Thumb:pressed">
             <Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackgroundPressed}" />
         </Style>
-        
+
         <!--==================================================-->
         <!-- Thumb horizontal state. -->
         <!--==================================================-->
@@ -267,7 +300,7 @@
             <Setter Property="MinWidth" Value="24" />
             <Setter Property="Height" Value="{DynamicResource ScrollBarThumbThickness}" />
         </Style>
-        
+
         <!--==================================================-->
         <!-- Thumb vertical state. -->
         <!--==================================================-->

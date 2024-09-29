@@ -37,7 +37,6 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
         <Setter Property="ScrollViewer.IsScrollInertiaEnabled" Value="True" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
 
         <!--==================================================-->
         <!-- Template. -->
@@ -48,7 +47,7 @@
             <ControlTemplate>
 
                 <Border
-                    Name="border"
+                    x:Name="border"
                     ClipToBounds="{TemplateBinding ClipToBounds}"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -56,7 +55,7 @@
                     CornerRadius="{TemplateBinding CornerRadius}">
 
                     <ScrollViewer
-                        Name="PART_ScrollViewer"
+                        x:Name="PART_ScrollViewer"
                         VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
                         HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
                         HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
@@ -68,7 +67,7 @@
                         Margin="4">
 
                         <ItemsPresenter
-                            Name="PART_ItemsPresenter"
+                            x:Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             Margin="{TemplateBinding Padding}" />
 
@@ -81,5 +80,5 @@
         </Setter>
 
     </ControlTheme>
-    
+
 </ResourceDictionary>

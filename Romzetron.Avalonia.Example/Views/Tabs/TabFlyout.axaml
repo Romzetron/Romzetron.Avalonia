@@ -47,9 +47,9 @@
     <!-- Scroll viewer -->
     <!--==================================================-->
 
-    <ScrollViewer 
-        Margin="8" 
-        VerticalScrollBarVisibility="Auto" 
+    <ScrollViewer
+        Margin="8"
+        VerticalScrollBarVisibility="Auto"
         HorizontalScrollBarVisibility="Auto">
 
         <!--==================================================-->
@@ -136,7 +136,7 @@
                     Margin="4">
 
                     <Panel
-                        Name="AttachedFlyoutPanel"
+                        x:Name="AttachedFlyoutPanel"
                         Background="Transparent"
                         HorizontalAlignment="Stretch"
                         Height="100">
@@ -170,7 +170,7 @@
                     HorizontalAlignment="Center">
 
                     <TextBlock
-                        Name="AttachedFlyoutXamlText"
+                        x:Name="AttachedFlyoutXamlText"
                         HorizontalAlignment="Center"
                         Padding="8" />
 
@@ -262,7 +262,7 @@
                         <!--==================================================-->
                         <!-- Top. -->
                         <!--==================================================-->
-                        
+
                         <Button Content="Placement=Top" HorizontalAlignment="Stretch">
                             <Button.Flyout>
                                 <Flyout Placement="Top">
@@ -276,7 +276,7 @@
                         <!--==================================================-->
                         <!-- Bottom. -->
                         <!--==================================================-->
-                        
+
                         <Button Content="Placement=Bottom" HorizontalAlignment="Stretch">
                             <Button.Flyout>
                                 <Flyout Placement="Bottom">
@@ -286,7 +286,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Left. -->
                         <!--==================================================-->
@@ -300,7 +300,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Right. -->
                         <!--==================================================-->
@@ -314,7 +314,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Center. -->
                         <!--==================================================-->
@@ -328,7 +328,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Top edge, left aligned. -->
                         <!--==================================================-->
@@ -342,7 +342,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Top edge, right aligned. -->
                         <!--==================================================-->
@@ -356,7 +356,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Bottom edge, left aligned. -->
                         <!--==================================================-->
@@ -370,7 +370,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Bottom edge, right aligned. -->
                         <!--==================================================-->
@@ -384,7 +384,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Left edge, top aligned. -->
                         <!--==================================================-->
@@ -398,7 +398,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Left edge bottom aligned. -->
                         <!--==================================================-->
@@ -412,7 +412,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Right edge, top aligned. -->
                         <!--==================================================-->
@@ -426,7 +426,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Right edge, bottom aligned. -->
                         <!--==================================================-->
@@ -485,7 +485,7 @@
                         <!--==================================================-->
                         <!-- Standard ShowMode. -->
                         <!--==================================================-->
-                        
+
                         <Button Content="ShowMode=Standard (default)">
                             <Button.Flyout>
                                 <Flyout>
@@ -502,7 +502,7 @@
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        
+
                         <!--==================================================-->
                         <!-- Transient ShowMode. -->
                         <!--==================================================-->
@@ -527,7 +527,7 @@
                         <!--==================================================-->
                         <!-- Transient with pointer dismiss ShowMode. -->
                         <!--==================================================-->
-                        
+
                         <Button Content="ShowMode=TransientWithDismissOnPointerMoveAway">
                             <Button.Flyout>
                                 <Flyout ShowMode="TransientWithDismissOnPointerMoveAway">

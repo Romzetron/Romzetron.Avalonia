@@ -36,7 +36,7 @@
                 <!--==================================================-->
 
                 <Border
-                    Name="LayoutRoot"
+                    x:Name="LayoutRoot"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -57,7 +57,7 @@
                         <!--==================================================-->
 
                         <ItemsPresenter
-                            Name="PART_ItemsPresenter"
+                            x:Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             Margin="{DynamicResource MenuFlyoutScrollerMargin}"
                             KeyboardNavigation.TabNavigation="Continue"
@@ -69,6 +69,27 @@
 
             </ControlTemplate>
 
+        </Setter>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- Horizontal MenuFlyoutPresenter control theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="HorizontalMenuFlyoutPresenter" TargetType="MenuFlyoutPresenter" BasedOn="{StaticResource {x:Type MenuFlyoutPresenter}}">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+
+        <Setter Property="MinWidth" Value="{DynamicResource HorizontalMenuFlyoutThemeMinWidth}" />
+
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
         </Setter>
 
     </ControlTheme>

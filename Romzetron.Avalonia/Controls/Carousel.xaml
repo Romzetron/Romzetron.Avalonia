@@ -26,7 +26,7 @@
                 <!--==================================================-->
 
                 <ScrollViewer
-                    Name="PART_ScrollViewer"
+                    x:Name="PART_ScrollViewer"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -38,7 +38,7 @@
                     <!--==================================================-->
 
                     <ItemsPresenter
-                        Name="PART_ItemsPresenter"
+                        x:Name="PART_ItemsPresenter"
                         ItemsPanel="{TemplateBinding ItemsPanel}"
                         Margin="{TemplateBinding Padding}" />
 

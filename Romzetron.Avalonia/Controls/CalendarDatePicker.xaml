@@ -205,7 +205,7 @@
                                 IsLightDismissEnabled="True">
 
                                 <Calendar
-                                    Name="PART_Calendar"
+                                    x:Name="PART_Calendar"
                                     FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
                                     IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
                                     SelectedDate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedDate, Mode=TwoWay}"

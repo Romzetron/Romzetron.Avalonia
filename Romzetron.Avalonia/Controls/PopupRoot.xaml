@@ -32,13 +32,13 @@
                     <Panel>
 
                         <Border
-                            Name="PART_TransparencyFallback"
+                            x:Name="PART_TransparencyFallback"
                             IsHitTestVisible="False" />
 
                         <VisualLayerManager IsPopup="True">
 
                             <ContentPresenter
-                                Name="PART_ContentPresenter"
+                                x:Name="PART_ContentPresenter"
                                 Background="{TemplateBinding Background}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}"

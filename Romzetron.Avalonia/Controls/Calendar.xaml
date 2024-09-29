@@ -48,7 +48,7 @@
                 <!--==================================================-->
 
                 <StackPanel
-                    Name="PART_Root"
+                    x:Name="PART_Root"
                     HorizontalAlignment="Center"
                     ClipToBounds="True">
 
@@ -57,7 +57,7 @@
                     <!--==================================================-->
 
                     <CalendarItem
-                        Name="PART_CalendarItem"
+                        x:Name="PART_CalendarItem"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"

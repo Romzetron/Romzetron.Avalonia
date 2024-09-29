@@ -125,7 +125,6 @@
         <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
         <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
         <Setter Property="MinWidth" Value="10" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Focusable" Value="True" />
@@ -160,7 +159,7 @@
                         <!--==================================================-->
 
                         <Border
-                            Name="PART_BorderElement"
+                            x:Name="PART_BorderElement"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -179,7 +178,7 @@
                             <!--==================================================-->
 
                             <StackPanel
-                                Name="PART_SpinnerPanel"
+                                x:Name="PART_SpinnerPanel"
                                 TabIndex="2"
                                 DockPanel.Dock="Right"
                                 Orientation="Horizontal"
@@ -192,14 +191,13 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_IncreaseButton"
+                                    x:Name="PART_IncreaseButton"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     Theme="{StaticResource ButtonSpinnerRepeatButton}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="0"
                                     VerticalAlignment="Stretch"
-                                    VerticalContentAlignment="Center"
-                                    FontSize="{TemplateBinding FontSize}">
+                                    VerticalContentAlignment="Center">
 
                                     <PathIcon
                                         Width="16"
@@ -213,14 +211,13 @@
                                 <!--==================================================-->
 
                                 <RepeatButton
-                                    Name="PART_DecreaseButton"
+                                    x:Name="PART_DecreaseButton"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     Theme="{StaticResource ButtonSpinnerRepeatButton}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="0"
                                     VerticalAlignment="Stretch"
-                                    VerticalContentAlignment="Center"
-                                    FontSize="{TemplateBinding FontSize}">
+                                    VerticalContentAlignment="Center">
 
                                     <PathIcon
                                         Width="16"
@@ -236,7 +233,7 @@
                             <!--==================================================-->
 
                             <ContentPresenter
-                                Name="PART_ContentPresenter"
+                                x:Name="PART_ContentPresenter"
                                 TabIndex="1"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}"

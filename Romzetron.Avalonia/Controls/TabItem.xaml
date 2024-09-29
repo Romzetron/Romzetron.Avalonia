@@ -44,7 +44,7 @@
         <!--==================================================-->
 
         <Setter Property="Template">
-            
+
             <!--==================================================-->
             <!-- Control theme. -->
             <!--==================================================-->
@@ -62,7 +62,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="PART_LayoutRoot"
+                        x:Name="PART_LayoutRoot"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{DynamicResource TabControlBorder}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -75,14 +75,12 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_ContentPresenter"
+                            x:Name="PART_ContentPresenter"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Content="{TemplateBinding Header}"
                             ContentTemplate="{TemplateBinding HeaderTemplate}"
-                            FontFamily="{TemplateBinding FontFamily}"
-                            FontSize="{TemplateBinding FontSize}"
-                            FontWeight="{TemplateBinding FontWeight}" />
+                            RecognizesAccessKey="True" />
 
                     </Border>
 
@@ -91,7 +89,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="PART_Highlight"
+                        x:Name="PART_Highlight"
                         ClipToBounds="True"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Margin="{TemplateBinding Margin}" />

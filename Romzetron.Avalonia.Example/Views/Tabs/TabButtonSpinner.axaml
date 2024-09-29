@@ -24,7 +24,7 @@
         <!--==================================================-->
 
         <CheckBox
-            Name="AllowSpinCheck"
+            x:Name="AllowSpinCheck"
             IsChecked="True"
             Content="AllowSpin" />
 
@@ -33,7 +33,7 @@
         <!--==================================================-->
 
         <CheckBox
-            Name="ShowSpinCheck"
+            x:Name="ShowSpinCheck"
             IsChecked="True"
             Content="ShowButtonSpinner" />
 

@@ -69,7 +69,7 @@
                         <!--==================================================-->
 
                         <ContentPresenter
-                            Name="PART_SelectedContentHost"
+                            x:Name="PART_SelectedContentHost"
                             Margin="{TemplateBinding Padding}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -84,7 +84,7 @@
 
                     <ItemsPresenter
                         Grid.Row="0" Grid.Column="0"
-                        Name="PART_ItemsPresenter"
+                        x:Name="PART_ItemsPresenter"
                         ItemsPanel="{TemplateBinding ItemsPanel}" />
 
                 </Grid>

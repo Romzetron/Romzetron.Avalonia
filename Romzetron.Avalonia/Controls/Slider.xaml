@@ -78,7 +78,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="FocusTarget"
+                        x:Name="FocusTarget"
                         Margin="0,-10"
                         Background="Transparent" />
 
@@ -87,7 +87,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="TrackBackground"
+                        x:Name="TrackBackground"
                         Background="{TemplateBinding Background}"
                         CornerRadius="{DynamicResource SliderCornerRadius}"
                         Height="{DynamicResource SliderTrackHeight}"
@@ -215,7 +215,6 @@
         <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
         <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThickness}" />
         <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
-        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
 
         <!--==================================================-->
         <!-- Horizontal style. -->
@@ -289,7 +288,7 @@
                                     <!--==================================================-->
 
                                     <TickBar
-                                        Name="TopTickBar"
+                                        x:Name="TopTickBar"
                                         Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"
                                         Ticks="{TemplateBinding Ticks}"
                                         TickFrequency="{TemplateBinding Slider.TickFrequency}"
@@ -308,7 +307,7 @@
                                     <!--==================================================-->
 
                                     <TickBar
-                                        Name="BottomTickBar"
+                                        x:Name="BottomTickBar"
                                         Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                                         Ticks="{TemplateBinding Ticks}"
                                         TickFrequency="{TemplateBinding Slider.TickFrequency}"
@@ -327,7 +326,7 @@
                                     <!--==================================================-->
 
                                     <Track
-                                        Name="PART_Track"
+                                        x:Name="PART_Track"
                                         Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                                         Minimum="{TemplateBinding Minimum}"
                                         Maximum="{TemplateBinding Maximum}"
@@ -342,7 +341,7 @@
                                         <Track.DecreaseButton>
 
                                             <RepeatButton
-                                                Name="PART_DecreaseButton"
+                                                x:Name="PART_DecreaseButton"
                                                 Theme="{StaticResource SliderHorizontalRepeatButton}"
                                                 Background="{TemplateBinding Foreground}"
                                                 Focusable="False"
@@ -357,7 +356,7 @@
                                         <Track.IncreaseButton>
 
                                             <RepeatButton
-                                                Name="PART_IncreaseButton"
+                                                x:Name="PART_IncreaseButton"
                                                 Theme="{StaticResource SliderHorizontalRepeatButton}"
                                                 Background="{TemplateBinding Background}"
                                                 Focusable="False"
@@ -370,7 +369,7 @@
                                         <!--==================================================-->
 
                                         <Thumb
-                                            Name="thumb"
+                                            x:Name="thumb"
                                             Width="{DynamicResource SliderHorizontalThumbWidth}"
                                             Height="{DynamicResource SliderHorizontalThumbHeight}"
                                             Margin="0"
@@ -469,7 +468,7 @@
                                     <!--==================================================-->
 
                                     <TickBar
-                                        Name="LeftTickBar"
+                                        x:Name="LeftTickBar"
                                         Grid.RowSpan="3"
                                         Ticks="{TemplateBinding Ticks}"
                                         TickFrequency="{TemplateBinding Slider.TickFrequency}"
@@ -488,7 +487,7 @@
                                     <!--==================================================-->
 
                                     <TickBar
-                                        Name="RightTickBar"
+                                        x:Name="RightTickBar"
                                         Grid.Row="0" Grid.RowSpan="3"
                                         Grid.Column="2"
                                         Ticks="{TemplateBinding Ticks}"
@@ -508,7 +507,7 @@
                                     <!--==================================================-->
 
                                     <Track
-                                        Name="PART_Track"
+                                        x:Name="PART_Track"
                                         Grid.Row="0" Grid.RowSpan="3"
                                         Grid.Column="1"
                                         Minimum="{TemplateBinding Minimum}"
@@ -524,7 +523,7 @@
                                         <Track.DecreaseButton>
 
                                             <RepeatButton
-                                                Name="PART_DecreaseButton"
+                                                x:Name="PART_DecreaseButton"
                                                 Theme="{StaticResource SliderVerticalRepeatButton}"
                                                 Background="{TemplateBinding Foreground}"
                                                 Focusable="False"
@@ -539,7 +538,7 @@
                                         <Track.IncreaseButton>
 
                                             <RepeatButton
-                                                Name="PART_IncreaseButton"
+                                                x:Name="PART_IncreaseButton"
                                                 Background="{TemplateBinding Background}"
                                                 Theme="{StaticResource SliderVerticalRepeatButton}"
                                                 Focusable="False"
@@ -552,7 +551,7 @@
                                         <!--==================================================-->
 
                                         <Thumb
-                                            Name="SliderThumb"
+                                            x:Name="SliderThumb"
                                             Width="{DynamicResource SliderVerticalThumbWidth}"
                                             Height="{DynamicResource SliderVerticalThumbHeight}"
                                             Margin="0"

@@ -59,14 +59,14 @@
                 <!-- Layout grid. -->
                 <!--==================================================-->
 
-                <Grid Name="PART_LayoutRoot">
+                <Grid x:Name="PART_LayoutRoot">
 
                     <!--==================================================-->
                     <!-- Text search box. -->
                     <!--==================================================-->
 
                     <TextBox
-                        Name="PART_TextBox"
+                        x:Name="PART_TextBox"
                         Watermark="{TemplateBinding Watermark}"
                         Width="{TemplateBinding Width}"
                         Foreground="{TemplateBinding Foreground}"
@@ -74,19 +74,20 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding CornerRadius}"
-                        FontSize="{TemplateBinding FontSize}"
-                        FontFamily="{TemplateBinding FontFamily}"
-                        FontWeight="{TemplateBinding FontWeight}"
+                        CaretIndex="{TemplateBinding CaretIndex, Mode=TwoWay}"
                         Padding="{TemplateBinding Padding}"
                         Margin="0"
-                        DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" />
+                        DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+                        MaxLength="{TemplateBinding MaxLength}"
+                        InnerLeftContent="{TemplateBinding InnerLeftContent}"
+                        InnerRightContent="{TemplateBinding InnerRightContent}" />
 
                     <!--==================================================-->
                     <!-- Search result popup. -->
                     <!--==================================================-->
 
                     <Popup
-                        Name="PART_Popup"
+                        x:Name="PART_Popup"
                         WindowManagerAddShadowHint="False"
                         MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
                         MaxHeight="{TemplateBinding MaxDropDownHeight}"
@@ -98,7 +99,7 @@
                         <!--==================================================-->
 
                         <Border
-                            Name="PART_SuggestionsContainer"
+                            x:Name="PART_SuggestionsContainer"
                             Padding="{DynamicResource AutoCompleteListMargin}"
                             BorderThickness="{DynamicResource AutoCompleteListBorderThickness}"
                             BorderBrush="{DynamicResource AutoCompleteBoxSuggestionsListBorderBrush}"
@@ -110,7 +111,7 @@
                             <!--==================================================-->
 
                             <ListBox
-                                Name="PART_SelectingItemsControl"
+                                x:Name="PART_SelectingItemsControl"
                                 BorderThickness="0"
                                 Background="Transparent"
                                 ItemTemplate="{TemplateBinding ItemTemplate}"

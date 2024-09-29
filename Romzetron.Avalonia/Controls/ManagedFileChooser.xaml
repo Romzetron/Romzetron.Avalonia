@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dialogs="using:Avalonia.Dialogs"
     xmlns:internal="using:Avalonia.Dialogs.Internal"
+    xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
     x:ClassModifier="internal"
     x:DataType="internal:ManagedFileChooserViewModel">
 
@@ -250,393 +251,57 @@
             <ControlTemplate>
 
                 <!--==================================================-->
-                <!-- Layout dock panel. -->
+                <!-- Background border. -->
                 <!--==================================================-->
 
-                <DockPanel Margin="8">
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
 
                     <!--==================================================-->
-                    <!-- Quick link list. -->
+                    <!-- Layout dock panel. -->
                     <!--==================================================-->
 
-                    <ListBox
-                        x:Name="PART_QuickLinks"
-                        DockPanel.Dock="Left"
-                        ItemsSource="{Binding QuickLinks}"
-                        SelectedIndex="{Binding QuickLinksSelectedIndex}"
-                        Focusable="False"
-                        Margin="4">
+                    <DockPanel Margin="8">
 
                         <!--==================================================-->
-                        <!-- Quick link item template. -->
-                        <!--==================================================-->
-
-                        <ListBox.ItemTemplate>
-
-                            <!--==================================================-->
-                            <!-- Data template. -->
-                            <!--==================================================-->
-
-                            <DataTemplate>
-
-                                <!--==================================================-->
-                                <!-- Icon & quick link container. -->
-                                <!--==================================================-->
-
-                                <StackPanel
-                                    Spacing="4"
-                                    Orientation="Horizontal"
-                                    Background="Transparent">
-
-                                    <!--==================================================-->
-                                    <!-- Icon. -->
-                                    <!--==================================================-->
-
-                                    <Image Width="16" Height="16">
-                                        <Image.Source>
-                                            <DrawingImage Drawing="{Binding IconKey, Converter={StaticResource Icons}}" />
-                                        </Image.Source>
-                                    </Image>
-
-                                    <!--==================================================-->
-                                    <!-- Quick link name. -->
-                                    <!--==================================================-->
-
-                                    <TextBlock Text="{Binding DisplayName}" />
-
-                                </StackPanel>
-
-                            </DataTemplate>
-
-                        </ListBox.ItemTemplate>
-
-                    </ListBox>
-
-                    <!--==================================================-->
-                    <!-- Navbar container. -->
-                    <!--==================================================-->
-
-                    <DockPanel
-                        x:Name="NavBar"
-                        DockPanel.Dock="Top"
-                        Margin="4"
-                        VerticalAlignment="Center">
-
-                        <!--==================================================-->
-                        <!-- Navbar layout. -->
-                        <!--==================================================-->
-
-                        <DockPanel Margin="4,0">
-
-                            <!--==================================================-->
-                            <!-- Go up one level button. -->
-                            <!--==================================================-->
-
-                            <Button
-                                Command="{Binding GoUp}"
-                                DockPanel.Dock="Left"
-                                Height="34"
-                                Margin="0,0,4,0">
-
-                                <Path
-                                    Data="M 0 7 L 7 0 L 14 7 M 7 0 L 7 16"
-                                    Stroke="{CompiledBinding $parent[Button].Foreground}"
-                                    StrokeThickness="2"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Margin="0,1,0,-1" />
-
-                            </Button>
-
-                            <!--==================================================-->
-                            <!-- Refresh button. -->
-                            <!--==================================================-->
-
-                            <Button
-                                Command="{Binding Refresh}"
-                                DockPanel.Dock="Right"
-                                Height="34"
-                                Margin="4,0,0,0">
-
-                                <Path
-                                    Data="M 10.12,2.12 L 9.41,-1.41 L 6.59,1.41 Z M 8,0 A 8,8 0 1 0 10.35,5.66"
-                                    Stroke="{CompiledBinding $parent[Button].Foreground}"
-                                    StrokeThickness="2"
-                                    Height="16"
-                                    Width="16"
-                                    Margin="10,3,0,0"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center" />
-
-                            </Button>
-
-                            <!--==================================================-->
-                            <!-- Location path. -->
-                            <!--==================================================-->
-
-                            <TextBox
-                                x:Name="Location"
-                                Text="{Binding Location}"
-                                Height="34"
-                                Margin="4,0">
-
-                                <TextBox.KeyBindings>
-                                    <KeyBinding Command="{Binding EnterPressed}" Gesture="Enter" />
-                                </TextBox.KeyBindings>
-
-                            </TextBox>
-
-                        </DockPanel>
-
-                    </DockPanel>
-
-                    <!--==================================================-->
-                    <!-- File name, filter, and buttons container. -->
-                    <!--==================================================-->
-
-                    <DockPanel
-                        Margin="0"
-                        DockPanel.Dock="Bottom">
-
-                        <!--==================================================-->
-                        <!-- File name, filters, and buttons container. -->
-                        <!--==================================================-->
-
-                        <DockPanel Margin="4">
-
-                            <!--==================================================-->
-                            <!-- File name and filter container. -->
-                            <!--==================================================-->
-
-                            <DockPanel
-                                DockPanel.Dock="Top"
-                                Margin="0,0,0,4">
-
-                                <!--==================================================-->
-                                <!-- Filter combobox. -->
-                                <!--==================================================-->
-
-                                <ComboBox
-                                    DockPanel.Dock="Right"
-                                    Margin="8,0,0,0"
-                                    Height="34"
-                                    IsVisible="{Binding ShowFilters}"
-                                    ItemsSource="{Binding Filters}"
-                                    SelectedItem="{Binding SelectedFilter}" />
-
-                                <!--==================================================-->
-                                <!-- File name. -->
-                                <!--==================================================-->
-
-                                <TextBox
-                                    Text="{Binding FileName}"
-                                    Watermark="File name"
-                                    Margin="0"
-                                    Height="34"
-                                    IsVisible="{Binding !SelectingFolder}" />
-
-                            </DockPanel>
-
-                            <!--==================================================-->
-                            <!-- Show hidden files checkbox. -->
-                            <!--==================================================-->
-
-                            <CheckBox
-                                IsChecked="{Binding ShowHiddenFiles}"
-                                Content="Show hidden files"
-                                DockPanel.Dock="Left" />
-
-                            <!--==================================================-->
-                            <!-- OK & Cancel buttons. -->
-                            <!--==================================================-->
-
-                            <UniformGrid
-                                x:Name="Finalize"
-                                HorizontalAlignment="Right"
-                                Margin="0,4,0,0"
-                                Rows="1">
-
-                                <Button
-                                    Content="OK"
-                                    Command="{Binding Ok}"
-                                    Height="34"
-                                    MinWidth="100" />
-
-                                <Button
-                                    Content="Cancel"
-                                    Command="{Binding Cancel}"
-                                    Height="34"
-                                    MinWidth="100" />
-
-                            </UniformGrid>
-
-                        </DockPanel>
-
-                    </DockPanel>
-
-                    <!--==================================================-->
-                    <!-- File list container. -->
-                    <!--==================================================-->
-
-                    <DockPanel Grid.IsSharedSizeScope="True">
-
-                        <!--==================================================-->
-                        <!-- File list grid. -->
-                        <!--==================================================-->
-
-                        <Grid
-                            DockPanel.Dock="Top"
-                            Margin="15 4 0 0"
-                            HorizontalAlignment="Stretch">
-
-                            <!--==================================================-->
-                            <!-- File list column definitions. -->
-                            <!--==================================================-->
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="20" SharedSizeGroup="Icon" />
-                                <ColumnDefinition Width="275" SharedSizeGroup="Name" />
-                                <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
-                                <ColumnDefinition Width="200" SharedSizeGroup="Modified" />
-                                <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
-                                <ColumnDefinition Width="150" SharedSizeGroup="Type" />
-                                <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
-                                <ColumnDefinition Width="200" SharedSizeGroup="Size" />
-                                <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
-                            </Grid.ColumnDefinitions>
-
-                            <!--==================================================-->
-                            <!-- File list grid styles. -->
-                            <!--==================================================-->
-
-                            <Grid.Styles>
-
-                                <!--==================================================-->
-                                <!-- Grid splitter style. -->
-                                <!--==================================================-->
-
-                                <Style Selector="GridSplitter">
-
-                                    <!--==================================================-->
-                                    <!-- Default property setters. -->
-                                    <!--==================================================-->
-
-                                    <Setter Property="Background" Value="{DynamicResource UiTheme05}" />
-
-                                    <!--==================================================-->
-                                    <!-- Template. -->
-                                    <!--==================================================-->
-
-                                    <Setter Property="Template">
-                                        <ControlTemplate>
-                                            <Border VerticalAlignment="Stretch" BorderThickness="0" Background="#01000000">
-                                                <Rectangle Width="1" VerticalAlignment="Stretch" Fill="{TemplateBinding Background}" />
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter>
-
-                                </Style>
-
-                            </Grid.Styles>
-
-                            <!--==================================================-->
-                            <!-- Name column header. -->
-                            <!--==================================================-->
-
-                            <TextBlock
-                                Grid.Column="1"
-                                Text="Name" />
-
-                            <GridSplitter
-                                Grid.Column="2"
-                                ResizeDirection="Columns" />
-
-                            <!--==================================================-->
-                            <!-- Date modified column header. -->
-                            <!--==================================================-->
-
-                            <TextBlock
-                                Grid.Column="3"
-                                Text="Date Modified" />
-
-                            <GridSplitter
-                                Grid.Column="4"
-                                ResizeDirection="Columns" />
-
-                            <!--==================================================-->
-                            <!-- File type column header. -->
-                            <!--==================================================-->
-
-                            <TextBlock
-                                Grid.Column="5"
-                                Text="Type" />
-
-                            <GridSplitter
-                                Grid.Column="6"
-                                ResizeDirection="Columns" />
-
-                            <!--==================================================-->
-                            <!-- File size column header. -->
-                            <!--==================================================-->
-
-                            <TextBlock
-                                Grid.Column="7"
-                                Text="Size" />
-
-                            <GridSplitter
-                                Grid.Column="8"
-                                ResizeDirection="Columns" />
-
-                        </Grid>
-
-                        <!--==================================================-->
-                        <!-- File list. -->
+                        <!-- Quick link list. -->
                         <!--==================================================-->
 
                         <ListBox
-                            x:Name="PART_Files"
-                            ItemsSource="{Binding Items}"
-                            Margin="4"
-                            SelectionMode="{Binding SelectionMode}"
-                            SelectedItems="{Binding SelectedItems}"
-                            ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            x:Name="PART_QuickLinks"
+                            DockPanel.Dock="Left"
+                            ItemsSource="{Binding QuickLinks}"
+                            SelectedIndex="{Binding QuickLinksSelectedIndex}"
+                            Focusable="False"
+                            Margin="4">
 
                             <!--==================================================-->
-                            <!-- File list template. -->
+                            <!-- Quick link item template. -->
                             <!--==================================================-->
 
                             <ListBox.ItemTemplate>
 
                                 <!--==================================================-->
-                                <!-- Data template -->
+                                <!-- Data template. -->
                                 <!--==================================================-->
 
-                                <DataTemplate x:DataType="internal:ManagedFileChooserItemViewModel">
+                                <DataTemplate>
 
                                     <!--==================================================-->
-                                    <!-- File list items layout grid. -->
+                                    <!-- Icon & quick link container. -->
                                     <!--==================================================-->
 
-                                    <Grid Background="Transparent">
+                                    <StackPanel
+                                        Spacing="4"
+                                        Orientation="Horizontal"
+                                        Background="Transparent">
 
                                         <!--==================================================-->
-                                        <!-- File list items column definitions. -->
-                                        <!--==================================================-->
-
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition SharedSizeGroup="Icon" />
-                                            <ColumnDefinition SharedSizeGroup="Name" />
-                                            <ColumnDefinition SharedSizeGroup="Splitter" />
-                                            <ColumnDefinition SharedSizeGroup="Modified" />
-                                            <ColumnDefinition SharedSizeGroup="Splitter" />
-                                            <ColumnDefinition SharedSizeGroup="Type" />
-                                            <ColumnDefinition SharedSizeGroup="Splitter" />
-                                            <ColumnDefinition SharedSizeGroup="Size" />
-                                            <ColumnDefinition SharedSizeGroup="Splitter" />
-                                        </Grid.ColumnDefinitions>
-
-                                        <!--==================================================-->
-                                        <!-- File icon. -->
+                                        <!-- Icon. -->
                                         <!--==================================================-->
 
                                         <Image Width="16" Height="16">
@@ -646,48 +311,12 @@
                                         </Image>
 
                                         <!--==================================================-->
-                                        <!-- File name. -->
+                                        <!-- Quick link name. -->
                                         <!--==================================================-->
 
-                                        <TextBlock
-                                            Grid.Column="1"
-                                            Text="{Binding DisplayName}" />
+                                        <TextBlock Text="{Binding DisplayName}" />
 
-                                        <!--==================================================-->
-                                        <!-- Date modified. -->
-                                        <!--==================================================-->
-
-                                        <TextBlock
-                                            Grid.Column="3"
-                                            Text="{Binding Modified}" />
-
-                                        <!--==================================================-->
-                                        <!-- File type. -->
-                                        <!--==================================================-->
-
-                                        <TextBlock
-                                            Grid.Column="5"
-                                            Text="{Binding Type}" />
-
-                                        <!--==================================================-->
-                                        <!-- File size. -->
-                                        <!--==================================================-->
-
-                                        <TextBlock
-                                            Grid.Column="7"
-                                            HorizontalAlignment="Right">
-
-                                            <TextBlock.Text>
-                                                <Binding Path="Size">
-                                                    <Binding.Converter>
-                                                        <internal:FileSizeStringConverter />
-                                                    </Binding.Converter>
-                                                </Binding>
-                                            </TextBlock.Text>
-
-                                        </TextBlock>
-
-                                    </Grid>
+                                    </StackPanel>
 
                                 </DataTemplate>
 
@@ -695,9 +324,394 @@
 
                         </ListBox>
 
+                        <!--==================================================-->
+                        <!-- Navbar container. -->
+                        <!--==================================================-->
+
+                        <DockPanel
+                            x:Name="NavBar"
+                            DockPanel.Dock="Top"
+                            Margin="4"
+                            VerticalAlignment="Center">
+
+                            <!--==================================================-->
+                            <!-- Navbar layout. -->
+                            <!--==================================================-->
+
+                            <DockPanel Margin="4,0">
+
+                                <!--==================================================-->
+                                <!-- Go up one level button. -->
+                                <!--==================================================-->
+
+                                <Button
+                                    Command="{Binding GoUp}"
+                                    DockPanel.Dock="Left"
+                                    Height="34"
+                                    Margin="0,0,4,0">
+
+                                    <Path
+                                        Data="M 0 7 L 7 0 L 14 7 M 7 0 L 7 16"
+                                        Stroke="{CompiledBinding $parent[Button].Foreground}"
+                                        StrokeThickness="2"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="0,1,0,-1" />
+
+                                </Button>
+
+                                <!--==================================================-->
+                                <!-- Refresh button. -->
+                                <!--==================================================-->
+
+                                <Button
+                                    Command="{Binding Refresh}"
+                                    DockPanel.Dock="Right"
+                                    Height="34"
+                                    Margin="4,0,0,0">
+
+                                    <Path
+                                        Data="M 10.12,2.12 L 9.41,-1.41 L 6.59,1.41 Z M 8,0 A 8,8 0 1 0 10.35,5.66"
+                                        Stroke="{CompiledBinding $parent[Button].Foreground}"
+                                        StrokeThickness="2"
+                                        Height="16"
+                                        Width="16"
+                                        Margin="10,3,0,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" />
+
+                                </Button>
+
+                                <!--==================================================-->
+                                <!-- Location path. -->
+                                <!--==================================================-->
+
+                                <TextBox
+                                    x:Name="Location"
+                                    Text="{Binding Location}"
+                                    Height="34"
+                                    Margin="4,0">
+
+                                    <TextBox.KeyBindings>
+                                        <KeyBinding Command="{Binding EnterPressed}" Gesture="Enter" />
+                                    </TextBox.KeyBindings>
+
+                                </TextBox>
+
+                            </DockPanel>
+
+                        </DockPanel>
+
+                        <!--==================================================-->
+                        <!-- File name, filter, and buttons container. -->
+                        <!--==================================================-->
+
+                        <DockPanel
+                            Margin="0"
+                            DockPanel.Dock="Bottom">
+
+                            <!--==================================================-->
+                            <!-- File name, filters, and buttons container. -->
+                            <!--==================================================-->
+
+                            <DockPanel Margin="4">
+
+                                <!--==================================================-->
+                                <!-- File name and filter container. -->
+                                <!--==================================================-->
+
+                                <DockPanel
+                                    DockPanel.Dock="Top"
+                                    Margin="0,0,0,4">
+
+                                    <!--==================================================-->
+                                    <!-- Filter combobox. -->
+                                    <!--==================================================-->
+
+                                    <ComboBox
+                                        DockPanel.Dock="Right"
+                                        Margin="8,0,0,0"
+                                        Height="34"
+                                        IsVisible="{Binding ShowFilters}"
+                                        ItemsSource="{Binding Filters}"
+                                        SelectedItem="{Binding SelectedFilter}" />
+
+                                    <!--==================================================-->
+                                    <!-- File name. -->
+                                    <!--==================================================-->
+
+                                    <TextBox
+                                        Text="{Binding FileName}"
+                                        Watermark="{DynamicResource StringManagedFileChooserFileNameWatermark}"
+                                        Margin="0"
+                                        Height="34"
+                                        IsVisible="{Binding !SelectingFolder}" />
+
+                                </DockPanel>
+
+                                <!--==================================================-->
+                                <!-- Show hidden files checkbox. -->
+                                <!--==================================================-->
+
+                                <CheckBox
+                                    IsChecked="{Binding ShowHiddenFiles}"
+                                    Content="{DynamicResource StringManagedFileChooserShowHiddenFilesText}"
+                                    DockPanel.Dock="Left" />
+
+                                <!--==================================================-->
+                                <!-- OK & Cancel buttons. -->
+                                <!--==================================================-->
+
+                                <UniformGrid
+                                    x:Name="Finalize"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,4,0,0"
+                                    Rows="1">
+
+                                    <Button
+                                        Content="{DynamicResource StringManagedFileChooserOkText}"
+                                        Command="{Binding Ok}"
+                                        Height="34"
+                                        MinWidth="100" />
+
+                                    <Button
+                                        Content="{DynamicResource StringManagedFileChooserCancelText}"
+                                        Command="{Binding Cancel}"
+                                        Height="34"
+                                        MinWidth="100" />
+
+                                </UniformGrid>
+
+                            </DockPanel>
+
+                        </DockPanel>
+
+                        <!--==================================================-->
+                        <!-- File list container. -->
+                        <!--==================================================-->
+
+                        <DockPanel Grid.IsSharedSizeScope="True">
+
+                            <!--==================================================-->
+                            <!-- File list grid. -->
+                            <!--==================================================-->
+
+                            <Grid
+                                DockPanel.Dock="Top"
+                                Margin="15 4 0 0"
+                                HorizontalAlignment="Stretch">
+
+                                <!--==================================================-->
+                                <!-- File list column definitions. -->
+                                <!--==================================================-->
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" SharedSizeGroup="Icon" />
+                                    <ColumnDefinition Width="275" SharedSizeGroup="Name" />
+                                    <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
+                                    <ColumnDefinition Width="200" SharedSizeGroup="Modified" />
+                                    <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
+                                    <ColumnDefinition Width="150" SharedSizeGroup="Type" />
+                                    <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
+                                    <ColumnDefinition Width="200" SharedSizeGroup="Size" />
+                                    <ColumnDefinition Width="16" SharedSizeGroup="Splitter" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--==================================================-->
+                                <!-- File list grid styles. -->
+                                <!--==================================================-->
+
+                                <Grid.Styles>
+
+                                    <!--==================================================-->
+                                    <!-- Grid splitter style. -->
+                                    <!--==================================================-->
+
+                                    <Style Selector="GridSplitter">
+
+                                        <!--==================================================-->
+                                        <!-- Default property setters. -->
+                                        <!--==================================================-->
+
+                                        <Setter Property="Background" Value="{DynamicResource UiTheme05}" />
+
+                                        <!--==================================================-->
+                                        <!-- Template. -->
+                                        <!--==================================================-->
+
+                                        <Setter Property="Template">
+                                            <ControlTemplate>
+                                                <Border VerticalAlignment="Stretch" BorderThickness="0" Background="#01000000">
+                                                    <Rectangle Width="1" VerticalAlignment="Stretch" Fill="{TemplateBinding Background}" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter>
+
+                                    </Style>
+
+                                </Grid.Styles>
+
+                                <!--==================================================-->
+                                <!-- Name column header. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Text="{DynamicResource StringManagedFileChooserNameColumn}" />
+
+                                <GridSplitter
+                                    Grid.Column="2"
+                                    ResizeDirection="Columns" />
+
+                                <!--==================================================-->
+                                <!-- Date modified column header. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    Grid.Column="3"
+                                    Text="{DynamicResource StringManagedFileChooserDateModifiedColumn}" />
+
+                                <GridSplitter
+                                    Grid.Column="4"
+                                    ResizeDirection="Columns" />
+
+                                <!--==================================================-->
+                                <!-- File type column header. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    Grid.Column="5"
+                                    Text="{DynamicResource StringManagedFileChooserTypeColumn}" />
+
+                                <GridSplitter
+                                    Grid.Column="6"
+                                    ResizeDirection="Columns" />
+
+                                <!--==================================================-->
+                                <!-- File size column header. -->
+                                <!--==================================================-->
+
+                                <TextBlock
+                                    Grid.Column="7"
+                                    Text="{DynamicResource StringManagedFileChooserSizeColumn}" />
+
+                                <GridSplitter
+                                    Grid.Column="8"
+                                    ResizeDirection="Columns" />
+
+                            </Grid>
+
+                            <!--==================================================-->
+                            <!-- File list. -->
+                            <!--==================================================-->
+
+                            <ListBox
+                                x:Name="PART_Files"
+                                ItemsSource="{Binding Items}"
+                                Margin="4"
+                                SelectionMode="{Binding SelectionMode}"
+                                SelectedItems="{Binding SelectedItems}"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                                <!--==================================================-->
+                                <!-- File list template. -->
+                                <!--==================================================-->
+
+                                <ListBox.ItemTemplate>
+
+                                    <!--==================================================-->
+                                    <!-- Data template -->
+                                    <!--==================================================-->
+
+                                    <DataTemplate x:DataType="internal:ManagedFileChooserItemViewModel">
+
+                                        <!--==================================================-->
+                                        <!-- File list items layout grid. -->
+                                        <!--==================================================-->
+
+                                        <Grid Background="Transparent">
+
+                                            <!--==================================================-->
+                                            <!-- File list items column definitions. -->
+                                            <!--==================================================-->
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition SharedSizeGroup="Icon" />
+                                                <ColumnDefinition SharedSizeGroup="Name" />
+                                                <ColumnDefinition SharedSizeGroup="Splitter" />
+                                                <ColumnDefinition SharedSizeGroup="Modified" />
+                                                <ColumnDefinition SharedSizeGroup="Splitter" />
+                                                <ColumnDefinition SharedSizeGroup="Type" />
+                                                <ColumnDefinition SharedSizeGroup="Splitter" />
+                                                <ColumnDefinition SharedSizeGroup="Size" />
+                                                <ColumnDefinition SharedSizeGroup="Splitter" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!--==================================================-->
+                                            <!-- File icon. -->
+                                            <!--==================================================-->
+
+                                            <Image Width="16" Height="16">
+                                                <Image.Source>
+                                                    <DrawingImage Drawing="{Binding IconKey, Converter={StaticResource Icons}}" />
+                                                </Image.Source>
+                                            </Image>
+
+                                            <!--==================================================-->
+                                            <!-- File name. -->
+                                            <!--==================================================-->
+
+                                            <TextBlock
+                                                Grid.Column="1"
+                                                Text="{Binding DisplayName}" />
+
+                                            <!--==================================================-->
+                                            <!-- Date modified. -->
+                                            <!--==================================================-->
+
+                                            <TextBlock
+                                                Grid.Column="3"
+                                                Text="{Binding Modified}" />
+
+                                            <!--==================================================-->
+                                            <!-- File type. -->
+                                            <!--==================================================-->
+
+                                            <TextBlock
+                                                Grid.Column="5"
+                                                Text="{Binding Type}" />
+
+                                            <!--==================================================-->
+                                            <!-- File size. -->
+                                            <!--==================================================-->
+
+                                            <TextBlock
+                                                Grid.Column="7"
+                                                HorizontalAlignment="Right">
+
+                                                <TextBlock.Text>
+                                                    <Binding Path="Size">
+                                                        <Binding.Converter>
+                                                            <internal:FileSizeStringConverter />
+                                                        </Binding.Converter>
+                                                    </Binding>
+                                                </TextBlock.Text>
+
+                                            </TextBlock>
+
+                                        </Grid>
+
+                                    </DataTemplate>
+
+                                </ListBox.ItemTemplate>
+
+                            </ListBox>
+
+                        </DockPanel>
+
                     </DockPanel>
 
-                </DockPanel>
+                </Border>
 
             </ControlTemplate>
 
@@ -735,7 +749,7 @@
                     <!--==================================================-->
 
                     <Border
-                        Name="border"
+                        x:Name="border"
                         BoxShadow="inset -6 0 3 -3 #20000000"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -746,7 +760,7 @@
                         <!--==================================================-->
 
                         <ScrollViewer
-                            Name="PART_ScrollViewer"
+                            x:Name="PART_ScrollViewer"
                             HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                             VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
 
@@ -755,7 +769,7 @@
                             <!--==================================================-->
 
                             <ItemsPresenter
-                                Name="PART_ItemsPresenter"
+                                x:Name="PART_ItemsPresenter"
                                 ItemsPanel="{TemplateBinding ItemsPanel}"
                                 Margin="{TemplateBinding Padding}" />
 
@@ -831,7 +845,7 @@
                                     <!--==================================================-->
 
                                     <ContentPresenter
-                                        Name="PART_ContentPresenter"
+                                        x:Name="PART_ContentPresenter"
                                         Background="Transparent"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
@@ -882,6 +896,115 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="Margin" Value="8,0,0,0" />
         </Style>
+
+    </ControlTheme>
+
+    <!--==================================================-->
+    <!-- Managed file chooser overwrite prompt control -->
+    <!-- theme. -->
+    <!--==================================================-->
+
+    <ControlTheme x:Key="{x:Type dialogs:ManagedFileChooserOverwritePrompt}" TargetType="dialogs:ManagedFileChooserOverwritePrompt">
+
+        <!--==================================================-->
+        <!-- Default property setters. -->
+        <!--==================================================-->
+
+        <Setter Property="MinWidth" Value="270" />
+        <Setter Property="MaxWidth" Value="400" />
+
+        <!--==================================================-->
+        <!-- Template. -->
+        <!--==================================================-->
+
+        <Setter Property="Template">
+
+            <!--==================================================-->
+            <!-- Control theme. -->
+            <!--==================================================-->
+
+            <ControlTemplate>
+
+                <!--==================================================-->
+                <!-- Background border. -->
+                <!--==================================================-->
+
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+
+                    <!--==================================================-->
+                    <!-- Layout stack panel. -->
+                    <!--==================================================-->
+
+                    <StackPanel Spacing="16">
+
+                        <!--==================================================-->
+                        <!-- Overwrite text. -->
+                        <!--==================================================-->
+
+                        <TextBlock TextWrapping="Wrap">
+
+                            <TextBlock.Text>
+
+                                <MultiBinding>
+
+                                    <MultiBinding.Converter>
+                                        <converters:StringFormatConverter />
+                                    </MultiBinding.Converter>
+
+                                    <DynamicResource ResourceKey="StringManagedFileChooserOverwritePromptFileAlreadyExistsText" />
+                                    <Binding Path="FileName" RelativeSource="{RelativeSource TemplatedParent}" />
+
+                                </MultiBinding>
+
+                            </TextBlock.Text>
+
+                        </TextBlock>
+
+                        <!--==================================================-->
+                        <!-- Button container. -->
+                        <!--==================================================-->
+
+                        <StackPanel
+                            HorizontalAlignment="Right"
+                            Spacing="8"
+                            Orientation="Horizontal">
+
+                            <!--==================================================-->
+                            <!-- Confirm button. -->
+                            <!--==================================================-->
+
+                            <Button
+                                Content="{DynamicResource StringManagedFileChooserOverwritePromptConfirmText}"
+                                MinWidth="80"
+                                HorizontalContentAlignment="Center"
+                                IsDefault="True"
+                                Command="{Binding Confirm, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                            <!--==================================================-->
+                            <!-- Cancel button. -->
+                            <!--==================================================-->
+
+                            <Button
+                                Content="{DynamicResource StringManagedFileChooserOverwritePromptCancelText}"
+                                MinWidth="80"
+                                IsCancel="True"
+                                HorizontalContentAlignment="Center"
+                                Command="{Binding Cancel, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </Border>
+
+            </ControlTemplate>
+
+        </Setter>
 
     </ControlTheme>
 

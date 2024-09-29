@@ -7,19 +7,16 @@ public partial class TabCalendarDatePicker : UserControl
     //==================================================
     // Constructor.
     //==================================================
-    
+
     public TabCalendarDatePicker()
     {
         InitializeComponent();
-        
+
         //--------------------------------------------------
         // Add blackout dates to example.
         //--------------------------------------------------
-        
+
         var blackoutCalendarDatePicker = this.Get<CalendarDatePicker>("BlackoutCalendarDatePicker");
-        blackoutCalendarDatePicker.TemplateApplied += (s, e) =>
-        {
-            blackoutCalendarDatePicker.BlackoutDates?.AddDatesInPast();
-        };
+        blackoutCalendarDatePicker.TemplateApplied += (s, e) => { blackoutCalendarDatePicker.BlackoutDates?.AddDatesInPast(); };
     }
 }

@@ -44,12 +44,12 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="{DynamicResource Blue05}" />
-            
+
             <GridSplitter
                 Grid.Row="1"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
-            
+                Grid.ColumnSpan="3" />
+
             <Border
                 Grid.Row="2"
                 Grid.Column="0"

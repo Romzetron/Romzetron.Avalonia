@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabNumericUpDown">
 
@@ -15,7 +16,7 @@
         HorizontalAlignment="Left"
         VerticalAlignment="Top"
         Spacing="8"
-        Width="200"
+        Width="260"
         Margin="8">
 
         <!--==================================================-->
@@ -23,7 +24,7 @@
         <!--==================================================-->
 
         <NumericUpDown
-            Name="MainNumberUpDown"
+            x:Name="MainNumberUpDown"
             Value="5.0"
             Minimum="0"
             Maximum="10"
@@ -51,7 +52,6 @@
             Minimum="0"
             Maximum="10"
             Increment="0.5"
-            Width="200"
             ButtonSpinnerLocation="Left"
             Watermark="Enter text" />
 
@@ -64,7 +64,6 @@
             Minimum="0"
             Maximum="10"
             Increment="0.5"
-            Width="200"
             ButtonSpinnerLocation="Left"
             Watermark="Enter text"
             HorizontalContentAlignment="Right" />
@@ -91,6 +90,86 @@
             Maximum="10"
             Increment="0.5"
             Watermark="Enter text" />
+
+        <!--==================================================-->
+        <!-- Inner left content. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5">
+
+            <NumericUpDown.InnerLeftContent>
+
+                <TextBlock
+                    Text="$"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center" />
+
+            </NumericUpDown.InnerLeftContent>
+
+        </NumericUpDown>
+
+        <!--==================================================-->
+        <!-- Inner right content. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5">
+
+            <NumericUpDown.InnerRightContent>
+
+                <TextBlock
+                    Text="min"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center" />
+
+            </NumericUpDown.InnerRightContent>
+
+        </NumericUpDown>
+
+        <!--==================================================-->
+        <!-- Validation error. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5">
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
+
+        </NumericUpDown>
+
+        <!--==================================================-->
+        <!-- Validation error tooltip. -->
+        <!--==================================================-->
+
+        <NumericUpDown
+            Value="{Binding #MainNumberUpDown.Value}"
+            Minimum="0"
+            Maximum="10"
+            Increment="0.5">
+
+            <NumericUpDown.Styles>
+                <Style Selector="DataValidationErrors">
+                    <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+                </Style>
+            </NumericUpDown.Styles>
+
+            <DataValidationErrors.Error>
+                <system:Exception />
+            </DataValidationErrors.Error>
+
+        </NumericUpDown>
 
     </StackPanel>
 

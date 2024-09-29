@@ -47,7 +47,7 @@
             <ControlTemplate>
 
                 <ContentPresenter
-                    Name="PART_ContentPresenter"
+                    x:Name="PART_ContentPresenter"
                     Background="{TemplateBinding Background}"
                     Foreground="{TemplateBinding Foreground}"
                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -195,7 +195,7 @@
         <!-- Default property setters. -->
         <!--==================================================-->
 
-        <Setter Property="Background" Value="{DynamicResource UiTheme06}"/>
+        <Setter Property="Background" Value="{DynamicResource UiTheme06}" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Height" Value="22" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -241,7 +241,7 @@
         <!-- Default property setters. -->
         <!--==================================================-->
 
-        <Setter Property="Background" Value="{DynamicResource UiTheme06}"/>
+        <Setter Property="Background" Value="{DynamicResource UiTheme06}" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Height" Value="22" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
