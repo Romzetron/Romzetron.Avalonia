@@ -24,6 +24,7 @@
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/CalendarItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/Carousel.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/CheckBox.xaml" />
+                <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/CircularProgress.axaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ComboBox.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ComboBoxItem.xaml" />
                 <MergeResourceInclude Source="avares://Romzetron.Avalonia/Controls/ContextMenu.xaml" />

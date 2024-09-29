@@ -1,0 +1,56 @@
+<UserControl
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="clr-namespace:Romzetron.Avalonia.Controls;assembly=Romzetron.Avalonia"
+	mc:Ignorable="d"
+	x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCircularProgress">
+	<ScrollViewer
+			HorizontalScrollBarVisibility="Disabled"
+			VerticalScrollBarVisibility="Auto">
+		<Grid ColumnDefinitions="Auto,*">
+			<StackPanel
+					HorizontalAlignment="Left"
+					VerticalAlignment="Top"
+					Spacing="10"
+					Margin="20">
+				<controls:CircularProgress
+						x:Name="Progress"
+						StrokeThickness="8"
+						IsIndeterminate="False"
+						Width="100"
+						Height="100"
+						Value="63" />
+				<Slider Value="{Binding #Progress.Value, Mode=TwoWay}"
+						Maximum="{Binding #Progress.Maximum}"
+						Minimum="{Binding #Progress.Minimum}" />
+				<CheckBox IsChecked="{Binding #Progress.ShowProgressText, Mode=TwoWay}"
+						Content="Show Progress Text" />
+				<CheckBox IsChecked="{Binding #Progress.IsIndeterminate, Mode=TwoWay}"
+						Content="Indeterminate" />
+			</StackPanel>
+			<ItemsControl ItemsSource="{x:Static Theme.Colors}"
+					Grid.Column="1"
+					Margin="10,0,0,0">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel />
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate DataType="ColorTheme">
+						<controls:CircularProgress Theme.ColorTheme="{Binding}"
+								IsIndeterminate="{Binding #Progress.IsIndeterminate, Mode=OneWay}"
+								ShowProgressText="{Binding #Progress.ShowProgressText, Mode=OneWay}"
+								Value="{Binding #Progress.Value, Mode=OneWay}"
+								Minimum="{Binding #Progress.Minimum, Mode=OneWay}"
+								Maximum="{Binding #Progress.Maximum, Mode=OneWay}"
+								Content="{Binding}"
+								Margin="10" />
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Grid>
+	</ScrollViewer>
+</UserControl>

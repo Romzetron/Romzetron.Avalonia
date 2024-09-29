@@ -219,6 +219,14 @@
                 <TabItem Header="CheckBox">
                     <tabs:TabCheckBox />
                 </TabItem>
+                
+                <!--==================================================-->
+                <!-- Circular Progress examples. -->
+                <!--==================================================-->
+
+                <TabItem Header="CircularProgress">
+                    <tabs:TabCircularProgress />
+                </TabItem>
 
                 <!--==================================================-->
                 <!-- ComboBox examples. -->
