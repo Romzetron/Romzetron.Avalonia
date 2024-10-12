@@ -11,9 +11,9 @@
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.1.0</Version>
-        <AssemblyVersion>11.1.0</AssemblyVersion>
-        <FileVersion>11.1.0</FileVersion>
+        <Version>11.1.4</Version>
+        <AssemblyVersion>11.1.4</AssemblyVersion>
+        <FileVersion>11.1.4</FileVersion>
         <OutputType>WinExe</OutputType>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
@@ -25,12 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.1.0"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.1.0"/>
+        <PackageReference Include="Avalonia" Version="11.1.4" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.1.4" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0"/>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.1.0"/>
-        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.1.0"/>
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.4"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.1.4" />
+        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.1.0.4" />
     </ItemGroup>
 
     <ItemGroup>

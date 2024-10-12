@@ -3,9 +3,9 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <Title>Romzetron Avalonia Theme</Title>
-        <Version>11.1.0</Version>
-        <AssemblyVersion>11.1.0</AssemblyVersion>
-        <FileVersion>11.1.0</FileVersion>
+        <Version>11.1.4</Version>
+        <AssemblyVersion>11.1.4</AssemblyVersion>
+        <FileVersion>11.1.4</FileVersion>
         <Company>Romzetron Software</Company>
         <Description>Theme library for Avalonia.</Description>
         <Copyright>Copyright © 2024 Romzetron Software</Copyright>
@@ -24,10 +24,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.1.0"/>
+        <PackageReference Include="Avalonia" Version="11.1.4" />
         <AvaloniaResource Include="**/*.xaml"/>
         <AvaloniaResource Include="**/*.ttf"/>
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.1.0"/>
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.1.4" />
     </ItemGroup>
 
     <ItemGroup>
