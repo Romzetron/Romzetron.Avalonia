@@ -4,14 +4,6 @@
     x:ClassModifier="internal">
 
     <!--==================================================-->
-    <!-- Constants. -->
-    <!--==================================================-->
-
-    <Thickness x:Key="AdornerMargin">0</Thickness>
-    <Thickness x:Key="AdornerPrimaryThickness">2</Thickness>
-    <Thickness x:Key="AdornerSecondaryThickness">1</Thickness>
-
-    <!--==================================================-->
     <!-- AdornerLayer control theme. -->
     <!--==================================================-->
 
@@ -34,19 +26,9 @@
                 <!--==================================================-->
 
                 <Border
-                    BorderThickness="{DynamicResource AdornerPrimaryThickness}"
-                    BorderBrush="{DynamicResource AdornerPrimaryBrush}"
-                    Margin="{DynamicResource AdornerMargin}">
-
-                    <!--==================================================-->
-                    <!-- Secondary border. -->
-                    <!--==================================================-->
-
-                    <Border
-                        BorderThickness="{DynamicResource AdornerSecondaryThickness}"
-                        BorderBrush="{DynamicResource AdornerSecondaryBrush}" />
-
-                </Border>
+                    BorderBrush="{DynamicResource AdornerBrush}"
+                    BorderThickness="{DynamicResource AdornerThickness}"
+                    CornerRadius="{DynamicResource AdornerCornerRadius}" />
 
             </FocusAdornerTemplate>
 

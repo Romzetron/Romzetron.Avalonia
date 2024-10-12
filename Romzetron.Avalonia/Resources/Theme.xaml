@@ -29,8 +29,11 @@
     <!-- AdornerLayer resources. -->
     <!--==================================================-->
 
-    <SolidColorBrush x:Key="AdornerPrimaryBrush" Color="{DynamicResource UiTheme00}" />
-    <SolidColorBrush x:Key="AdornerSecondaryBrush" Color="{DynamicResource UiTheme00}" Opacity="0.5" />
+    <SolidColorBrush x:Key="AdornerBrush" Color="{DynamicResource UiTextTheme00}" Opacity="0.5" />
+
+    <CornerRadius x:Key="AdornerCornerRadius">4</CornerRadius>
+    <Thickness x:Key="AdornerPadding">2</Thickness>
+    <Thickness x:Key="AdornerThickness">1.5</Thickness>
 
     <!--==================================================-->
     <!-- AutoCompleteBox resources. -->
