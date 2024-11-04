@@ -17,6 +17,7 @@
 
     <x:String x:Key="StringTimePickerHourText">Hour</x:String>
     <x:String x:Key="StringTimePickerMinuteText">Minute</x:String>
+    <x:String x:Key="StringTimePickerSecondText">Second</x:String>
 
     <!--==================================================-->
     <!-- TextBox/SelectableTextBox flyout. -->

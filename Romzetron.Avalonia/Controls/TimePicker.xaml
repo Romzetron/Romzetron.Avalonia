@@ -217,7 +217,7 @@
                                     Width="1" />
 
                                 <!--==================================================-->
-                                <!-- Second text. -->
+                                <!-- Minute text. -->
                                 <!--==================================================-->
 
                                 <Border
@@ -246,12 +246,41 @@
                                     Width="1" />
 
                                 <!--==================================================-->
-                                <!-- Period text. -->
+                                <!-- Second text. -->
                                 <!--==================================================-->
 
                                 <Border
                                     x:Name="PART_ThirdPickerHost"
                                     Grid.Column="4"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch">
+
+                                    <TextBlock
+                                        x:Name="PART_SecondTextBlock"
+                                        Text="{DynamicResource StringTimePickerSecondText}"
+                                        HorizontalAlignment="Center"
+                                        Padding="{DynamicResource ButtonPadding}" />
+
+                                </Border>
+
+                                <!--==================================================-->
+                                <!-- Third divider. -->
+                                <!--==================================================-->
+
+                                <Rectangle
+                                    x:Name="PART_ThirdColumnDivider"
+                                    Grid.Column="5"
+                                    Fill="{DynamicResource DateTimePickerButtonSpacerBrush}"
+                                    HorizontalAlignment="Center"
+                                    Width="1" />
+
+                                <!--==================================================-->
+                                <!-- Period text. -->
+                                <!--==================================================-->
+
+                                <Border
+                                    x:Name="PART_FourthPickerHost"
+                                    Grid.Column="6"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Stretch">
 
@@ -487,10 +516,57 @@
                             </Panel>
 
                             <!--==================================================-->
+                            <!-- Second container. -->
+                            <!--==================================================-->
+
+                            <Panel x:Name="PART_SecondHost" Grid.Column="4">
+
+                                <!--==================================================-->
+                                <!-- Scroll viewer. -->
+                                <!--==================================================-->
+
+                                <ScrollViewer
+                                    HorizontalScrollBarVisibility="Disabled"
+                                    VerticalScrollBarVisibility="Hidden"
+                                    Margin="0,4">
+
+                                    <!--==================================================-->
+                                    <!-- Minute selector. -->
+                                    <!--==================================================-->
+
+                                    <DateTimePickerPanel
+                                        x:Name="PART_SecondSelector"
+                                        PanelType="Second"
+                                        ItemHeight="{DynamicResource DateTimePickerFlyoutPresenterItemHeight}"
+                                        ShouldLoop="True" />
+
+                                </ScrollViewer>
+
+                                <!--==================================================-->
+                                <!-- Minute scroll up button. -->
+                                <!--==================================================-->
+
+                                <RepeatButton
+                                    x:Name="PART_SecondUpButton"
+                                    Theme="{StaticResource DateTimePickerUpButton}"
+                                    Margin="2" />
+
+                                <!--==================================================-->
+                                <!-- Minute scroll down button. -->
+                                <!--==================================================-->
+
+                                <RepeatButton
+                                    x:Name="PART_SecondDownButton"
+                                    Theme="{StaticResource DateTimePickerDownButton}"
+                                    Margin="2" />
+
+                            </Panel>
+
+                            <!--==================================================-->
                             <!-- Period container. -->
                             <!--==================================================-->
 
-                            <Panel x:Name="PART_PeriodHost" Grid.Column="4">
+                            <Panel x:Name="PART_PeriodHost" Grid.Column="6">
 
                                 <!--==================================================-->
                                 <!-- Scroll viewer. -->
@@ -541,7 +617,7 @@
                             <!--     x:Name="HighlightRect" ZIndex="-1" -->
                             <!--     Fill="{DynamicResource TimePickerFlyoutPresenterHighlightFill}" -->
                             <!--     Grid.Column="0" -->
-                            <!--     Grid.ColumnSpan="5" -->
+                            <!--     Grid.ColumnSpan="7" -->
                             <!--     VerticalAlignment="Center" -->
                             <!--     Height="{DynamicResource TimePickerFlyoutPresenterHighlightHeight}" /> -->
 
@@ -567,6 +643,18 @@
                                 HorizontalAlignment="Center"
                                 Width="{DynamicResource DateTimePickerSpacerWidth}"
                                 Grid.Column="3"
+                                Margin="4,-4" />
+
+                            <!--==================================================-->
+                            <!-- Third spacer. -->
+                            <!--==================================================-->
+
+                            <Rectangle
+                                x:Name="PART_ThirdSpacer"
+                                Fill="{DynamicResource DateTimePickerFlyoutBorderBrush}"
+                                HorizontalAlignment="Center"
+                                Width="{DynamicResource DateTimePickerSpacerWidth}"
+                                Grid.Column="5"
                                 Margin="4,-4" />
 
                         </Grid>
