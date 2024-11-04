@@ -11,9 +11,9 @@
         <PackageTags>avalonia, ui, theme</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.1.4</Version>
-        <AssemblyVersion>11.1.4</AssemblyVersion>
-        <FileVersion>11.1.4</FileVersion>
+        <Version>11.2.0</Version>
+        <AssemblyVersion>11.2.0</AssemblyVersion>
+        <FileVersion>11.2.0</FileVersion>
         <OutputType>WinExe</OutputType>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
