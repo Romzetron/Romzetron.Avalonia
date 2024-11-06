@@ -15,13 +15,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.0" />
-        <AvaloniaResource Include="**/*.xaml"/>
-        <AvaloniaResource Include="**/*.ttf"/>
-        <PackageReference Include="Romzetron.Avalonia.Shared" Version="$(Version)" />
-    </ItemGroup>
-
-    <ItemGroup>
         <None Update="RomzetronLogo.png">
             <Pack>True</Pack>
             <PackagePath/>
@@ -38,7 +31,17 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-      <ProjectReference Include="..\Romzetron.Avalonia.Shared\Romzetron.Avalonia.Shared.csproj" />
+        <ProjectReference Include="..\Romzetron.Avalonia.Shared\Romzetron.Avalonia.Shared.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="Romzetron.Avalonia.Shared" Version="$(Version)"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.0"/>
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
     </ItemGroup>
 
 </Project>

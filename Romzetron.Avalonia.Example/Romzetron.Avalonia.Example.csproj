@@ -7,7 +7,7 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <None Update="RomzetronLogo.png">
             <Pack>True</Pack>
@@ -24,6 +24,15 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.0"/>
+        <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="Romzetron.Avalonia" Version="$(Version)"/>
+    </ItemGroup>
+
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
@@ -33,12 +42,6 @@
         <PackageReference Include="Avalonia.Desktop" Version="11.2.0"/>
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0"/>
         <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0"/>
-        <PackageReference Include="Romzetron.Avalonia" Version="$(Version)" />
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.0"/>
-        <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
@@ -125,6 +126,7 @@ public class RomzetronThemeBase<T> : Style where T : AvaloniaObject
     /// and methods to manage a variety of predefined color themes.
     /// </summary>
     /// <typeparam name="T">The type parameter constraint requires T to be of type AvaloniaObject.</typeparam>
+    [RequiresUnreferencedCode("RomzetronThemeBase dynamically loads referenced assembly with Avalonia resources.")]
     protected RomzetronThemeBase()
     {
         var uriAmber = new Uri("avares://Romzetron.Avalonia.Shared/Resources/Color/ColorThemeAmber.xaml");

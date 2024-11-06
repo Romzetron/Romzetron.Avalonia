@@ -5,20 +5,12 @@
         <AssemblyName>Romzetron.Avalonia.Shared</AssemblyName>
         <RootNamespace>Romzetron.Avalonia.Shared</RootNamespace>
         <Description>Shared theme components library for Romzetron.Avalonia.</Description>
-        <!-- NativeMenuBar uses ReflectionBinding -->
-        <NoWarn>$(NoWarn);IL2026</NoWarn>
         <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <TrimmerSingleWarn>false</TrimmerSingleWarn>
         <IsTrimmable>true</IsTrimmable>
         <AvaloniaXamlC>true</AvaloniaXamlC>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.0"/>
-        <AvaloniaResource Include="**/*.xaml"/>
-        <AvaloniaResource Include="**/*.ttf"/>
-    </ItemGroup>
 
     <ItemGroup>
         <None Update="RomzetronLogo.png">
@@ -31,9 +23,13 @@
         <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
             <Link>LICENSE.md</Link>
         </Content>
-        <Content Include="..\README.md" Pack="true" PackagePath="">
-            <Link>README.md</Link>
-        </Content>
+        <Content Include="README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.0"/>
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
     </ItemGroup>
 
 </Project>

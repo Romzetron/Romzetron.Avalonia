@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using System.Timers;
 using Avalonia;
 using Avalonia.Threading;
@@ -36,10 +37,6 @@ public class MainWindowViewModel : ViewModelBase
             var theme = GetRomzetronAvaloniaTheme();
             if (theme is not null)
                 theme.ColorTheme = value;
-            //
-            // var shared = GetRomzetronAvaloniaSharedTheme();
-            // if (shared is not null)
-            //     shared.ColorTheme = value;
         }
     }
 
@@ -68,11 +65,7 @@ public class MainWindowViewModel : ViewModelBase
 
     public MainWindowViewModel()
     {
-        var version = Assembly.GetExecutingAssembly().GetName().Version;
-
-        WindowTitle = version is not null
-            ? $"Romzetron Avalonia Theme Example {version.Major}.{version.Minor}.{version.Build}.{version.Revision}"
-            : "Romzetron Avalonia Theme Example";
+        WindowTitle = $"Romzetron Avalonia Theme Example {GetNugetVersion()}";
 
         SelectedColorTheme = ColorTheme.Blue;
 
@@ -80,6 +73,26 @@ public class MainWindowViewModel : ViewModelBase
         _themeCycleTimer.Elapsed += OnThemeCycleTimerElapsed;
 
         RunTimer = true;
+    }
+
+    //==================================================
+    // Get the nuget version.
+    //==================================================
+
+    private static string GetNugetVersion()
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        var attribute = assembly
+            .GetCustomAttributes<AssemblyInformationalVersionAttribute>()
+            .FirstOrDefault();
+
+        if (attribute?.InformationalVersion == null)
+            return "Version not found";
+
+        var nugetVersion = attribute.InformationalVersion;
+        var semanticVersion = nugetVersion.Split('+').First();
+
+        return semanticVersion;
     }
 
     //==================================================
@@ -99,7 +112,7 @@ public class MainWindowViewModel : ViewModelBase
 
         return null;
     }
-    
+
     //==================================================
     // Toggle cycling themes.
     //==================================================

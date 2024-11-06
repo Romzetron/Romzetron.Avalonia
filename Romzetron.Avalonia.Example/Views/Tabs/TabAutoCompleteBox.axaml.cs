@@ -58,8 +58,8 @@ public partial class TabAutoCompleteBox : UserControl
 
     private static StateData[] BuildAllStates()
     {
-        return new[]
-        {
+        return
+        [
             new StateData("Alabama", "AL", "Montgomery"),
             new StateData("Alaska", "AK", "Juneau"),
             new StateData("Arizona", "AZ", "Phoenix"),
@@ -109,8 +109,8 @@ public partial class TabAutoCompleteBox : UserControl
             new StateData("Washington", "WA", "Olympia"),
             new StateData("West Virginia", "WV", "Charleston"),
             new StateData("Wisconsin", "WI", "Madison"),
-            new StateData("Wyoming", "WY", "Cheyenne"),
-        };
+            new StateData("Wyoming", "WY", "Cheyenne")
+        ];
     }
 
     //==================================================
@@ -163,7 +163,7 @@ public partial class TabAutoCompleteBox : UserControl
 
     private bool LastWordContains(string? searchText, string? item)
     {
-        var words = searchText?.Split(' ') ?? Array.Empty<string>();
+        var words = searchText?.Split(' ') ?? [];
 
         var options = Sentences
             .Select(x => x.First)
@@ -197,7 +197,7 @@ public partial class TabAutoCompleteBox : UserControl
         if (item is null)
             return string.Empty;
 
-        var parts = text?.Split(' ') ?? Array.Empty<string>();
+        var parts = text?.Split(' ') ?? [];
 
         if (parts.Length == 0)
             return item;
