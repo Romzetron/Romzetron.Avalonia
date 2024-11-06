@@ -41,29 +41,4 @@
       <ProjectReference Include="..\Romzetron.Avalonia.Shared\Romzetron.Avalonia.Shared.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeAmber.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeBlue.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeBlueGrey.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeBrown.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeDeepOrange.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeDeepPurple.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeGreen.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeIndigo.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeOrange.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemePink.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemePurple.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeRed.xaml" />
-      <UpToDateCheckInput Remove="Resources\Color\ColorThemeTeal.xaml" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Black.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Bold.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-ExtraBold.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-ExtraLight.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Light.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Medium.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Regular.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-SemiBold.ttf" />
-      <UpToDateCheckInput Remove="Fonts\Inter-Thin.ttf" />
-    </ItemGroup>
-
 </Project>

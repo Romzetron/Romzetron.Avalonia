@@ -36,16 +36,4 @@
         </Content>
     </ItemGroup>
 
-    <ItemGroup>
-        <UpToDateCheckInput Remove="Fonts\Inter-Black.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-Bold.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-ExtraBold.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-ExtraLight.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-Light.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-Medium.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-Regular.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-SemiBold.ttf"/>
-        <UpToDateCheckInput Remove="Fonts\Inter-Thin.ttf"/>
-    </ItemGroup>
-
 </Project>
