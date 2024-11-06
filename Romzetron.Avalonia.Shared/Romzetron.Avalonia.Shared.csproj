@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Title>Romzetron Avalonia Theme Shared Components</Title>
+        <AssemblyName>Romzetron.Avalonia.Shared</AssemblyName>
+        <RootNamespace>Romzetron.Avalonia.Shared</RootNamespace>
+        <Description>Shared theme components library for Romzetron.Avalonia.</Description>
+        <!-- NativeMenuBar uses ReflectionBinding -->
+        <NoWarn>$(NoWarn);IL2026</NoWarn>
+        <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+        <TrimmerSingleWarn>false</TrimmerSingleWarn>
+        <IsTrimmable>true</IsTrimmable>
+        <AvaloniaXamlC>true</AvaloniaXamlC>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.0"/>
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="RomzetronLogo.png">
+            <Pack>True</Pack>
+            <PackagePath/>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
+            <Link>LICENSE.md</Link>
+        </Content>
+        <Content Include="..\README.md" Pack="true" PackagePath="">
+            <Link>README.md</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <UpToDateCheckInput Remove="Fonts\Inter-Black.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-Bold.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-ExtraBold.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-ExtraLight.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-Light.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-Medium.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-Regular.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-SemiBold.ttf"/>
+        <UpToDateCheckInput Remove="Fonts\Inter-Thin.ttf"/>
+    </ItemGroup>
+
+</Project>

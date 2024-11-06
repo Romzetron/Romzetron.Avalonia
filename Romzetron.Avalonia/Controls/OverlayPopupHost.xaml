@@ -14,9 +14,8 @@
         <!--==================================================-->
 
         <Setter Property="Foreground" Value="{DynamicResource StandardFontForeground}" />
-        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
         <Setter Property="FontStyle" Value="Normal" />
 
         <!--==================================================-->

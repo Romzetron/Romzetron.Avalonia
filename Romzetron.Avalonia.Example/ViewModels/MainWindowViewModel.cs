@@ -3,6 +3,7 @@ using System.Timers;
 using Avalonia;
 using Avalonia.Threading;
 using ReactiveUI;
+using Romzetron.Avalonia.Shared;
 
 namespace Romzetron.Avalonia.Example.ViewModels;
 
@@ -35,6 +36,10 @@ public class MainWindowViewModel : ViewModelBase
             var theme = GetRomzetronAvaloniaTheme();
             if (theme is not null)
                 theme.ColorTheme = value;
+            //
+            // var shared = GetRomzetronAvaloniaSharedTheme();
+            // if (shared is not null)
+            //     shared.ColorTheme = value;
         }
     }
 
@@ -94,7 +99,7 @@ public class MainWindowViewModel : ViewModelBase
 
         return null;
     }
-
+    
     //==================================================
     // Toggle cycling themes.
     //==================================================

@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Romzetron.Avalonia.Example\Romzetron.Avalonia.Example.csproj" Type="Classic C#" />
+  <Project Path="Romzetron.Avalonia.Shared\Romzetron.Avalonia.Shared.csproj" Type="Classic C#" />
+  <Project Path="Romzetron.Avalonia\Romzetron.Avalonia.csproj" Type="Classic C#" />
+</Solution>

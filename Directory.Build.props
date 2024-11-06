@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Version>11.2.0-beta1</Version>
+    <AssemblyVersion>11.2.0</AssemblyVersion>
+    <FileVersion>11.2.0</FileVersion>
+    <Company>Romzetron Software</Company>
+    <Copyright>Copyright © 2024 Romzetron Software</Copyright>
+    <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
+    <PackageIcon>RomzetronLogo.png</PackageIcon>
+    <PackageTags>avalonia, ui, theme</PackageTags>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>

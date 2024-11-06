@@ -6,12 +6,16 @@ using Avalonia.ReactiveUI;
 
 namespace Romzetron.Avalonia.Example;
 
+/// <summary>
+/// A class containing the entry point for the Avalonia application.
+/// </summary>
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
 internal class Program
 {
-    // Initialization code. Don't use any Avalonia, third-party APIs or any
-    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-    // yet and stuff might break.
+    /// <summary>
+    /// Entry point for the application.
+    /// </summary>
+    /// <param name="args">Command-line arguments passed to the application.</param>
     [STAThread]
     public static void Main(string[] args)
     {
@@ -19,7 +23,10 @@ internal class Program
             .StartWithClassicDesktopLifetime(args);
     }
 
-    // Avalonia configuration, don't remove; also used by visual designer.
+    /// <summary>
+    /// Configures and builds the Avalonia application.
+    /// </summary>
+    /// <returns>An instance of <see cref="AppBuilder"/> configured with the necessary settings for the application.</returns>
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<App>()
