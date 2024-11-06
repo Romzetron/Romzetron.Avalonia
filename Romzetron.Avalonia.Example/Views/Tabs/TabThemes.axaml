@@ -5,8 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
-    xmlns:theme="clr-namespace:Romzetron.Avalonia;assembly=Romzetron.Avalonia"
-    xmlns:converters="clr-namespace:Romzetron.Avalonia.Converters;assembly=Romzetron.Avalonia"
+    xmlns:converters="clr-namespace:Romzetron.Avalonia.Shared.Converters;assembly=Romzetron.Avalonia.Shared"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabThemes">
 
@@ -47,7 +46,7 @@
         <RadioButton
             Grid.Row="0" Grid.Column="0"
             Content="Red"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Red}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Red}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -78,7 +77,7 @@
         <RadioButton
             Grid.Row="1" Grid.Column="0"
             Content="Pink"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Pink}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Pink}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -109,7 +108,7 @@
         <RadioButton
             Grid.Row="2" Grid.Column="0"
             Content="Purple"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Purple}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Purple}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -140,7 +139,7 @@
         <RadioButton
             Grid.Row="3" Grid.Column="0"
             Content="Deep Purple"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.DeepPurple}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.DeepPurple}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -171,7 +170,7 @@
         <RadioButton
             Grid.Row="4" Grid.Column="0"
             Content="Indigo"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Indigo}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Indigo}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -202,7 +201,7 @@
         <RadioButton
             Grid.Row="5" Grid.Column="0"
             Content="Blue"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Blue}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Blue}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -233,7 +232,7 @@
         <RadioButton
             Grid.Row="6" Grid.Column="0"
             Content="Teal"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Teal}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Teal}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -264,7 +263,7 @@
         <RadioButton
             Grid.Row="7" Grid.Column="0"
             Content="Green"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Green}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Green}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -295,7 +294,7 @@
         <RadioButton
             Grid.Row="8" Grid.Column="0"
             Content="Amber"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Amber}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Amber}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -326,7 +325,7 @@
         <RadioButton
             Grid.Row="9" Grid.Column="0"
             Content="Orange"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Orange}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Orange}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -357,7 +356,7 @@
         <RadioButton
             Grid.Row="10" Grid.Column="0"
             Content="Deep Orange"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.DeepOrange}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.DeepOrange}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -388,7 +387,7 @@
         <RadioButton
             Grid.Row="11" Grid.Column="0"
             Content="Brown"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.Brown}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.Brown}}"
             Margin="4"
             GroupName="ThemeSelector" />
 
@@ -419,7 +418,7 @@
         <RadioButton
             Grid.Row="12" Grid.Column="0"
             Content="Blue Grey"
-            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static theme:ColorTheme.BlueGrey}}"
+            IsChecked="{Binding SelectedColorTheme, Converter={StaticResource ThemeConverter}, ConverterParameter={x:Static ColorTheme.BlueGrey}}"
             Margin="4"
             GroupName="ThemeSelector" />
 

@@ -121,7 +121,6 @@
 
             <Style Selector="^ /template/ ContentControl#PART_ContentPresenter">
                 <Setter Property="FontFamily" Value="{DynamicResource FontInterExtraBold}" />
-                <Setter Property="FontWeight" Value="Bold" />
             </Style>
 
             <!--==================================================-->

@@ -167,7 +167,7 @@
         <!--==================================================-->
 
         <Style Selector="^:checked">
-            <Setter Property="FontFamily" Value="{DynamicResource FontInterBold}" />
+            <Setter Property="FontFamily" Value="{DynamicResource FontInterExtraBold}" />
         </Style>
 
         <Style Selector="^:checked /template/ Border#SeparatorBorder">

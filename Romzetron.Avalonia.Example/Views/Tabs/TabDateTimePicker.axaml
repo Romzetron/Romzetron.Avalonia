@@ -226,7 +226,7 @@
         </StackPanel>
 
         <!--==================================================-->
-        <!-- Time picker with 12 hour clock. -->
+        <!-- Time picker with 12-hour clock. -->
         <!--==================================================-->
 
         <StackPanel Orientation="Horizontal">
@@ -244,7 +244,7 @@
         </StackPanel>
 
         <!--==================================================-->
-        <!-- Time picker with 24 hour clock. -->
+        <!-- Time picker with 24-hour clock. -->
         <!--==================================================-->
 
         <StackPanel Orientation="Horizontal">

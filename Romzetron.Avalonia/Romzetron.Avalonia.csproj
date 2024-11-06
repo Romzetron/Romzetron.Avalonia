@@ -1,39 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <Title>Romzetron Avalonia Theme</Title>
-        <Version>11.2.0</Version>
-        <AssemblyVersion>11.2.0</AssemblyVersion>
-        <FileVersion>11.2.0</FileVersion>
-        <Company>Romzetron Software</Company>
+        <AssemblyName>Romzetron.Avalonia</AssemblyName>
+        <RootNamespace>Romzetron.Avalonia</RootNamespace>
         <Description>Theme library for Avalonia.</Description>
-        <Copyright>Copyright © 2024 Romzetron Software</Copyright>
-        <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
-        <PackageIcon>RomzetronLogo.png</PackageIcon>
-        <PackageTags>avalonia, ui, theme</PackageTags>
-        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Nullable>enable</Nullable>
         <!-- NativeMenuBar uses ReflectionBinding -->
         <NoWarn>$(NoWarn);IL2026</NoWarn>
         <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <TrimmerSingleWarn>false</TrimmerSingleWarn>
         <IsTrimmable>true</IsTrimmable>
+        <AvaloniaXamlC>true</AvaloniaXamlC>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.0" />
-        <AvaloniaResource Include="**/*.xaml"/>
-        <AvaloniaResource Include="**/*.ttf"/>
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.0" />
-    </ItemGroup>
 
     <ItemGroup>
         <None Update="RomzetronLogo.png">
             <Pack>True</Pack>
-            <PackagePath></PackagePath>
+            <PackagePath/>
         </None>
     </ItemGroup>
 
@@ -44,6 +28,20 @@
         <Content Include="..\README.md" Pack="true" PackagePath="">
             <Link>README.md</Link>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+        <ProjectReference Include="..\Romzetron.Avalonia.Shared\Romzetron.Avalonia.Shared.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="Romzetron.Avalonia.Shared" Version="$(Version)"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.0"/>
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
     </ItemGroup>
 
 </Project>

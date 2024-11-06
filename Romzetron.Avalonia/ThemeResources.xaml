@@ -11,15 +11,15 @@
     <!-- Font resources. -->
     <!--==================================================-->
 
-    <FontFamily x:Key="FontInterBlack">../Fonts/Inter-Black.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterBold">../Fonts/Inter-Bold.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterExtraBold">../Fonts/Inter-ExtraBold.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterExtraLight">../Fonts/Inter-ExtraLight.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterLight">../Fonts/Inter-Light.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterMedium">../Fonts/Inter-Medium.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterRegular">../Fonts/Inter-Regular.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterSemiBold">../Fonts/Inter-SemiBold.ttf#Inter</FontFamily>
-    <FontFamily x:Key="FontInterThin">../Fonts/Inter-Thin.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterBlack">Fonts/Inter-Black.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterBold">Fonts/Inter-Bold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraBold">Fonts/Inter-ExtraBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraLight">Fonts/Inter-ExtraLight.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterLight">Fonts/Inter-Light.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterMedium">Fonts/Inter-Medium.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterRegular">Fonts/Inter-Regular.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterSemiBold">Fonts/Inter-SemiBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterThin">Fonts/Inter-Thin.ttf#Inter</FontFamily>
 
     <SolidColorBrush x:Key="StandardFontForeground" Color="{DynamicResource UiTextTheme00}" />
 

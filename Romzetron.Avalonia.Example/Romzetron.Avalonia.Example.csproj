@@ -1,40 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <Copyright>Copyright © 2024 Romzetron Software</Copyright>
-        <Company>Romzetron Software</Company>
         <Title>Romzetron Avalonia Theme Example</Title>
-        <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
-        <PackageIcon>RomzetronLogo.png</PackageIcon>
         <Description>Theme library for Avalonia.</Description>
-        <PackageTags>avalonia, ui, theme</PackageTags>
-        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>11.2.0</Version>
-        <AssemblyVersion>11.2.0</AssemblyVersion>
-        <FileVersion>11.2.0</FileVersion>
         <OutputType>WinExe</OutputType>
-        <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="RomzetronLogo.png">
+            <Pack>True</Pack>
+            <PackagePath/>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
+            <Link>LICENSE.md</Link>
+        </Content>
+        <Content Include="..\README.md" Pack="true" PackagePath="">
+            <Link>README.md</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.0"/>
+        <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="Romzetron.Avalonia" Version="$(Version)"/>
+    </ItemGroup>
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.0" />
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.0" />
-        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.0" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0" />
-        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
+        <PackageReference Include="Avalonia" Version="11.2.0"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.0"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0"/>
+        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -151,28 +158,9 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Tabs\TabHyperlinkButton.axaml.cs">
-          <DependentUpon>TabHyperlinkButton.axaml</DependentUpon>
-          <SubType>Code</SubType>
+            <DependentUpon>TabHyperlinkButton.axaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
 
-    <ItemGroup>
-        <None Update="RomzetronLogo.png">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
-            <Link>LICENSE.md</Link>
-        </Content>
-        <Content Include="..\README.md" Pack="true" PackagePath="">
-            <Link>README.md</Link>
-        </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Assets\"/>
-    </ItemGroup>
 </Project>

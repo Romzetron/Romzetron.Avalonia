@@ -10,10 +10,10 @@
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <MergeResourceInclude Source="/Resources/BoxShadows.xaml" />
-                <MergeResourceInclude Source="/Resources/FullPalette.xaml" />
-                <MergeResourceInclude Source="/Resources/Theme.xaml" />
-                <MergeResourceInclude Source="/Strings/InvariantResources.xaml" />
+                <ResourceInclude Source="avares://Romzetron.Avalonia.Shared/Resources/BoxShadows.xaml" />
+                <ResourceInclude Source="avares://Romzetron.Avalonia.Shared/Resources/FullPalette.xaml" />
+                <ResourceInclude Source="ThemeResources.xaml" />
+                <ResourceInclude Source="Strings/InvariantResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
@@ -22,6 +22,6 @@
     <!-- Include all control styles. -->
     <!--==================================================-->
 
-    <StyleInclude Source="/Resources/Controls.xaml" />
+    <StyleInclude Source="Controls.xaml" />
 
 </Styles>
