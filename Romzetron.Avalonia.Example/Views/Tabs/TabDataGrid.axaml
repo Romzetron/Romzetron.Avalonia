@@ -1,0 +1,235 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabDataGrid"
+    x:DataType="viewModels:DataGridViewModel">
+
+    <!--==================================================-->
+    <!-- Design time data context. -->
+    <!--==================================================-->
+
+    <Design.DataContext>
+        <viewModels:DataGridViewModel />
+    </Design.DataContext>
+
+    <!--==================================================-->
+    <!-- Main layout grid. -->
+    <!--==================================================-->
+
+    <Grid
+        MaxHeight="{Binding DesiredSize.Height, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+        RowDefinitions="Auto,Auto,Auto,Auto,*"
+        ColumnDefinitions="Auto,Auto,Auto,Auto,*"
+        VerticalAlignment="Top"
+        Margin="4">
+
+        <!--==================================================-->
+        <!-- Header visibility. -->
+        <!--==================================================-->
+
+        <Label
+            Grid.Row="0" Grid.Column="0"
+            Content="Header Visibility"
+            VerticalAlignment="Center"
+            Margin="4" />
+
+        <ComboBox
+            x:Name="HeaderVisibilityComboBox"
+            Grid.Row="0" Grid.Column="1"
+            SelectedIndex="1"
+            Width="200"
+            Margin="4">
+
+            <ComboBoxItem Content="None" />
+            <ComboBoxItem Content="Column" />
+            <ComboBoxItem Content="Row" />
+            <ComboBoxItem Content="All" />
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Row details visibility mode. -->
+        <!--==================================================-->
+
+        <Label
+            Grid.Row="1" Grid.Column="0"
+            Content="Row Details Visibility Mode"
+            VerticalAlignment="Center"
+            Margin="4" />
+
+        <ComboBox
+            x:Name="RowDetailsVisibilityModeComboBox"
+            Grid.Row="1" Grid.Column="1"
+            SelectedIndex="0"
+            Width="200"
+            Margin="4">
+
+            <ComboBoxItem Content="Collapsed" />
+            <ComboBoxItem Content="Visible" />
+            <ComboBoxItem Content="Visible When Selected" />
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Selection mode. -->
+        <!--==================================================-->
+
+        <Label
+            Grid.Row="2" Grid.Column="0"
+            Content="Selection Mode"
+            VerticalAlignment="Center"
+            Margin="4" />
+
+        <ComboBox
+            x:Name="SelectionModeComboBox"
+            Grid.Row="2" Grid.Column="1"
+            SelectedIndex="0"
+            Width="200"
+            Margin="4">
+
+            <ComboBoxItem Content="Single" />
+            <ComboBoxItem Content="Extended" />
+
+        </ComboBox>
+
+        <!--==================================================-->
+        <!-- Data source. -->
+        <!--==================================================-->
+
+        <ToggleSwitch
+            x:Name="DataSourceCheckBox"
+            Grid.Row="0" Grid.RowSpan="3"
+            Grid.Column="2"
+            Content="Grouped Data"
+            VerticalAlignment="Top"
+            Margin="16,4,4,4" />
+
+        <!--==================================================-->
+        <!-- Data grid example. -->
+        <!--==================================================-->
+
+        <DataGrid
+            x:Name="ExampleDataGrid"
+            Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5"
+            ItemsSource="{Binding Products}"
+            AutoGenerateColumns="True"
+            GridLinesVisibility="All"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            CanUserResizeColumns="True"
+            CanUserReorderColumns="True"
+            CanUserSortColumns="True"
+            HeadersVisibility="Column"
+            RowDetailsVisibilityMode="Collapsed"
+            SelectionMode="Single"
+            Margin="4,8,4,4">
+
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+
+                    <TextBlock
+                        Text="This is where the row details are displayed"
+                        Margin="4"
+                        VerticalAlignment="Center" />
+
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+
+            <DataGrid.Styles>
+                <Style Selector="DataGridRow">
+                    <Setter Property="Header" Value="{Binding ProductID}" />
+                </Style>
+            </DataGrid.Styles>
+
+            <DataGrid.RowTheme>
+
+                <ControlTheme TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
+                    <ControlTheme.Children>
+                        <Style Selector="^:nth-child(odd)">
+                            <Setter Property="Background" Value="{DynamicResource UiTheme02}" />
+                        </Style>
+                        <Style Selector="^:nth-child(even)">
+                            <Setter Property="Background" Value="{DynamicResource UiTheme03}" />
+                        </Style>
+                    </ControlTheme.Children>
+                </ControlTheme>
+
+            </DataGrid.RowTheme>
+
+        </DataGrid>
+
+        <!--==================================================-->
+        <!-- Behaviors. -->
+        <!--==================================================-->
+
+        <Interaction.Behaviors>
+
+            <!--==================================================-->
+            <!-- Data source. -->
+            <!--==================================================-->
+
+            <DataTriggerBehavior Binding="{Binding IsChecked, ElementName=DataSourceCheckBox}" Value="True">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="ItemsSource" Value="{Binding GroupedProducts}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding IsChecked, ElementName=DataSourceCheckBox}" Value="False">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="ItemsSource" Value="{Binding Products}" />
+            </DataTriggerBehavior>
+
+            <!--==================================================-->
+            <!-- Header visibility. -->
+            <!--==================================================-->
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=HeaderVisibilityComboBox}" Value="0">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="HeadersVisibility" Value="{x:Static DataGridHeadersVisibility.None}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=HeaderVisibilityComboBox}" Value="1">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="HeadersVisibility" Value="{x:Static DataGridHeadersVisibility.Column}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=HeaderVisibilityComboBox}" Value="2">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="HeadersVisibility" Value="{x:Static DataGridHeadersVisibility.Row}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=HeaderVisibilityComboBox}" Value="3">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="HeadersVisibility" Value="{x:Static DataGridHeadersVisibility.All}" />
+            </DataTriggerBehavior>
+
+            <!--==================================================-->
+            <!-- Row details visibility. -->
+            <!--==================================================-->
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=RowDetailsVisibilityModeComboBox}" Value="0">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="RowDetailsVisibilityMode" Value="{x:Static DataGridRowDetailsVisibilityMode.Collapsed}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=RowDetailsVisibilityModeComboBox}" Value="1">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="RowDetailsVisibilityMode" Value="{x:Static DataGridRowDetailsVisibilityMode.Visible}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=RowDetailsVisibilityModeComboBox}" Value="2">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="RowDetailsVisibilityMode" Value="{x:Static DataGridRowDetailsVisibilityMode.VisibleWhenSelected}" />
+            </DataTriggerBehavior>
+
+            <!--==================================================-->
+            <!-- Selection mode. -->
+            <!--==================================================-->
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=SelectionModeComboBox}" Value="0">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="SelectionMode" Value="{x:Static DataGridSelectionMode.Single}" />
+            </DataTriggerBehavior>
+
+            <DataTriggerBehavior Binding="{Binding SelectedIndex, ElementName=SelectionModeComboBox}" Value="1">
+                <ChangePropertyAction TargetObject="ExampleDataGrid" PropertyName="SelectionMode" Value="{x:Static DataGridSelectionMode.Extended}" />
+            </DataTriggerBehavior>
+
+        </Interaction.Behaviors>
+
+    </Grid>
+
+</UserControl>

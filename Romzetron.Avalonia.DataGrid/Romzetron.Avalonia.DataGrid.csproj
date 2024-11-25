@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Title>Romzetron Avalonia DataGrid Theme</Title>
+        <AssemblyName>Romzetron.Avalonia.DataGrid</AssemblyName>
+        <RootNamespace>Romzetron.Avalonia.DataGrid</RootNamespace>
+        <Description>DataGrid theme library for Avalonia.</Description>
+        <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+        <TrimmerSingleWarn>false</TrimmerSingleWarn>
+        <IsTrimmable>true</IsTrimmable>
+        <AvaloniaXamlC>true</AvaloniaXamlC>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="RomzetronLogo.png">
+            <Pack>True</Pack>
+            <PackagePath/>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\LICENSE.md" Pack="true" PackagePath="">
+            <Link>LICENSE.md</Link>
+        </Content>
+        <Content Include="..\README.md" Pack="true" PackagePath="">
+            <Link>README.md</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+        <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="Romzetron.Avalonia" Version="$(Version)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.1" />
+        <AvaloniaResource Include="**/*.xaml"/>
+        <AvaloniaResource Include="**/*.ttf"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeAmber.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeBlue.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeBlueGrey.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeBrown.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeDeepOrange.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeDeepPurple.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeGreen.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeIndigo.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeOrange.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemePink.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemePurple.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeRed.xaml" />
+      <UpToDateCheckInput Remove="Resources\Color\DataGridColorThemeTeal.xaml" />
+    </ItemGroup>
+
+</Project>

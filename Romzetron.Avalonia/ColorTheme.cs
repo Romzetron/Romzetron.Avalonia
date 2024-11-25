@@ -1,4 +1,4 @@
-namespace Romzetron.Avalonia.Shared;
+namespace Romzetron.Avalonia;
 
 /// <summary>
 /// Specifies the available color themes for the application's user interface.

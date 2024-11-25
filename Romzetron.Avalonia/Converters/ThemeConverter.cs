@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 
-namespace Romzetron.Avalonia.Shared.Converters;
+namespace Romzetron.Avalonia.Converters;
 
 /// <summary>
 /// The ThemeConverter class is responsible for converting between ColorTheme enumerations

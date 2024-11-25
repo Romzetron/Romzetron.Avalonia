@@ -5,7 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
-    xmlns:converters="clr-namespace:Romzetron.Avalonia.Shared.Converters;assembly=Romzetron.Avalonia.Shared"
+    xmlns:converters="clr-namespace:Romzetron.Avalonia.Converters;assembly=Romzetron.Avalonia"
     mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
     x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabThemes">
 

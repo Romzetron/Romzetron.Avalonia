@@ -1,0 +1,152 @@
+<!--==================================================-->
+<!-- Romzetron theme base resources. -->
+<!--==================================================-->
+
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--==================================================-->
+    <!-- Font resources. -->
+    <!--==================================================-->
+
+    <FontFamily x:Key="FontInterBlack">Fonts/Inter-Black.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterBold">Fonts/Inter-Bold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraBold">Fonts/Inter-ExtraBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterExtraLight">Fonts/Inter-ExtraLight.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterLight">Fonts/Inter-Light.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterMedium">Fonts/Inter-Medium.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterRegular">Fonts/Inter-Regular.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterSemiBold">Fonts/Inter-SemiBold.ttf#Inter</FontFamily>
+    <FontFamily x:Key="FontInterThin">Fonts/Inter-Thin.ttf#Inter</FontFamily>
+
+    <SolidColorBrush x:Key="StandardFontForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <x:Double x:Key="StandardFontSize">12</x:Double>
+
+    <!--==================================================-->
+    <!-- DataGrid resources. -->
+    <!--==================================================-->
+
+    <SolidColorBrush x:Key="DataGridBackground" Color="{DynamicResource UiTheme01}" />
+
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackground" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundPointerOver" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundDragged" Color="{DynamicResource UiTheme03}" />
+
+    <SolidColorBrush x:Key="DataGridColumnHeaderForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <SolidColorBrush x:Key="DataGridBorderBrush" Color="{DynamicResource UiTheme06}" />
+    <SolidColorBrush x:Key="DataGridGridLines" Color="{DynamicResource UiTheme06}" />
+
+    <SolidColorBrush x:Key="DataGridRowGroupHeaderBackground" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="DataGridRowGroupHeaderBackgroundPointerOver" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="DataGridRowGroupHeaderBackgroundPressed" Color="{DynamicResource UiTheme03}" />
+    <SolidColorBrush x:Key="DataGridRowGroupHeaderForeground" Color="{DynamicResource UiTextTheme00}" />
+
+    <SolidColorBrush x:Key="DataGridRowBackground" Color="{DynamicResource UiTheme02}" />
+    <SolidColorBrush x:Key="DataGridRowBackgroundPointerOver" Color="{DynamicResource UiTheme04}" />
+    <SolidColorBrush x:Key="DataGridRowBackgroundSelectedUnfocused" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="DataGridRowBackgroundSelectedPointerOverUnfocused" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="DataGridRowBackgroundSelectedFocused" Color="{DynamicResource ColorTheme06}" />
+    <SolidColorBrush x:Key="DataGridRowBackgroundSelectedPointerOverFocused" Color="{DynamicResource ColorTheme07}" />
+    <SolidColorBrush x:Key="DataGridRowInvalid" Color="{DynamicResource DataGridRed06}" />
+
+    <SolidColorBrush x:Key="DataGridRowBackgroundSelectedForeground" Color="{DynamicResource White}" />
+
+    <SolidColorBrush x:Key="DataGridCellBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="DataGridCellCurrentVisual" Color="{DynamicResource White}" />
+    <SolidColorBrush x:Key="DataGridCellFocused" Color="{DynamicResource White}" />
+
+    <SolidColorBrush x:Key="DataGridDropLocationIndicatorBackground" Color="{DynamicResource ColorTheme05}" />
+
+    <Thickness x:Key="DataGridBorderThickness">1</Thickness>
+    <CornerRadius x:Key="DataGridCornerRadius">4</CornerRadius>
+    <x:Double x:Key="DataGridSortIconMinWidth">24</x:Double>
+
+    <!--==================================================-->
+    <!-- Theme dictionaries. -->
+    <!--==================================================-->
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!--==================================================-->
+        <!-- Default/light UI theme colors. -->
+        <!--==================================================-->
+
+        <ResourceDictionary x:Key="Default">
+
+            <!--==================================================-->
+            <!-- Default background colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTheme00">#ffffff</Color>
+            <Color x:Key="UiTheme01">#f0f0f0</Color>
+            <Color x:Key="UiTheme02">#e1e1e1</Color>
+            <Color x:Key="UiTheme03">#d2d2d2</Color>
+            <Color x:Key="UiTheme04">#c3c3c3</Color>
+            <Color x:Key="UiTheme05">#b5b5b5</Color>
+            <Color x:Key="UiTheme06">#a7a7a7</Color>
+            <Color x:Key="UiTheme07">#999999</Color>
+            <Color x:Key="UiTheme08">#8b8b8b</Color>
+            <Color x:Key="UiTheme09">#7e7e7e</Color>
+
+            <!--==================================================-->
+            <!-- Default text colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTextTheme00">#000000</Color>
+            <Color x:Key="UiTextTheme01">#191919</Color>
+            <Color x:Key="UiTextTheme02">#2a2a2a</Color>
+            <Color x:Key="UiTextTheme03">#3d3d3d</Color>
+            <Color x:Key="UiTextTheme04">#515151</Color>
+            <Color x:Key="UiTextTheme05">#666666</Color>
+            <Color x:Key="UiTextTheme06">#7b7b7b</Color>
+            <Color x:Key="UiTextTheme07">#929292</Color>
+            <Color x:Key="UiTextTheme08">#a9a9a9</Color>
+            <Color x:Key="UiTextTheme09">#c0c0c0</Color>
+
+        </ResourceDictionary>
+
+        <!--==================================================-->
+        <!-- Dark UI theme colors. -->
+        <!--==================================================-->
+
+        <ResourceDictionary x:Key="Dark">
+
+            <!--==================================================-->
+            <!-- Dark background colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTheme00">#000000</Color>
+            <Color x:Key="UiTheme01">#121212</Color>
+            <Color x:Key="UiTheme02">#1d1d1d</Color>
+            <Color x:Key="UiTheme03">#272727</Color>
+            <Color x:Key="UiTheme04">#333333</Color>
+            <Color x:Key="UiTheme05">#3e3e3e</Color>
+            <Color x:Key="UiTheme06">#4a4a4a</Color>
+            <Color x:Key="UiTheme07">#575757</Color>
+            <Color x:Key="UiTheme08">#636363</Color>
+            <Color x:Key="UiTheme09">#707070</Color>
+
+            <!--==================================================-->
+            <!-- Dark text colors. -->
+            <!--==================================================-->
+
+            <Color x:Key="UiTextTheme00">#ffffff</Color>
+            <Color x:Key="UiTextTheme01">#e8e8e8</Color>
+            <Color x:Key="UiTextTheme02">#d1d1d1</Color>
+            <Color x:Key="UiTextTheme03">#bababa</Color>
+            <Color x:Key="UiTextTheme04">#a4a4a4</Color>
+            <Color x:Key="UiTextTheme05">#8f8f8f</Color>
+            <Color x:Key="UiTextTheme06">#7a7a7a</Color>
+            <Color x:Key="UiTextTheme07">#656565</Color>
+            <Color x:Key="UiTextTheme08">#525252</Color>
+            <Color x:Key="UiTextTheme09">#3f3f3f</Color>
+
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>
