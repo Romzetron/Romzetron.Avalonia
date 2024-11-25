@@ -17,6 +17,7 @@
         <Setter Property="Foreground" Value="{DynamicResource WindowForeground}" />
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
+        <Setter Property="UseLayoutRounding" Value="False" />
 
         <!--==================================================-->
         <!-- Template. -->

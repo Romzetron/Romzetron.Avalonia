@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Styling;
 
-namespace Romzetron.Avalonia.Shared;
+namespace Romzetron.Avalonia;
 
 /// <summary>
 /// The Theme class is an abstract class that extends Avalonia's Styles class.

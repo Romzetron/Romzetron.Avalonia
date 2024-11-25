@@ -18,7 +18,8 @@
     <!--==================================================-->
 
     <Application.Styles>
-        <RomzetronTheme ColorTheme="Blue" />
+        <RomzetronTheme />
+        <RomzetronThemeDataGrid />
     </Application.Styles>
 
 </Application>

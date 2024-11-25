@@ -25,12 +25,14 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.0"/>
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.1" />
         <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
+        <ProjectReference Include="..\Romzetron.Avalonia.DataGrid\Romzetron.Avalonia.DataGrid.csproj"/>
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Release'">
         <PackageReference Include="Romzetron.Avalonia" Version="$(Version)"/>
+        <PackageReference Include="Romzetron.Avalonia.DataGrid" Version="$(Version)"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -38,10 +40,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.0"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.0"/>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0"/>
-        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0"/>
+        <PackageReference Include="Avalonia" Version="11.2.1" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.1" />
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.2.1" />
+        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -160,6 +163,10 @@
         <Compile Update="Views\Tabs\TabHyperlinkButton.axaml.cs">
             <DependentUpon>TabHyperlinkButton.axaml</DependentUpon>
             <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\Tabs\TabDataGrid.axaml.cs">
+          <DependentUpon>TabDataGrid.axaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
 

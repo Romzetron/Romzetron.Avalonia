@@ -4,7 +4,6 @@ using System.Timers;
 using Avalonia;
 using Avalonia.Threading;
 using ReactiveUI;
-using Romzetron.Avalonia.Shared;
 
 namespace Romzetron.Avalonia.Example.ViewModels;
 
@@ -132,6 +131,7 @@ public class MainWindowViewModel : ViewModelBase
         {
             SelectedColorTheme = SelectedColorTheme switch
             {
+                ColorTheme.Default => ColorTheme.Red,
                 ColorTheme.Red => ColorTheme.Pink,
                 ColorTheme.Pink => ColorTheme.Purple,
                 ColorTheme.Purple => ColorTheme.DeepPurple,

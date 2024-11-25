@@ -1,6 +1,6 @@
 using Avalonia.Media;
 
-namespace Romzetron.Avalonia.Shared;
+namespace Romzetron.Avalonia;
 
 public static class ColorPalette
 {
