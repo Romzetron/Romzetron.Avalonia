@@ -250,6 +250,7 @@
 
                                 <ContentPresenter
                                     Grid.Column="0"
+                                    VerticalAlignment="Center"
                                     Content="{TemplateBinding InnerLeftContent}" />
 
                                 <!--==================================================-->
