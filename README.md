@@ -31,7 +31,7 @@ The theme can be added to an application by modifying `App.axaml` to add `<Romze
 
 ### Changing Color Theme
 
-The color theme can be set application wide on startup by setting the `ColorTheme` property.
+The color theme can be set application-wide on startup by setting the `ColorTheme` property.
 
 ```xml
 <Application.Styles>

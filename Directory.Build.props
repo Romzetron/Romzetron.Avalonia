@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>11.2.5.0</Version>
-    <AssemblyVersion>11.2.5.0</AssemblyVersion>
-    <FileVersion>11.2.5.0</FileVersion>
+    <Version>11.3.0.0</Version>
+    <AssemblyVersion>11.3.0.0</AssemblyVersion>
+    <FileVersion>11.3.0.0</FileVersion>
     <Company>Romzetron Software</Company>
     <Copyright>Copyright © 2025 Romzetron Software</Copyright>
     <PackageProjectUrl>https://github.com/Romzetron/Romzetron.Avalonia</PackageProjectUrl>
