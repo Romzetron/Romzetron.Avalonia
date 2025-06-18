@@ -251,6 +251,7 @@
                                 <ContentPresenter
                                     Grid.Column="0"
                                     VerticalAlignment="Center"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Content="{TemplateBinding InnerLeftContent}" />
 
                                 <!--==================================================-->
@@ -366,6 +367,7 @@
 
                                 <ContentPresenter
                                     Grid.Column="2"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Content="{TemplateBinding InnerRightContent}" />
 
                             </Grid>
