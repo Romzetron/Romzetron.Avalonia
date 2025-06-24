@@ -38,7 +38,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 ColumnDefinitions="Auto,Auto"
-                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
                 <!--==================================================-->
                 <!-- Standard slider. -->
@@ -51,7 +51,24 @@
 
                 <Slider
                     Grid.Row="0" Grid.Column="1"
+                    x:Name="HorizontalSlider"
                     Value="50"
+                    Width="{StaticResource SliderWidthWide}"
+                    Margin="{StaticResource SliderHorizontalMargin}" />
+
+                <!--==================================================-->
+                <!-- Reversed slider. -->
+                <!--==================================================-->
+
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Content="Reversed"
+                    VerticalAlignment="Center" />
+
+                <Slider
+                    Grid.Row="1" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
+                    IsDirectionReversed="True"
                     Width="{StaticResource SliderWidthWide}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
@@ -60,31 +77,32 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="1" Grid.Column="0"
+                    Grid.Row="2" Grid.Column="0"
                     Content="Top Ticks"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="1" Grid.Column="1"
-                    Value="50"
+                    Grid.Row="2" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="TopLeft"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
                     Width="{StaticResource SliderWidthWide}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
+
                 <!--==================================================-->
                 <!-- Slider with bottom ticks. -->
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="2" Grid.Column="0"
+                    Grid.Row="3" Grid.Column="0"
                     Content="Bottom Ticks"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="2" Grid.Column="1"
-                    Value="50"
+                    Grid.Row="3" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="BottomRight"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
@@ -96,13 +114,13 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="3" Grid.Column="0"
+                    Grid.Row="4" Grid.Column="0"
                     Content="Top &amp; Bottom Ticks"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="3" Grid.Column="1"
-                    Value="50"
+                    Grid.Row="4" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="Outside"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
@@ -114,14 +132,14 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="4" Grid.Column="0"
+                    Grid.Row="5" Grid.Column="0"
                     Content="Disabled"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="4" Grid.Column="1"
+                    Grid.Row="5" Grid.Column="1"
                     IsEnabled="False"
-                    Value="50"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="Outside"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
@@ -133,13 +151,13 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="5" Grid.Column="0"
+                    Grid.Row="6" Grid.Column="0"
                     Content="Validation Error"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="5" Grid.Column="1"
-                    Value="50"
+                    Grid.Row="6" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="Outside"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
@@ -157,13 +175,13 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="6" Grid.Column="0"
+                    Grid.Row="7" Grid.Column="0"
                     Content="Validation Error Tooltip"
                     VerticalAlignment="Center" />
 
                 <Slider
-                    Grid.Row="6" Grid.Column="1"
-                    Value="50"
+                    Grid.Row="7" Grid.Column="1"
+                    Value="{Binding ElementName=HorizontalSlider, Path=Value}"
                     TickPlacement="Outside"
                     TickFrequency="5"
                     IsSnapToTickEnabled="True"
@@ -187,22 +205,30 @@
                 <!--==================================================-->
 
                 <Label
-                    Grid.Row="7" Grid.Column="0"
+                    Grid.Row="8" Grid.Column="0"
                     Content="Vertical Sliders"
                     VerticalAlignment="Center" />
 
                 <StackPanel
-                    Grid.Row="7" Grid.Column="1"
+                    Grid.Row="8" Grid.Column="1"
                     Orientation="Horizontal">
 
                     <Slider
+                        x:Name="VerticalSlider"
                         Value="50"
                         Orientation="Vertical"
                         Height="{StaticResource SliderHeight}"
                         Margin="{StaticResource SliderVerticalMargin}" />
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
+                        Orientation="Vertical"
+                        IsDirectionReversed="True"
+                        Height="{StaticResource SliderHeight}"
+                        Margin="{StaticResource SliderVerticalMargin}" />
+
+                    <Slider
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         Orientation="Vertical"
                         TickPlacement="TopLeft"
                         TickFrequency="10"
@@ -211,7 +237,7 @@
                         Margin="{StaticResource SliderVerticalMargin}" />
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         Orientation="Vertical"
                         TickPlacement="BottomRight"
                         TickFrequency="10"
@@ -220,7 +246,7 @@
                         Margin="{StaticResource SliderVerticalMargin}" />
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         Orientation="Vertical"
                         TickPlacement="Outside"
                         TickFrequency="10"
@@ -229,7 +255,7 @@
                         Margin="{StaticResource SliderVerticalMargin}" />
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         IsEnabled="False"
                         Orientation="Vertical"
                         TickPlacement="Outside"
@@ -239,7 +265,7 @@
                         Margin="{StaticResource SliderVerticalMargin}" />
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         Orientation="Vertical"
                         TickPlacement="Outside"
                         TickFrequency="10"
@@ -259,7 +285,7 @@
                     </Slider>
 
                     <Slider
-                        Value="50"
+                        Value="{Binding ElementName=VerticalSlider, Path=Value}"
                         Orientation="Vertical"
                         TickPlacement="Outside"
                         TickFrequency="10"
@@ -309,13 +335,14 @@
 
                 <Slider
                     Grid.Row="0" Grid.Column="1"
+                    x:Name="ThemeSlider"
                     Value="50"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="0" Grid.Column="2"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -332,14 +359,14 @@
                 <Slider
                     Grid.Row="1" Grid.Column="1"
                     Theme.ColorTheme="Red"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="1" Grid.Column="2"
                     Theme.ColorTheme="Red"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -356,14 +383,14 @@
                 <Slider
                     Grid.Row="2" Grid.Column="1"
                     Theme.ColorTheme="Pink"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="2" Grid.Column="2"
                     Theme.ColorTheme="Pink"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -380,14 +407,14 @@
                 <Slider
                     Grid.Row="3" Grid.Column="1"
                     Theme.ColorTheme="Purple"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="3" Grid.Column="2"
                     Theme.ColorTheme="Purple"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -404,14 +431,14 @@
                 <Slider
                     Grid.Row="4" Grid.Column="1"
                     Theme.ColorTheme="DeepPurple"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="4" Grid.Column="2"
                     Theme.ColorTheme="DeepPurple"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -428,14 +455,14 @@
                 <Slider
                     Grid.Row="5" Grid.Column="1"
                     Theme.ColorTheme="Indigo"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="5" Grid.Column="2"
                     Theme.ColorTheme="Indigo"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -452,14 +479,14 @@
                 <Slider
                     Grid.Row="6" Grid.Column="1"
                     Theme.ColorTheme="Blue"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="6" Grid.Column="2"
                     Theme.ColorTheme="Blue"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -476,14 +503,14 @@
                 <Slider
                     Grid.Row="7" Grid.Column="1"
                     Theme.ColorTheme="Teal"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="7" Grid.Column="2"
                     Theme.ColorTheme="Teal"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -500,14 +527,14 @@
                 <Slider
                     Grid.Row="8" Grid.Column="1"
                     Theme.ColorTheme="Green"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="8" Grid.Column="2"
                     Theme.ColorTheme="Green"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -524,14 +551,14 @@
                 <Slider
                     Grid.Row="9" Grid.Column="1"
                     Theme.ColorTheme="Amber"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="9" Grid.Column="2"
                     Theme.ColorTheme="Amber"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -548,14 +575,14 @@
                 <Slider
                     Grid.Row="10" Grid.Column="1"
                     Theme.ColorTheme="Orange"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="10" Grid.Column="2"
                     Theme.ColorTheme="Orange"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -572,14 +599,14 @@
                 <Slider
                     Grid.Row="11" Grid.Column="1"
                     Theme.ColorTheme="DeepOrange"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="11" Grid.Column="2"
                     Theme.ColorTheme="DeepOrange"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -596,14 +623,14 @@
                 <Slider
                     Grid.Row="12" Grid.Column="1"
                     Theme.ColorTheme="Brown"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="12" Grid.Column="2"
                     Theme.ColorTheme="Brown"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
@@ -620,14 +647,14 @@
                 <Slider
                     Grid.Row="13" Grid.Column="1"
                     Theme.ColorTheme="BlueGrey"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />
 
                 <Slider
                     Grid.Row="13" Grid.Column="2"
                     Theme.ColorTheme="BlueGrey"
-                    Value="50"
+                    Value="{Binding ElementName=ThemeSlider, Path=Value}"
                     IsEnabled="False"
                     Width="{StaticResource SliderWidthNarrow}"
                     Margin="{StaticResource SliderHorizontalMargin}" />

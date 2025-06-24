@@ -13,7 +13,7 @@
             <DockPanel LastChildFill="True">
                 <StackPanel Spacing="16" DockPanel.Dock="Top">
                     <Slider Value="50" />
-                    <Slider IsDirectionReversed="True" Value="50" />
+                    <Slider IsDirectionReversed="True" Value="50" TickPlacement="TopLeft" TickFrequency="10" />
                     <Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" />
                     <Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" />
                     <Slider Value="50" TickPlacement="Outside" TickFrequency="10" />
@@ -300,6 +300,7 @@
                                         VerticalAlignment="Bottom"
                                         Placement="Top"
                                         IsVisible="False"
+                                        IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
                                         Fill="{DynamicResource SliderTickBarFill}" />
 
                                     <!--==================================================-->
@@ -319,6 +320,7 @@
                                         VerticalAlignment="Top"
                                         Placement="Bottom"
                                         IsVisible="False"
+                                        IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
                                         Fill="{DynamicResource SliderTickBarFill}" />
 
                                     <!--==================================================-->
@@ -480,6 +482,7 @@
                                         HorizontalAlignment="Right"
                                         Placement="Left"
                                         IsVisible="False"
+                                        IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
                                         Fill="{DynamicResource SliderTickBarFill}" />
 
                                     <!--==================================================-->
@@ -500,6 +503,7 @@
                                         HorizontalAlignment="Left"
                                         Placement="Right"
                                         IsVisible="False"
+                                        IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
                                         Fill="{DynamicResource SliderTickBarFill}" />
 
                                     <!--==================================================-->
