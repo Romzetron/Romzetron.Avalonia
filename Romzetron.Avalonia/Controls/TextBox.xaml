@@ -39,7 +39,10 @@
     <!-- Default cut/copy/paste menu. -->
     <!--==================================================-->
 
-    <MenuFlyout x:Key="DefaultTextBoxContextFlyout" Placement="Bottom">
+    <MenuFlyout 
+        ShowMode="{OnFormFactor Desktop=Standard, Mobile=Transient}"
+        x:Key="DefaultTextBoxContextFlyout"
+        Placement="Bottom">
 
         <MenuItem
             Header="{DynamicResource StringTextFlyoutCutText}"
@@ -67,6 +70,7 @@
 
     <MenuFlyout
         x:Key="HorizontalTextBoxContextFlyout"
+        ShowMode="{OnFormFactor Desktop=Standard, Mobile=Transient}"
         FlyoutPresenterTheme="{StaticResource HorizontalMenuFlyoutPresenter}"
         ItemContainerTheme="{StaticResource HorizontalMenuItem}">
 
