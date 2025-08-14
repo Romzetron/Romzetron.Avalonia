@@ -24,6 +24,17 @@
     <Color x:Key="Red08">#C62828</Color>            <!--Text: WHITE -->
     <Color x:Key="Red09">#B71C1C</Color>            <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="RedBrush00" Color="{StaticResource Red00}" />
+    <SolidColorBrush x:Key="RedBrush02" Color="{StaticResource Red02}" />
+    <SolidColorBrush x:Key="RedBrush01" Color="{StaticResource Red01}" />
+    <SolidColorBrush x:Key="RedBrush03" Color="{StaticResource Red03}" />
+    <SolidColorBrush x:Key="RedBrush04" Color="{StaticResource Red04}" />
+    <SolidColorBrush x:Key="RedBrush05" Color="{StaticResource Red05}" />
+    <SolidColorBrush x:Key="RedBrush06" Color="{StaticResource Red06}" />
+    <SolidColorBrush x:Key="RedBrush07" Color="{StaticResource Red07}" />
+    <SolidColorBrush x:Key="RedBrush08" Color="{StaticResource Red08}" />
+    <SolidColorBrush x:Key="RedBrush09" Color="{StaticResource Red09}" />
+
     <!--==================================================-->
     <!-- PINK color palette. -->
     <!--==================================================-->
@@ -38,6 +49,17 @@
     <Color x:Key="Pink07">#C2185B</Color>           <!--Text: WHITE -->
     <Color x:Key="Pink08">#AD1457</Color>           <!--Text: WHITE -->
     <Color x:Key="Pink09">#880E4F</Color>           <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="PinkBrush00" Color="{StaticResource Pink00}" />
+    <SolidColorBrush x:Key="PinkBrush01" Color="{StaticResource Pink01}" />
+    <SolidColorBrush x:Key="PinkBrush02" Color="{StaticResource Pink02}" />
+    <SolidColorBrush x:Key="PinkBrush03" Color="{StaticResource Pink03}" />
+    <SolidColorBrush x:Key="PinkBrush04" Color="{StaticResource Pink04}" />
+    <SolidColorBrush x:Key="PinkBrush05" Color="{StaticResource Pink05}" />
+    <SolidColorBrush x:Key="PinkBrush06" Color="{StaticResource Pink06}" />
+    <SolidColorBrush x:Key="PinkBrush07" Color="{StaticResource Pink07}" />
+    <SolidColorBrush x:Key="PinkBrush08" Color="{StaticResource Pink08}" />
+    <SolidColorBrush x:Key="PinkBrush09" Color="{StaticResource Pink09}" />
 
     <!--==================================================-->
     <!-- PURPLE color palette. -->
@@ -54,6 +76,17 @@
     <Color x:Key="Purple08">#6A1B9A</Color>         <!--Text: WHITE -->
     <Color x:Key="Purple09">#4A148C</Color>         <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="PurpleBrush00" Color="{StaticResource Purple00}" />
+    <SolidColorBrush x:Key="PurpleBrush01" Color="{StaticResource Purple01}" />
+    <SolidColorBrush x:Key="PurpleBrush02" Color="{StaticResource Purple02}" />
+    <SolidColorBrush x:Key="PurpleBrush03" Color="{StaticResource Purple03}" />
+    <SolidColorBrush x:Key="PurpleBrush04" Color="{StaticResource Purple04}" />
+    <SolidColorBrush x:Key="PurpleBrush05" Color="{StaticResource Purple05}" />
+    <SolidColorBrush x:Key="PurpleBrush06" Color="{StaticResource Purple06}" />
+    <SolidColorBrush x:Key="PurpleBrush07" Color="{StaticResource Purple07}" />
+    <SolidColorBrush x:Key="PurpleBrush08" Color="{StaticResource Purple08}" />
+    <SolidColorBrush x:Key="PurpleBrush09" Color="{StaticResource Purple09}" />
+
     <!--==================================================-->
     <!-- DEEP-PURPLE color palette. -->
     <!--==================================================-->
@@ -68,6 +101,17 @@
     <Color x:Key="DeepPurple07">#512DA8</Color>     <!--Text: WHITE -->
     <Color x:Key="DeepPurple08">#4527A0</Color>     <!--Text: WHITE -->
     <Color x:Key="DeepPurple09">#311B92</Color>     <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="DeepPurpleBrush00" Color="{StaticResource DeepPurple00}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush01" Color="{StaticResource DeepPurple01}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush02" Color="{StaticResource DeepPurple02}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush03" Color="{StaticResource DeepPurple03}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush04" Color="{StaticResource DeepPurple04}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush05" Color="{StaticResource DeepPurple05}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush06" Color="{StaticResource DeepPurple06}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush07" Color="{StaticResource DeepPurple07}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush08" Color="{StaticResource DeepPurple08}" />
+    <SolidColorBrush x:Key="DeepPurpleBrush09" Color="{StaticResource DeepPurple09}" />
 
     <!--==================================================-->
     <!-- INDIGO color palette. -->
@@ -84,6 +128,17 @@
     <Color x:Key="Indigo08">#283593</Color>         <!--Text: WHITE -->
     <Color x:Key="Indigo09">#1A237E</Color>         <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="IndigoBrush00" Color="{StaticResource Indigo00}" />
+    <SolidColorBrush x:Key="IndigoBrush01" Color="{StaticResource Indigo01}" />
+    <SolidColorBrush x:Key="IndigoBrush02" Color="{StaticResource Indigo02}" />
+    <SolidColorBrush x:Key="IndigoBrush03" Color="{StaticResource Indigo03}" />
+    <SolidColorBrush x:Key="IndigoBrush04" Color="{StaticResource Indigo04}" />
+    <SolidColorBrush x:Key="IndigoBrush05" Color="{StaticResource Indigo05}" />
+    <SolidColorBrush x:Key="IndigoBrush06" Color="{StaticResource Indigo06}" />
+    <SolidColorBrush x:Key="IndigoBrush07" Color="{StaticResource Indigo07}" />
+    <SolidColorBrush x:Key="IndigoBrush08" Color="{StaticResource Indigo08}" />
+    <SolidColorBrush x:Key="IndigoBrush09" Color="{StaticResource Indigo09}" />
+
     <!--==================================================-->
     <!-- BLUE color palette. -->
     <!--==================================================-->
@@ -98,6 +153,17 @@
     <Color x:Key="Blue07">#1976D2</Color>           <!--Text: WHITE -->
     <Color x:Key="Blue08">#1565C0</Color>           <!--Text: WHITE -->
     <Color x:Key="Blue09">#0D47A1</Color>           <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="BlueBrush00" Color="{StaticResource Blue00}" />
+    <SolidColorBrush x:Key="BlueBrush01" Color="{StaticResource Blue01}" />
+    <SolidColorBrush x:Key="BlueBrush02" Color="{StaticResource Blue02}" />
+    <SolidColorBrush x:Key="BlueBrush03" Color="{StaticResource Blue03}" />
+    <SolidColorBrush x:Key="BlueBrush04" Color="{StaticResource Blue04}" />
+    <SolidColorBrush x:Key="BlueBrush05" Color="{StaticResource Blue05}" />
+    <SolidColorBrush x:Key="BlueBrush06" Color="{StaticResource Blue06}" />
+    <SolidColorBrush x:Key="BlueBrush07" Color="{StaticResource Blue07}" />
+    <SolidColorBrush x:Key="BlueBrush08" Color="{StaticResource Blue08}" />
+    <SolidColorBrush x:Key="BlueBrush09" Color="{StaticResource Blue09}" />
 
     <!--==================================================-->
     <!-- TEAL color palette. -->
@@ -114,6 +180,17 @@
     <Color x:Key="Teal08">#00695C</Color>           <!--Text: WHITE -->
     <Color x:Key="Teal09">#004D40</Color>           <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="TealBrush00" Color="{StaticResource Teal00}" />
+    <SolidColorBrush x:Key="TealBrush01" Color="{StaticResource Teal01}" />
+    <SolidColorBrush x:Key="TealBrush02" Color="{StaticResource Teal02}" />
+    <SolidColorBrush x:Key="TealBrush03" Color="{StaticResource Teal03}" />
+    <SolidColorBrush x:Key="TealBrush04" Color="{StaticResource Teal04}" />
+    <SolidColorBrush x:Key="TealBrush05" Color="{StaticResource Teal05}" />
+    <SolidColorBrush x:Key="TealBrush06" Color="{StaticResource Teal06}" />
+    <SolidColorBrush x:Key="TealBrush07" Color="{StaticResource Teal07}" />
+    <SolidColorBrush x:Key="TealBrush08" Color="{StaticResource Teal08}" />
+    <SolidColorBrush x:Key="TealBrush09" Color="{StaticResource Teal09}" />
+
     <!--==================================================-->
     <!-- GREEN color palette. -->
     <!--==================================================-->
@@ -128,6 +205,17 @@
     <Color x:Key="Green07">#388E3C</Color>          <!--Text: WHITE -->
     <Color x:Key="Green08">#2E7D32</Color>          <!--Text: WHITE -->
     <Color x:Key="Green09">#1B5E20</Color>          <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="GreenBrush00" Color="{StaticResource Green00}" />
+    <SolidColorBrush x:Key="GreenBrush01" Color="{StaticResource Green01}" />
+    <SolidColorBrush x:Key="GreenBrush02" Color="{StaticResource Green02}" />
+    <SolidColorBrush x:Key="GreenBrush03" Color="{StaticResource Green03}" />
+    <SolidColorBrush x:Key="GreenBrush04" Color="{StaticResource Green04}" />
+    <SolidColorBrush x:Key="GreenBrush05" Color="{StaticResource Green05}" />
+    <SolidColorBrush x:Key="GreenBrush06" Color="{StaticResource Green06}" />
+    <SolidColorBrush x:Key="GreenBrush07" Color="{StaticResource Green07}" />
+    <SolidColorBrush x:Key="GreenBrush08" Color="{StaticResource Green08}" />
+    <SolidColorBrush x:Key="GreenBrush09" Color="{StaticResource Green09}" />
 
     <!--==================================================-->
     <!-- YELLOW color palette. -->
@@ -144,6 +232,17 @@
     <Color x:Key="Yellow08">#F9A825</Color>         <!--Text: WHITE -->
     <Color x:Key="Yellow09">#F57F17</Color>         <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="YellowBrush00" Color="{StaticResource Yellow00}" />
+    <SolidColorBrush x:Key="YellowBrush01" Color="{StaticResource Yellow01}" />
+    <SolidColorBrush x:Key="YellowBrush02" Color="{StaticResource Yellow02}" />
+    <SolidColorBrush x:Key="YellowBrush03" Color="{StaticResource Yellow03}" />
+    <SolidColorBrush x:Key="YellowBrush04" Color="{StaticResource Yellow04}" />
+    <SolidColorBrush x:Key="YellowBrush05" Color="{StaticResource Yellow05}" />
+    <SolidColorBrush x:Key="YellowBrush06" Color="{StaticResource Yellow06}" />
+    <SolidColorBrush x:Key="YellowBrush07" Color="{StaticResource Yellow07}" />
+    <SolidColorBrush x:Key="YellowBrush08" Color="{StaticResource Yellow08}" />
+    <SolidColorBrush x:Key="YellowBrush09" Color="{StaticResource Yellow09}" />
+
     <!--==================================================-->
     <!-- AMBER color palette. -->
     <!--==================================================-->
@@ -158,6 +257,17 @@
     <Color x:Key="Amber07">#FFA000</Color>          <!--Text: WHITE -->
     <Color x:Key="Amber08">#FF8F00</Color>          <!--Text: WHITE -->
     <Color x:Key="Amber09">#FF6F00</Color>          <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="AmberBrush00" Color="{StaticResource Amber00}" />
+    <SolidColorBrush x:Key="AmberBrush01" Color="{StaticResource Amber01}" />
+    <SolidColorBrush x:Key="AmberBrush02" Color="{StaticResource Amber02}" />
+    <SolidColorBrush x:Key="AmberBrush03" Color="{StaticResource Amber03}" />
+    <SolidColorBrush x:Key="AmberBrush04" Color="{StaticResource Amber04}" />
+    <SolidColorBrush x:Key="AmberBrush05" Color="{StaticResource Amber05}" />
+    <SolidColorBrush x:Key="AmberBrush06" Color="{StaticResource Amber06}" />
+    <SolidColorBrush x:Key="AmberBrush07" Color="{StaticResource Amber07}" />
+    <SolidColorBrush x:Key="AmberBrush08" Color="{StaticResource Amber08}" />
+    <SolidColorBrush x:Key="AmberBrush09" Color="{StaticResource Amber09}" />
 
     <!--==================================================-->
     <!-- ORANGE color palette. -->
@@ -174,6 +284,17 @@
     <Color x:Key="Orange08">#EF6C00</Color>         <!--Text: WHITE -->
     <Color x:Key="Orange09">#E65100</Color>         <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="OrangeBrush00" Color="{StaticResource Orange00}" />
+    <SolidColorBrush x:Key="OrangeBrush01" Color="{StaticResource Orange01}" />
+    <SolidColorBrush x:Key="OrangeBrush02" Color="{StaticResource Orange02}" />
+    <SolidColorBrush x:Key="OrangeBrush03" Color="{StaticResource Orange03}" />
+    <SolidColorBrush x:Key="OrangeBrush04" Color="{StaticResource Orange04}" />
+    <SolidColorBrush x:Key="OrangeBrush05" Color="{StaticResource Orange05}" />
+    <SolidColorBrush x:Key="OrangeBrush06" Color="{StaticResource Orange06}" />
+    <SolidColorBrush x:Key="OrangeBrush07" Color="{StaticResource Orange07}" />
+    <SolidColorBrush x:Key="OrangeBrush08" Color="{StaticResource Orange08}" />
+    <SolidColorBrush x:Key="OrangeBrush09" Color="{StaticResource Orange09}" />
+
     <!--==================================================-->
     <!-- DEEP-ORANGE color palette. -->
     <!--==================================================-->
@@ -188,6 +309,17 @@
     <Color x:Key="DeepOrange07">#E64A19</Color>     <!--Text: WHITE -->
     <Color x:Key="DeepOrange08">#D84315</Color>     <!--Text: WHITE -->
     <Color x:Key="DeepOrange09">#BF360C</Color>     <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="DeepOrangeBrush00" Color="{StaticResource DeepOrange00}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush01" Color="{StaticResource DeepOrange01}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush02" Color="{StaticResource DeepOrange02}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush03" Color="{StaticResource DeepOrange03}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush04" Color="{StaticResource DeepOrange04}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush05" Color="{StaticResource DeepOrange05}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush06" Color="{StaticResource DeepOrange06}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush07" Color="{StaticResource DeepOrange07}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush08" Color="{StaticResource DeepOrange08}" />
+    <SolidColorBrush x:Key="DeepOrangeBrush09" Color="{StaticResource DeepOrange09}" />
 
     <!--==================================================-->
     <!-- BROWN color palette. -->
@@ -204,6 +336,17 @@
     <Color x:Key="Brown08">#4E342E</Color>          <!--Text: WHITE -->
     <Color x:Key="Brown09">#3E2723</Color>          <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="BrownBrush00" Color="{StaticResource Brown00}" />
+    <SolidColorBrush x:Key="BrownBrush01" Color="{StaticResource Brown01}" />
+    <SolidColorBrush x:Key="BrownBrush02" Color="{StaticResource Brown02}" />
+    <SolidColorBrush x:Key="BrownBrush03" Color="{StaticResource Brown03}" />
+    <SolidColorBrush x:Key="BrownBrush04" Color="{StaticResource Brown04}" />
+    <SolidColorBrush x:Key="BrownBrush05" Color="{StaticResource Brown05}" />
+    <SolidColorBrush x:Key="BrownBrush06" Color="{StaticResource Brown06}" />
+    <SolidColorBrush x:Key="BrownBrush07" Color="{StaticResource Brown07}" />
+    <SolidColorBrush x:Key="BrownBrush08" Color="{StaticResource Brown08}" />
+    <SolidColorBrush x:Key="BrownBrush09" Color="{StaticResource Brown09}" />
+
     <!--==================================================-->
     <!-- GREY color palette. -->
     <!--==================================================-->
@@ -219,6 +362,17 @@
     <Color x:Key="Grey08">#323232</Color>           <!--Text: WHITE -->
     <Color x:Key="Grey09">#212121</Color>           <!--Text: WHITE -->
 
+    <SolidColorBrush x:Key="GreyBrush00" Color="{StaticResource Grey00}" />
+    <SolidColorBrush x:Key="GreyBrush01" Color="{StaticResource Grey01}" />
+    <SolidColorBrush x:Key="GreyBrush02" Color="{StaticResource Grey02}" />
+    <SolidColorBrush x:Key="GreyBrush03" Color="{StaticResource Grey03}" />
+    <SolidColorBrush x:Key="GreyBrush04" Color="{StaticResource Grey04}" />
+    <SolidColorBrush x:Key="GreyBrush05" Color="{StaticResource Grey05}" />
+    <SolidColorBrush x:Key="GreyBrush06" Color="{StaticResource Grey06}" />
+    <SolidColorBrush x:Key="GreyBrush07" Color="{StaticResource Grey07}" />
+    <SolidColorBrush x:Key="GreyBrush08" Color="{StaticResource Grey08}" />
+    <SolidColorBrush x:Key="GreyBrush09" Color="{StaticResource Grey09}" />
+
     <!--==================================================-->
     <!-- BLUE-GREY color palette. -->
     <!--==================================================-->
@@ -233,5 +387,16 @@
     <Color x:Key="BlueGrey07">#455A64</Color>       <!--Text: WHITE -->
     <Color x:Key="BlueGrey08">#37474F</Color>       <!--Text: WHITE -->
     <Color x:Key="BlueGrey09">#263238</Color>       <!--Text: WHITE -->
+
+    <SolidColorBrush x:Key="BlueGreyBrush00" Color="{StaticResource BlueGrey00}" />
+    <SolidColorBrush x:Key="BlueGreyBrush01" Color="{StaticResource BlueGrey01}" />
+    <SolidColorBrush x:Key="BlueGreyBrush02" Color="{StaticResource BlueGrey02}" />
+    <SolidColorBrush x:Key="BlueGreyBrush03" Color="{StaticResource BlueGrey03}" />
+    <SolidColorBrush x:Key="BlueGreyBrush04" Color="{StaticResource BlueGrey04}" />
+    <SolidColorBrush x:Key="BlueGreyBrush05" Color="{StaticResource BlueGrey05}" />
+    <SolidColorBrush x:Key="BlueGreyBrush06" Color="{StaticResource BlueGrey06}" />
+    <SolidColorBrush x:Key="BlueGreyBrush07" Color="{StaticResource BlueGrey07}" />
+    <SolidColorBrush x:Key="BlueGreyBrush08" Color="{StaticResource BlueGrey08}" />
+    <SolidColorBrush x:Key="BlueGreyBrush09" Color="{StaticResource BlueGrey09}" />
 
 </ResourceDictionary>

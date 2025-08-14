@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--==================================================-->
-    <!-- BLUE them background colors. -->
+    <!-- BROWN them background colors. -->
     <!--==================================================-->
 
     <Color x:Key="ColorTheme00">#EFEBE9</Color>
@@ -18,7 +18,7 @@
     <Color x:Key="ColorTheme09">#3E2723</Color>
 
     <!--==================================================-->
-    <!-- BLUE theme text colors. -->
+    <!-- BROWN theme text colors. -->
     <!--==================================================-->
 
     <Color x:Key="ColorThemeText00">#000000</Color>

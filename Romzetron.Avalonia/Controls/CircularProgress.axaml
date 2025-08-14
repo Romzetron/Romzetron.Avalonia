@@ -227,104 +227,104 @@
         <!-- Red theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Red] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Red06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Red]">
+            <Setter Property="Stroke" Value="{DynamicResource RedBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Pink theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Pink] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Pink06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Pink]">
+            <Setter Property="Stroke" Value="{DynamicResource PinkBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Purple theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Purple] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Purple06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Purple]">
+            <Setter Property="Stroke" Value="{DynamicResource PurpleBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Deep purple theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=DeepPurple] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource DeepPurple06}" />
+        <Style Selector="^[(Theme.ColorTheme)=DeepPurple]">
+            <Setter Property="Stroke" Value="{DynamicResource DeepPurpleBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Indigo theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Indigo] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Indigo06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Indigo]">
+            <Setter Property="Stroke" Value="{DynamicResource IndigoBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Blue theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Blue] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Blue06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Blue]">
+            <Setter Property="Stroke" Value="{DynamicResource BlueBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Teal theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Teal] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Teal06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Teal]">
+            <Setter Property="Stroke" Value="{DynamicResource TealBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Green theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Green] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Green06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Green]">
+            <Setter Property="Stroke" Value="{DynamicResource GreenBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Amber theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Amber] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Amber06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Amber]">
+            <Setter Property="Stroke" Value="{DynamicResource AmberBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Orange theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Orange] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Orange06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Orange]">
+            <Setter Property="Stroke" Value="{DynamicResource OrangeBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- DeepOrange theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=DeepOrange] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource DeepOrange06}" />
+        <Style Selector="^[(Theme.ColorTheme)=DeepOrange]">
+            <Setter Property="Stroke" Value="{DynamicResource DeepOrangeBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- Brown theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=Brown] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource Brown06}" />
+        <Style Selector="^[(Theme.ColorTheme)=Brown]">
+            <Setter Property="Stroke" Value="{DynamicResource BrownBrush06}" />
         </Style>
 
         <!--==================================================-->
         <!-- BlueGrey theme. -->
         <!--==================================================-->
 
-        <Style Selector="^[(Theme.ColorTheme)=BlueGrey] /template/ Arc#Stroke">
-            <Setter Property="Stroke" Value="{DynamicResource BlueGrey06}" />
+        <Style Selector="^[(Theme.ColorTheme)=BlueGrey]">
+            <Setter Property="Stroke" Value="{DynamicResource BlueGreyBrush06}" />
         </Style>
 
     </ControlTheme>
