@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
@@ -115,6 +116,12 @@ public sealed class CircularProgress : ContentControl
     public static FuncValueConverter<CircularProgress, double> GetStrokeBorderThickness => new(x => x?.StrokeThickness ?? 8);
 
     /// <summary>
+    /// Defines the duration of the circular rotation animation for the indeterminate state of the progress indicator.
+    /// This property specifies how long the rotation animation takes to complete one full cycle.
+    /// </summary>
+    public static readonly StyledProperty<TimeSpan> RotationDurationProperty = AvaloniaProperty.Register<CircularProgress, TimeSpan>(nameof(RotationDuration), TimeSpan.FromSeconds(2));
+
+    /// <summary>
     /// Gets or sets a boolean value that indicates whether the progress is indeterminate.
     /// When set to true, the progress indicator does not display an exact value and may use an animation to show that progress is ongoing.
     /// </summary>
@@ -204,7 +211,7 @@ public sealed class CircularProgress : ContentControl
     /// </summary>
     /// <remarks>
     /// This property determines how the end points of the stroke are drawn when rendering the circular progress control.
-    /// Valid values include members of the <see cref="Avalonia.Media.PenLineCap"/> enumeration such as `Flat`, `Square`, and `Round`.
+    /// Valid values include members of the <see cref="PenLineCap"/> enumeration such as `Flat`, `Square`, and `Round`.
     /// </remarks>
     public PenLineCap StrokeLineCap
     {
@@ -246,6 +253,16 @@ public sealed class CircularProgress : ContentControl
     {
         get => GetValue(ValueProperty);
         set => SetValue(ValueProperty, value);
+    }
+
+    /// <summary>
+    /// Specifies the duration of the rotation animation for the circular progress indicator.
+    /// This property determines the time it takes to complete one full cycle of the rotation.
+    /// </summary>
+    public TimeSpan RotationDuration
+    {
+        get => GetValue(RotationDurationProperty);
+        set => SetValue(RotationDurationProperty, value);
     }
 
     //==================================================

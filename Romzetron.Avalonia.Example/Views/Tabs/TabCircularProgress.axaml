@@ -4,8 +4,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="clr-namespace:Romzetron.Avalonia.Controls;assembly=Romzetron.Avalonia"
+    xmlns:viewModels="clr-namespace:Romzetron.Avalonia.Example.ViewModels"
     mc:Ignorable="d"
-    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCircularProgress">
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabCircularProgress"
+    x:DataType="viewModels:CircularProgressViewModel">
 
     <!--==================================================-->
     <!-- Scroll viewer. -->
@@ -37,12 +39,25 @@
                     IsIndeterminate="False"
                     Width="100"
                     Height="100"
-                    Value="63" />
+                    Value="50" />
+
+                <Label
+                    Content="Value"
+                    Margin="0,8,0,-8" />
 
                 <Slider
                     Value="{Binding #Progress.Value, Mode=TwoWay}"
                     Maximum="{Binding #Progress.Maximum}"
                     Minimum="{Binding #Progress.Minimum}" />
+
+                <Label
+                    Content="Indeterminate Rotation Duration"
+                    Margin="0,8,0,-8" />
+
+                <Slider
+                    Value="{Binding DurationMs, Mode=TwoWay}"
+                    Minimum="500"
+                    Maximum="5000" />
 
                 <CheckBox
                     IsChecked="{Binding #Progress.ShowProgressText, Mode=TwoWay}"
@@ -81,8 +96,9 @@
                             Minimum="{Binding #Progress.Minimum, Mode=OneWay}"
                             Maximum="{Binding #Progress.Maximum, Mode=OneWay}"
                             Content="{Binding}"
-                            Margin="10" />
-
+                            Margin="10"
+                            RotationDuration="{Binding DataContext.RotationDuration, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}
+" />
                     </DataTemplate>
 
                 </ItemsControl.ItemTemplate>
