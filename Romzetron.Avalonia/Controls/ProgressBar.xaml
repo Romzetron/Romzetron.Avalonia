@@ -185,7 +185,7 @@
         </Style>
 
         <Style Selector="^:horizontal">
-            <Setter Property="MinWidth" Value="200" />
+            <Setter Property="MinWidth" Value="20" />
             <Setter Property="MinHeight" Value="8" />
         </Style>
 
@@ -200,7 +200,7 @@
 
         <Style Selector="^:vertical">
             <Setter Property="MinWidth" Value="8" />
-            <Setter Property="MinHeight" Value="200" />
+            <Setter Property="MinHeight" Value="20" />
         </Style>
 
         <Style Selector="^:vertical /template/ LayoutTransformControl#PART_LayoutTransformControl">
