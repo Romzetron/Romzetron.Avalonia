@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.3.3" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.3.4" />
         <ProjectReference Include="..\Romzetron.Avalonia\Romzetron.Avalonia.csproj"/>
         <ProjectReference Include="..\Romzetron.Avalonia.DataGrid\Romzetron.Avalonia.DataGrid.csproj"/>
     </ItemGroup>
@@ -40,10 +40,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.3.3" />
-        <PackageReference Include="Avalonia.Desktop" Version="11.3.3" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.3" />
-        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.3" />
+        <PackageReference Include="Avalonia" Version="11.3.4" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.3.4" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.4" />
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.4" />
         <PackageReference Include="Xaml.Behaviors.Avalonia" Version="11.3.2" />
     </ItemGroup>
 
