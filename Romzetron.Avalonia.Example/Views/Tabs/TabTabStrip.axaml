@@ -1,0 +1,83 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+    x:Class="Romzetron.Avalonia.Example.Views.Tabs.TabTabStrip">
+
+    <!--==================================================-->
+    <!-- Layout grid. -->
+    <!--==================================================-->
+
+    <StackPanel
+        Margin="8"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        Spacing="8">
+
+        <!--==================================================-->
+        <!-- Tab strip. -->
+        <!--==================================================-->
+
+        <TabStrip Margin="6,0">
+
+            <TabStripItem Content="Theme" />
+            <TabStripItem Content="Red" Theme.ColorTheme="Red" />
+            <TabStripItem Content="Pink" Theme.ColorTheme="Pink" />
+            <TabStripItem Content="Purple" Theme.ColorTheme="Purple" />
+            <TabStripItem Content="Deep Purple" Theme.ColorTheme="DeepPurple" />
+            <TabStripItem Content="Indigo" Theme.ColorTheme="Indigo" />
+            <TabStripItem Content="Blue" Theme.ColorTheme="Blue" />
+            <TabStripItem Content="Teal" Theme.ColorTheme="Teal" />
+            <TabStripItem Content="Green" Theme.ColorTheme="Green" />
+            <TabStripItem Content="Amber" Theme.ColorTheme="Amber" />
+            <TabStripItem Content="Orange" Theme.ColorTheme="Orange" />
+            <TabStripItem Content="Deep Orange" Theme.ColorTheme="DeepOrange" />
+            <TabStripItem Content="Brown" Theme.ColorTheme="Brown" />
+            <TabStripItem Content="Blue Grey" Theme.ColorTheme="BlueGrey" />
+            <TabStripItem Content="Disabled" IsEnabled="False" />
+
+        </TabStrip>
+
+        <!--==================================================-->
+        <!-- TabStrip that simulates TabControl. -->
+        <!--==================================================-->
+
+        <TextBlock
+            Text="Simulated TabControl"
+            Margin="8,16,0,0" />
+
+        <Grid
+            RowDefinitions="Auto,*"
+            HorizontalAlignment="Left">
+
+            <Border
+                Grid.Row="1"
+                Background="{DynamicResource TabControlBackground}"
+                BorderBrush="{DynamicResource TabControlBorder}"
+                BorderThickness="1"
+                CornerRadius="4">
+
+                <TextBlock
+                    Text="Simulated Content"
+                    Margin="16" />
+
+            </Border>
+
+            <TabStrip
+                Grid.Row="0"
+                Margin="6,0,6,-1">
+
+                <TabStripItem Content="Tab 1" />
+                <TabStripItem Content="Tab 2" />
+                <TabStripItem Content="Tab 3" />
+
+            </TabStrip>
+
+        </Grid>
+
+    </StackPanel>
+
+</UserControl>

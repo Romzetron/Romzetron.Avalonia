@@ -41,6 +41,7 @@
         <Setter Property="Margin" Value="0" />
         <Setter Property="MinHeight" Value="{DynamicResource TabStripItemMinHeight}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="4,4,0,0" />
 
         <!--==================================================-->
         <!-- Template. -->
@@ -69,7 +70,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{DynamicResource TabControlBorder}"
                         BorderThickness="1"
-                        CornerRadius="4"
+                        CornerRadius="{TemplateBinding CornerRadius}"
                         Margin="2,0,2,1"
                         Padding="{TemplateBinding Padding}">
 
@@ -92,7 +93,7 @@
 
                     <Border
                         x:Name="PART_Highlight"
-                        CornerRadius="4,4,0,0"
+                        CornerRadius="{TemplateBinding CornerRadius}"
                         Background="{DynamicResource TabItemHeaderHighlightUnselected}"
                         VerticalAlignment="Top"
                         Height="4"
@@ -103,6 +104,16 @@
             </ControlTemplate>
 
         </Setter>
+
+        <Style Selector="^ /template/ Border#PART_LayoutRoot">
+            <Setter Property="BorderThickness" Value="1,1,1,0" />
+            <Setter Property="Margin" Value="2,0,2,1" />
+        </Style>
+
+        <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="Padding" Value="12,8,12,9" />
+        </Style>
 
         <!--==================================================-->
         <!-- Selected state. -->

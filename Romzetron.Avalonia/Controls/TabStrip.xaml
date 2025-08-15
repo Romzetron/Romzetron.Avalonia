@@ -22,6 +22,9 @@
     <!--==================================================-->
 
     <ControlTheme x:Key="{x:Type TabStrip}" TargetType="TabStrip">
+        
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TabControlBorder}" />
 
         <!--==================================================-->
         <!-- Template. -->
@@ -52,7 +55,8 @@
 
                     <ItemsPresenter
                         x:Name="PART_ItemsPresenter"
-                        ItemsPanel="{TemplateBinding ItemsPanel}" />
+                        ItemsPanel="{TemplateBinding ItemsPanel}"
+                        Margin="0,0,0,-2"/>
 
                 </Border>
 

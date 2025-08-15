@@ -368,8 +368,16 @@
                 <!-- TabControl and TabItem examples. -->
                 <!--==================================================-->
 
-                <TabItem Header="TabControl/TabItem">
+                <TabItem Header="TabControl">
                     <tabs:TabTabControl />
+                </TabItem>
+
+                <!--==================================================-->
+                <!-- TabStrip and TabStripItem examples. -->
+                <!--==================================================-->
+
+                <TabItem Header="TabStrip">
+                    <tabs:TabTabStrip />
                 </TabItem>
 
                 <!--==================================================-->

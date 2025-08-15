@@ -168,6 +168,10 @@
           <DependentUpon>TabDataGrid.axaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Tabs\TabTabStrip.axaml.cs">
+          <DependentUpon>TabTabStrip.axaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
 </Project>
