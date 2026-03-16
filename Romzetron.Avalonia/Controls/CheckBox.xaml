@@ -72,7 +72,7 @@
                     <Grid
                         Grid.Column="0"
                         VerticalAlignment="Top"
-                        Height="32">
+                        Height="{DynamicResource CheckBoxMinHeight}">
 
                         <!--==================================================-->
                         <!-- Check background. -->

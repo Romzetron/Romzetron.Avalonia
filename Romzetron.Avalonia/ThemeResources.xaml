@@ -142,6 +142,8 @@
     <SolidColorBrush x:Key="CheckBoxForeground" Color="{DynamicResource UiTextTheme00}" />
     <SolidColorBrush x:Key="CheckBoxForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
 
+    <x:Double x:Key="CheckBoxMinHeight">32</x:Double>
+
     <!--==================================================-->
     <!-- CircularProgress resources. -->
     <!--==================================================-->
@@ -540,6 +542,8 @@
 
     <SolidColorBrush x:Key="RadioButtonForeground" Color="{DynamicResource UiTextTheme00}" />
     <SolidColorBrush x:Key="RadioButtonForegroundDisabled" Color="{DynamicResource UiTextTheme06}" />
+
+    <x:Double x:Key="RadioButtonMinHeight">32</x:Double>
 
     <!--==================================================-->
     <!-- RepeatButton resources. -->

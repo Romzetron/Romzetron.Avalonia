@@ -62,7 +62,9 @@
                         <!-- Ellipse container. -->
                         <!--==================================================-->
 
-                        <Grid Height="32" VerticalAlignment="Top">
+                        <Grid
+                            Height="{DynamicResource RadioButtonMinHeight}"
+                            VerticalAlignment="Top">
 
                             <!--==================================================-->
                             <!-- Outer ellipse. -->
