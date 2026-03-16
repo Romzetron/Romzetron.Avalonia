@@ -743,7 +743,6 @@
                         ContentTemplate="{TemplateBinding ContentTemplate}"
                         Padding="{TemplateBinding Padding}"
                         Margin="0"
-                        RecognizesAccessKey="True"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 
@@ -752,6 +751,14 @@
             </ControlTemplate>
 
         </Setter>
+
+        <!--==================================================-->
+        <!-- Recognize access key style. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="RecognizesAccessKey" Value="True" />
+        </Style>
 
         <!--==================================================-->
         <!-- Default states. -->

@@ -79,7 +79,7 @@
                                 UseLayoutRounding="False" />
 
                             <!--==================================================-->
-                            <!-- Check outer ellipse. -->
+                            <!-- Check the outer ellipse. -->
                             <!--==================================================-->
 
                             <Ellipse
@@ -117,8 +117,7 @@
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
-                            Foreground="{TemplateBinding Foreground}"
-                            RecognizesAccessKey="True" />
+                            Foreground="{TemplateBinding Foreground}" />
 
                     </Grid>
 
@@ -127,6 +126,14 @@
             </ControlTemplate>
 
         </Setter>
+
+        <!--==================================================-->
+        <!-- Recognize access key style. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="RecognizesAccessKey" Value="True" />
+        </Style>
 
         <!--==================================================-->
         <!-- Pressed state. -->

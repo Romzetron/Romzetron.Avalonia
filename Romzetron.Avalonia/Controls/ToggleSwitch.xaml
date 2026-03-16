@@ -81,8 +81,7 @@
                         VerticalAlignment="Top"
                         Content="{TemplateBinding Content}"
                         ContentTemplate="{TemplateBinding ContentTemplate}"
-                        Margin="{DynamicResource ToggleSwitchTopHeaderMargin}"
-                        RecognizesAccessKey="True" />
+                        Margin="{DynamicResource ToggleSwitchTopHeaderMargin}" />
 
                     <!--==================================================-->
                     <!-- Toggle layout grid. -->
@@ -214,6 +213,14 @@
             </ControlTemplate>
 
         </Setter>
+
+        <!--==================================================-->
+        <!-- Recognize access key style. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="RecognizesAccessKey" Value="True" />
+        </Style>
 
         <!--==================================================-->
         <!-- Content empty state. -->

@@ -63,7 +63,6 @@
                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Stretch"
-                            RecognizesAccessKey="True"
                             Margin="{TemplateBinding Padding}" />
 
                         <!--==================================================-->
@@ -118,6 +117,14 @@
             </ControlTemplate>
 
         </Setter>
+
+        <!--==================================================-->
+        <!-- Recognize access key style. -->
+        <!--==================================================-->
+
+        <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="RecognizesAccessKey" Value="True" />
+        </Style>
 
         <!--==================================================-->
         <!-- Selected state. -->
