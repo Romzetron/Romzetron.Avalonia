@@ -37,7 +37,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.4" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.7" />
         <AvaloniaResource Include="**/*.xaml"/>
         <AvaloniaResource Include="**/*.ttf"/>
     </ItemGroup>

@@ -48,11 +48,14 @@
             <!-- Left/right placement toggle. -->
             <!--==================================================-->
 
-            <ToggleSwitch
-                OffContent="Left"
-                OnContent="Right"
-                Content="Placement"
-                IsChecked="{Binding !IsLeft}" />
+            <TextBlock
+                Text="PanelPlacement"
+                Margin="0,8,0,0" />
+
+            <ComboBox
+                ItemsSource="{Binding PanelPlacementOptions}"
+                SelectedItem="{Binding SelectedPanelPlacement}"
+                HorizontalAlignment="Stretch" />
 
             <!--==================================================-->
             <!-- Display mode. -->

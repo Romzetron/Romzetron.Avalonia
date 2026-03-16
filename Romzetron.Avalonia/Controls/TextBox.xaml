@@ -39,7 +39,7 @@
     <!-- Default cut/copy/paste menu. -->
     <!--==================================================-->
 
-    <MenuFlyout 
+    <MenuFlyout
         ShowMode="{OnFormFactor Desktop=Standard, Mobile=Transient}"
         x:Key="DefaultTextBoxContextFlyout"
         Placement="Bottom">
@@ -303,7 +303,7 @@
 
                                             <TextBlock
                                                 x:Name="PART_Watermark"
-                                                Opacity="0.3"
+                                                Opacity="{DynamicResource TextBoxPlaceholderOpacity}"
                                                 Text="{TemplateBinding Watermark}"
                                                 TextAlignment="{TemplateBinding TextAlignment}"
                                                 TextWrapping="{TemplateBinding TextWrapping}"

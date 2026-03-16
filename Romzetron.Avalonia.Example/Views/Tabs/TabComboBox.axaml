@@ -123,6 +123,21 @@
 
         </ComboBox>
 
+        <!--==================================================-->
+        <!-- Editable example. -->
+        <!--==================================================-->
+
+        <ComboBox
+            SelectedIndex="0"
+            IsEditable="True"
+            Width="200">
+
+            <ComboBoxItem>Editable Item A</ComboBoxItem>
+            <ComboBoxItem>Editable Item B</ComboBoxItem>
+            <ComboBoxItem>Editable Item C</ComboBoxItem>
+
+        </ComboBox>
+
     </StackPanel>
 
 </UserControl>

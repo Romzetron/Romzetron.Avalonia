@@ -9,12 +9,16 @@
     <!--==================================================-->
 
     <Design.PreviewWith>
+
         <Border Padding="20">
+
             <StackPanel Spacing="10">
+
                 <ComboBox PlaceholderText="Select an item">
                     <ComboBoxItem>Item 1</ComboBoxItem>
                     <ComboBoxItem>Item 2</ComboBoxItem>
                 </ComboBox>
+
                 <ComboBox
                     IsEnabled="False"
                     Width="200"
@@ -23,6 +27,7 @@
                     <ComboBoxItem>Item 1</ComboBoxItem>
                     <ComboBoxItem>Item 2</ComboBoxItem>
                 </ComboBox>
+
                 <ComboBox PlaceholderText="Error">
                     <DataValidationErrors.Error>
                         <sys:Exception>
@@ -32,8 +37,28 @@
                         </sys:Exception>
                     </DataValidationErrors.Error>
                 </ComboBox>
+
+                <Border
+                    Background="{DynamicResource ComboBoxDropDownBackground}"
+                    BorderBrush="{DynamicResource ComboBoxDropDownBorderBrush}"
+                    BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+                    Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+                    CornerRadius="{DynamicResource ComboBoxDropdownCornerRadius}">
+
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <ComboBoxItem>Item 1</ComboBoxItem>
+                        <ComboBoxItem>Item 2 long</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Item 3</ComboBoxItem>
+                        <ComboBoxItem IsEnabled="False">Item 4</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True" IsEnabled="False">Item 5</ComboBoxItem>
+                    </StackPanel>
+
+                </Border>
+
             </StackPanel>
+
         </Border>
+
     </Design.PreviewWith>
 
     <!--==================================================-->
@@ -125,8 +150,16 @@
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Margin="{TemplateBinding Padding}"
                             Text="{TemplateBinding PlaceholderText}"
-                            Foreground="{TemplateBinding PlaceholderForeground}"
-                            IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
+                            Foreground="{TemplateBinding PlaceholderForeground}">
+                            
+                            <TextBlock.IsVisible>
+                                <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                    <Binding Path="SelectionBoxItem" RelativeSource="{RelativeSource TemplatedParent}" Converter="{x:Static ObjectConverters.IsNull}" />
+                                    <Binding Path="!IsEditable" RelativeSource="{RelativeSource TemplatedParent}" />
+                                </MultiBinding>
+                            </TextBlock.IsVisible>
+                            
+                        </TextBlock>
 
                         <!--==================================================-->
                         <!-- Content. -->
@@ -140,7 +173,33 @@
                             Grid.Column="0"
                             Margin="{TemplateBinding Padding}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            IsVisible="{TemplateBinding IsEditable, Converter={x:Static BoolConverters.Not}}" />
+                        
+                        <!--==================================================-->
+                        <!-- Editable text box. -->
+                        <!--==================================================-->
+
+                        <TextBox
+                            Name="PART_EditableTextBox"
+                            Grid.Column="0"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Background="Transparent"
+                            Text="{TemplateBinding Text, Mode=TwoWay}"
+                            Watermark="{TemplateBinding PlaceholderText}"
+                            BorderThickness="0"
+                            IsVisible="{TemplateBinding IsEditable}">
+
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextBoxBackgroundFocused">Transparent</SolidColorBrush>
+                                <SolidColorBrush x:Key="TextBoxBackgroundPointerOver">Transparent</SolidColorBrush>
+                                <Thickness x:Key="TextBoxBorderThicknessFocused">0</Thickness>
+                            </TextBox.Resources>
+
+                        </TextBox>
 
                         <!--==================================================-->
                         <!-- Dropdown overlay. -->
@@ -298,6 +357,15 @@
                 <Setter Property="Foreground" Value="{DynamicResource ComboBoxForegroundDisabled}" />
             </Style>
 
+        </Style>
+        
+        <!--==================================================-->
+        <!-- IsEditable state. -->
+        <!--==================================================-->
+        
+        <Style Selector="^[IsEditable=true]">
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="Local" />
         </Style>
 
     </ControlTheme>

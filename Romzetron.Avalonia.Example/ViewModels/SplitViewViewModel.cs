@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Avalonia.Controls;
 using ReactiveUI;
 
@@ -10,22 +11,13 @@ public class SplitViewViewModel : ViewModelBase
     // Private variables.
     //==================================================
 
-    private bool _isLeft = true;
+    private SplitViewPanePlacement _panePlacement = SplitViewPanePlacement.Left;
+    private string _selectedPanelPlacement = "Left";
     private int _displayMode = 3; //CompactOverlay
 
     //==================================================
     // Properties.
     //==================================================
-
-    public bool IsLeft
-    {
-        get => _isLeft;
-        set
-        {
-            this.RaiseAndSetIfChanged(ref _isLeft, value);
-            this.RaisePropertyChanged(nameof(PanePlacement));
-        }
-    }
 
     public int DisplayMode
     {
@@ -37,7 +29,31 @@ public class SplitViewViewModel : ViewModelBase
         }
     }
 
-    public SplitViewPanePlacement PanePlacement => _isLeft ? SplitViewPanePlacement.Left : SplitViewPanePlacement.Right;
+    public List<string> PanelPlacementOptions { get; } = ["Left", "Right", "Top", "Bottom"];
+
+    public string SelectedPanelPlacement
+    {
+        get => _selectedPanelPlacement;
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _selectedPanelPlacement, value);
+
+            PanePlacement = value switch
+            {
+                "Left" => SplitViewPanePlacement.Left,
+                "Right" => SplitViewPanePlacement.Right,
+                "Top" => SplitViewPanePlacement.Top,
+                "Bottom" => SplitViewPanePlacement.Bottom,
+                _ => PanePlacement
+            };
+        }
+    }
+
+    public SplitViewPanePlacement PanePlacement
+    {
+        get => _panePlacement;
+        set => this.RaiseAndSetIfChanged(ref _panePlacement, value);
+    }
 
     public SplitViewDisplayMode CurrentDisplayMode
     {

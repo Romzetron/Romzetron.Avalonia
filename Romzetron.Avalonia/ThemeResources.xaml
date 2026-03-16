@@ -700,6 +700,7 @@
     <Thickness x:Key="TextBoxBorderThicknessFocused">2</Thickness>
     <CornerRadius x:Key="TextBoxCornerRadius">4</CornerRadius>
     <Thickness x:Key="TextBoxPadding">8</Thickness>
+    <x:Double x:Key="TextBoxPlaceholderOpacity">0.3</x:Double>
 
     <!--==================================================-->
     <!-- TitleBar resources. -->
