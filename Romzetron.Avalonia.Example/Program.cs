@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Dialogs;
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 
 namespace Romzetron.Avalonia.Example;
 

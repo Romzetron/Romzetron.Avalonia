@@ -18,6 +18,7 @@
         <Setter Property="Foreground" Value="{DynamicResource White}" />
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontInterMedium}" />
+        <Setter Property="Inline.TextDecorations" Value="" />
 
         <!--==================================================-->
         <!-- Template. -->

@@ -116,7 +116,8 @@
                                 BorderThickness="0"
                                 Background="Transparent"
                                 ItemTemplate="{TemplateBinding ItemTemplate}"
-                                Margin="{DynamicResource AutoCompleteListPadding}" />
+                                Margin="{DynamicResource AutoCompleteListPadding}"
+                                ScrollViewer.IsScrollChainingEnabled="False" />
 
                         </Border>
 

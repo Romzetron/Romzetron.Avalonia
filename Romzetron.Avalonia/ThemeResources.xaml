@@ -302,6 +302,8 @@
     <x:Double x:Key="DateTimePickerFlyoutPresenterHighlightHeight">40</x:Double>
     <x:Double x:Key="DateTimePickerFlyoutPresenterItemHeight">40</x:Double>
     <x:Double x:Key="DateTimePickerFlyoutAcceptDismissHostGridHeight">33</x:Double>
+    <x:Double x:Key="DatePickerThemeMinWidth">296</x:Double>
+    <x:Double x:Key="DatePickerThemeMaxWidth">456</x:Double>
 
     <!--==================================================-->
     <!-- DateTimePickerFlyoutItem resources. -->
@@ -705,6 +707,13 @@
     <CornerRadius x:Key="TextBoxCornerRadius">4</CornerRadius>
     <Thickness x:Key="TextBoxPadding">8</Thickness>
     <x:Double x:Key="TextBoxPlaceholderOpacity">0.3</x:Double>
+    
+    <!--==================================================-->
+    <!-- TimePicker resources. -->
+    <!--==================================================-->
+    
+    <x:Double x:Key="TimePickerThemeMinWidth">242</x:Double>
+    <x:Double x:Key="TimePickerThemeMaxWidth">456</x:Double>
 
     <!--==================================================-->
     <!-- TitleBar resources. -->

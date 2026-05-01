@@ -134,6 +134,8 @@
         <Setter Property="CornerRadius" Value="{DynamicResource DateTimePickerButtonCornerRadius}" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="{DynamicResource TimePickerThemeMinWidth}" />
+        <Setter Property="MaxWidth" Value="{DynamicResource TimePickerThemeMaxWidth}" />
 
         <!--==================================================-->
         <!-- Template. -->
@@ -174,8 +176,8 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             IsEnabled="{TemplateBinding IsEnabled}"
-                            MinWidth="{DynamicResource TimePickerMinWidth}"
-                            MaxWidth="{DynamicResource TimePickerMaxWidth}"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            MaxWidth="{TemplateBinding MaxWidth}"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             TemplatedControl.IsTemplateFocusTarget="True"

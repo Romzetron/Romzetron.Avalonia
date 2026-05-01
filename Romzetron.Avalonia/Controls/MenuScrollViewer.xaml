@@ -37,6 +37,7 @@
         <!--==================================================-->
 
         <Setter Property="Background" Value="Transparent" />
+        <Setter Property="IsScrollChainingEnabled" Value="False" />
 
         <!--==================================================-->
         <!-- Template. -->
